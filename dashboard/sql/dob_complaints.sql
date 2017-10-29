@@ -1,13 +1,11 @@
-select pluto.cd,
-      pluto.bbl,
-	pluto.address,
-      sales.residentialunits,
-      pluto.unitsres,
-	sales.saleprice as saleprice,
-   	sales.saleprice / nullif(sales.grosssquarefeet, 0) as ppgsf,
-	to_char(saledate, 'YYYY-MM-DD') as iso_date,
-   	sales.saledate,
-           concat('<a href="http://whoownswhat.justfix.nyc/address/',
+select pluto.cd, 
+    pad.bbl, 
+    pluto.address,
+	pluto.unitsres as residentialunits, 
+    uc2007, 
+    uc2016,
+    count(distinct complaintnumber) as dobcomplaints,
+         concat('<a href="http://whoownswhat.justfix.nyc/address/',
             case 
                   when pluto.borocode = '1' then 'MANHATTAN'
                   when pluto.borocode = '2' then 'BRONX'
@@ -52,20 +50,28 @@ select pluto.cd,
             '&lot=',
             pluto.lot,
             '">(ACRIS)</a>') as acrislink,
-      case when ((cast(uc2007 as float) - 
+       case when ((cast(uc2007 as float) - 
                 cast(uc2016 as float)) 
                /cast(uc2007 as float) >= 0.25) then 'yes' else 'no' end as highloss
-FROM dof_sales sales
-LEFT JOIN pluto_16v2 pluto on sales.bbl = pluto.bbl
-INNER JOIN rentstab ON rentstab.ucbbl = pluto.bbl
-LEFT JOIN hpd_registrations_grouped_by_bbl_with_contacts hpd_reg on hpd_reg.bbl = pluto.bbl
-WHERE pluto.cd is not null
-      AND pluto.cd = '${ cd }'
-      AND sales.saledate >= date_trunc('month', current_date - interval '2 month')
-      AND sales.residentialunits > 0
-      AND sales.saleprice > 50000
-      AND COALESCE(uc2007,uc2008, uc2009, uc2010, uc2011, uc2012, uc2013, uc2014,uc2015,uc2016) is not null
-order by sales.saledate desc;
-
-
+from dobcomplaints dob
+left join padadr pad on pad.bin = dob.bin
+inner join pluto_16v2 pluto on pluto.bbl=pad.bbl
+inner join rentstab on rentstab.ucbbl=pad.bbl
+LEFT JOIN hpd_registrations_grouped_by_bbl_with_contacts hpd_reg on hpd_reg.bbl = pad.bbl
+where cast(date_entered as date) >= date_trunc('month', current_date - interval '1 month') and
+    AND pluto.cd = '${ cd }'
+    pluto.unitsres > 0 
+	AND COALESCE(uc2007,uc2008, uc2009, uc2010, uc2011, uc2012, uc2013, uc2014,uc2015,uc2016) is not null
+group by pad.bbl, 
+		 pluto.address, 
+         pluto.cd, 
+         pluto.unitsres, 
+         uc2007, 
+         uc2016, 
+         corpnames, 
+         pluto.borocode, 
+         pluto.block, 
+         pluto.lot
+having count(distinct complaintnumber) > 1
+order by pluto.cd asc, dobcomplaints desc
 
