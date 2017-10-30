@@ -5,89 +5,176 @@ html
     link(href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet") 
     link(rel='stylesheet' href='./styles.css')
   body
-    div.title.tc.fl.w-100.pa2.bg-light-blue.bb.b--mid-gray
+    div.title.tc.fl.w-100.pa2.bg-dark-red.near-white
       h1.f1 #{district.name}
-      h2.f3.navy #{district.neighborhoods}
+      h2.f3.light-gray #{district.neighborhoods}
     div.stats.fl.w-100.tc
-      p.f3 
-        span #{stats.lots} lots 
-        span.pl5 #{stats.unitsres} residential units
-    div.fl.w-100.open-violations.tc
-      h2 Open HPD Violations
-      p 
-        | <span class="b">#{stats.buildingsWithOpenViolations}</span> buildings have open violations with a total of 
-        | <span class="b">#{stats.totalNumberOfOpenViolations}</span> violations
-      p <span class="b">#{stats.resBuildingsWithViolationsPct}</span> of all residential buildings in the district have at last one violation
-      p There is an average of <span class="b">#{stats.openViolationsPerUnit} violations</span> per residential unit in the district
-
-    div.fl.w-100.tc.pl5
-      h2.tl Sales
-      h5.tl New sales of stablized residential buildings
+      p.f4 
+        span.pa7 <img src="/dashboard/101.png"> [Can't get image to appear]
+        span.pa7 [key and notes option 1]  
+    div.fl.w-100.tc.pa4
+      h2.tl.mv2 Sales 
+      h5.tl.mt2 New sales of stablized residential buildings
       table.w-100
         thead
           tr
-            th BBL
-            th Address
-            th Residential Units
-            th Sale Price
-            th Price/GSF
-            th Sale date
-            th Owner
+            th.w-10.pv1 BBL
+            th.w-20 Address
+            th.w-10 Res Units
+            th.w-10 Stab Units '07
+            th.w-10 Stab Units '16
+            th.w-10 Sale Price
+            th.w-10 $/GSF
+            th.w-10 Sale Date
+            th.w-10 Owner
+            th 
+            th 
+            th 
         tbody
         each sale in recentSales
           tr
-            td #{sale.bbl}
-            td #{sale.address}
+            td.f6.pv1.pr3.tl #{sale.bbl}
+            td.f6.tl #{sale.address}
             td #{sale.residentialunits}
-            td #{sale.saleprice}
-            td #{sale.ppgsf}
+            td #{sale.uc2007}
+            td #{sale.uc2016}
+            td $#{sale.saleprice}
+            td $#{sale.ppgsf}
             td #{sale.iso_date}
-            td #{sale.corpnames}
-    div.fl.w-100.tc.pa5
-      h2.tl HPD Violations
-      h5.tl 
+            td.f6 !{sale.owner}
+            td.f7 !{sale.hpdlink}
+            td.f7 !{sale.bislink}
+            td.f7 !{sale.acrislink} 
+      div.fl.w-100.tc.pa4
+      h2.tl.mv2 HPD Complaints
+      h5.tl.mt2 Stabilized buildings with 3+ HPD complaints last month
       table.w-100
         thead
           tr
-            th BBL
-            th Address
-            th Class A Violations
-            th Class B Violations
-            th Class C Violations
-            th Total Violations
+            th.w-10.pv3 BBL
+            th.w-15 Address
+            th.w-10 Res Units
+            th.w-10 Stab Units '07
+            th.w-10 Stab Units '16
+            th.w-10 Complaints
+            th.w-10 Owner
+            th  
+            th   
+            th    
+        tbody
+        //change this
+        each violation in hpdViolations
+          tr
+            td.f6.pv1.pr3.tl [BBL]
+            td.f6.tl [Address]
+            td [ ]
+            td [ ]
+            td [ ]
+            td [ ]
+            td.f6 [owner]
+            td.f7 (HPD)
+            td.f7 (DOB)
+            td.f7 (ACRIS)    
+    div.fl.w-100.tc.pa4
+      h2.tl.mv2 HPD Violations
+      h5.tl.mt2 Stabilized buildings with 10+ HPD violations last month
+      table.w-100
+        thead
+          tr
+            th.w-10.pv3 BBL
+            th.w-20 Address
+            th.w-10 Res Units
+            th.w-10 Stab Units '07
+            th.w-10 Stab Units '16
+            th.w-10 Class A
+            th.w-10 Class B
+            th.w-10 Class C
+            th.w-10 Total
+            th.w-10 Owner
+            th  
+            th   
+            th    
         tbody
         each violation in hpdViolations
           tr
-            td #{violation.bbl}
-            td #{violation.address}
+            td.f6.pv1.pr3.tl #{violation.bbl}
+            td.f6.tl #{violation.address}
+            td #{violation.residentialunits}
+            td #{violation.uc2007}
+            td #{violation.uc2016}
             td #{violation.class_a}
             td #{violation.class_b}
             td #{violation.class_c}
-            td #{violation.total}    
-    div.fl.w-100.tc.pl5
-      h2.tl DOB Jobs
-      h5.tl Stabilized buildings with new A1, A2, or DM DOB Permits filed
+            td #{violation.total}
+            td.f6 !{violation.owner}
+            td.f7 !{violation.hpdlink}
+            td.f7 !{violation.bislink}
+            td.f7 !{violation.acrislink} 
+      div.fl.w-100.tc.pa4
+      h2.tl.mv2 DOB Complaints
+      h5.tl.mt2 Stabilized buildings with 2+ DOB complaints last month
       table.w-100
         thead
           tr
-            th BBL
-            th Address
-            th Residential Units     
-            th Alt 1 Permits
-            th Alt 2 Permits
-            th Demolition Permits
-            th Total
-            th Owner
+            th.w-10.pv3 BBL
+            th.w-15 Address
+            th.w-10 Res Units
+            th.w-10 Stab Units '07
+            th.w-10 Stab Units '16
+            th.w-10 Complaints
+            th.w-10 Owner
+            th  
+            th   
+            th    
+        tbody
+        //change this
+        each violation in hpdViolations
+          tr
+            td.f6.pv1.pr3.tl [BBL]
+            td.f6.tl [Address]
+            td [ ]
+            td [ ]
+            td [ ]
+            td [ ]
+            td.f6 [owner]
+            td.f7 (HPD)
+            td.f7 (DOB)
+            td.f7 (ACRIS)    
+      div.fl.w-100.tc.pa4
+      h2.tl.mv2 DOB Jobs
+      h5.tl.mt2 Stabilized buildings with any DOB permit applications last month
+      table.w-100
+        thead
+          tr
+            th.w-10.pv3 BBL
+            th.w-25 Address
+            th.w-10 Res Units
+            th.w-10 Stab Units '07
+            th.w-10 Stab Units '16
+            th.w-10 Alt 1 Permits
+            th.w-10 Alt 2 Permits
+            th.w-10 DM Permits
+            th.w-10 Owner
+            th  
+            th   
+            th    
         tbody
         each job in dobjobs
           tr
-            td #{job.bbl}
-            td #{job.address}
+            td.f6.pv1 #{job.bbl}
+            td.f6 #{job.address}
             td #{job.residentialunits}
+            td #{job.uc2007}
+            td #{job.uc2016}
             td #{job.a1}
             td #{job.a2}
             td #{job.dm}
-            td #{job.total}
-            td #{job.corpnames}
+            td.f6 !{job.owner}
+            td.f7 !{job.hpdlink}
+            td.f7 !{job.bislink}
+            td.f7 !{job.acrislink}     
+    
+    
+  
     div.fl.w-100.tc.mb4
       a(href='/') Back
