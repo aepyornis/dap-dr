@@ -20,6 +20,8 @@ If you setup NYCDB  with the default credentials (user: nycdb, pass: nycdb, data
 
 - Build the site: ``` npm run build ```
 
+- Create an archive of boards.json and pages: ``` npm run zip ```
+
 Requirements:
   - postgres
   - nodejs > 8.5

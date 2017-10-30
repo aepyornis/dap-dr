@@ -10,6 +10,7 @@
   "scripts": {
     "json": "./commmunityBoardJson.js > boards.json",
     "build": "./communityBoardPages.js boards.json",
+    "zip": "zip -r dap-dr-$(date +'%F').zip boards.json public",
     "clean": "rm -rf ./public",
     "start": "http-server ./public",
     "test": "mocha"
