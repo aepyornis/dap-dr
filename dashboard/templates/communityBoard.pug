@@ -41,40 +41,40 @@ html
             td $#{sale.saleprice}
             td $#{sale.ppgsf}
             td #{sale.iso_date}
-            td.f6 !{sale.owner}
+            td.f7.tl.pr2.pt1 !{sale.owner}
             td.f7 !{sale.hpdlink}
             td.f7 !{sale.bislink}
             td.f7 !{sale.acrislink} 
-      div.fl.w-100.tc.pa4
-      h2.tl.mv2 HPD Complaints
-      h5.tl.mt2 Stabilized buildings with 3+ HPD complaints last month
-      table.w-100
-        thead
-          tr
-            th.w-10.pv3 BBL
-            th.w-15 Address
-            th.w-10 Res Units
-            th.w-10 Stab Units '07
-            th.w-10 Stab Units '16
-            th.w-10 Complaints
-            th.w-10 Owner
-            th  
-            th   
-            th    
-        tbody
-        //change this
-        each violation in hpdViolations
-          tr
-            td.f6.pv1.pr3.tl [BBL]
-            td.f6.tl [Address]
-            td [ ]
-            td [ ]
-            td [ ]
-            td [ ]
-            td.f6 [owner]
-            td.f7 (HPD)
-            td.f7 (DOB)
-            td.f7 (ACRIS)    
+      //- div.fl.w-100.tc.pa4
+      //- h2.tl.mv2 HPD Complaints
+      //- h5.tl.mt2 Stabilized buildings with 3+ HPD complaints last month
+      //- table.w-100
+      //-   thead
+      //-     tr
+      //-       th.w-10.pv3 BBL
+      //-       th.w-15 Address
+      //-       th.w-10 Res Units
+      //-       th.w-10 Stab Units '07
+      //-       th.w-10 Stab Units '16
+      //-       th.w-10 Complaints
+      //-       th.w-10 Owner
+      //-       th  
+      //-       th   
+      //-       th    
+      //-   tbody
+      //-   //change this
+      //-   each violation in hpdViolations
+      //-     tr
+      //-       td.f6.pv1.pr3.tl [BBL]
+      //-       td.f6.tl [Address]
+      //-       td [ ]
+      //-       td [ ]
+      //-       td [ ]
+      //-       td [ ]
+      //-       td.f6 [owner]
+      //-       td.f7 (HPD)
+      //-       td.f7 (DOB)
+      //-       td.f7 (ACRIS)    
     div.fl.w-100.tc.pa4
       h2.tl.mv2 HPD Violations
       h5.tl.mt2 Stabilized buildings with 10+ HPD violations last month
@@ -106,40 +106,40 @@ html
             td #{violation.class_b}
             td #{violation.class_c}
             td #{violation.total}
-            td.f6 !{violation.owner}
+            td.f7.tl.pr2.pt1 !{violation.owner}
             td.f7 !{violation.hpdlink}
             td.f7 !{violation.bislink}
             td.f7 !{violation.acrislink} 
-      div.fl.w-100.tc.pa4
-      h2.tl.mv2 DOB Complaints
-      h5.tl.mt2 Stabilized buildings with 2+ DOB complaints last month
-      table.w-100
-        thead
-          tr
-            th.w-10.pv3 BBL
-            th.w-15 Address
-            th.w-10 Res Units
-            th.w-10 Stab Units '07
-            th.w-10 Stab Units '16
-            th.w-10 Complaints
-            th.w-10 Owner
-            th  
-            th   
-            th    
-        tbody
-        //change this
-        each violation in hpdViolations
-          tr
-            td.f6.pv1.pr3.tl [BBL]
-            td.f6.tl [Address]
-            td [ ]
-            td [ ]
-            td [ ]
-            td [ ]
-            td.f6 [owner]
-            td.f7 (HPD)
-            td.f7 (DOB)
-            td.f7 (ACRIS)    
+      //- div.fl.w-100.tc.pa4
+      //- h2.tl.mv2 DOB Complaints
+      //- h5.tl.mt2 Stabilized buildings with 2+ DOB complaints last month
+      //- table.w-100
+      //-   thead
+      //-     tr
+      //-       th.w-10.pv3 BBL
+      //-       th.w-15 Address
+      //-       th.w-10 Res Units
+      //-       th.w-10 Stab Units '07
+      //-       th.w-10 Stab Units '16
+      //-       th.w-10 Complaints
+      //-       th.w-10 Owner
+      //-       th  
+      //-       th   
+      //-       th    
+      //-   tbody
+      //-   //change this
+      //-   each violation in hpdViolations
+      //-     tr
+      //-       td.f6.pv1.pr3.tl [BBL]
+      //-       td.f6.tl [Address]
+      //-       td [ ]
+      //-       td [ ]
+      //-       td [ ]
+      //-       td [ ]
+      //-       td.f6 [owner]
+      //-       td.f7 (HPD)
+      //-       td.f7 (DOB)
+      //-       td.f7 (ACRIS)    
       div.fl.w-100.tc.pa4
       h2.tl.mv2 DOB Jobs
       h5.tl.mt2 Stabilized buildings with any DOB permit applications last month
@@ -169,7 +169,7 @@ html
             td #{job.a1}
             td #{job.a2}
             td #{job.dm}
-            td.f6 !{job.owner}
+            td.f7.tl.pr2.pt1 !{job.owner}
             td.f7 !{job.hpdlink}
             td.f7 !{job.bislink}
             td.f7 !{job.acrislink}     
