@@ -7,7 +7,7 @@ select pluto.cd,
    	sales.saleprice / nullif(sales.grosssquarefeet, 0) as ppgsf,
 	to_char(saledate, 'YYYY-MM-DD') as iso_date,
    	sales.saledate,
-           concat('<a href="http://whoownswhat.justfix.nyc/address/',
+      concat('<a href="http://whoownswhat.justfix.nyc/address/',
             case 
                   when pluto.borocode = '1' then 'MANHATTAN'
                   when pluto.borocode = '2' then 'BRONX'

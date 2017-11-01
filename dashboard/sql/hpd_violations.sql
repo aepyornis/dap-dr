@@ -12,7 +12,7 @@ select viols.bbl,
 		when violationclass = 'B' then 1
 		when violationclass = 'C' then 1
 		else 0 end) as total,
-	     concat('<a href="http://whoownswhat.justfix.nyc/address/',
+      concat('<a href="http://whoownswhat.justfix.nyc/address/',
             case 
                   when pluto.borocode = '1' then 'MANHATTAN'
                   when pluto.borocode = '2' then 'BRONX'
@@ -29,8 +29,9 @@ select viols.bbl,
             '%20',
             split_part(pluto.address,' ',4),
             '" target="_blank">',
-            hpd_reg.corpnames,
-            ' </a>') as owner,
+            replace(trim(both'"{}"' from cast(hpd_reg.corpnames as text)), '"',''),
+            ' </a>'
+               ) as owner,
       concat('<a href="https://hpdonline.hpdnyc.org/HPDonline/Provide_address.aspx?p1=',
             pluto.borocode,
             '&p2=',
@@ -42,24 +43,26 @@ select viols.bbl,
             '+',
             split_part(pluto.address,' ',4),
             '" target="_blank">',
-            '(HPD)</a>') as hpdlink,
+            '(HPD)</a>'
+               ) as hpdlink,
       concat('<a href="http://a810-bisweb.nyc.gov/bisweb/PropertyProfileOverviewServlet?boro=',
             pluto.borocode,
             '&block=',
             pluto.block,
             '&lot=',
             pluto.lot,
-            '">(BIS)</a>') as bislink,
+            '" target="_blank">(BIS)</a>') as bislink,
       concat('<a href="http://a836-acris.nyc.gov/bblsearch/bblsearch.asp?borough=',
             pluto.borocode,
             '&block=',
             pluto.block,
             '&lot=',
             pluto.lot,
-            '">(ACRIS)</a>') as acrislink,
+            '" target="_blank">(ACRIS)</a>'
+               ) as acrislink,
       case when ((cast(uc2007 as float) - 
                 cast(uc2016 as float)) 
-               /cast(uc2007 as float) >= 0.25) then 'yes' else 'no' end as highloss
+               /cast(uc2007 as float) >= 0.25) then 0 else 1 end as highloss
 from hpd_violations viols
 left join pluto_16v2 pluto on pluto.bbl = viols.bbl
 inner join rentstab on rentstab.ucbbl=viols.bbl
