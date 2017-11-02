@@ -5,11 +5,19 @@ html
     link(href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet") 
     link(rel='stylesheet' href='./styles.css')
   body
-    div.title.tc.fl.w-100.pa2.bg-dark-red.white
-      h1.f2 #{district.borough} #{district.name}
-      h2.f3.light-gray #{district.neighborhoods}
-    div.fl.tl.pl4.pt4.w-50
-      img(src='https://github.com/aepyornis/dap-dr/blob/master/dashboard/cdimages/101.png?raw=true').w-80
+    div.title.tc.fl.w-100.pa2.bg-dark-red.white 
+      table
+        thead  
+          tr
+            th.w-20
+              img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/anhdlogo.png')
+            th.w-60
+              h1.f2.ma0 #{district.borough} #{district.name}
+              h2.f4.ma1.light-gray #{district.neighborhoods}
+            th.w-20
+              img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/daplogo.png')
+    div.fl.tl.pl5.pt4.w-50
+      img(src='https://github.com/aepyornis/dap-dr/blob/master/dashboard/cdimages/101.png?raw=true').w-70
     div.fl.tc.pt3.pr4.w-50.v-mid 
       h2.pt4 Key
       p.tl All buildings listed have registered stabilized units at least once between 2007 and 2016, according to our data.
