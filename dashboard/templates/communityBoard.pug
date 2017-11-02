@@ -21,12 +21,12 @@ html
             th.w-10.pv1 BBL
             th.w-20 Address
             th.w-10 Res Units
-            th.w-10 Stab Units '07
-            th.w-10 Stab Units '16
+            <th colspan="2"> Stab Units 07 / 16 </td>
+            //- th.w-10 Stab Units '16
             th.w-10 Sale Price
             th.w-10 $/GSF
             th.w-10 Sale Date
-            th.w-10 Owner
+            th.w-20 Owner
             th 
             th 
             th 
@@ -36,8 +36,8 @@ html
             td.f6.pv1.pr3.tl #{sale.bbl}
             td.f6.tl #{sale.address}
             td #{sale.residentialunits}
-            td #{sale.uc2007}
-            td #{sale.uc2016}
+            td.gray #{sale.uc2007} /
+            td.gray #{sale.uc2016}
             td $#{sale.saleprice}
             td $#{sale.ppgsf}
             td #{sale.iso_date}
@@ -84,8 +84,8 @@ html
             th.w-10.pv3 BBL
             th.w-20 Address
             th.w-10 Res Units
-            th.w-10 Stab Units '07
-            th.w-10 Stab Units '16
+            <th colspan="2"> Stab Units 07 / 16 </td>
+            //- th.w-10 Stab Units '16
             th.w-10 Class A
             th.w-10 Class B
             th.w-10 Class C
@@ -100,8 +100,8 @@ html
             td.f6.pv1.pr3.tl #{violation.bbl}
             td.f6.tl #{violation.address}
             td #{violation.residentialunits}
-            td #{violation.uc2007}
-            td #{violation.uc2016}
+            td.gray #{violation.uc2007} /
+            td.gray #{violation.uc2016}
             td #{violation.class_a}
             td #{violation.class_b}
             td #{violation.class_c}
