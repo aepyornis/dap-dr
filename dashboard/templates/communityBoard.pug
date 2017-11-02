@@ -5,13 +5,17 @@ html
     link(href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet") 
     link(rel='stylesheet' href='./styles.css')
   body
-    div.title.tc.fl.w-100.pa2.bg-dark-red.near-white
-      h1.f1 #{district.name}
+    div.title.tc.fl.w-100.pa2.bg-dark-red.white
+      h1.f2 #{district.borough} #{district.name}
       h2.f3.light-gray #{district.neighborhoods}
-    div.stats.fl.w-100.tc
-      p.f4 
-        span.pa7 <img src="/dashboard/101.png"> [Can't get image to appear]
-        span.pa7 [key and notes option 1]  
+    div.fl.tl.pl4.pt4.w-50
+      img(src='https://github.com/aepyornis/dap-dr/blob/master/dashboard/cdimages/101.png?raw=true').w-80
+    div.fl.tc.pt3.pr4.w-50.v-mid 
+      h2.pt4 Key
+      p.tl All buildings listed have registered stabilized units at least once between 2007 and 2016, according to our data.
+      p.bg-yellow.ma2.pv2 Buildings in yellow meet two risk criteria
+      p.bg-gold.ma2.pv2 Buildings in orange meet three risk criteria
+      p.bg-dark-red.white.ma2.pv2 Buildings in red meet four risk criteria
     div.fl.w-100.tc.pa4
       h2.tl.mv2 Sales 
       h5.tl.mt2 New sales of stablized residential buildings
@@ -19,13 +23,12 @@ html
         thead
           tr
             th.w-10.pv1 BBL
-            th.w-20 Address
+            th.w-15 Address
             th.w-10 Res Units
-            <th colspan="2"> Stab Units 07 / 16 </td>
-            //- th.w-10 Stab Units '16
-            th.w-10 Sale Price
-            th.w-10 $/GSF
-            th.w-10 Sale Date
+            th.w-10 Stab. Units <br> '07 / '16
+            th.w-8 Sale Price
+            th.w-8 $/GSF
+            th.w-8 Sale Date
             th.w-20 Owner
             th 
             th 
@@ -36,8 +39,7 @@ html
             td.f6.pv1.pr3.tl #{sale.bbl}
             td.f6.tl #{sale.address}
             td #{sale.residentialunits}
-            td.gray #{sale.uc2007} /
-            td.gray #{sale.uc2016}
+            td.gray #{sale.uc2007} / #{sale.uc2016}
             td $#{sale.saleprice}
             td $#{sale.ppgsf}
             td #{sale.iso_date}
@@ -46,35 +48,35 @@ html
             td.f7 !{sale.bislink}
             td.f7 !{sale.acrislink} 
       //- div.fl.w-100.tc.pa4
-      //- h2.tl.mv2 HPD Complaints
-      //- h5.tl.mt2 Stabilized buildings with 3+ HPD complaints last month
-      //- table.w-100
-      //-   thead
-      //-     tr
-      //-       th.w-10.pv3 BBL
-      //-       th.w-15 Address
-      //-       th.w-10 Res Units
-      //-       th.w-10 Stab Units '07
-      //-       th.w-10 Stab Units '16
-      //-       th.w-10 Complaints
-      //-       th.w-10 Owner
-      //-       th  
-      //-       th   
-      //-       th    
-      //-   tbody
-      //-   //change this
-      //-   each violation in hpdViolations
-      //-     tr
-      //-       td.f6.pv1.pr3.tl [BBL]
-      //-       td.f6.tl [Address]
-      //-       td [ ]
-      //-       td [ ]
-      //-       td [ ]
-      //-       td [ ]
-      //-       td.f6 [owner]
-      //-       td.f7 (HPD)
-      //-       td.f7 (DOB)
-      //-       td.f7 (ACRIS)    
+        //- h2.tl.mv2 HPD Complaints
+        //- h5.tl.mt2 Stabilized buildings with 3+ HPD complaints last month
+        //- table.w-100
+        //-   thead
+        //-     tr
+        //-       th.w-10.pv3 BBL
+        //-       th.w-15 Address
+        //-       th.w-10 Res Units
+        //-       th.w-10 Stab Units '07
+        //-       th.w-10 Stab Units '16
+        //-       th.w-10 Complaints
+        //-       th.w-10 Owner
+        //-       th  
+        //-       th   
+        //-       th    
+        //-   tbody
+        //-   //change this
+        //-   each violation in hpdViolations
+        //-     tr
+        //-       td.f6.pv1.pr3.tl [BBL]
+        //-       td.f6.tl [Address]
+        //-       td [ ]
+        //-       td [ ]
+        //-       td [ ]
+        //-       td [ ]
+        //-       td.f6 [owner]
+        //-       td.f7 (HPD)
+        //-       td.f7 (DOB)
+        //-       td.f7 (ACRIS)    
     div.fl.w-100.tc.pa4
       h2.tl.mv2 HPD Violations
       h5.tl.mt2 Stabilized buildings with 10+ HPD violations last month
@@ -82,15 +84,14 @@ html
         thead
           tr
             th.w-10.pv3 BBL
-            th.w-20 Address
-            th.w-10 Res Units
-            <th colspan="2"> Stab Units 07 / 16 </td>
-            //- th.w-10 Stab Units '16
-            th.w-10 Class A
-            th.w-10 Class B
-            th.w-10 Class C
-            th.w-10 Total
-            th.w-10 Owner
+            th.w-15 Address
+            th.w-10 Res. Units
+            th.w-10 Stab. Units <br> '07 / '16
+            th.w-5 Class A
+            th.w-5 Class B
+            th.w-5 Class C
+            th.w-5 Total
+            th.w-20 Owner
             th  
             th   
             th    
@@ -100,8 +101,7 @@ html
             td.f6.pv1.pr3.tl #{violation.bbl}
             td.f6.tl #{violation.address}
             td #{violation.residentialunits}
-            td.gray #{violation.uc2007} /
-            td.gray #{violation.uc2016}
+            td.gray #{violation.uc2007} / #{violation.uc2016}
             td #{violation.class_a}
             td #{violation.class_b}
             td #{violation.class_c}
@@ -111,35 +111,35 @@ html
             td.f7 !{violation.bislink}
             td.f7 !{violation.acrislink} 
       //- div.fl.w-100.tc.pa4
-      //- h2.tl.mv2 DOB Complaints
-      //- h5.tl.mt2 Stabilized buildings with 2+ DOB complaints last month
-      //- table.w-100
-      //-   thead
-      //-     tr
-      //-       th.w-10.pv3 BBL
-      //-       th.w-15 Address
-      //-       th.w-10 Res Units
-      //-       th.w-10 Stab Units '07
-      //-       th.w-10 Stab Units '16
-      //-       th.w-10 Complaints
-      //-       th.w-10 Owner
-      //-       th  
-      //-       th   
-      //-       th    
-      //-   tbody
-      //-   //change this
-      //-   each violation in hpdViolations
-      //-     tr
-      //-       td.f6.pv1.pr3.tl [BBL]
-      //-       td.f6.tl [Address]
-      //-       td [ ]
-      //-       td [ ]
-      //-       td [ ]
-      //-       td [ ]
-      //-       td.f6 [owner]
-      //-       td.f7 (HPD)
-      //-       td.f7 (DOB)
-      //-       td.f7 (ACRIS)    
+        //- h2.tl.mv2 DOB Complaints
+        //- h5.tl.mt2 Stabilized buildings with 2+ DOB complaints last month
+        //- table.w-100
+        //-   thead
+        //-     tr
+        //-       th.w-10.pv3 BBL
+        //-       th.w-15 Address
+        //-       th.w-10 Res Units
+        //-       th.w-10 Stab Units '07
+        //-       th.w-10 Stab Units '16
+        //-       th.w-10 Complaints
+        //-       th.w-10 Owner
+        //-       th  
+        //-       th   
+        //-       th    
+        //-   tbody
+        //-   //change this
+        //-   each violation in hpdViolations
+        //-     tr
+        //-       td.f6.pv1.pr3.tl [BBL]
+        //-       td.f6.tl [Address]
+        //-       td [ ]
+        //-       td [ ]
+        //-       td [ ]
+        //-       td [ ]
+        //-       td.f6 [owner]
+        //-       td.f7 (HPD)
+        //-       td.f7 (DOB)
+        //-       td.f7 (ACRIS)    
       div.fl.w-100.tc.pa4
       h2.tl.mv2 DOB Jobs
       h5.tl.mt2 Stabilized buildings with any DOB permit applications last month
@@ -147,25 +147,23 @@ html
         thead
           tr
             th.w-10.pv3 BBL
-            th.w-25 Address
+            th.w-15 Address
             th.w-10 Res Units
-            th.w-10 Stab Units '07
-            th.w-10 Stab Units '16
-            th.w-10 Alt 1 Permits
-            th.w-10 Alt 2 Permits
-            th.w-10 DM Permits
-            th.w-10 Owner
+            th.w-10 Stab. Units <br> '07 / '16
+            th.w-8 Alt 1 Permits
+            th.w-8 Alt 2 Permits
+            th.w-8 DM Permits
+            th.w-20 Owner
             th  
             th   
             th    
         tbody
         each job in dobjobs
           tr
-            td.f6.pv1 #{job.bbl}
+            td.f6.pv1.pr3.tl #{job.bbl}
             td.f6 #{job.address}
             td #{job.residentialunits}
-            td #{job.uc2007}
-            td #{job.uc2016}
+            td.gray #{job.uc2007} / #{job.uc2016}
             td #{job.a1}
             td #{job.a2}
             td #{job.dm}
