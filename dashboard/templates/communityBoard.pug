@@ -42,7 +42,7 @@ html
             th.w-10.pv1 BBL
             th.w-15 Address
             th.w-10 Res Units
-            th.w-10 Stab. Units <br> '07 / '16
+            <th colspan="2" style="width:10%"> Stab. Units <br><span style="color:gray"> 2007 </span> 2016 </th>
             th.w-8 Sale Price
             th.w-8 $/GSF
             th.w-8 Sale Date
@@ -56,7 +56,8 @@ html
             td.f6.pv1.pr3.tl #{sale.bbl}
             td.f6.tl #{sale.address}
             td #{sale.residentialunits}
-            td.gray #{sale.uc2007} / #{sale.uc2016}
+            td.gray #{sale.uc2007} 
+            td #{sale.uc2016}
             td $#{sale.saleprice}
             td $#{sale.ppgsf}
             td #{sale.iso_date}
@@ -103,7 +104,7 @@ html
             th.w-10.pv3 BBL
             th.w-15 Address
             th.w-10 Res. Units
-            th.w-10 Stab. Units <br> '07 / '16
+            <th colspan="2" style="width:10%"> Stab. Units <br><span style="color:gray"> 2007 </span> 2016 </th>
             th.w-5 Class A
             th.w-5 Class B
             th.w-5 Class C
@@ -118,7 +119,8 @@ html
             td.f6.pv1.pr3.tl #{violation.bbl}
             td.f6.tl #{violation.address}
             td #{violation.residentialunits}
-            td.gray #{violation.uc2007} / #{violation.uc2016}
+            td.gray #{violation.uc2007} 
+            td #{violation.uc2016}
             td #{violation.class_a}
             td #{violation.class_b}
             td #{violation.class_c}
@@ -166,7 +168,7 @@ html
             th.w-10.pv3 BBL
             th.w-15 Address
             th.w-10 Res Units
-            th.w-10 Stab. Units <br> '07 / '16
+            <th colspan="2" style="width:10%"> Stab. Units <br><span style="color:gray"> 2007 </span> 2016 </th>
             th.w-8 Alt 1 Permits
             th.w-8 Alt 2 Permits
             th.w-8 DM Permits
@@ -180,7 +182,8 @@ html
             td.f6.pv1.pr3.tl #{job.bbl}
             td.f6.tl #{job.address}
             td #{job.residentialunits}
-            td.gray #{job.uc2007} / #{job.uc2016}
+            td.gray #{job.uc2007} 
+            td #{job.uc2016}
             td #{job.a1}
             td #{job.a2}
             td #{job.dm}
