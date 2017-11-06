@@ -1,4 +1,13 @@
-body {
+html, body {
     font-family: 'Montserrat', sans-serif;
+    
 }
 
+a {
+    color: #150055;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #b0b0b0 
+}
