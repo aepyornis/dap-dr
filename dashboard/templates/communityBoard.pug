@@ -17,7 +17,8 @@ html
             th.w-20
               img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/daplogo.png')
     div.fl.tl.pl5.pt4.w-50
-      img(src='https://github.com/aepyornis/dap-dr/blob/master/dashboard/cdimages/101.png?raw=true').w-70
+      - var mapurl = 'https://github.com/aepyornis/dap-dr/blob/master/dashboard/cdimages/' + district.cd + '.png?raw=true'
+      img(src=mapurl).w-70
     div.fl.tc.pt3.pr4.w-50.v-mid 
       h2.pt4 Key
       p.tl All buildings listed have registered stabilized units at least once between 2007 and 2016, according to our data.
@@ -114,10 +115,10 @@ html
             td #{violation.class_b}
             td #{violation.class_c}
             td #{violation.total}
-            td.f7.tl.pr2.pt1 !{violation.owner}
-            td.f7 !{violation.hpdlink}
-            td.f7 !{violation.bislink}
-            td.f7 !{violation.acrislink} 
+            td.f7.tl.pr2.pt1.link !{violation.owner}
+            td.f7.link !{violation.hpdlink}
+            td.f7.link !{violation.bislink}
+            td.f7.link !{violation.acrislink} 
       //- div.fl.w-100.tc.pa4
         //- h2.tl.mv2 DOB Complaints
         //- h5.tl.mt2 Stabilized buildings with 2+ DOB complaints last month
