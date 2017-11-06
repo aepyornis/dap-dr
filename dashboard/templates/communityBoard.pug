@@ -5,26 +5,34 @@ html
     link(href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet") 
     link(rel='stylesheet' href='./styles.css')
   body
-    div.title.tc.fl.w-100.pa2.bg-dark-red.white 
+    div.title.tc.fl.w-100.pt2.white.dapheader
       table
         thead  
           tr
             th.w-20
               img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/anhdlogo.png')
             th.w-60
-              h1.f2.ma0 #{district.borough} #{district.name}
-              h2.f4.ma1.light-gray #{district.neighborhoods}
+              h1.f2.ma0.black-90 #{district.borough} #{district.name}
+              h2.f4.ma1.black-80 #{district.neighborhoods}
             th.w-20
               img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/daplogo.png')
-    div.fl.tl.pl5.pt4.w-50
+    div.w-100.bg-dark-red.tc.fl
+      p.f3.pv1.mv1 BETA
+    div.fl.w-100.tl.pl3.mt2.f4.b
+      a(href='/') Back
+    div.fl.tl.pl5.pt4.w-40
       - var mapurl = 'https://github.com/aepyornis/dap-dr/blob/master/dashboard/cdimages/' + district.cd + '.png?raw=true'
-      img(src=mapurl).w-70
-    div.fl.tc.pt3.pr4.w-50.v-mid 
-      h2.pt4 Key
+      img(src=mapurl).w-90
+    div.fl.tc.pt3.pr4.pl3.w-50.v-mid 
+      h2.pt2 Key
       p.tl All buildings listed have registered stabilized units at least once between 2007 and 2016, according to our data.
-      p.bg-yellow.ma2.pv2 Buildings in yellow meet two risk criteria
-      p.bg-gold.ma2.pv2 Buildings in orange meet three risk criteria
-      p.bg-dark-red.white.ma2.pv2 Buildings in red meet four risk criteria
+      p.mv2.pv1.dapyellow Buildings in yellow meet two risk criteria
+      p.mv2.pv1.daporange Buildings in orange meet three risk criteria
+      p.white.mv2.pv1.dapred Buildings in red meet four risk criteria
+      p.f5.tl Notes/need to do:
+      p.f6.tl Sales are 8/1/17 - 9/1/17. HPD violations are 8/1/17-9/1/17. DOB Jobs are 9/1/17-10/11/17. 
+      p.f6.tl The color coding isn't applied yet; need Ziggy's help. 
+      p.f7.tl.gray Other changes: make maps expand on click
     div.fl.w-100.tc.pa4
       h2.tl.mv2 Sales 
       h5.tl.mt2 New sales of stablized residential buildings
@@ -170,7 +178,7 @@ html
         each job in dobjobs
           tr
             td.f6.pv1.pr3.tl #{job.bbl}
-            td.f6 #{job.address}
+            td.f6.tl #{job.address}
             td #{job.residentialunits}
             td.gray #{job.uc2007} / #{job.uc2016}
             td #{job.a1}
