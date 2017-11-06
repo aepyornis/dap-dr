@@ -5,7 +5,7 @@ html
     link(href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet") 
     link(rel='stylesheet' href='./styles.css')
   body
-    div.title.tc.fl.w-100.pa2.bg-dark-red.white 
+    div.title.tc.fl.w-100.pa2.white.dapred
       table
         thead  
           tr
@@ -16,15 +16,20 @@ html
               h2.f4.ma1.light-gray #{district.neighborhoods}
             th.w-20
               img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/daplogo.png')
-    div.fl.tl.pl5.pt4.w-50
+    div.fl.tl.pl5.pt4.w-40
       - var mapurl = 'https://github.com/aepyornis/dap-dr/blob/master/dashboard/cdimages/' + district.cd + '.png?raw=true'
-      img(src=mapurl).w-70
-    div.fl.tc.pt3.pr4.w-50.v-mid 
+      img(src=mapurl).w-90
+    div.fl.tc.pt3.pr4.pl3.w-50.v-mid 
       h2.pt4 Key
       p.tl All buildings listed have registered stabilized units at least once between 2007 and 2016, according to our data.
       p.bg-yellow.ma2.pv2 Buildings in yellow meet two risk criteria
       p.bg-gold.ma2.pv2 Buildings in orange meet three risk criteria
-      p.bg-dark-red.white.ma2.pv2 Buildings in red meet four risk criteria
+      p.white.ma2.pv2.dapred Buildings in red meet four risk criteria
+      p
+      p
+      h1.bg-red BETA
+      p Time periods shown are over several months, not one month. Needs to be adjusted.
+      p CD maps should look nicer
     div.fl.w-100.tc.pa4
       h2.tl.mv2 Sales 
       h5.tl.mt2 New sales of stablized residential buildings
@@ -170,7 +175,7 @@ html
         each job in dobjobs
           tr
             td.f6.pv1.pr3.tl #{job.bbl}
-            td.f6 #{job.address}
+            td.f6.tl #{job.address}
             td #{job.residentialunits}
             td.gray #{job.uc2007} / #{job.uc2016}
             td #{job.a1}
