@@ -67,8 +67,9 @@ LEFT JOIN pluto_16v2 pluto on dobjobs.bbl = pluto.bbl
 INNER JOIN rentstab rentstab on rentstab.ucbbl = dobjobs.bbl
 LEFT JOIN hpd_registrations_grouped_by_bbl_with_contacts hpd_reg on hpd_reg.bbl = dobjobs.bbl
 WHERE
-   pluto.cd = '${ cd }'
-   AND dobjobs.latestactiondate >= date_trunc('month', current_date - interval '2 month')
+   pluto.cd = '${ cd }' and
+   latestactiondate >= date_trunc('month', current_date - interval '2 month') and
+   latestactiondate <= date_trunc('month', current_date - interval '1 month')
    AND coalesce(uc2007,uc2008, uc2009, uc2010, uc2011, uc2012, uc2013, uc2014,uc2015,uc2016) is not null
 group by pluto.cd, 
 		 dobjobs.bbl, 

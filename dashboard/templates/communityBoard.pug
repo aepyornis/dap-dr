@@ -1,8 +1,11 @@
 doctype html
 html
   head
-    link(rel='stylesheet' href='./tachyons.css')
     link(href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet") 
+    link(rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css")
+    link(rel='stylesheet' href='./tachyons.css')
+    script(src="https://code.jquery.com/jquery-1.11.3.min.js")
+    script(src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js")
     link(rel='stylesheet' href='./styles.css')
   body
     div.title.tc.fl.w-100.pt2.white.dapheader
@@ -21,8 +24,14 @@ html
     div.fl.w-100.tl.pl3.mt2.f4.b
       a(href='/') Back
     div.fl.tl.pl5.pt4.w-40
-      - var mapurl = 'https://github.com/aepyornis/dap-dr/blob/master/dashboard/cdimages/' + district.cd + '.png?raw=true'
-      img(src=mapurl).w-90
+       - var mapurl = 'https://github.com/aepyornis/dap-dr/blob/master/dashboard/cdimages/' + district.cd + '.png?raw=true'
+        <div id="pageone" data-role="main" class="ui-content">
+          <a href="#myPopup" data-rel="popup" data-position-to="window">
+            img(src=mapurl).w-90.imgstyle
+          <div data-role="popup" id="myPopup">
+            <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+              img(src=mapurl)
+          </div></div>
     div.fl.tc.pt3.pr4.pl3.w-50.v-mid 
       h2.pt2 Key
       p.tl All buildings listed have registered stabilized units at least once between 2007 and 2016, according to our data.
@@ -41,15 +50,13 @@ html
           tr
             th.w-10.pv1 BBL
             th.w-15 Address
-            th.w-10 Res Units
+            th.w-10 Res. Units
             <th colspan="2" style="width:10%"> Stab. Units <br><span style="color:gray"> 2007 </span> 2016 </th>
-            th.w-8 Sale Price
-            th.w-8 $/GSF
-            th.w-8 Sale Date
+            th Sale Price
+            th $/GSF
+            th Sale Date
             th.w-20 Owner
-            th 
-            th 
-            th 
+            th.w-10 
         tbody
         each sale in recentSales
           tr
@@ -62,9 +69,7 @@ html
             td $#{sale.ppgsf}
             td #{sale.iso_date}
             td.f7.tl.pr2.pt1 !{sale.owner}
-            td.f7 !{sale.hpdlink}
-            td.f7 !{sale.bislink}
-            td.f7 !{sale.acrislink} 
+            td.f7 !{sale.hpdlink} !{sale.bislink} !{sale.acrislink} 
       //- div.fl.w-100.tc.pa4
         //- h2.tl.mv2 HPD Complaints
         //- h5.tl.mt2 Stabilized buildings with 3+ HPD complaints last month
@@ -105,14 +110,12 @@ html
             th.w-15 Address
             th.w-10 Res. Units
             <th colspan="2" style="width:10%"> Stab. Units <br><span style="color:gray"> 2007 </span> 2016 </th>
-            th.w-5 Class A
-            th.w-5 Class B
-            th.w-5 Class C
-            th.w-5 Total
+            th Class A
+            th Class B
+            th Class C
+            th Total
             th.w-20 Owner
-            th  
-            th   
-            th    
+            th.w-10     
         tbody
         each violation in hpdViolations
           tr
@@ -126,9 +129,7 @@ html
             td #{violation.class_c}
             td #{violation.total}
             td.f7.tl.pr2.pt1 !{violation.owner}
-            td.f7 !{violation.hpdlink}
-            td.f7 !{violation.bislink}
-            td.f7 !{violation.acrislink} 
+            td.f7 !{violation.hpdlink} !{violation.bislink} !{violation.acrislink} 
       //- div.fl.w-100.tc.pa4
         //- h2.tl.mv2 DOB Complaints
         //- h5.tl.mt2 Stabilized buildings with 2+ DOB complaints last month
@@ -166,16 +167,14 @@ html
         thead
           tr
             th.w-10.pv3 BBL
-            th.w-15 Address
-            th.w-10 Res Units
+            th.w-20 Address
+            th.w-15 Res. Units
             <th colspan="2" style="width:10%"> Stab. Units <br><span style="color:gray"> 2007 </span> 2016 </th>
-            th.w-8 Alt 1 Permits
-            th.w-8 Alt 2 Permits
-            th.w-8 DM Permits
+            th Alt 1 Permits
+            th Alt 2 Permits
+            th DM Permits
             th.w-20 Owner
-            th  
-            th   
-            th    
+            th.w-10     
         tbody
         each job in dobjobs
           tr
@@ -188,9 +187,7 @@ html
             td #{job.a2}
             td #{job.dm}
             td.f7.tl.pr2.pt1 !{job.owner}
-            td.f7 !{job.hpdlink}
-            td.f7 !{job.bislink}
-            td.f7 !{job.acrislink}     
+            td.f7 !{job.hpdlink} !{job.bislink} !{job.acrislink}     
     
     
   
