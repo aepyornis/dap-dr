@@ -4,7 +4,9 @@ html
     link(href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet") 
     link(rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css")
     link(rel='stylesheet' href='./tachyons.css')
-    script(src="https://code.jquery.com/jquery-1.11.3.min.js")
+    //- link(rel='stylesheet' href='./jquery.mobile-1.4.5.css')
+    //- script(type="text/javascript" src="./jquery.mobile-1.4.5.min.js")
+    script(src="https://code.jquery.com/jquery-1.11.3.js")
     script(src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js")
     link(rel='stylesheet' href='./styles.css')
   body
@@ -23,11 +25,11 @@ html
       p.f3.pv1.mv1 BETA
     div.fl.w-100.tl.pl3.mt2.f4.b
       a(href='/') Back
-    div.fl.tl.pl5.pt4.w-40
+    div.fl.tl.pl3.pt5.mt2.w-40
        - var mapurl = 'https://github.com/aepyornis/dap-dr/blob/master/dashboard/cdimages/' + district.cd + '.png?raw=true'
         <div id="pageone" data-role="main" class="ui-content">
-          <a href="#myPopup" data-rel="popup" data-position-to="window">
-            img(src=mapurl).w-90.imgstyle
+          <a href="#myPopup" data-rel="popup" data-position-to="window" class="imgstyle">
+            img(src=mapurl)
           <div data-role="popup" id="myPopup">
             <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
               img(src=mapurl)

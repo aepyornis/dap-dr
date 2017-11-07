@@ -12,9 +12,9 @@ a:hover {
     background-color: #808080 
 }
 
-.imgstyle, .imgstyle:hover {
+.imgstyle:hover {
     text-decoration: none;
-    color: white;
+    background-color:rgba(0, 0, 0, 0)
 }
 
 .dapheader {
