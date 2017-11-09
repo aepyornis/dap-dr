@@ -4,7 +4,7 @@ html, body {
 
 
 a:link, a:visited {
-    color: #150055;
+    color: #1b4fd3;
     text-decoration: none;
 }
 
@@ -39,3 +39,4 @@ a:hover {
 .ui-page-theme-a a:visited, html .ui-bar-a a:visited, html .ui-body-a a:visited, html body .ui-group-theme-a a:visited {
     color: #150055;
 }
+
