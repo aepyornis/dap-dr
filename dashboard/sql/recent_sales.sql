@@ -36,7 +36,7 @@ select pluto.cd,
             split_part(pluto.address,' ',3),
             '+',
             split_part(pluto.address,' ',4),
-            '" target="_blank">(HPD)</a>'
+            '" target="_blank">(HPD)</a>'),
       concat('<a href="http://a810-bisweb.nyc.gov/bisweb/PropertyProfileOverviewServlet?boro=',
             pluto.borocode,
             '&block=',
