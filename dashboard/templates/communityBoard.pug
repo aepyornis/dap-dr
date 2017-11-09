@@ -73,36 +73,33 @@ html
             td #{sale.iso_date}
             td.f7.tl.pr2.pt1 !{sale.owner}
             td.f7 !{sale.hpdlink} !{sale.bislink} !{sale.acrislink} 
-      //- div.fl.w-100.tc.pa4
-        //- h2.tl.mv2 HPD Complaints
-        //- h5.tl.mt2 Stabilized buildings with 3+ HPD complaints last month
-        //- table.w-100
-        //-   thead
-        //-     tr
-        //-       th.w-10.pv3 BBL
-        //-       th.w-15 Address
-        //-       th.w-10 Res Units
-        //-       th.w-10 Stab Units '07
-        //-       th.w-10 Stab Units '16
-        //-       th.w-10 Complaints
-        //-       th.w-10 Owner
-        //-       th  
-        //-       th   
-        //-       th    
-        //-   tbody
-        //-   //change this
-        //-   each violation in hpdViolations
-        //-     tr
-        //-       td.f6.pv1.pr3.tl [BBL]
-        //-       td.f6.tl [Address]
-        //-       td [ ]
-        //-       td [ ]
-        //-       td [ ]
-        //-       td [ ]
-        //-       td.f6 [owner]
-        //-       td.f7 (HPD)
-        //-       td.f7 (DOB)
-        //-       td.f7 (ACRIS)    
+    div.fl.w-100.tc.pa4
+      h2.tl.mv2 HPD Complaints [Pending]
+      h5.tl.mt2 Stabilized buildings with 3+ HPD complaints last month
+      table.w-100
+        thead
+          tr
+            th.w-10.pv3 BBL
+            th.w-15 Address
+            th.w-10 Res Units
+            <th colspan="2" style="width:10%"> Stab. Units <br><span style="color:gray"> 2007 </span> 2016 </th>
+            th Complaints
+            th.w-20 Owner
+            th.w-10  
+          //- tbody
+          //- //change this
+          //- each violation in hpdViolations
+          //-   tr
+          //-     td.f6.pv1.pr3.tl [BBL]
+          //-     td.f6.tl [Address]
+          //-     td [ ]
+          //-     td [ ]
+          //-     td [ ]
+          //-     td [ ]
+          //-     td.f6 [owner]
+          //-     td.f7 (HPD)
+          //-     td.f7 (DOB)
+          //-     td.f7 (ACRIS)    
     div.fl.w-100.tc.pa4
       h2.tl.mv2 HPD Violations
       h5.tl.mt2 Stabilized buildings with 10+ HPD violations last month
@@ -133,22 +130,19 @@ html
             td #{violation.total}
             td.f7.tl.pr2.pt1 !{violation.owner}
             td.f7 !{violation.hpdlink} !{violation.bislink} !{violation.acrislink} 
-      //- div.fl.w-100.tc.pa4
-        //- h2.tl.mv2 DOB Complaints
-        //- h5.tl.mt2 Stabilized buildings with 2+ DOB complaints last month
-        //- table.w-100
-        //-   thead
-        //-     tr
-        //-       th.w-10.pv3 BBL
-        //-       th.w-15 Address
-        //-       th.w-10 Res Units
-        //-       th.w-10 Stab Units '07
-        //-       th.w-10 Stab Units '16
-        //-       th.w-10 Complaints
-        //-       th.w-10 Owner
-        //-       th  
-        //-       th   
-        //-       th    
+    div.fl.w-100.tc.pa4
+      h2.tl.mv2 DOB Complaints [Pending]
+      h5.tl.mt2 Stabilized buildings with 2+ DOB complaints last month
+      table.w-100
+        thead
+          tr
+            th.w-10.pv3 BBL
+            th.w-15 Address
+            th.w-10 Res Units
+            <th colspan="2" style="width:10%"> Stab. Units <br><span style="color:gray"> 2007 </span> 2016 </th>
+            th Complaints
+            th.w-20 Owner
+            th.w-10     
         //-   tbody
         //-   //change this
         //-   each violation in hpdViolations
