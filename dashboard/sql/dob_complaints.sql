@@ -60,12 +60,12 @@ left join padadr pad on pad.bin = dob.bin
 inner join pluto_16v2 pluto on pluto.bbl=pad.bbl
 inner join rentstab on rentstab.ucbbl=pad.bbl
 LEFT JOIN hpd_registrations_grouped_by_bbl_with_contacts hpd_reg on hpd_reg.bbl = pad.bbl
-where cast(date_entered as date) >= date_trunc('month', current_date - interval '1 month') and
+where cast(date_entered as date) >= date_trunc('month', current_date - interval '1 month') 
     AND pluto.cd = '${ cd }'
-    pluto.unitsres > 0 
-	AND COALESCE(uc2007,uc2008, uc2009, uc2010, uc2011, uc2012, uc2013, uc2014,uc2015,uc2016) is not null
+    and pluto.unitsres > 0 
+    AND COALESCE(uc2007,uc2008, uc2009, uc2010, uc2011, uc2012, uc2013, uc2014,uc2015,uc2016) is not null
 group by pad.bbl, 
-		 pluto.address, 
+         pluto.address, 
          pluto.cd, 
          pluto.unitsres, 
          uc2007, 
