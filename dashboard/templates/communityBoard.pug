@@ -24,7 +24,7 @@ html
     div.fl.w-100.tl.pl3.mt2.f4.b
       a(href='/') Back
     div.fl.tl.pl4.pr3.w-40
-       - var mapurl = 'https://github.com/aepyornis/dap-dr/blob/master/dashboard/cdimages/' + district.cd + '-01.png?raw=true'
+       - var mapurl = 'https://github.com/aepyornis/dap-dr/blob/master/dashboard/imagesnew/' + district.cd + '.png?raw=true'
         div
           img(src=mapurl)
         //- <div id="pageone" data-role="main" class="ui-content" style="padding:3px">
@@ -97,20 +97,19 @@ html
             th Complaints
             th.w-20 Owner
             th.w-10  
-          //- tbody
-          //- //change this
-          //- each violation in hpdViolations
-          //-   tr
-          //-     td.f6.pv1.pr3.tl [BBL]
-          //-     td.f6.tl [Address]
-          //-     td [ ]
-          //-     td [ ]
-          //-     td [ ]
-          //-     td [ ]
-          //-     td.f6 [owner]
-          //-     td.f7 (HPD)
-          //-     td.f7 (DOB)
-          //-     td.f7 (ACRIS)    
+          tbody
+          each complaint in hpdComplaints
+            tr
+              td.f6.pv1.pr3.tl #{complaint.bbl}
+              td.f6.tl #{complaint.bbl}
+              td #{complaint.residentialunits}
+              td #{complaint.uc2007}
+              td #{complaint.uc2016}
+              td 
+              td.f6 [owner]
+              td.f7 (HPD)
+              td.f7 (DOB)
+              td.f7 (ACRIS)    
     div.fl.w-100.tc.pa4
       h2.tl.mv2 HPD Violations
       h5.tl.mt2 Stabilized buildings with 10+ HPD violations last month

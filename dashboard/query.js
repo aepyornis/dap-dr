@@ -20,5 +20,5 @@ module.exports = {
   hpdViolations: sqlQuery('hpd_violations'),
   dobjobs: sqlQuery('dob_jobs'),
   dobComplaints: sqlQuery('dob_complaints'),
-  hpdCimplaints: sqlQuery('hpd_complaints'),
+  hpdComplaints: sqlQuery('hpd_complaints'),
 };
