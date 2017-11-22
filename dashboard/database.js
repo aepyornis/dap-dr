@@ -71,6 +71,8 @@ const database = function(connectionStr = defaultConnectionStr) {
     recentSales: (d) => db.query(queryForDistrict('recentSales', d)),
     newBuildingJobs: (d) => db.query(queryForDistrict('newBuildingJobs', d)),
     dobjobs: (d) => db.query(queryForDistrict('dobjobs', d))
+    dobComplaints: (d) => db.query(queryForDistrict('dobComplaints', d))
+    hpdComplaints: (d) => db.query(queryForDistrict('hpdComplaints', d))
   };
 
 };
