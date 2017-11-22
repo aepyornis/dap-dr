@@ -26,11 +26,10 @@ html
     div.fl.w-100.tl.pl3.mt2.f4.b
       a(href='/') Back
     div.fl.tl.pl4.pr3.w-40
-       - var mapurl = 'https://github.com/aepyornis/dap-dr/blob/master/dashboard/cdimages/' + district.cd + '.png?raw=true'
+       - var mapurl = 'https://github.com/aepyornis/dap-dr/blob/master/dashboard/cdimages/' + district.cd + '-01.png?raw=true'
         <div id="pageone" data-role="main" class="ui-content" style="padding:3px">
           <a href="#myPopup" data-rel="popup" data-position-to="window" class="imgstyle">
-            //- img(src=mapurl).w-90.pt3.pr3.pl3
-            <img src='101.svg'>
+            img(src=mapurl).w-90.pt3.pr3.pl3
           <div data-role="popup" id="myPopup">
             <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
               img(src=mapurl)
