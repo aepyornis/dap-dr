@@ -11,7 +11,7 @@ html
     link(rel='stylesheet' href='./styles.css')
   body
     div.title.tc.fl.w-100.pt2.white.dapheader
-      table
+      table.pr4.pl4.pv2
         thead  
           tr
             th.w-20
@@ -25,11 +25,11 @@ html
       p.f3.pv1.mv1 BETA
     div.fl.w-100.tl.pl3.mt2.f4.b
       a(href='/') Back
-    div.fl.tl.pl4.pt5.pr3.mt2.w-40
-       - var mapurl = 'https://github.com/aepyornis/dap-dr/blob/master/dashboard/cdimages/' + district.cd + '.png?raw=true'
-        <div id="pageone" data-role="main" class="ui-content" style="padding:0px">
+    div.fl.tl.pl4.pr3.w-40
+       - var mapurl = 'https://github.com/aepyornis/dap-dr/blob/master/dashboard/cdimages/' + district.cd + '.svg?raw=true'
+        <div id="pageone" data-role="main" class="ui-content" style="padding:3px">
           <a href="#myPopup" data-rel="popup" data-position-to="window" class="imgstyle">
-            img(src=mapurl).w-90.pa3
+            img(src=mapurl).w-90.pt3.pr3.pl3
           <div data-role="popup" id="myPopup">
             <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
               img(src=mapurl)
@@ -37,7 +37,7 @@ html
         div.f6.tc Click to enlarge
     div.fl.tc.pt3.pr4.pl3.w-50.v-mid 
       h2.pt2 DAP District Reports
-      p.f5 A monthly update of harassment and displacement risk in rent stabilized buildings in the district. A building appearing on one or more of these lists can indicate that residents are facing significant displacement pressure and affordable apartments are threatened.
+      p.f5.tl A monthly update of harassment and displacement risk in rent stabilized buildings in the district. A building appearing on one or more of these lists can indicate that residents are facing significant displacement pressure and affordable apartments are threatened.
       p.mv2.pv1.dapyellow Buildings in yellow meet two risk criteria
       p.mv2.pv1.daporange Buildings in orange meet three risk criteria
       p.white.mv2.pv1.dapred Buildings in red meet four risk criteria
@@ -51,15 +51,26 @@ html
       table.w-100
         thead
           tr
-            th.w-10.pv1 BBL
+            th.w-10.pt2 BBL
             th.w-15 Address
             th.w-10 Total Units
-            <th colspan="2" style="width:10%"> Stabilized Units <br><span style="color:gray"> 2007 </span> 2016 </th>
+            <th colspan="2" style="width:10%"> Stabilized Units</th>
             th Sale Price
             th $/GSF
             th Sale Date
             th.w-20 Owner
             th.w-10 
+          tr 
+              th.w-10.pb3 
+              th.w-15 
+              th.w-10 
+              th.w-5.gray 2007
+              th.w-5 2016
+              th 
+              th 
+              th  
+              th.w-20 
+              th.w-10
         tbody
         each sale in recentSales
           tr
@@ -68,10 +79,10 @@ html
             td #{sale.residentialunits}
             td.gray #{sale.uc2007} 
             td #{sale.uc2016}
-            td $#{sale.saleprice}
-            td $#{sale.ppgsf}
-            td #{sale.iso_date}
-            td.f7.tl.pr2.pt1 !{sale.owner}
+            td.f6 #{sale.saleprice}
+            td.f6 $ #{sale.ppgsf}
+            td.f6 #{sale.iso_date}
+            td.f7.tl.pr2.pt1.pl2 !{sale.owner}
             td.f7 !{sale.hpdlink} !{sale.bislink} !{sale.acrislink} 
     div.fl.w-100.tc.pa4
       h2.tl.mv2 HPD Complaints [Pending]
@@ -106,16 +117,28 @@ html
       table.w-100
         thead
           tr
-            th.w-10.pv3 BBL
+            th.w-10.pt2 BBL
             th.w-15 Address
             th.w-10 Total Units
-            <th colspan="2" style="width:10%"> Stabilized Units <br><span style="color:gray"> 2007 </span> 2016 </th>
+            <th colspan="2" style="width:10%"> Stabilized Units </th>
             th Class A
             th Class B
             th Class C
             th Total
             th.w-20 Owner
-            th.w-10     
+            th.w-10 
+          tr 
+            th.w-10.pb3 
+            th.w-15 
+            th.w-10 
+            th.w-5.gray 2007
+            th.w-5 2016
+            th 
+            th 
+            th 
+            th 
+            th.w-20 
+            th.w-10
         tbody
         each violation in hpdViolations
           tr
@@ -163,15 +186,26 @@ html
       table.w-100
         thead
           tr
-            th.w-10.pv3 BBL
+            th.w-10.pt2 BBL
             th.w-20 Address
             th.w-15 Total Units
-            <th colspan="2" style="width:10%"> Stabilized Units <br><span style="color:gray"> 2007 </span> 2016 </th>
+            <th colspan="2" style="width:10%"> Stabilized Units</th>
             th Alt 1 Permits
             th Alt 2 Permits
             th DM Permits
             th.w-20 Owner
             th.w-10     
+          tr 
+            th.w-10.pb3 
+            th.w-15 
+            th.w-10 
+            th.w-5.gray 2007
+            th.w-5 2016
+            th 
+            th 
+            th  
+            th.w-20 
+            th.w-10
         tbody
         each job in dobjobs
           tr
