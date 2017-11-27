@@ -2,10 +2,8 @@ doctype html
 html
   head
     link(href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet") 
-    //- link(rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css")
     link(rel='stylesheet' href='./tachyons.css')
     script(src="https://code.jquery.com/jquery-1.11.3.js")
-    //- script(src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js")
     link(rel='stylesheet' href='./styles.css')
   body
     div.title.tc.fl.w-100.pt2.white.dapheader
@@ -23,18 +21,10 @@ html
       p.f3.pv1.mv1 BETA
     div.fl.w-100.tl.pl3.mt2.f4.b
       a(href='/') Back
-    div.fl.tl.pl4.pr3.w-40
+    div.fl.tl.w-40
        - var mapurl = 'https://github.com/aepyornis/dap-dr/blob/master/dashboard/imagesnew/' + district.cd + '.png?raw=true'
         div
           img(src=mapurl)
-        //- <div id="pageone" data-role="main" class="ui-content" style="padding:3px">
-        //-   <a href="#myPopup" data-rel="popup" data-position-to="window" class="imgstyle">
-        //-     img(src=mapurl).w-90.pt3.pr3.pl3
-        //-   <div data-role="popup" id="myPopup">
-        //-     <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
-        //-       img(src=mapurl)
-        //-   </div></div>
-        //- div.f6.tc Click to enlarge
     div.fl.tc.pt3.pr4.pl3.w-50.v-mid 
       h2.pt2 DAP District Reports
       p.f5.tl A monthly update of harassment and displacement risk in rent stabilized buildings in the district. A building appearing on one or more of these lists can indicate that residents are facing significant displacement pressure and affordable apartments are threatened.
@@ -85,31 +75,38 @@ html
             td.f7.tl.pr2.pt1.pl2 !{sale.owner}
             td.f7 !{sale.hpdlink} !{sale.bislink} !{sale.acrislink} 
     div.fl.w-100.tc.pa4
-      h2.tl.mv2 HPD Complaints [Pending]
+      h2.tl.mv2 HPD Complaints
       h5.tl.mt2 Stabilized buildings with 3+ HPD complaints last month
       table.w-100
         thead
           tr
-            th.w-10.pv3 BBL
+            th.w-10.pt2 BBL
             th.w-15 Address
-            th.w-10 Total Units
-            <th colspan="2" style="width:10%"> Stabilized Units <br><span style="color:gray"> 2007 </span> 2016 </th>
-            th Complaints
+            th.w-15 Total Units
+            <th colspan="2" style="width:16%"> Stabilized Units</th>
+            th.w-15 Complaints
             th.w-20 Owner
             th.w-10  
+          tr 
+            th.w-10.pb3 
+            th.w-15 
+            th.w-15 
+            th.w-8.gray 2007
+            th.w-8 2016
+            th.w-15
+            th.w-20 
+            th.w-10
           tbody
           each complaint in hpdComplaints
             tr
               td.f6.pv1.pr3.tl #{complaint.bbl}
-              td.f6.tl #{complaint.bbl}
+              td.f6.tl #{complaint.address}
               td #{complaint.residentialunits}
-              td #{complaint.uc2007}
+              td.gray #{complaint.uc2007}
               td #{complaint.uc2016}
-              td 
-              td.f6 [owner]
-              td.f7 (HPD)
-              td.f7 (DOB)
-              td.f7 (ACRIS)    
+              td #{complaint.hpdcomplaints}
+              td.f7.tl.pr2.pt1.pl2 !{complaint.owner}
+              td.f7 !{complaint.hpdlink} !{complaint.bislink} !{complaint.acrislink}
     div.fl.w-100.tc.pa4
       h2.tl.mv2 HPD Violations
       h5.tl.mt2 Stabilized buildings with 10+ HPD violations last month

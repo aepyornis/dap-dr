@@ -1,3 +1,5 @@
+select * from dob_complaints where status is null
+/* need to fix all of the below
 select pluto.cd, 
     pad.bbl, 
     pluto.address,
@@ -55,7 +57,7 @@ select pluto.cd,
       case when ((cast(uc2007 as float) - 
                 cast(uc2016 as float)) 
                /cast(uc2007 as float) >= 0.25) then 0 else 1 end as highloss
-from dobcomplaints dob
+from dob_complaints dob
 left join padadr pad on pad.bin = dob.bin
 inner join pluto_16v2 pluto on pluto.bbl=pad.bbl
 inner join rentstab on rentstab.ucbbl=pad.bbl
@@ -76,4 +78,4 @@ group by pad.bbl,
          pluto.lot
 having count(distinct complaintnumber) > 1
 order by pluto.cd asc, dobcomplaints desc
-
+*/
