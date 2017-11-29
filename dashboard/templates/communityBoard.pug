@@ -36,9 +36,17 @@ html
          span . Each list is a risk indicator. A building appearing on one or more of these lists can mean that residents are facing significant displacement pressure and affordable apartments are threatened.
         p.tl.f6.lighttext All buildings listed have contained stabilized units at least once between 2007 and 2016, according to our data. 
         p.tl.f6.lighttext If a building appears on more than one list in a given month it will be flagged:
-        p.mv1.pv1.f6.dapyellow Buildings in yellow meet two risk criteria
-        p.mv1.pv1.f6.daporange Buildings in orange meet three risk criteria
-        p.mv1.pv1.f6.dapred.white Buildings in red meet four risk criteria
+        div(style='position:relative')
+          img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/dapyellow.png', style='width:100%; height:22px')
+          div.pv1.f6(style='position:absolute; top:0%; left:25%;') Buildings in yellow meet two risk criteria
+        div(style='position:relative')
+          img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/daporange.png', style='width:100%; height:22px')
+          div.pv1.f6(style='position:absolute; top:0%; left:25%;') Buildings in orange meet three risk criteria
+        div(style='position:relative')
+          img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/dapred.png', style='width:100%; height:22px')
+          div.pv1.f6.white(style='position:absolute; top:0%; left:25%;') Buildings in red meet four risk criteria
+        //- p.mv1.pv1.f6.daporange Buildings in orange meet three risk criteria
+        //- p.mv1.pv1.f6.dapred.white Buildings in red meet four risk criteria
         p.f6.tl.lighttext The 
          span.fakelink blue links
          span  let you click through directly to a property's 
