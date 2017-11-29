@@ -26,7 +26,6 @@ SELECT subset.*,
 	pluto.unitsres as residentialunits,
 	uc2007, uc2016,
     pluto.borocode,
-
 	count(case when violationclass = 'A' then 1 else null end) as class_a,
 	count(case when violationclass = 'B' then 1 else null end) as class_b,
 	count(case when violationclass = 'C' then 1 else null end) as class_c,
@@ -53,7 +52,8 @@ SELECT subset.*,
             pluto.block,
             '&lot=',
             pluto.lot,
-            '" target="_blank">(BIS)</a>') as bislink,
+            '" target="_blank">(BIS)</a>'
+                ) as bislink,
       concat('<a href="http://a836-acris.nyc.gov/bblsearch/bblsearch.asp?borough=',
             pluto.borocode,
             '&block=',
@@ -75,7 +75,7 @@ SELECT subset.*,
     ) as subset
 LEFT JOIN hpd_registrations_grouped_by_bbl_with_contacts hpd_reg on hpd_reg.bbl = subset.bbl
 group by subset.bbl, cd, address, residentialunits, uc2007, uc2016, class_a, class_b, class_c, total, borocode, hpdlink, bislink, acrislink
-order by subset.bbl asc
+order by total desc, subset.bbl asc 
 
 
 

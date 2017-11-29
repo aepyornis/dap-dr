@@ -1,11 +1,12 @@
-html, body {
+html, body, div, table, th, tbody, thead {
     font-family: 'Montserrat', sans-serif;
+    font-weight:400;
 }
-
 
 a:link, a:visited {
     color: #1b4fd3;
     text-decoration: none;
+    font-weight: 400;
 }
 
 a:hover {
@@ -17,8 +18,8 @@ a:hover {
     background-color:rgba(0, 0, 0, 0)
 }
 
-.dapheader {
-    background-color: #e1d7d7
+.dapgray {
+    background-color: #c4b9b9
 }
 
 .dapred {
@@ -32,11 +33,31 @@ a:hover {
 .dapyellow {
     background-color: #fede88
 }
-.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper { 
-    text-shadow: none
+
+.boldtext {
+	font-weight: 700;
 }
 
-.ui-page-theme-a a:visited, html .ui-bar-a a:visited, html .ui-body-a a:visited, html body .ui-group-theme-a a:visited {
-    color: #150055;
+.medtext {
+    font-weight: 500;
 }
 
+.lighttext {
+    font-weight: 300;
+}
+
+.fakelink {
+    color: #1b4fd3;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.fakelink:hover {
+    background-color: #b6b6b6 
+    
+}
+
+
+/* .shadow {
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+} */
