@@ -1,8 +1,4 @@
-select id, job, doc, borough, house, streetname, bbl, bin, address,
-        jobtype, jobstatus, jobstatusdescription, latestactiondate,
-        buildingtype, applicantname, ownername, 
-        existingheight, proposedheight, existingnoofstories, proposednoofstories,
-        existingdwelling, proposeddwellingunits, jobdescription
+select bbl
 from dobjobs
 /*changed this because I don't need it, it was ziggy's*/
 where jobtype = 'not real building' 
