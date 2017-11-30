@@ -7,21 +7,19 @@ html
     link(rel='stylesheet' href='./styles.css')
   body
     div.title.tc.fl.w-100.pt2.white.dapgray
-      table.pr4.pl4.pv2
+      table.pr4.pl4
         thead  
           tr
             th.w-20
-              img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/anhdlogo.png')
+              img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/DAP District Reports.png')
             th.w-45.pl3
-              h1.ma0.black-90 DAP District Report
-              p.f3.medtext.ma1.black-90 #{district.borough} #{district.name}
-              p.f5.ma1.black-80 #{district.neighborhoods}
-            th.w-15
+              p.f3.medtext.ma1.black-90 #{district.borough} #{district.name} 
+            th.w-20.pr6
               p.f3.black OCTOBER 2017
-            th.w-20.pl3.pr2
-              img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/daplogo.png')
-    div.w-100.bg-dark-red.tc.fl.no-print
-      p.f5.mv1 BETA
+    div.w-100.bg-black-10.tc.fl
+      p.mv1.pl4 #{district.neighborhoods}
+    //- div.w-100.bg-dark-red.tc.fl.no-print
+    //-   p.f5.mv1 BETA
     div.fl.w-100.tl.pl3.mt2.f5
       a(href='/index.html').no-print Back
     div.fl
@@ -30,7 +28,7 @@ html
           img(src=mapurl).fl
       div.fl.tc.pl4.pr5.w-70
         p.f6.tl.lh-title.lighttext A monthly update of 
-         span.bg-black-20 harassment and displacement risk in rent stabilized buildings
+         span.highlight harassment and displacement risk in rent stabilized buildings
          span  in 
          span.medtext #{district.borough} #{district.name}
          span . Each list is a risk indicator. A building appearing on one or more of these lists can mean that residents are facing significant displacement pressure and affordable apartments are threatened.

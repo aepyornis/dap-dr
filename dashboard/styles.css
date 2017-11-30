@@ -39,6 +39,10 @@ a:hover {
     background-color: #fede88
 }
 
+.highlight {
+    background-color: #e9dbb9
+}
+
 .boldtext {
 	font-weight: 700;
 }

@@ -5,28 +5,59 @@ html
     link(rel='stylesheet' href='./tachyons.css')
     link(rel='stylesheet' href='./styles.css')
   body
-    div.title.tc.fl.w-100.pt2.white.dapgray
-      table.pr4.pl4.pv2
-        thead  
-          tr
-            th.w-30
-              img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/anhdlogo.png')
-            th.w-30
-              img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/daplogo.png')
-            th.w-25
-              p.f2.tl.ma0.black-90 ANHD's 
-              p.f3.tl.ma0.black-90 DAP District Reports
-    //- header.tc.ph4
-    //-   h1.f3.f2-m.f1-l.fw3.black-90.mv3 
-    //-     | DAP District Reports - Monthly Updates on Housing Risk
-      //h2.f5.f4-m.f3-l.fw2.black-90.mv3
-    main.mb3
-      for boro in districts
-        div.fl.w-100.pa3
-          h2.f3.black-60 #{boro[0]}
-          for district in boro[1]
-            div.fl.w-80.mb3.links
-              a(href=`${district.cd}.html`) 
-                | #{district.neighborhoods}
+    div.title.tc.fl.w-100.pt2.white.dapgray.mb3
+      img.w-30(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/DAP District Reports.png')
+    div.f4.pl4.black-70
+      p DAP District Reports provide monthly updates on harassment and displacement risk in rent stabilized buildings. Risk indicators include 
+        span.black sales
+        span , 
+        span.black HPD complaints
+        span , 
+        span.black HPD violations
+        span , 
+        span.black DOB complaints
+        span , and 
+        span.black DOB construction permit applications.
+      p Buildings that appear on multiple lists are coded 
+        span.dapyellow.black.ph1 yellow
+        span , 
+        span.daporange.black.ph1 orange
+        span , or 
+        span.dapred.white.ph1.lighttext red
+        span , depending on the level of risk.
+      p
+        span.highlight Organizers have limited time and capacity, and we created DAP District Reports to make it easier to prioritize where to do outreach. These reports provide a regular update on displacement risk in the neighborhoods where our organizers work.
+    //- table.pa2.w-100
+    //-     thead
+    //-       tr.black
+    //-         th.w-20.f4 
+    //-           a(href='#tag') Bronx
+    //-         th.w-20.f4 Brooklyn
+    //-         th.w-20.f4 Manhattan
+    //-         th.w-20.f4 Queens
+    //-         th.w-20.f4 Staten Island
 
+    //- - function rps () {
+    //-   var counter = document.getElementById('counter');
+    //-   var number = +counter.innerHTML;
+    //-   //- number++;
+    //-   counter.innerHTML = number;}
+
+    for boro in districts
+        div.fl.w-100.ph4
+          h2.f3.black #{boro[0]} 
+          for district in boro[1]
+            div.fl.mb3.links.w-90
+              a(href=`${district.cd}.html`) 
+                span.black-90 #{district.name}: 
+                | #{district.neighborhoods}
+    //- main.mb3
+    //-   div.fl.w-100.ph4
+    //-     h2.f3.black#bronx Bronx
+    //-     for district in #{boro[0]}
+    //-         div.fl.w-80.mb3.links
+    //-           a(href=`${district.cd}.html`) 
+    //-             span.black-90 #{district.name}: 
+    //-             | #{district.neighborhoods}
+      
 
