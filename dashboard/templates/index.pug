@@ -1,13 +1,24 @@
 doctype html
 html
   head
+    link(href="https://fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,regular,medium,semi-bold,bold, extra-bold, black" rel="stylesheet") 
     link(rel='stylesheet' href='./tachyons.css')
-    link(href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet")
     link(rel='stylesheet' href='./styles.css')
-  body.courier
-    header.tc.ph4
-      h1.f3.f2-m.f1-l.fw3.black-90.mv3 
-        | DAP District Reports - Monthly Updates on Housing Risk
+  body
+    div.title.tc.fl.w-100.pt2.white.dapgray
+      table.pr4.pl4.pv2
+        thead  
+          tr
+            th.w-30
+              img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/anhdlogo.png')
+            th.w-30
+              img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/daplogo.png')
+            th.w-25
+              p.f2.tl.ma0.black-90 ANHD's 
+              p.f3.tl.ma0.black-90 DAP District Reports
+    //- header.tc.ph4
+    //-   h1.f3.f2-m.f1-l.fw3.black-90.mv3 
+    //-     | DAP District Reports - Monthly Updates on Housing Risk
       //h2.f5.f4-m.f3-l.fw2.black-90.mv3
     main.mb3
       for boro in districts
@@ -15,7 +26,7 @@ html
           h2.f3.black-60 #{boro[0]}
           for district in boro[1]
             div.fl.w-80.mb3.links
-              a.link.black.hover-bg-light-red(href=`${district.cd}.html`) 
+              a(href=`${district.cd}.html`) 
                 | #{district.neighborhoods}
 
 

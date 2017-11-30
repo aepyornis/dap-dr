@@ -3,7 +3,7 @@ html
   head
     link(href="https://fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,regular,medium,semi-bold,bold, extra-bold, black" rel="stylesheet") 
     link(rel='stylesheet' href='./tachyons.css')
-    script(src="https://code.jquery.com/jquery-1.11.3.js")
+    //- script(src="https://code.jquery.com/jquery-1.11.3.js")
     link(rel='stylesheet' href='./styles.css')
   body
     div.title.tc.fl.w-100.pt2.white.dapgray
@@ -13,19 +13,19 @@ html
             th.w-20
               img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/anhdlogo.png')
             th.w-45.pl3
-              h2.ma0.black-90 DAP District Report
-              p.f5.medtext.ma1.black-90 #{district.borough} #{district.name}
-              p.f6.ma1.black-80 #{district.neighborhoods}
+              h1.ma0.black-90 DAP District Report
+              p.f3.medtext.ma1.black-90 #{district.borough} #{district.name}
+              p.f5.ma1.black-80 #{district.neighborhoods}
             th.w-15
               p.f3.black OCTOBER 2017
             th.w-20.pl3.pr2
               img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/daplogo.png')
-    div.w-100.bg-dark-red.tc.fl
+    div.w-100.bg-dark-red.tc.fl.no-print
       p.f5.mv1 BETA
     div.fl.w-100.tl.pl3.mt2.f5
-      a(href='/') Back
+      a(href='/index.html').no-print Back
     div.fl
-      div.fl.w-30.pl4.pt3
+      div.fl.w-30.pl4.pt3.pb4
         - var mapurl = 'https://github.com/aepyornis/dap-dr/blob/master/dashboard/cdmaps/' + district.cd + '-01.png?raw=true'
           img(src=mapurl).fl
       div.fl.tc.pl4.pr5.w-70
@@ -38,16 +38,11 @@ html
         p.tl.f6.lighttext If a building appears on more than one list in a given month it will be flagged:
         div(style='position:relative')
           img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/riskyellow.png', style='width:100%;')
-          //- div.pv1.f6(style='position:absolute; top:0%; left:25%;') Buildings in yellow meet two risk criteria
         div(style='position:relative')
           img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/riskorange.png', style='width:100%;')
-          //- div.pv1.f6(style='position:absolute; top:0%; left:25%;') Buildings in orange meet three risk criteria
         div(style='position:relative')
           img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/riskred.png', style='width:100%;')
-          //- div.pv1.f6.white(style='position:absolute; top:0%; left:25%;') Buildings in red meet four risk criteria
-        //- p.mv1.pv1.f6.daporange Buildings in orange meet three risk criteria
-        //- p.mv1.pv1.f6.dapred.white Buildings in red meet four risk criteria
-        p.f6.tl.lighttext The 
+        p.f6.tl.lighttext.no-print The 
          span.fakelink blue links
          span  let you click through directly to a property's 
          a(href='http://whoownswhat.justfix.nyc', target='_blank') Who Owns What
@@ -58,79 +53,79 @@ html
          span , or 
          a(href='https://a836-acris.nyc.gov/DS/DocumentSearch/BBL', target='_blank') ACRIS
          span .
-    div.fl.w-100.pt3.ph4
+    div.fl.w-100.pt3.ph4.pb2.bg-black-10
       p.f3.tl.mt0.mb1 New sales of residential buildings
       p.f6.tl.mt0.mb3.lighttext A large purchase price can mean the new owner plans to displace stabilized tenants to make more profit (data is currently September 2017)
       table.w-100
         thead
           tr
-            th.w-10 BBL
-            th.w-15 Address
-            th.w-10 Total Units
-            th.w-10(colspan="2") Stabilized Units
-            th Sale Price
-            th $/SF
-            th Sale Date
-            th.w-20 Owner
-            th.w-10 
-          tr.f7
-            th.w-10.tl Boro, Block, Lot
+            th.w-10.f5 BBL
+            th.w-15.f5 Address
+            th.w-10.f5 Total Units
+            th.w-10(colspan="2").f5 Stabilized Units
+            th.f5 Sale Price
+            th.f5 Price / Sq Foot
+            th.f5 Sale Date
+            th.w-20.f5 Owner
+            th.w-10.f5.no-print 
+          tr
+            th.w-10.tl
             th.w-15 
             th.w-10 
-            th.w-5.f6.gray 2007
-            th.w-5.f6 2016
+            th.w-5.gray 2007
+            th.w-5 2016
             th 
-            th.tl Price / Sq Foot 
+            th.tl
             th  
             th.w-20 
-            th.w-10
+            th.w-10.no-print
         tbody
         each sale in recentSales
           tr
-            td.f6.pb1.pt2.pr3.tl #{sale.bbl}
-            td.f6.tl #{sale.address}
+            td.pr3.tl #{sale.bbl}
+            td.tl #{sale.address}
             td #{sale.residentialunits}
             td.gray.tc #{sale.uc2007} 
             td.tc #{sale.uc2016}
-            td.f6 #{sale.saleprice}
-            td.f6 $ #{sale.ppgsf}
-            td.f6 #{sale.iso_date}
+            td #{sale.saleprice}
+            td $ #{sale.ppgsf}
+            td #{sale.iso_date}
             td.f7.tl.pr2.pt1.pl2 !{sale.owner}
-            td.f7 !{sale.hpdlink} !{sale.bislink} !{sale.acrislink} 
-    div.fl.w-100.tc.pt3.ph4
+            td.f7.no-print !{sale.hpdlink} !{sale.bislink} !{sale.acrislink} 
+    div.fl.w-100.tc.mt4.ph4.pb2.bg-black-10
       p.f3.tl.mt3.mb1 Buildings with 3+ HPD Complaints last month
       p.f6.tl.mt0.mb3.lighttext HPD complaints can indicate a landlord is neglecting or actively harassing tenants
       table.w-100
         thead
           tr
-            th.w-10 BBL
-            th.w-15 Address
-            th.w-15 Total Units
+            th.w-10.f5 BBL
+            th.w-15.f5 Address
+            th.w-15.f5 Total Units
             th.w-16(colspan="2") Stabilized Units
             th.w-15 Complaints
             th.w-20 Owner
-            th.w-10  
+            th.w-10.no-print  
           tr 
-            th.w-10.pb3 
+            th.w-10.pb3
             th.w-15 
             th.w-15 
             th.w-8.gray 2007
             th.w-8 2016
             th.w-15
             th.w-20 
-            th.w-10
+            th.w-10.no-print
         tbody
         each complaint in hpdComplaints
           tr
-            td.f6.pv1.pr3.tl #{complaint.bbl}
-            td.f6.tl #{complaint.address}
+            td.pr3.tl #{complaint.bbl}
+            td.tl #{complaint.address}
             td #{complaint.residentialunits}
             td.gray #{complaint.uc2007}
             td #{complaint.uc2016}
             td #{complaint.hpdcomplaints}
             td.f7.tl.pr2.pt1.pl2 !{complaint.owner}
-            td.f7 !{complaint.hpdlink} !{complaint.bislink} !{complaint.acrislink}
-    div.fl.w-100.tc.pt3.ph4
+            td.f7.no-print !{complaint.hpdlink} !{complaint.bislink} !{complaint.acrislink}
+    div.fl.w-100.tc.mt4.ph4.pb2.bg-black-10
       p.f3.tl.mt3.mb1 Buildings with 10+ HPD violations last month
       p.f6.tl.mt0.mb3.lighttext HPD violations can indicate a landlord is neglecting or actively harassing tenants (currently August 2017)
       table.w-100
@@ -145,9 +140,9 @@ html
             th Class C
             th Total
             th.w-20 Owner
-            th.w-10 
+            th.w-10.no-print 
           tr 
-            th.w-10.pb3 
+            th.w-10.pb3 Boro, Block, Lot
             th.w-15 
             th.w-10 
             th.w-5.gray 2007
@@ -157,12 +152,12 @@ html
             th 
             th 
             th.w-20 
-            th.w-10
+            th.w-10.no-print
         tbody
         each violation in hpdViolations
           tr
-            td.f6.pv1.pr3.tl #{violation.bbl}
-            td.f6.tl #{violation.address}
+            td.pr3.tl #{violation.bbl}
+            td.tl #{violation.address}
             td #{violation.residentialunits}
             td.gray #{violation.uc2007} 
             td #{violation.uc2016}
@@ -171,8 +166,8 @@ html
             td #{violation.class_c}
             td #{violation.total}
             td.f7.tl.pr2.pt1 !{violation.owner}
-            td.f7 !{violation.hpdlink} !{violation.bislink} !{violation.acrislink} 
-    div.fl.w-100.tc.pt3.ph4
+            td.f7.no-print !{violation.hpdlink} !{violation.bislink} !{violation.acrislink} 
+    div.fl.w-100.tc.mt4.ph4.pb2.bg-black-10
       p.f3.tl.mt3.mb1 Buildings with 2+ DOB Complaints last month
       p.f6.tl.mt0.mb3.lighttext DOB complaints indicate issues related to construction and overall building conditions. 
       table.w-100
@@ -184,28 +179,28 @@ html
             th.w-16(colspan="2") Stabilized Units
             th.w-15 Complaints
             th.w-20 Owner
-            th.w-10  
+            th.w-10.no-print
           tr 
-            th.w-10.pb3 
+            th.w-10.pb3 Boro, Block, Lot
             th.w-15 
             th.w-15 
             th.w-8.gray 2007
             th.w-8 2016
             th.w-15
             th.w-20 
-            th.w-10
+            th.w-10.no-print
         tbody
         each complaint in dobComplaints
           tr
-            td.f6.pv1.pr3.tl #{complaint.bbl}
+            td.f6.pr3.tl #{complaint.bbl}
             td.f6.tl #{complaint.address}
             td #{complaint.residentialunits}
             td.gray #{complaint.uc2007}
             td #{complaint.uc2016}
             td #{complaint.dobcomplaints}
             td.f7.tl.pr2.pt1.pl2 !{complaint.owner}
-            td.f7 !{complaint.hpdlink} !{complaint.bislink} !{complaint.acrislink}
-    div.fl.w-100.tc.pt3.ph4
+            td.f7.no-print !{complaint.hpdlink} !{complaint.bislink} !{complaint.acrislink}
+    div.fl.w-100.tc.mt4.ph4.pb2.bg-black-10
       p.f3.tl.mt3.mb1 Buildings with DOB permit applications filed last month
       p.f6.tl.mt0.mb3.lighttext Construction permit applications may reflect Individual Apartment Improvements (Alt 2) that are used to de-stabilize apartments.
       table.w-100
@@ -219,9 +214,9 @@ html
             th Alt 2 Permits
             th DM Permits
             th.w-20 Owner
-            th.w-10     
+            th.w-10.no-print
           tr 
-            th.w-10.pb3 
+            th.w-10.pb3 Boro, Block, Lot
             th.w-15 
             th.w-10 
             th.w-5.gray 2007
@@ -230,12 +225,12 @@ html
             th 
             th  
             th.w-20 
-            th.w-10
+            th.w-10.no-print
         tbody
         each job in dobjobs
           tr
-            td.f6.pv1.pr3.tl #{job.bbl}
-            td.f6.tl #{job.address}
+            td.pr3.tl #{job.bbl}
+            td.tl #{job.address}
             td #{job.residentialunits}
             td.gray #{job.uc2007} 
             td #{job.uc2016}
@@ -243,6 +238,6 @@ html
             td #{job.a2}
             td #{job.dm}
             td.f7.tl.pr2.pt1 !{job.owner}
-            td.f7 !{job.hpdlink} !{job.bislink} !{job.acrislink}     
-    div.fl.w-100.tc.mb4
-      a(href='/') Back
+            td.f7.no-print !{job.hpdlink} !{job.bislink} !{job.acrislink}     
+    div.fl.w-100.tc.mv3.f5
+      a(href='/index.html').no-print Back

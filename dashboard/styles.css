@@ -1,12 +1,17 @@
 html, body, div, table, th, tbody, thead {
     font-family: 'Montserrat', sans-serif;
     font-weight:400;
+    font-size: 0.9rem;
 }
 
 a:link, a:visited {
     color: #1b4fd3;
     text-decoration: none;
     font-weight: 400;
+}
+
+h1, h2, h3, h4 {
+    font-weight:500;
 }
 
 a:hover {
@@ -57,7 +62,11 @@ a:hover {
     
 }
 
+@media print
+{    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+}
 
-/* .shadow {
-    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
-} */

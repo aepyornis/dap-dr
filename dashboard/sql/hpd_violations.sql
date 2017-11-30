@@ -75,7 +75,7 @@ SELECT subset.*,
     ) as subset
 LEFT JOIN hpd_registrations_grouped_by_bbl_with_contacts hpd_reg on hpd_reg.bbl = subset.bbl
 group by subset.bbl, cd, address, residentialunits, uc2007, uc2016, class_a, class_b, class_c, total, borocode, hpdlink, bislink, acrislink
-order by total desc, subset.bbl asc 
+order by cd asc, total desc
 
 
 
