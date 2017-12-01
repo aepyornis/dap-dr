@@ -23,30 +23,33 @@ html
     div.fl.w-100.tl.pl3.mt2.f5
       a(href='/index.html').no-print Back
     div.fl
-      div.fl.w-30.pl4.pt3.pb4
+      div.fl.w-25.pl4.pt3.pb2
         - var mapurl = 'https://github.com/aepyornis/dap-dr/blob/master/dashboard/cdmaps/' + district.cd + '-01.png?raw=true'
           img(src=mapurl).fl
-      div.fl.tc.pl4.pr5.w-70
+      div.fl.tc.pl4.pr5.w-75
         p.f6.tl.lh-title.lighttext A monthly update of 
          span.highlight harassment and displacement risk in rent stabilized buildings
          span  in 
          span.medtext #{district.borough} #{district.name}
-         span . Each list is a risk indicator. A building appearing on one or more of these lists can mean that residents are facing significant displacement pressure and affordable apartments are threatened.
-        p.tl.f6.lighttext All buildings listed have contained stabilized units at least once between 2007 and 2016, according to our data. 
+         span . Each list is a risk indicator. A building appearing on one or more of these lists can mean that residents are facing displacement pressure and affordable apartments are threatened.
+        p.tl.f6.lighttext All buildings listed have contained stabilized units at least once between 2007 and 2016, according to our data. You can also click the address to see the property on Google Maps.
         p.f6.tl.lighttext.no-print The 
          span.fakelink blue links
          span  let you click through directly to a property's 
          a(href='http://whoownswhat.justfix.nyc', target='_blank') Who Owns What
          span  page for owner info, 
-         a(href='https://hpdonline.hpdnyc.org/HPDonline/provide_address.aspx', target='_blank') HPD Building Info
+         a(href='https://hpdonline.hpdnyc.org/HPDonline/provide_address.aspx', target='_blank') HPD building info
          span , 
          a(href='http://a810-bisweb.nyc.gov/bisweb/bsqpm01.jsp', target='_blank') DOB's Building Information System
-         span , or 
+         span ,  
          a(href='https://a836-acris.nyc.gov/DS/DocumentSearch/BBL', target='_blank') ACRIS
+         span , or 
+         a(href='http://nycprop.nyc.gov/nycproperty/nynav/jsp/selectbbl.jsp', target='_blank') property tax information
          span .
-      div.fl
-        span.tl.f6.lighttext If a building appears on more than one list in a given month it will be flagged:
-        table
+      div.fl.pb3
+        p.tc.mb1.f6.lighttext If a building appears on more than one of the lists below in a given month it will be flagged: 
+          span.bg-yellow NOTE: COLOR CODING IS STILL BEING DEVELOPED
+        table.ph4
           thead
             tr
               th.w-30
@@ -55,29 +58,21 @@ html
                 img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/riskorange.png')
               th.w-30
                 img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/riskred.png')
-
-      
-      //- div(style='position:relative')
-      //-   img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/riskyellow.png', style='width:100%;')
-      //- div(style='position:relative')
-      //-   img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/riskorange.png', style='width:100%;')
-      //- div(style='position:relative')
-      //-   img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/riskred.png', style='width:100%;')
     div.fl.w-100.pt3.ph4.pb2.bg-black-10
       p.f3.tl.mt0.mb1 New sales of residential buildings
       p.f6.tl.mt0.mb3.lighttext A large purchase price can mean the new owner plans to displace stabilized tenants to make more profit (data is currently September 2017)
       table.w-100
         thead
           tr
-            th.w-10.f5 BBL
-            th.w-15.f5 Address
-            th.w-10.f5 Total Units
+            th.w-10 BBL
+            th.w-15 Address
+            th.w-10 Total Units
             th.w-10(colspan="2").f5 Stabilized Units
             th.f5 Sale Price
             th.f5 Price / Sq Foot
             th.f5 Sale Date
-            th.w-20.f5 Owner
-            th.w-10.f5.no-print 
+            th.w-20 Owner
+            th.w-10.no-print 
           tr
             th.w-10.tl
             th.w-15 
@@ -91,9 +86,9 @@ html
             th.w-10.no-print
         tbody
         each sale in recentSales
-          tr
+          tr.f6
             td.pr3.tl #{sale.bbl}
-            td.tl #{sale.address}
+            td.tl !{sale.googlelink}
             td #{sale.residentialunits}
             td.gray.tc #{sale.uc2007} 
             td.tc #{sale.uc2016}
@@ -101,16 +96,16 @@ html
             td $ #{sale.ppgsf}
             td #{sale.iso_date}
             td.f7.tl.pr2.pt1.pl2 !{sale.owner}
-            td.f7.no-print !{sale.hpdlink} !{sale.bislink} !{sale.acrislink} 
+            td.f7.no-print !{sale.hpdlink} !{sale.bislink} !{sale.acrislink} !{sale.taxlink}
     div.fl.w-100.tc.mt4.ph4.pb2.bg-black-10
       p.f3.tl.mt3.mb1 Buildings with 3+ HPD Complaints last month
       p.f6.tl.mt0.mb3.lighttext HPD complaints can indicate a landlord is neglecting or actively harassing tenants
       table.w-100
         thead
           tr
-            th.w-10.f5 BBL
-            th.w-15.f5 Address
-            th.w-15.f5 Total Units
+            th.w-10 BBL
+            th.w-15 Address
+            th.w-15 Total Units
             th.w-16(colspan="2") Stabilized Units
             th.w-15 Complaints
             th.w-20 Owner
@@ -126,15 +121,15 @@ html
             th.w-10.no-print
         tbody
         each complaint in hpdComplaints
-          tr
+          tr.f6
             td.pr3.tl #{complaint.bbl}
-            td.tl #{complaint.address}
+            td.tl !{complaint.googlelink}
             td #{complaint.residentialunits}
             td.gray #{complaint.uc2007}
             td #{complaint.uc2016}
             td #{complaint.hpdcomplaints}
             td.f7.tl.pr2.pt1.pl2 !{complaint.owner}
-            td.f7.no-print !{complaint.hpdlink} !{complaint.bislink} !{complaint.acrislink}
+            td.f7.no-print !{complaint.hpdlink} !{complaint.bislink} !{complaint.acrislink} !{complaint.taxlink}
     div.fl.w-100.tc.mt4.ph4.pb2.bg-black-10
       p.f3.tl.mt3.mb1 Buildings with 10+ HPD violations last month
       p.f6.tl.mt0.mb3.lighttext HPD violations can indicate a landlord is neglecting or actively harassing tenants (currently August 2017)
@@ -165,9 +160,9 @@ html
             th.w-10.no-print
         tbody
         each violation in hpdViolations
-          tr
+          tr.f6
             td.pr3.tl #{violation.bbl}
-            td.tl #{violation.address}
+            td.tl !{violation.googlelink}
             td #{violation.residentialunits}
             td.gray #{violation.uc2007} 
             td #{violation.uc2016}
@@ -176,7 +171,7 @@ html
             td #{violation.class_c}
             td #{violation.total}
             td.f7.tl.pr2.pt1 !{violation.owner}
-            td.f7.no-print !{violation.hpdlink} !{violation.bislink} !{violation.acrislink} 
+            td.f7.no-print !{violation.hpdlink} !{violation.bislink} !{violation.acrislink} !{violation.taxlink}
     div.fl.w-100.tc.mt4.ph4.pb2.bg-black-10
       p.f3.tl.mt3.mb1 Buildings with 2+ DOB Complaints last month
       p.f6.tl.mt0.mb3.lighttext DOB complaints indicate issues related to construction and overall building conditions. 
@@ -201,18 +196,18 @@ html
             th.w-10.no-print
         tbody
         each complaint in dobComplaints
-          tr
+          tr.f6
             td.f6.pr3.tl #{complaint.bbl}
-            td.f6.tl #{complaint.address}
+            td.f6.tl !{complaint.googlelink}
             td #{complaint.residentialunits}
             td.gray #{complaint.uc2007}
             td #{complaint.uc2016}
             td #{complaint.dobcomplaints}
             td.f7.tl.pr2.pt1.pl2 !{complaint.owner}
-            td.f7.no-print !{complaint.hpdlink} !{complaint.bislink} !{complaint.acrislink}
+            td.f7.no-print !{complaint.hpdlink} !{complaint.bislink} !{complaint.acrislink} !{complaint.taxlink}
     div.fl.w-100.tc.mt4.ph4.pb2.bg-black-10
       p.f3.tl.mt3.mb1 Buildings with DOB permit applications filed last month
-      p.f6.tl.mt0.mb3.lighttext Construction permit applications may reflect Individual Apartment Improvements (Alt 2) that are used to de-stabilize apartments.
+      p.f6.tl.mt0.mb3.lighttext Construction permit applications may reflect Individual Apartment Improvements (Alt 2 permits) that are used to destabilize apartments.
       table.w-100
         thead
           tr
@@ -238,9 +233,9 @@ html
             th.w-10.no-print
         tbody
         each job in dobjobs
-          tr
+          tr.f6
             td.pr3.tl #{job.bbl}
-            td.tl #{job.address}
+            td.tl !{job.googlelink}
             td #{job.residentialunits}
             td.gray #{job.uc2007} 
             td #{job.uc2016}
@@ -248,6 +243,6 @@ html
             td #{job.a2}
             td #{job.dm}
             td.f7.tl.pr2.pt1 !{job.owner}
-            td.f7.no-print !{job.hpdlink} !{job.bislink} !{job.acrislink}     
+            td.f7.no-print !{job.hpdlink} !{job.bislink} !{job.acrislink} !{job.taxlink}
     div.fl.w-100.tc.mv3.f5
       a(href='/index.html').no-print Back

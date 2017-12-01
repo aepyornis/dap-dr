@@ -65,6 +65,10 @@ a:hover {
     
 }
 
+.center {
+    text-align: center;
+}
+
 @media print
 {    
     .no-print, .no-print *
