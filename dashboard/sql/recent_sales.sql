@@ -43,7 +43,7 @@ select pluto.cd,
             pluto.block,
             '&lot=',
             pluto.lot,
-            '" target="_blank">(BIS)</a>') as bislink,
+            '" target="_blank">(DOB)</a>') as bislink,
       concat('<a href="http://a836-acris.nyc.gov/bblsearch/bblsearch.asp?borough=',
             pluto.borocode,
             '&block=',
@@ -51,16 +51,30 @@ select pluto.cd,
             '&lot=',
             pluto.lot,
             '" target="_blank">(ACRIS)</a>') as acrislink,
-      case when ((cast(uc2007 as float) - 
-                cast(uc2016 as float)) 
-               /cast(uc2007 as float) >= 0.25) then 'yes' else 'no' end as highloss
+            ' ',
+            pluto.zipcode,
+            '" target="_blank">',
+      concat('<a href="http://webapps.nyc.gov:8084/CICS/fin1/find001i?FFUNC=C&FBORO=',
+            pluto.borocode,
+            '&FBLOCK=',
+            pluto.block,
+            '&FLOT=',
+            pluto.lot,
+            '" target="_blank">(Taxes)</a>') as taxlink,
+      concat('<a href="http://www.google.com/maps/place/',
+            pluto.address,
+            ' ',
+            pluto.zipcode,
+            '" target="_blank">',
+            pluto.address,
+            '</a>') as googlelink
 FROM dof_sales sales
 LEFT JOIN pluto_16v2 pluto on sales.bbl = pluto.bbl
 INNER JOIN rentstab ON rentstab.ucbbl = pluto.bbl
 LEFT JOIN hpd_registrations_grouped_by_bbl_with_contacts hpd_reg on hpd_reg.bbl = pluto.bbl
 WHERE pluto.cd is not null
       AND pluto.cd = '${ cd }'
-      AND sales.saledate >= date_trunc('month', current_date - interval '2 month')
+      AND sales.saledate >= date_trunc('month', current_date - interval '3 month')
       AND sales.residentialunits > 0
       AND sales.saleprice > 50000
       AND COALESCE(uc2007,uc2008, uc2009, uc2010, uc2011, uc2012, uc2013, uc2014,uc2015,uc2016) is not null

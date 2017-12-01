@@ -45,7 +45,7 @@ select subset.*,
                   pluto.block,
                   '&lot=',
                   pluto.lot,
-                  '" target="_blank">(BIS)</a>') as bislink,
+                  '" target="_blank">(DOB)</a>') as bislink,
             concat('<a href="http://a836-acris.nyc.gov/bblsearch/bblsearch.asp?borough=',
                   pluto.borocode,
                   '&block=',
@@ -53,7 +53,21 @@ select subset.*,
                   '&lot=',
                   pluto.lot,
                   '" target="_blank">(ACRIS)</a>'
-                  ) as acrislink
+                  ) as acrislink,
+            concat('<a href="http://webapps.nyc.gov:8084/CICS/fin1/find001i?FFUNC=C&FBORO=',
+                  pluto.borocode,
+                  '&FBLOCK=',
+                  pluto.block,
+                  '&FLOT=',
+                  pluto.lot,
+                  '" target="_blank">(Taxes)</a>') as taxlink,
+            concat('<a href="http://www.google.com/maps/place/',
+                  pluto.address,
+                  ' ',
+                  pluto.zipcode,
+                  '" target="_blank">',
+                  pluto.address,
+                  '</a>') as googlelink
       from dob_complaints dob
       left join pluto_16v2 pluto on pluto.address = concat(house_number,' ',house_street)
       inner join rentstab on rentstab.ucbbl=pluto.bbl
@@ -61,11 +75,11 @@ select subset.*,
       AND community_board = '${ cd }'
       and pluto.unitsres > 0 
       AND COALESCE(uc2007,uc2008, uc2009, uc2010, uc2011, uc2012, uc2013, uc2014,uc2015,uc2016) is not null
-      group by pluto.bbl, concat(house_number,' ',house_street), community_board, pluto.unitsres, uc2007, uc2016, pluto.address, pluto.borocode, pluto.block, pluto.lot
+      group by pluto.bbl, concat(house_number,' ',house_street), community_board, pluto.unitsres, uc2007, uc2016, pluto.address, pluto.borocode, pluto.block, pluto.lot, pluto.zipcode
       having count(distinct complaint_number) > 1
       ) as subset
 LEFT JOIN hpd_registrations_grouped_by_bbl_with_contacts hpd_reg on hpd_reg.bbl = subset.bbl
-group by subset.bbl, address, community_board, residentialunits, uc2007, uc2016, dobcomplaints, borocode, hpdlink, bislink, acrislink
+group by subset.bbl, address, community_board, residentialunits, uc2007, uc2016, dobcomplaints, borocode, hpdlink, bislink, acrislink, googlelink, taxlink
       order by community_board asc, dobcomplaints desc
 
 

@@ -1,7 +1,6 @@
 html, body, div, table, th, tbody, thead {
     font-family: 'Montserrat', sans-serif;
     font-weight:400;
-    font-size: 0.9rem;
 }
 
 a:link, a:visited {
@@ -71,6 +70,13 @@ a:hover {
     .no-print, .no-print *
     {
         display: none !important;
+    }
+
+
+    html, body, div, table, th, tbody, thead {
+        font-family: 'Montserrat', sans-serif;
+        font-weight:400;
+        font-size: 0.75rem !important;
     }
 }
 
