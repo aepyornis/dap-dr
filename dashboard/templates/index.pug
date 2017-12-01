@@ -26,7 +26,7 @@ html
         span.dapred.white.ph1.lighttext red
         span , depending on the level of risk.
       p
-        span.highlight Organizers have limited time and capacity, and we created DAP District Reports to make it easier to prioritize where to do outreach. These reports provide a regular update on displacement risk in the neighborhoods where our organizers work.
+        span.highlight Organizers have limited time and capacity, and we created DAP District Reports to make it easier to prioritize where to do outreach. These reports give regular updates on displacement risk in the neighborhoods where our organizers work.
     //- table.pa2.w-100
     //-     thead
     //-       tr.black
@@ -51,9 +51,15 @@ html
               a(href=`${district.cd}.html`) 
                 span.black-90 #{district.name}: 
                 | #{district.neighborhoods}
-    div.fl.w-100.bg-black-40 
-      p.pv3.center.black.lighttext Made possible by funding from the Ford Foundation
-        img(src='https://static.wixstatic.com/media/555352_0174dac8c51845ca9168e487a6d4a7d3~mv2.jpg/v1/fill/w_190,h_64,al_c,q_80,usm_0.66_1.00_0.01/555352_0174dac8c51845ca9168e487a6d4a7d3~mv2.webp')
+    div.fl.w-100.bg-black-10 
+      table.ph4
+        thead
+          tr
+            th.pv3.pl4.w-45.black.lighttext
+              span Made possible by funding from
+            th.w-45.pl3
+              img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/fordlogo.png')
+
     //- main.mb3
     //-   div.fl.w-100.ph4
     //-     h2.f3.black#bronx Bronx

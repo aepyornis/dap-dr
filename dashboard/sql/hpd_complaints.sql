@@ -77,7 +77,7 @@ select subset.*,
             and cast(receiveddate as date) < date_trunc('month', current_date - interval '1 month') 
             and pluto.unitsres > 0
             and coalesce(uc2007,uc2008, uc2009, uc2010, uc2011, uc2012, uc2013, uc2014,uc2015,uc2016) is not null
-      group by hpd.bbl, pluto.cd, pluto.address, residentialunits, receiveddate, uc2007, uc2016, borocode, pluto.block, pluto.lot, pluto.zipcode
+      group by hpd.bbl, pluto.cd, pluto.address, residentialunits, uc2007, uc2016, borocode, pluto.block, pluto.lot, pluto.zipcode
       having count(distinct complaintid) > 2
       ) as subset
 left join hpd_registrations_grouped_by_bbl_with_contacts hpd_reg on hpd_reg.bbl = subset.bbl
