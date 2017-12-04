@@ -86,7 +86,8 @@ html
             th.w-10.no-print
         tbody
         each sale in recentSales
-          tr.f6
+          - var trStyle = rowClass(bblCount[sale.bbl].length);
+          tr(class=trStyle)
             td.pr3.tl #{sale.bbl}
             td.tl !{sale.googlelink}
             td #{sale.residentialunits}
@@ -121,7 +122,8 @@ html
             th.w-10.no-print
         tbody
         each complaint in hpdComplaints
-          tr.f6
+          - var trStyle = rowClass(bblCount[complaint.bbl].length);
+          tr(class=trStyle)
             td.pr3.tl #{complaint.bbl}
             td.tl !{complaint.googlelink}
             td #{complaint.residentialunits}
@@ -160,7 +162,8 @@ html
             th.w-10.no-print
         tbody
         each violation in hpdViolations
-          tr.f6
+          - var trStyle = rowClass(bblCount[violation.bbl].length);
+          tr(class=trStyle)
             td.pr3.tl #{violation.bbl}
             td.tl !{violation.googlelink}
             td #{violation.residentialunits}
