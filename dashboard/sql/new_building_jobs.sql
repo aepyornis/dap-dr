@@ -4,4 +4,4 @@ from dobjobs
 where jobtype = 'not real building' 
 AND communityboard = '${ cd }'
 order by latestactiondate desc
-limit 10;
+limit 0;

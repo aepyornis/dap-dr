@@ -1,6 +1,12 @@
 html, body, div, table, th, tbody, thead {
     font-family: 'Montserrat', sans-serif;
     font-weight:400;
+
+}
+
+
+h1, h2, h3, h4 {
+    font-weight:500;
 }
 
 a:link, a:visited {
@@ -9,16 +15,11 @@ a:link, a:visited {
     font-weight: 400;
 }
 
-h1, h2, h3, h4 {
-    font-weight:500;
-}
-
 a:hover {
     background-color: #b6b6b6 
 }
 
 .imgstyle:hover {
-    text-decoration: none;
     background-color:rgba(0, 0, 0, 0)
 }
 
@@ -69,6 +70,11 @@ a:hover {
     text-align: center;
 }
 
+.risks {
+    max-width: 340px;
+    width:100%
+}
+
 @media print
 {    
     .no-print, .no-print *
@@ -76,11 +82,21 @@ a:hover {
         display: none !important;
     }
 
+    .no-screen {}
+
 
     html, body, div, table, th, tbody, thead {
         font-family: 'Montserrat', sans-serif;
         font-weight:400;
         font-size: 0.75rem !important;
     }
+
+    
+}
+
+@media screen
+{
+    .no-print{}
+    .no-screen{display:none;}
 }
 

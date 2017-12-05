@@ -11,28 +11,29 @@ html
         thead  
           tr
             th.w-20
-              img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/dapdrlogo.png')
+              a(href='/').imgstyle
+                img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/dapdrlogo.png')
             th.w-45.pl3
               p.f3.medtext.ma1.black-90 #{district.borough} #{district.name} 
             th.w-20.pr6
               p.f3.black OCTOBER 2017
     div.w-100.bg-black-10.tc.fl
       p.mv1.pl4 #{district.neighborhoods}
-    //- div.w-100.bg-dark-red.tc.fl.no-print
-    //-   p.f5.mv1 BETA
     div.fl.w-100.tl.pl3.mt2.f5
       a(href='/index.html').no-print Back
     div.fl
       div.fl.w-25.pl4.pt3.pb2
         - var mapurl = 'https://github.com/aepyornis/dap-dr/blob/master/dashboard/cdmaps/' + district.cd + '-01.png?raw=true'
           img(src=mapurl).fl
-      div.fl.tc.pl4.pr5.w-75
+      div.fl.tc.pl4.pr5.w-75.lh-copy
         p.f6.tl.lh-title.lighttext A monthly update of 
          span.highlight harassment and displacement risk in rent stabilized buildings
          span  in 
          span.medtext #{district.borough} #{district.name}
-         span . Each list is a risk indicator. A building appearing on one or more of these lists can mean that residents are facing displacement pressure and affordable apartments are threatened.
-        p.tl.f6.lighttext All buildings listed have contained stabilized units at least once between 2007 and 2016, according to our data. You can also click the address to see the property on Google Maps.
+         span . Risk indicators include sales, HPD complaints, HPD violations, DOB complaints, and DOB construction permit applications. A building appearing on one or more of these lists can mean that residents are facing displacement pressure and affordable apartments are threatened.
+        p.tl.f6.lighttext All buildings listed have registered stabilized units at least once between 2007 and 2016, according to our data (
+          a(href='#notes') Notes
+          span ).
         p.f6.tl.lighttext.no-print The 
          span.fakelink blue links
          span  let you click through directly to a property's 
@@ -46,61 +47,66 @@ html
          span , or 
          a(href='http://nycprop.nyc.gov/nycproperty/nynav/jsp/selectbbl.jsp', target='_blank') property tax information
          span . You can also click a building address to view it in Google Maps.
-      div.fl.pb3
+      div.fl.pb3.w-100
         p.tc.mb1.f6.lighttext If a building appears on more than one of the lists below in a given month it will be flagged: 
-          span.bg-yellow NOTE: COLOR CODING IS STILL BEING DEVELOPED
-        table.ph4
-          thead
-            tr
-              th.w-30
-                img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/riskyellow.png')
-              th.w-30
-                img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/riskorange.png')
-              th.w-30
-                img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/riskred.png')
+        table.ph4.w-100.risks
+          thead.risks
+            tr.risks
+              th
+                img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/riskyellow.png').risks
+              th
+                img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/riskorange.png').risks
+              th
+                img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/riskred.png').risks
     div.fl.w-100.pt3.ph4.pb2.bg-black-10
-      p.f3.tl.mt0.mb1 New sales of residential buildings
-      p.f6.tl.mt0.mb3.lighttext A large purchase price can mean the new owner plans to displace stabilized tenants to make more profit (data is currently September 2017)
+      p.f3.tl.mt0.mb1 Sales of residential buildings last month
+      p.f6.tl.mt0.mb3.lighttext.lh-copy A large purchase price can mean the new owner plans to displace tenants to make more profit. Buildings on this list sold for more than $50,000, which we use as a proxy for "real" sales versus other types of transfers. Sales data is messy – click a building's 
+        a(href='https://a836-acris.nyc.gov/DS/DocumentSearch/BBL', target='_blank') (ACRIS)
+        span  link for more detailed documentation. 
+        span.medtext Note: 
+        span Data from the Department of Finance can lag, so these sales might be from the month before last (currently September 2017)
       table.w-100
         thead
           tr
             th.w-10 BBL
-            th.w-15 Address
-            th.w-10 Total Units
+            th.w-20 Address
+            th.w-15 Total Units
             th.w-10(colspan="2").f5 Stabilized Units
-            th.f5 Sale Price
-            th.f5 Price / Sq Foot
-            th.f5 Sale Date
+            th.f5.w-5.tc Sale Price
+            th.f5.w-5.tc Price / Sq Foot
+            th.f5.w-5.tc Sale Date
             th.w-20 Owner
             th.w-10.no-print 
           tr
-            th.w-10.tl
-            th.w-15 
-            th.w-10 
+            th.tl
+            th
+            th
             th.w-5.gray 2007
             th.w-5 2016
             th 
             th.tl
             th  
-            th.w-20 
-            th.w-10.no-print
+            th 
+            th.no-print
         tbody
         each sale in recentSales
           - var trStyle = rowClass(bblCount[sale.bbl].length);
           tr(class=trStyle)
             td.pr3.tl #{sale.bbl}
             td.tl !{sale.googlelink}
-            td #{sale.residentialunits}
+            td.tc #{sale.unitsres}
             td.gray.tc #{sale.uc2007} 
             td.tc #{sale.uc2016}
-            td #{sale.saleprice}
-            td $ #{sale.ppgsf}
+            td.tc #{sale.saleprice}
+            td.tc $ #{sale.ppgsf}
             td #{sale.iso_date}
             td.f7.tl.pr2.pt1.pl2 !{sale.owner}
-            td.f7.no-print !{sale.hpdlink} !{sale.bislink} !{sale.acrislink} !{sale.taxlink}
+            td.f7.tc.no-print !{sale.hpdlink} !{sale.bislink} !{sale.acrislink} !{sale.taxlink}
     div.fl.w-100.tc.mt4.ph4.pb2.bg-black-10
-      p.f3.tl.mt3.mb1 Buildings with 3+ HPD Complaints last month
-      p.f6.tl.mt0.mb3.lighttext HPD complaints can indicate a landlord is neglecting or actively harassing tenants
+      p.f3.tl.mt3.mb1 Buildings with 3+ new HPD Complaints last month
+      p.f6.tl.mt0.mb3.lighttext.lh-copy Complaints that tenants make about conditions in their apartment or building get sent to Housing Preservation and Development for inspection. One complaint can include multiple problems in an apartment or a building. Click a building's 
+        a(href='https://hpdonline.hpdnyc.org/HPDonline/provide_address.aspx', target='_blank') (HPD)
+        span  link for details. 
       table.w-100
         thead
           tr
@@ -133,8 +139,12 @@ html
             td.f7.tl.pr2.pt1.pl2 !{complaint.owner}
             td.f7.no-print !{complaint.hpdlink} !{complaint.bislink} !{complaint.acrislink} !{complaint.taxlink}
     div.fl.w-100.tc.mt4.ph4.pb2.bg-black-10
-      p.f3.tl.mt3.mb1 Buildings with 10+ HPD violations last month
-      p.f6.tl.mt0.mb3.lighttext HPD violations can indicate a landlord is neglecting or actively harassing tenants (currently August 2017)
+      p.f3.tl.mt3.mb1 Buildings with 10+ new HPD violations last month
+      p.f6.tl.mt0.mb3.lighttext.lh-copy HPD issues violations of the Housing Maintenance Code after inspecting building conditions. Class A, B, and C violations can indicate a landlord is neglecting or actively harassing tenants, Class C being the most severe (
+        a(href='http://www1.nyc.gov/assets/hpd/downloads/pdf/ABCs-housing-singlepg.pdf', target='_blank') info, p.7
+        span ). Click a building's 
+        a(href='https://hpdonline.hpdnyc.org/HPDonline/provide_address.aspx', target='_blank') (HPD)
+        span  link for more details. 
       table.w-100
         thead
           tr
@@ -176,8 +186,10 @@ html
             td.f7.tl.pr2.pt1 !{violation.owner}
             td.f7.no-print !{violation.hpdlink} !{violation.bislink} !{violation.acrislink} !{violation.taxlink}
     div.fl.w-100.tc.mt4.ph4.pb2.bg-black-10
-      p.f3.tl.mt3.mb1 Buildings with 2+ DOB Complaints last month
-      p.f6.tl.mt0.mb3.lighttext DOB complaints indicate issues related to construction and overall building conditions. 
+      p.f3.tl.mt3.mb1 Buildings with 2+ new DOB Complaints last month
+      p.f6.tl.mt0.mb3.lighttext.lh-copy Complaints that tenants make about construction or certain building conditions (e.g. broken elevator) get sent to the Department of Buildings. Click a building's 
+        a(href='http://a810-bisweb.nyc.gov/bisweb/bsqpm01.jsp', target='_blank') (DOB)
+        span  link for details through the Building Information System. 
       table.w-100
         thead
           tr
@@ -199,7 +211,8 @@ html
             th.w-10.no-print
         tbody
         each complaint in dobComplaints
-          tr.f6
+          - var trStyle = rowClass(bblCount[complaint.bbl].length);
+          tr(class=trStyle)
             td.f6.pr3.tl #{complaint.bbl}
             td.f6.tl !{complaint.googlelink}
             td #{complaint.residentialunits}
@@ -209,8 +222,12 @@ html
             td.f7.tl.pr2.pt1.pl2 !{complaint.owner}
             td.f7.no-print !{complaint.hpdlink} !{complaint.bislink} !{complaint.acrislink} !{complaint.taxlink}
     div.fl.w-100.tc.mt4.ph4.pb2.bg-black-10
-      p.f3.tl.mt3.mb1 Buildings with DOB permit applications filed last month
-      p.f6.tl.mt0.mb3.lighttext Construction permit applications may reflect Individual Apartment Improvements (Alt 2 permits) that are used to destabilize apartments.
+      p.f3.tl.mt3.mb1 Buildings with new DOB permit applications filed last month
+      p.f6.tl.mt0.mb3.lighttext.lh-copy Construction permit applications show a landlord's intention to do construction and renovations, which can be used to destabilize apartments: for example, Alt 2 permits may represent work that will justify Individual Apartment Improvement rent increases (
+        a(href='http://www1.nyc.gov/assets/buildings/pdf/pw1_userguide.pdf', target='_blank') more info on permit types, p.5
+        span ). Click a building's 
+        a(href='http://a810-bisweb.nyc.gov/bisweb/bsqpm01.jsp', target='_blank') (DOB)
+        span  link for details through the Building Information System. 
       table.w-100
         thead
           tr
@@ -236,7 +253,8 @@ html
             th.w-10.no-print
         tbody
         each job in dobjobs
-          tr.f6
+          - var trStyle = rowClass(bblCount[job.bbl].length);
+          tr(class=trStyle)
             td.pr3.tl #{job.bbl}
             td.tl !{job.googlelink}
             td #{job.residentialunits}
@@ -247,5 +265,46 @@ html
             td #{job.dm}
             td.f7.tl.pr2.pt1 !{job.owner}
             td.f7.no-print !{job.hpdlink} !{job.bislink} !{job.acrislink} !{job.taxlink}
-    div.fl.w-100.tc.mv3.f5
+    div.fl.w-100.tl.pl3.mv3.f5
       a(href='/index.html').no-print Back
+      span  | 
+      a(href='#') Top
+    //- Screen version
+    div.fl.w-100.bg-black-10.f6.pl4
+      div.pt3.lighttext.no-print
+        span Data sources: 
+        a(href='http://taxbills.nyc') taxbills.nyc
+        span  (
+        a(href='https://github.com/talos/nyc-stabilization-unit-counts') @talos
+        span , 
+        a(href='http://taxbills.nyc/DATALICENSE-CC-BY-SA.html') CC BY-SA
+        span ), 
+        a(href='http://www1.nyc.gov/site/finance/taxes/property-rolling-sales-data.page' target='blank') DOF Rolling Sales
+        span , 
+        a(href='https://data.cityofnewyork.us/Housing-Development/Housing-Maintenance-Code-Complaints/uwyv-629c/data' target='blank') HPD Complaints
+        span , 
+        a(href='https://data.cityofnewyork.us/Housing-Development/Housing-Maintenance-Code-Violations/wvxf-dwi5/data' target='blank') HPD Violations
+        span , 
+        a(href='https://data.cityofnewyork.us/Housing-Development/DOB-Complaints-Received/eabe-havv/data' target='blank') DOB Complaints
+        span , 
+        a(href='https://data.cityofnewyork.us/Housing-Development/DOB-Job-Application-Filings/ic3t-wcy2/data' target='blank') DOB Job Application Filings
+    //- Print version
+    div.fl.w-100.bg-black-10.f6.pl4
+      div.pt3.lighttext.no-screen
+        span Data sources: taxbills.nyc (github.com/talos, CC BY-SA), Department of Finance Rolling Sales; NYC OpenData Portal: Housing Maintenance Code Complaints, Housing Maintenance Code Violations, DOB Complaints Received, DOB Job Applications Filed,  
+        div.fl.w-100.bg-black-10 
+      div.pr3.pt3.lighttext
+        span#notes Notes: Rent stabilized unit numbers are approximate and based on property tax bills from the NYC Department of Finance: click a building's 
+        a(href='http://nycprop.nyc.gov/nycproperty/nynav/jsp/selectbbl.jsp', target='_blank') (Taxes)
+        span  link for individual property tax bills. Missing or fluctuating numbers may be due to missing/incorrect registration by the owner or inconsistencies in property tax documentation. NYS Housing and Community Renewal maintains the most accurate information on rent stabilization, which is not available to the public. 
+      table
+        thead
+          tr
+            th.pv3.w-40.black.lighttext
+              span Made possible by support from
+            th.w-40.pl2
+              img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/fordlogo.png')
+            th.w-20.pv3.w-40.black.lighttext
+              span and 
+                a(href='https://github.com/aepyornis/nyc-db' target='_blank') Ziggy 
+                span.no-screen : https://github.com/aepyornis/nyc-db
