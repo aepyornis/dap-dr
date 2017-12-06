@@ -1,13 +1,12 @@
 html, body, div, table, th, tbody, thead {
     font-family: 'Montserrat', sans-serif;
     font-weight:400;
-
 }
-
 
 h1, h2, h3, h4 {
     font-weight:500;
 }
+
 
 a:link, a:visited {
     color: #1b4fd3;
