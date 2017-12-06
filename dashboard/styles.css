@@ -27,15 +27,20 @@ a:hover {
 }
 
 .dapred {
-    background-color: #e4492a
+    background-color: #e4492a;
+    -webkit-print-color-adjust: exact;
 }
 
 .daporange {
-    background-color: #fdbb50
+    background-color: #fdbb50;
+    -webkit-print-color-adjust: exact;
+    
 }
 
 .dapyellow {
-    background-color: #fede88
+    background-color: #fede88;
+    -webkit-print-color-adjust: exact;
+    
 }
 
 .highlight {
