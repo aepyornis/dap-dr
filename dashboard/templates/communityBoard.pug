@@ -26,14 +26,19 @@ html
         - var mapurl = 'https://github.com/aepyornis/dap-dr/blob/master/dashboard/cdmaps/' + district.cd + '-01.png?raw=true'
           img(src=mapurl).fl
       div.fl.tc.pl4.pr5.w-75.lh-copy
-        p.f6.tl.lh-title.lighttext A monthly update of 
-         span.highlight harassment and displacement risk in rent stabilized buildings
-         span  in 
-         span.medtext #{district.borough} #{district.name}
-         span . Risk indicators include sales, HPD complaints, HPD violations, DOB complaints, and DOB construction permit applications. A building appearing on one or more of these lists can mean that residents are facing displacement pressure and affordable apartments are threatened.
-        p.tl.f6.lighttext All buildings listed have registered stabilized units at least once between 2007 and 2016, according to our data (
-          a(href='#notes') Notes
-          span ).
+        p.f6.tl.lighttext A monthly update of 
+          span.highlight harassment and displacement risk in rent stabilized buildings
+          span  in 
+          span.medtext #{district.borough} #{district.name}
+          span . Risk indicators include sales, HPD complaints, HPD violations, DOB complaints, and DOB construction permit applications. 
+          span  Buildings that appear on multiple lists are coded 
+          span.dapyellow.black.ph1 yellow
+          span , 
+          span.daporange.black.ph1 orange
+          span , or 
+          span.dapred.white.ph1.lighttext red
+          span , based on the number of lists they're on.
+
         p.f6.tl.lighttext.no-print The 
          span.fakelink blue links
          span  let you click through directly to a property's 
@@ -47,6 +52,9 @@ html
          span , or 
          a(href='http://nycprop.nyc.gov/nycproperty/nynav/jsp/selectbbl.jsp', target='_blank') property tax information
          span . You can also click a building address to view it in Google Maps.
+        p.tl.f6.lighttext All buildings listed have registered stabilized units at least once between 2007 and 2016 (
+          a(href='#notes').no-print Notes
+          span ).
       div.fl.pb3.w-100
         p.tc.mb1.f6.lighttext If a building appears on more than one of the lists below in a given month it will be flagged: 
         table.ph4.w-100
@@ -59,12 +67,13 @@ html
               th
                 img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/riskred.png').risks
     div.fl.w-100.pt3.ph4.pb2.bg-black-10
-      p.f3.tl.mt0.mb1 Sales of residential buildings last month
-      p.f6.tl.mt0.mb3.lighttext.lh-copy A large purchase price can mean the new owner plans to displace tenants to make more profit. Buildings on this list sold for more than $50,000, which we use as a proxy for "real" sales versus other types of transfers. Sales data is messy – click a building's 
-        a(href='https://a836-acris.nyc.gov/DS/DocumentSearch/BBL', target='_blank') (ACRIS)
-        span  link for more detailed documentation. 
+      p.f3.tl.mt0.mb1 New sales of residential buildings last month
+      p.f6.tl.mt0.mb3.lighttext.lh-copy A large sale price can mean the new owner plans to displace tenants to make more profit. Buildings on this list sold for more than $50,000, which we use as a proxy for "real" sales versus other types of transfers. 
+        span.no-print Sales data is messy – click a building's 
+        a(href='https://a836-acris.nyc.gov/DS/DocumentSearch/BBL', target='_blank').no-print (ACRIS)
+        span.no-print  link for more detailed documentation. 
         span.medtext Note: 
-        span Data from the Department of Finance can lag, so these sales might be from the month before last (currently September 2017)
+        span Data from the Department of Finance can lag, so these sales might be from the month before last. (currently September 2017)
       table.w-100
         thead
           tr
@@ -97,16 +106,17 @@ html
             td.tc #{sale.unitsres}
             td.gray.tc #{sale.uc2007} 
             td.tc #{sale.uc2016}
-            td.tc #{sale.saleprice}
+            td.tc $#{sale.saleprice}
             td.tc $ #{sale.ppgsf}
             td #{sale.iso_date}
             td.f7.tl.pr2.pt1.pl2 !{sale.owner}
             td.f7.tc.no-print !{sale.hpdlink} !{sale.bislink} !{sale.acrislink} !{sale.taxlink}
     div.fl.w-100.tc.mt4.ph4.pb2.bg-black-10
       p.f3.tl.mt3.mb1 Buildings with 3+ new HPD Complaints last month
-      p.f6.tl.mt0.mb3.lighttext.lh-copy Complaints that tenants make about conditions in their apartment or building get sent to Housing Preservation and Development for inspection. One complaint can include multiple problems in an apartment or a building. Click a building's 
-        a(href='https://hpdonline.hpdnyc.org/HPDonline/provide_address.aspx', target='_blank') (HPD)
-        span  link for details. 
+      p.f6.tl.mt0.mb3.lighttext.lh-copy Complaints that tenants make about conditions in their apartment or building get sent to Housing Preservation and Development for inspection. One complaint can include multiple problems in an apartment or a building. 
+        span.no-print Click a building's 
+        a(href='https://hpdonline.hpdnyc.org/HPDonline/provide_address.aspx', target='_blank').no-print (HPD)
+        span.no-print  link for details. 
       table.w-100
         thead
           tr
@@ -140,11 +150,13 @@ html
             td.f7.no-print !{complaint.hpdlink} !{complaint.bislink} !{complaint.acrislink} !{complaint.taxlink}
     div.fl.w-100.tc.mt4.ph4.pb2.bg-black-10
       p.f3.tl.mt3.mb1 Buildings with 10+ new HPD violations last month
-      p.f6.tl.mt0.mb3.lighttext.lh-copy HPD issues violations of the Housing Maintenance Code after inspecting building conditions. Class A, B, and C violations can indicate a landlord is neglecting or actively harassing tenants, Class C being the most severe (
-        a(href='http://www1.nyc.gov/assets/hpd/downloads/pdf/ABCs-housing-singlepg.pdf', target='_blank') info, p.7
-        span ). Click a building's 
-        a(href='https://hpdonline.hpdnyc.org/HPDonline/provide_address.aspx', target='_blank') (HPD)
-        span  link for more details. 
+      p.f6.tl.mt0.mb3.lighttext.lh-copy HPD issues violations of the Housing Maintenance Code after inspecting building conditions. Class A, B, and C violations can indicate a landlord is neglecting or actively harassing tenants, Class C being the most severe 
+        span.no-print (
+        a(href='http://www1.nyc.gov/assets/hpd/downloads/pdf/ABCs-housing-singlepg.pdf', target='_blank').no-print info, p.7
+        span.no-print ). Click a building's 
+        a(href='https://hpdonline.hpdnyc.org/HPDonline/provide_address.aspx', target='_blank').no-print (HPD)
+        span.no-print  link for more details
+        span . 
       table.w-100
         thead
           tr
@@ -187,9 +199,10 @@ html
             td.f7.no-print !{violation.hpdlink} !{violation.bislink} !{violation.acrislink} !{violation.taxlink}
     div.fl.w-100.tc.mt4.ph4.pb2.bg-black-10
       p.f3.tl.mt3.mb1 Buildings with 2+ new DOB Complaints last month
-      p.f6.tl.mt0.mb3.lighttext.lh-copy Complaints that tenants make about construction or certain building conditions (e.g. broken elevator) get sent to the Department of Buildings. Click a building's 
-        a(href='http://a810-bisweb.nyc.gov/bisweb/bsqpm01.jsp', target='_blank') (DOB)
-        span  link for details through the Building Information System. 
+      p.f6.tl.mt0.mb3.lighttext.lh-copy Complaints that tenants make about construction or certain building conditions (e.g. broken elevator) get sent to the Department of Buildings. 
+        span.no-print Click a building's 
+        a(href='http://a810-bisweb.nyc.gov/bisweb/bsqpm01.jsp', target='_blank').no-print (DOB)
+        span.no-print  link for details through the Building Information System. 
       table.w-100
         thead
           tr
@@ -223,11 +236,13 @@ html
             td.f7.no-print !{complaint.hpdlink} !{complaint.bislink} !{complaint.acrislink} !{complaint.taxlink}
     div.fl.w-100.tc.mt4.ph4.pb2.bg-black-10
       p.f3.tl.mt3.mb1 Buildings with new DOB permit applications filed last month
-      p.f6.tl.mt0.mb3.lighttext.lh-copy Construction permit applications show a landlord's intention to do construction and renovations, which can be used to destabilize apartments: for example, Alt 2 permits may represent work that will justify Individual Apartment Improvement rent increases (
-        a(href='http://www1.nyc.gov/assets/buildings/pdf/pw1_userguide.pdf', target='_blank') more info on permit types, p.5
-        span ). Click a building's 
-        a(href='http://a810-bisweb.nyc.gov/bisweb/bsqpm01.jsp', target='_blank') (DOB)
-        span  link for details through the Building Information System. 
+      p.f6.tl.mt0.mb3.lighttext.lh-copy Construction permit applications show a landlord's intention to do construction and renovations, which can be used to destabilize apartments: for example, Alt 2 permits may represent work that will justify Individual Apartment Improvement rent increases 
+        span.no-print (
+        a(href='http://www1.nyc.gov/assets/buildings/pdf/pw1_userguide.pdf', target='_blank').no-print more info on permit types, p.5
+        span.no-print ). Click a building's 
+        a(href='http://a810-bisweb.nyc.gov/bisweb/bsqpm01.jsp', target='_blank').no-print (DOB)
+        span.no-print  link for details through the Building Information System
+        span . 
       table.w-100
         thead
           tr
@@ -269,42 +284,45 @@ html
       a(href='/index.html').no-print Back
       span  | 
       a(href='#') Top
-    //- Screen version
     div.fl.w-100.bg-black-10.f6.pl4
-      div.pt3.lighttext.no-print
-        span Data sources: 
+      div.pr3.pt3
+        span The 
+        a(href='http://www.anhd.org', target='_blank') Association for Neighborhood and Housing Development
+        span  produces these District Reports and 
+        a(href='http://map.dapmapnyc.org/app', target='_blank') DAP Map
+        span  as part of its Displacement Alert Project. Email lucy.b@anhd.org with feedback or questions. 
+      div.pt3.lighttext
+        span.medtext Data sources: 
         a(href='http://taxbills.nyc') taxbills.nyc
         span  (
-        a(href='https://github.com/talos/nyc-stabilization-unit-counts') @talos
+        a(href='https://github.com/talos/nyc-stabilization-unit-counts') github.com/talos
         span , 
         a(href='http://taxbills.nyc/DATALICENSE-CC-BY-SA.html') CC BY-SA
-        span ), 
+        span ); 
         a(href='http://www1.nyc.gov/site/finance/taxes/property-rolling-sales-data.page' target='blank') DOF Rolling Sales
+        span ; NYC OpenData Portal: 
+        a(href='https://data.cityofnewyork.us/Housing-Development/Housing-Maintenance-Code-Complaints/uwyv-629c/data' target='blank') Housing Maintenance Code Complaints
         span , 
-        a(href='https://data.cityofnewyork.us/Housing-Development/Housing-Maintenance-Code-Complaints/uwyv-629c/data' target='blank') HPD Complaints
+        a(href='https://data.cityofnewyork.us/Housing-Development/Housing-Maintenance-Code-Violations/wvxf-dwi5/data' target='blank') Housing Maintenance Code Violations
         span , 
-        a(href='https://data.cityofnewyork.us/Housing-Development/Housing-Maintenance-Code-Violations/wvxf-dwi5/data' target='blank') HPD Violations
+        a(href='https://data.cityofnewyork.us/Housing-Development/DOB-Complaints-Received/eabe-havv/data' target='blank') DOB Complaints Received
         span , 
-        a(href='https://data.cityofnewyork.us/Housing-Development/DOB-Complaints-Received/eabe-havv/data' target='blank') DOB Complaints
-        span , 
-        a(href='https://data.cityofnewyork.us/Housing-Development/DOB-Job-Application-Filings/ic3t-wcy2/data' target='blank') DOB Job Application Filings
-    //- Print version
-    div.fl.w-100.bg-black-10.f6.pl4
-      div.pt3.lighttext.no-screen
-        span Data sources: taxbills.nyc (github.com/talos, CC BY-SA), Department of Finance Rolling Sales; NYC OpenData Portal: Housing Maintenance Code Complaints, Housing Maintenance Code Violations, DOB Complaints Received, DOB Job Applications Filed,  
-        div.fl.w-100.bg-black-10 
+        a(href='https://data.cityofnewyork.us/Housing-Development/DOB-Job-Application-Filings/ic3t-wcy2/data' target='blank') DOB Job Applications Filed
       div.pr3.pt3.lighttext
-        span#notes Notes: Rent stabilized unit numbers are approximate and based on property tax bills from the NYC Department of Finance: click a building's 
-        a(href='http://nycprop.nyc.gov/nycproperty/nynav/jsp/selectbbl.jsp', target='_blank') (Taxes)
-        span  link for individual property tax bills. Missing or fluctuating numbers may be due to missing/incorrect registration by the owner or inconsistencies in property tax documentation. NYS Housing and Community Renewal maintains the most accurate information on rent stabilization, which is not available to the public. 
+        span#notes.medtext Notes: 
+        span Rent stabilized unit numbers are approximate and based on property tax bills from the NYC Department of Finance
+        span.no-print : click a building's 
+        a(href='http://nycprop.nyc.gov/nycproperty/nynav/jsp/selectbbl.jsp', target='_blank').no-print (Taxes)
+        span.no-print  link for individual property tax bills
+        span . Missing or fluctuating numbers may be due to missing/incorrect registration by the owner or inconsistencies in property tax documentation. NYS Housing and Community Renewal maintains the most accurate information on rent stabilization, which is not available to the public.
       table
         thead
           tr
-            th.pv3.w-40.black.lighttext
+            th.pv3.black.lighttext
               span Made possible by support from
-            th.w-40.pl2
+            th
               img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/fordlogo.png')
-            th.w-20.pv3.w-40.black.lighttext
+            th.pv3.black.lighttext.pl1
               span and 
-                a(href='https://github.com/aepyornis/nyc-db' target='_blank') Ziggy 
-                span.no-screen : https://github.com/aepyornis/nyc-db
+                a(href='https://github.com/aepyornis/nyc-db' target='_blank') Ziggy (github.com/aepyornis)
+                span .

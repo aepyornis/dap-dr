@@ -1,4 +1,4 @@
-select bbl
+select *
 from dobjobs
 /*changed this because I don't need it, it was ziggy's*/
 where jobtype = 'not real building' 

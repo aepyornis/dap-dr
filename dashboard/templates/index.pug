@@ -7,7 +7,7 @@ html
   body
     div.title.tc.fl.w-100.pt2.white.dapgray.mb3
       img.w-30(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/dapdrlogo.png')
-    div.f4.pl4.black-70
+    div.f5.pl4.black-70
       p DAP District Reports provide monthly updates on harassment and displacement risk in rent stabilized buildings. Risk indicators include 
         span.black sales
         span , 
@@ -26,23 +26,7 @@ html
         span.dapred.white.ph1.lighttext red
         span , depending on the level of risk.
       p
-        span.highlight Organizers have limited time and capacity, and we created DAP District Reports to make it easier to prioritize where to do outreach. These reports give regular updates on displacement risk in the neighborhoods where our organizers work.
-    //- table.pa2.w-100
-    //-     thead
-    //-       tr.black
-    //-         th.w-20.f4 
-    //-           a(href='#tag') Bronx
-    //-         th.w-20.f4 Brooklyn
-    //-         th.w-20.f4 Manhattan
-    //-         th.w-20.f4 Queens
-    //-         th.w-20.f4 Staten Island
-
-    //- - function rps () {
-    //-   var counter = document.getElementById('counter');
-    //-   var number = +counter.innerHTML;
-    //-   //- number++;
-    //-   counter.innerHTML = number;}
-
+        span.highlight Organizers have limited time and capacity, and we created DAP District Reports to make it easier to prioritize where to do outreach. These reports give regular updates on displacement risk to stabilized tenants in the neighborhoods where our organizers work.
     for boro in districts
         div.fl.w-100.ph4
           h2.f3.black #{boro[0]} 
@@ -51,24 +35,21 @@ html
               a(href=`${district.cd}.html`) 
                 span.black-90 #{district.name}: 
                 | #{district.neighborhoods}
-    div.fl.w-100.bg-black-10 
-      table.ph4
+    div.fl.w-100.bg-black-10.f6.pl4
+      div.pr3.pt3
+        span The 
+        a(href='http://www.anhd.org', target='_blank') Association for Neighborhood and Housing Development
+        span  produces these District Reports and 
+        a(href='http://map.dapmapnyc.org/app', target='_blank') DAP Map
+        span  as part of its Displacement Alert Project. Email lucy.b@anhd.org with feedback or questions. 
+      table
         thead
           tr
-            th.pv3.pl4.w-40.black.lighttext
+            th.pv3.black.lighttext
               span Made possible by support from
-            th.w-40.pl2
+            th
               img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/fordlogo.png')
-            th.w-20.pv3.w-40.black.lighttext
+            th.pv3.black.lighttext.pl1
               span and 
-                a(href='https://github.com/aepyornis/nyc-db') Ziggy
-    //- main.mb3
-    //-   div.fl.w-100.ph4
-    //-     h2.f3.black#bronx Bronx
-    //-     for district in #{boro[0]}
-    //-         div.fl.w-80.mb3.links
-    //-           a(href=`${district.cd}.html`) 
-    //-             span.black-90 #{district.name}: 
-    //-             | #{district.neighborhoods}
-      
-
+                a(href='https://github.com/aepyornis/nyc-db' target='_blank') Ziggy (github.com/aepyornis)
+                span .

@@ -7,6 +7,10 @@ h1, h2, h3, h4 {
     font-weight:500;
 }
 
+table {
+    border-spacing: 0;
+    padding: 1px;
+}
 
 a:link, a:visited {
     color: #1b4fd3;
@@ -95,6 +99,11 @@ a:hover {
         font-size: 0.75rem !important;
     }
 
+    a:link, a:visited {
+        color: black;
+        text-decoration: none;
+        font-weight: 400;
+    }
     
 }
 
