@@ -16,7 +16,7 @@ html
             th.w-45.pl3
               p.f3.medtext.ma1.black-90 #{district.borough} #{district.name} 
             th.w-20.pr6
-              p.f3.black OCTOBER 2017
+              p.f3.black NOVEMBER 2017
     div.w-100.bg-black-10.tc.fl
       p.mv1.pl4 #{district.neighborhoods}
     div.fl.w-100.tl.pl3.mt2.f5
@@ -73,7 +73,7 @@ html
         a(href='https://a836-acris.nyc.gov/DS/DocumentSearch/BBL', target='_blank').no-print (ACRIS)
         span.no-print  link for more detailed documentation. 
         span.medtext Note: 
-        span Data from the Department of Finance can lag, so these sales might be from the month before last. (currently September 2017)
+        span Data from the Department of Finance can lag, so these sales might be from the month before last. 
       table.w-100
         thead
           tr
@@ -103,11 +103,11 @@ html
           tr(class=trStyle)
             td.pr3.tl #{sale.bbl}
             td.tl !{sale.googlelink}
-            td.tc #{sale.unitsres}
+            td.tc #{sale.residentialunits}
             td.gray.tc #{sale.uc2007} 
             td.tc #{sale.uc2016}
             td.tc $#{sale.saleprice}
-            td.tc $ #{sale.ppgsf}
+            td.tc $#{sale.ppgsf}
             td #{sale.iso_date}
             td.f7.tl.pr2.pt1.pl2 !{sale.owner}
             td.f7.tc.no-print !{sale.hpdlink} !{sale.bislink} !{sale.acrislink} !{sale.taxlink}

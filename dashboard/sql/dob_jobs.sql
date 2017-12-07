@@ -16,7 +16,7 @@ SELECT subset.*,
        '%20',
        split_part(address,' ',4),
        '" target="_blank">',
-       replace(trim(both'"{}"' from cast(corpnames as text)), '"',''),
+       replace(trim(both'"{}",' from cast(corpnames as text)), '"',''),
         ' </a>'
            )) as owner
     from
