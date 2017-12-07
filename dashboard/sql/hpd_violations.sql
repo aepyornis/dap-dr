@@ -26,13 +26,13 @@ SELECT subset.*,
 	pluto.unitsres as residentialunits,
 	uc2007, uc2016,
     pluto.borocode,
-	count(case when violationclass = 'A' then 1 else null end) as class_a,
-	count(case when violationclass = 'B' then 1 else null end) as class_b,
-	count(case when violationclass = 'C' then 1 else null end) as class_c,
+	count(case when "class" = 'A' then 1 else null end) as class_a,
+	count(case when "class" = 'B' then 1 else null end) as class_b,
+	count(case when "class" = 'C' then 1 else null end) as class_c,
 		sum(case
-		when violationclass = 'A' then 1
-		when violationclass = 'B' then 1
-		when violationclass = 'C' then 1
+		when "class" = 'A' then 1
+		when "class" = 'B' then 1
+		when "class" = 'C' then 1
 		else 0 end) as total,
         concat('<a href="https://hpdonline.hpdnyc.org/HPDonline/Provide_address.aspx?p1=',
             pluto.borocode,
@@ -85,7 +85,7 @@ SELECT subset.*,
        and novissueddate < date_trunc('month', current_date - interval '3 month')
        AND coalesce(uc2007,uc2008, uc2009, uc2010, uc2011, uc2012, uc2013, uc2014,uc2015,uc2016) is not null
     group by viols.bbl, pluto.cd, pluto.address, residentialunits, uc2007, uc2016, borocode, pluto.block, pluto.lot, pluto.zipcode
-    having count(violationclass) > 9
+    having count("class") > 9
     ) as subset
 LEFT JOIN hpd_registrations_grouped_by_bbl_with_contacts hpd_reg on hpd_reg.bbl = subset.bbl
 group by subset.bbl, cd, address, residentialunits, uc2007, uc2016, class_a, class_b, class_c, total, borocode, hpdlink, bislink, acrislink, googlelink, taxlink
