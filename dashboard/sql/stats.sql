@@ -21,7 +21,8 @@ select	'buildingsWithOpenViolations' as name,
 	count(distinct ov_bbls.*) as d
 from (
 	select distinct bbl as bbl
-     	from hpd_open_violations
+     	from hpd_violations
+	where currentstatusid not in (3,6,9,19,36)
 ) as ov_bbls
 inner join pluto_16v2 on pluto_16v2.bbl = ov_bbls.bbl
 where pluto_16v2.cd = '${ cd }'
@@ -32,7 +33,8 @@ select 'totalNumberOfOpenViolations' as name,
        sum(ov.c) as d
 from (
 	select bbl, count(*) as c
-     	from hpd_open_violations
+     	from hpd_violations
+	where currentstatusid not in (3,6,9,19,36)
     	group by bbl
       ) as ov
 left join pluto_16v2 on pluto_16v2.bbl = ov.bbl
