@@ -12,6 +12,12 @@ table {
     padding: 1px;
 }
 
+.sticky {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+}
+
 a:link, a:visited {
     color: #1b4fd3;
     text-decoration: none;

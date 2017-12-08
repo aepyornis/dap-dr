@@ -8,8 +8,12 @@ html
     div.title.tc.fl.w-100.pt2.white.dapgray.mb3
       img.w-30(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/dapdrlogo.png')
     div.f5.pl4.black-70
-      p DAP District Reports provide monthly updates on harassment and displacement risk in rent stabilized buildings. Risk indicators include 
-        span.black sales
+      p
+        span.highlight Tenant organizers have limited time and capacity. 
+          | ANHD produces DAP District Reports to help them prioritize outreach by giving monthly updates on displacement risk to stabilized tenants 
+          | in the neighborhoods where organizers work.
+      p DAP District Reports provide a list of rent stabilized buildings by Community Board where tenants may be at risk of harassment and displacement. Displacement risk is indicated by new 
+        span.black property sales
         span , 
         span.black HPD complaints
         span , 
@@ -17,7 +21,8 @@ html
         span , 
         span.black DOB complaints
         span , and 
-        span.black DOB construction permit applications.
+        span.black DOB construction permit applications. 
+        span The reports are updated monthly with new data.
       p Buildings that appear on multiple lists are coded 
         span.dapyellow.black.ph1 yellow
         span , 
@@ -25,23 +30,23 @@ html
         span , or 
         span.dapred.white.ph1.lighttext red
         span , depending on the level of risk.
-      p
-        span.highlight Organizers have limited time and capacity, and we created DAP District Reports to make it easier to prioritize where to do outreach. These reports give regular updates on displacement risk to stabilized tenants in the neighborhoods where our organizers work.
     for boro in districts
-        div.fl.w-100.ph4
-          h2.f3.black #{boro[0]} 
-          for district in boro[1]
-            div.fl.mb3.links.w-90
-              a(href=`${district.cd}.html`) 
-                span.black-90 #{district.name}: 
-                | #{district.neighborhoods}
+      div.fl.w-100.ph4
+        h2.f3.black #{boro[0]} 
+        for district in boro[1]
+          div.fl.mb3.links.w-90
+            a(href=`${district.cd}.html`) 
+              span.black-90 #{district.name}: 
+              | #{district.neighborhoods}
     div.fl.w-100.bg-black-10.f6.pl4
       div.pr3.pt3
         span The 
         a(href='http://www.anhd.org', target='_blank') Association for Neighborhood and Housing Development
         span  produces these District Reports and 
         a(href='http://map.dapmapnyc.org/app', target='_blank') DAP Map
-        span  as part of its Displacement Alert Project. Email lucy.b@anhd.org with feedback or questions. 
+        span  as part of its Displacement Alert Project. Email 
+        a(href='mailto:lucy.b@anhd.org') lucy.b@anhd.org
+        span  with feedback or questions.  
       table
         thead
           tr
