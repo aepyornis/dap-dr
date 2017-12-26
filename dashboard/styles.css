@@ -12,12 +12,6 @@ table {
     padding: 1px;
 }
 
-.sticky {
-    position: sticky;
-    position: -webkit-sticky;
-    top: 0;
-}
-
 a:link, a:visited {
     color: #1b4fd3;
     text-decoration: none;
@@ -69,17 +63,6 @@ a:hover {
     font-weight: 300;
 }
 
-.fakelink {
-    color: #1b4fd3;
-    text-decoration: none;
-    font-weight: 400;
-}
-
-.fakelink:hover {
-    background-color: #b6b6b6 
-    
-}
-
 .center {
     text-align: center;
 }
@@ -95,16 +78,13 @@ a:hover {
     {
         display: none !important;
     }
-
+    .panel {display: block !important;}
     .no-screen {}
-
-
     html, body, div, table, th, tbody, thead {
         font-family: 'Montserrat', sans-serif;
         font-weight:400;
         font-size: 0.75rem !important;
     }
-
     a:link, a:visited {
         color: black;
         text-decoration: none;
@@ -117,5 +97,36 @@ a:hover {
 {
     .no-print{}
     .no-screen{display:none;}
+    .panel{display:none;}
 }
 
+.accordion {
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+ .accordion:hover {
+    background-color: #c4b9b9
+}
+
+/* .f6 {
+    font-size: 30px;
+} */
+/* 
+@media(min-width:60){
+    .f6 {
+        font-size: 30px !important;
+    }
+} */
+
+/* p{color:green;} */
+
+
+.f4, .f5, .f6, .f7 {
+    font-size: 120%;
+}
+
+@media(min-width:320px){
+    .f6 {
+        font-size: 100%;
+    }

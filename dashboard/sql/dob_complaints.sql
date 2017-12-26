@@ -1,24 +1,25 @@
 select subset.*,
-      first(concat('<a href="http://whoownswhat.justfix.nyc/address/',
-            case 
-                  when borocode = '1' then 'MANHATTAN'
-                  when borocode = '2' then 'BRONX'
-                  when borocode = '3' then 'BROOKLYN'
-                  when borocode = '4' then 'QUEENS'
-                  when borocode = '5' then 'STATEN ISLAND'
-            end,
-            '/',
-            split_part(address,' ',1),
-            '/',
-            split_part(address,' ',2),
-            '%20',
-            split_part(address,' ',3),
-            '%20',
-            split_part(address,' ',4),
-            '" target="_blank">',
-            replace(trim(both'"{}",' from cast(corpnames as text)), '"',''),
-            ' </a>'
-            )) as owner
+      first(replace(trim(both'"{}",' from cast(corpnames as text)), '"','')) as owner
+      -- first(concat('<a href="http://whoownswhat.justfix.nyc/address/',
+      --       case 
+      --             when borocode = '1' then 'MANHATTAN'
+      --             when borocode = '2' then 'BRONX'
+      --             when borocode = '3' then 'BROOKLYN'
+      --             when borocode = '4' then 'QUEENS'
+      --             when borocode = '5' then 'STATEN ISLAND'
+      --       end,
+      --       '/',
+      --       split_part(address,' ',1),
+      --       '/',
+      --       split_part(address,' ',2),
+      --       '%20',
+      --       split_part(address,' ',3),
+      --       '%20',
+      --       split_part(address,' ',4),
+      --       '" target="_blank">',
+      --       replace(trim(both'"{}",' from cast(corpnames as text)), '"',''),
+      --       ' </a>'
+      --       )) as owner
       from
       (select communityboard, 
       pluto.bbl, 
@@ -61,6 +62,9 @@ select subset.*,
                   '&FLOT=',
                   pluto.lot,
                   '" target="_blank">(Taxes)</a>') as taxlink,
+            concat('<a href="http://www.oasisnyc.net/map.aspx?zoomto=lot:',
+                  pluto.bbl,
+                  '" target="_blank">(OASIS)</a>') as oasislink,
             concat('<a href="http://www.google.com/maps/place/',
                   pluto.address,
                   ' ',
@@ -76,11 +80,11 @@ select subset.*,
       AND communityboard = '${ cd }'
       and pluto.unitsres > 0 
       AND COALESCE(uc2007,uc2008, uc2009, uc2010, uc2011, uc2012, uc2013, uc2014,uc2015,uc2016) is not null
-      group by pluto.bbl, concat(housenumber,' ',housestreet), communityboard, pluto.unitsres, uc2007, uc2016, pluto.address, pluto.borocode, pluto.block, pluto.lot, pluto.zipcode
+      group by pluto.bbl, concat(housenumber,' ',housestreet), communityboard, pluto.unitsres, uc2007, uc2016, pluto.address, pluto.borocode, pluto.block, pluto.lot, pluto.zipcode, pluto.bbl
       having count(distinct complaintnumber) > 1
       ) as subset
 LEFT JOIN hpd_registrations_grouped_by_bbl_with_contacts hpd_reg on hpd_reg.bbl = subset.bbl
-group by subset.bbl, address, communityboard, residentialunits, uc2007, uc2016, dobcomplaints, borocode, hpdlink, bislink, acrislink, googlelink, taxlink
+group by subset.bbl, address, communityboard, residentialunits, uc2007, uc2016, dobcomplaints, borocode, hpdlink, bislink, acrislink, googlelink, taxlink, oasislink
       order by communityboard asc, dobcomplaints desc
 
 
