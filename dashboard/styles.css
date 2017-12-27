@@ -15,23 +15,36 @@ table {
 
 .inner {
     display: inline-block;
-    padding: 10px;
     min-width: 240px;
     max-width: 300px;
     vertical-align: middle;
     text-align: center;
  }
 
-.inner2 {
+#intro {
     display: inline-block;
-    min-width: 240px;
-    max-width: 600px;
+    min-width: 320px;
+    max-width: 960px;
     vertical-align: top;
 }
 
  #map {
+     display: inline-block;
      vertical-align: top;
+     min-width: 300px;
+     max-width: 380px;
  }
+
+.key {
+    display: inline-block;
+    min-width: 240px;
+}
+
+.credits {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+}
 
 th, td {
     padding: 5px;
@@ -45,6 +58,10 @@ a:link, a:visited {
 
 a:hover {
     background-color: #b6b6b6 
+}
+
+a.light {
+    font-weight: 300;
 }
 
 .imgstyle:hover {
@@ -131,14 +148,9 @@ a:hover {
 }
 
 
-/* 
-html{
-    font-size:120%;
-    hyphens: auto;
-} 
-tr, td, .f7{font-size:60%;} */
 
-@media(min-width:0em){
+
+/* @media(min-width:0em){
     html{
         font-size: 110%;
     };
@@ -149,7 +161,7 @@ tr, td, .f7{font-size:60%;} */
         font-size: 100%
     };
 
-}
+} */
 
 
 @media 
@@ -158,7 +170,9 @@ only screen and (max-width: 800px),
 
 	/* Force table to not be like tables anymore */
 	table, thead, tbody, th, td, tr { 
-		display: block; 
+        display: block; 
+        text-align: left !important; 
+        
 	}
 	
 	/* Hide table headers (but not display: none;, for accessibility) */
@@ -180,6 +194,7 @@ only screen and (max-width: 800px),
         min-height: 26px;
         /* padding-top: 5px;
         padding-bottom: 5px; */
+        
 	}
 	
 	td:before { 
@@ -189,7 +204,7 @@ only screen and (max-width: 800px),
 		top: 6px;
 		left: 6px;
 		max-width: auto; 
-        padding-right: 10px; 
+        padding-right: 10px;
     }
 
     th {
@@ -199,7 +214,7 @@ only screen and (max-width: 800px),
 
     tr {
         /* margin-top: 10px; */
-        border-top: 6px solid white;
+        border-top: 6px solid #e5e5e5;
         padding-top: 8px;
         padding-bottom: 8px;
 
