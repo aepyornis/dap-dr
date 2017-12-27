@@ -13,6 +13,26 @@ table {
     
 }
 
+.inner {
+    display: inline-block;
+    padding: 10px;
+    min-width: 240px;
+    max-width: 300px;
+    vertical-align: middle;
+    text-align: center;
+ }
+
+.inner2 {
+    display: inline-block;
+    min-width: 240px;
+    max-width: 600px;
+    vertical-align: top;
+}
+
+ #map {
+     vertical-align: top;
+ }
+
 th, td {
     padding: 5px;
 }
@@ -29,6 +49,11 @@ a:hover {
 
 .imgstyle:hover {
     background-color:rgba(0, 0, 0, 0)
+}
+
+#daplogo {
+    width: 300px;
+    padding-left: 0px;
 }
 
 .dapgray {
@@ -66,15 +91,6 @@ a:hover {
 
 .lighttext {
     font-weight: 300;
-}
-
-.center {
-    text-align: center;
-}
-
-.risks {
-    max-width: 340px;
-    width:100%
 }
 
 @media print
@@ -122,24 +138,23 @@ html{
 } 
 tr, td, .f7{font-size:60%;} */
 
-/* @media(min-width:20em){
+@media(min-width:0em){
     html{
-        font-size: 150%;
-        width: 100%;
+        font-size: 110%;
     };
-} */
+} 
 
-/* @media(min-width:40em){
+@media(min-width:480px){
     html{
         font-size: 100%
     };
 
-} */
+}
 
 
 @media 
-only screen and (max-width: 480px),
-(min-device-width: 480px) and (max-device-width: 1024px)  {
+only screen and (max-width: 800px),
+(min-device-width: 800px) and (max-device-width: 1024px)  {
 
 	/* Force table to not be like tables anymore */
 	table, thead, tbody, th, td, tr { 

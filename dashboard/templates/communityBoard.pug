@@ -13,26 +13,22 @@ html
       gtag('js', new Date());
       gtag('config', 'UA-110952392-1');
   body
-    div.title.tc.fl.w-100.pt2.white.dapgray
-      table.pr4.pl4
-        thead  
-          tr
-            th
-              a(href='/').imgstyle
-                img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/dapdrlogo.png')
-            th.pl3
-              p.f3.medtext.ma1.black-90 #{district.borough} #{district.name} 
-            th.pr6
-              p.f3.black NOVEMBER 2017
+    div.dapgray.w-100
+      div.inner
+        a(href='/').imgstyle
+          img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/dapdrlogo.png')#daplogo
+      div.inner.f4.medtext.black-90
+        div #{district.borough} #{district.name} 
+        div.lighttext November 2017 
     div.w-100.bg-black-10.tc.fl
       p.mv1.pl4 #{district.neighborhoods}
-    div.fl.w-100.tl.pl3.mt2.f5
+    div.fl.w-100.tl.pl2.f5
       a(href='/').no-print Back
     div.fl
-      div.fl.w-25.pl4.pt3.pb2
+      div.w-25.inner
         - var mapurl = 'https://github.com/aepyornis/dap-dr/blob/master/dashboard/cdmaps/' + district.cd + '-01.png?raw=true'
-          img(src=mapurl).fl
-      div.fl.tc.pl4.pr5.w-75.lh-copy
+          img(src=mapurl).pl4
+      div.ph4.inner2
         p.f6.tl.mb1.lighttext A monthly update of 
           span harassment and displacement risk in rent stabilized buildings
           span  in 
@@ -41,7 +37,7 @@ html
           a(href='#notes').no-print Notes
           span.no-print )
           span . 
-        div.f6.fl.tl.mv1
+        div.f6.tl.mv1
           div.lighttext Risk indicators include
           div.pl3.pt1
             a(href='#sales') New sales of residential buildings
@@ -68,7 +64,7 @@ html
               a(href='http://www.oasisnyc.net/map.aspx', target='_blank') OASIS Map
               span  page. You can also click a building address to view it in Google Maps.
       div.fl.pb3.ph1.f6.w-100
-        div.tc.mb1.mt0.lighttext If a building appears on more than one of the lists below in a given month it will be coded: 
+        div.mb1.mt0.lighttext If a building appears on more than one of the lists below in a given month it will be coded: 
         div
           div.fl.w-33
             img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/riskyellow.png')
@@ -76,7 +72,7 @@ html
             img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/riskorange.png')
           div.fl.w-33
             img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/riskred.png')
-        div.fl.tc.w-100 
+        div.fl.w-100 
           span.dapgray Tip:
           span.bg-white.lighttext  to find the building on other lists, copy its BBL (Borough, Block, and Lot code) and use Find (Ctrl+F or &#8984+F)
     div.fl.w-100.mb3.bg-black-10#sales
