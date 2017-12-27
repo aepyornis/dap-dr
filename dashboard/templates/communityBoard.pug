@@ -1,6 +1,7 @@
 doctype html
 html
   head
+    meta( name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes' )
     link(href="https://fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,regular,medium,semi-bold,bold, extra-bold, black" rel="stylesheet") 
     link(rel='stylesheet' href='./tachyons.css')
     link(rel='stylesheet' href='./styles.css') 
@@ -16,12 +17,12 @@ html
       table.pr4.pl4
         thead  
           tr
-            th.w-20
+            th
               a(href='/').imgstyle
                 img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/dapdrlogo.png')
-            th.w-45.pl3
+            th.pl3
               p.f3.medtext.ma1.black-90 #{district.borough} #{district.name} 
-            th.w-20.pr6
+            th.pr6
               p.f3.black NOVEMBER 2017
     div.w-100.bg-black-10.tc.fl
       p.mv1.pl4 #{district.neighborhoods}
@@ -66,24 +67,18 @@ html
               span , or 
               a(href='http://www.oasisnyc.net/map.aspx', target='_blank') OASIS Map
               span  page. You can also click a building address to view it in Google Maps.
-        //- p.tl.f6.lighttext All buildings listed have registered stabilized units at least once between 2007 and 2016 
-        //-   span.no-print (
-        //-   a(href='#notes').no-print Notes
-        //-   span.no-print ). 
-      div.fl.pb3.w-100
-        p.tc.mb1.mt0.f6.lighttext If a building appears on more than one of the lists below in a given month it will be coded: 
-        table.ph4.w-100
-          thead
-            tr
-              th
-                img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/riskyellow.png').risks
-              th
-                img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/riskorange.png').risks
-              th
-                img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/riskred.png').risks
-        p.tc.mv1.f6.no-print 
-          span.dapgray.ph1 Tip:
-          span.lighttext  to find the building on other lists, copy its BBL (Borough, Block, and Lot code) and use Find (Ctrl+F or &#8984+F)
+      div.fl.pb3.ph1.f6.w-100
+        div.tc.mb1.mt0.lighttext If a building appears on more than one of the lists below in a given month it will be coded: 
+        div
+          div.fl.w-33
+            img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/riskyellow.png')
+          div.fl.w-33
+            img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/riskorange.png')
+          div.fl.w-33
+            img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/riskred.png')
+        div.fl.tc.w-100 
+          span.dapgray Tip:
+          span.bg-white.lighttext  to find the building on other lists, copy its BBL (Borough, Block, and Lot code) and use Find (Ctrl+F or &#8984+F)
     div.fl.w-100.mb3.bg-black-10#sales
       div.accordion.f3.tl.pv2.ph4 New sales of residential buildings last month
       div.ph4.pb2.panel
@@ -104,10 +99,10 @@ html
               th BBL
               th.w-20 Address
               th Total Units
-              th(colspan="2").f5 Stabilized Units
-              th.f5.tc Sale Price
-              th.f5.tc Price / Sq Foot
-              th.f5.tc Sale Date &#9662;
+              th(colspan="2") Stabilized Units
+              th Sale Price
+              th Price / Sq Foot
+              th Sale Date &#9662;
               th Owner
               th.w-20.no-print 
             tr
@@ -125,16 +120,16 @@ html
           each sale in recentSales
             - var trStyle = rowClass(bblCount[sale.bbl].length);
             tr(class=trStyle)
-              td.pr2.pl1.tl.f7 #{sale.bbl}
-              td.tl !{sale.googlelink}
-              td.tc #{sale.residentialunits}
-              td.gray.tc #{sale.uc2007} 
-              td.tc #{sale.uc2016}
-              td.tc $#{sale.saleprice}
-              td.tc $#{sale.ppgsf}
-              td #{sale.iso_date}
-              td.f7.tl.pr2.pt1.pl2 !{sale.owner}
-              td.f7.tc.no-print !{sale.hpdlink} !{sale.bislink} !{sale.acrislink} !{sale.taxlink} !{sale.oasislink}
+              td.sales #{sale.bbl}
+              td.sales !{sale.googlelink}
+              td.sales #{sale.residentialunits}
+              td.gray.sales #{sale.uc2007} 
+              td.sales #{sale.uc2016}
+              td.sales $#{sale.saleprice}
+              td.sales $#{sale.ppgsf}
+              td.sales #{sale.iso_date}
+              td.sales !{sale.owner}
+              td.no-print.sales !{sale.hpdlink} !{sale.bislink} !{sale.acrislink} !{sale.taxlink} !{sale.oasislink}
         div.fl.w-100.tl.mv2.f5.no-print
           a(href='#') Top
     div.fl.w-100.mb3.bg-black-10#hpdcomplaints
@@ -154,7 +149,7 @@ html
               th Complaints &#9662;
               th Owner
               th.w-20.no-print  
-            tr 
+            tr
               th.pb3
               th
               th
@@ -167,14 +162,14 @@ html
           each complaint in hpdComplaints
             - var trStyle = rowClass(bblCount[complaint.bbl].length);
             tr(class=trStyle)
-              td.pr2.pl1.tl.f7 #{complaint.bbl}
-              td.tl !{complaint.googlelink}
-              td #{complaint.residentialunits}
-              td.gray #{complaint.uc2007}
-              td #{complaint.uc2016}
-              td #{complaint.hpdcomplaints}
-              td.f7.tl.pr2.pt1.pl2 !{complaint.owner}
-              td.f7.tc.no-print !{complaint.hpdlink} !{complaint.bislink} !{complaint.acrislink} !{complaint.taxlink} !{complaint.oasislink}
+              td.hpdcomplaints #{complaint.bbl}
+              td.hpdcomplaints !{complaint.googlelink}
+              td.hpdcomplaints #{complaint.residentialunits}
+              td.gray.hpdcomplaints #{complaint.uc2007}
+              td.hpdcomplaints #{complaint.uc2016}
+              td.hpdcomplaints #{complaint.hpdcomplaints}
+              td.hpdcomplaints !{complaint.owner}
+              td.no-print.hpdcomplaints !{complaint.hpdlink} !{complaint.bislink} !{complaint.acrislink} !{complaint.taxlink} !{complaint.oasislink}
         div.fl.w-100.tl.mv2.f5.no-print
           a(href='#') Top
     div.fl.w-100.mb3.bg-black-10#hpdviols
@@ -216,17 +211,17 @@ html
           each violation in hpdViolations
             - var trStyle = rowClass(bblCount[violation.bbl].length);
             tr(class=trStyle)
-              td.pr2.pl1.tl.f7 #{violation.bbl}
-              td.tl !{violation.googlelink}
-              td #{violation.residentialunits}
-              td.gray #{violation.uc2007} 
-              td #{violation.uc2016}
-              td #{violation.class_a}
-              td #{violation.class_b}
-              td #{violation.class_c}
-              td #{violation.total}
-              td.f7.tl.pr2.pt1 !{violation.owner}
-              td.f7.tc.no-print !{violation.hpdlink} !{violation.bislink} !{violation.acrislink} !{violation.taxlink} !{violation.oasislink}
+              td.hpdviols #{violation.bbl}
+              td.hpdviols !{violation.googlelink}
+              td.hpdviols #{violation.residentialunits}
+              td.gray.hpdviols #{violation.uc2007} 
+              td.hpdviols #{violation.uc2016}
+              td.hpdviols #{violation.class_a}
+              td.hpdviols #{violation.class_b}
+              td.hpdviols #{violation.class_c}
+              td.hpdviols #{violation.total}
+              td.hpdviols !{violation.owner}
+              td.hpdviols.no-print !{violation.hpdlink} !{violation.bislink} !{violation.acrislink} !{violation.taxlink} !{violation.oasislink}
         div.fl.w-100.tl.mv2.f5.no-print
           a(href='#') Top
     div.fl.w-100.mb3.bg-black-10#dobcomplaints
@@ -259,14 +254,14 @@ html
           each complaint in dobComplaints
             - var trStyle = rowClass(bblCount[complaint.bbl].length);
             tr(class=trStyle).w-100
-              td.pr2.pl1.tl.f7 #{complaint.bbl}
-              td.f6.tl !{complaint.googlelink}
-              td #{complaint.residentialunits}
-              td.gray #{complaint.uc2007}
-              td #{complaint.uc2016}
-              td #{complaint.dobcomplaints}
-              td.f7.tl.pr2.pt1.pl2 !{complaint.owner}
-              td.f7.tc.no-print !{complaint.hpdlink} !{complaint.bislink} !{complaint.acrislink} !{complaint.taxlink} !{complaint.oasislink}
+              td.dobcomplaints #{complaint.bbl}
+              td.dobcomplaints !{complaint.googlelink}
+              td.dobcomplaints #{complaint.residentialunits}
+              td.gray.dobcomplaints #{complaint.uc2007}
+              td.dobcomplaints #{complaint.uc2016}
+              td.dobcomplaints #{complaint.dobcomplaints}
+              td.dobcomplaints !{complaint.owner}
+              td.no-print.dobcomplaints !{complaint.hpdlink} !{complaint.bislink} !{complaint.acrislink} !{complaint.taxlink} !{complaint.oasislink}
         div.fl.w-100.tl.mv2.f5.no-print
           a(href='#') Top
     div.fl.w-100.mb3.bg-black-10#dobjobs
@@ -306,16 +301,16 @@ html
           each job in dobjobs
             - var trStyle = rowClass(bblCount[job.bbl].length);
             tr(class=trStyle)
-              td.pr2.pl1.tl.f7 #{job.bbl}
-              td.tl !{job.googlelink}
-              td #{job.residentialunits}
-              td.gray #{job.uc2007} 
-              td #{job.uc2016}
-              td #{job.a1}
-              td #{job.a2}
-              td #{job.dm}
-              td.f7.tl.pr2.pt1 !{job.owner}
-              td.f7.tc.no-print !{job.hpdlink} !{job.bislink} !{job.acrislink} !{job.taxlink} !{job.oasislink}
+              td.dobjobs #{job.bbl}
+              td.dobjobs !{job.googlelink}
+              td.dobcomplaints #{job.residentialunits}
+              td.gray.dobjobs #{job.uc2007} 
+              td.dobjobs #{job.uc2016}
+              td.dobjobs #{job.a1}
+              td.dobjobs #{job.a2}
+              td.dobjobs #{job.dm}
+              td.dobjobs !{job.owner}
+              td.no-print.dobjobs !{job.hpdlink} !{job.bislink} !{job.acrislink} !{job.taxlink} !{job.oasislink}
     div.fl.w-100.tl.pl3.mt1.mb3.f5.no-print
       a(href='javascript:history.back()') Back
       span  | 
@@ -357,7 +352,7 @@ html
         span.no-print  link for individual property tax bills
         span . Missing or fluctuating numbers may be due to missing/incorrect registration by the owner or inconsistencies in property tax documentation. 
             | NYS Housing and Community Renewal maintains the most accurate information on rent stabilization, which is not available to the public.
-        //- p The threshold of $50,000 is used to differentiate "true" or "arms-length" sales that reflect the property's market value for transfers between people or entities with existing relationships.            
+        p The threshold of $50,000 is used to differentiate "true" or "arms-length" sales that reflect the property's market value for transfers between people or entities with existing relationships.            
       table
         thead
           tr
