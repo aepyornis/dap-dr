@@ -21,19 +21,15 @@ table {
     text-align: center;
  }
 
-#intro {
-    display: inline-block;
-    min-width: 320px;
-    max-width: 960px;
-    vertical-align: top;
+
+.map {
+    min-width: 320px !important;
+    max-width: 460px !important;
 }
 
- #map {
-     display: inline-block;
-     vertical-align: top;
-     min-width: 300px;
-     max-width: 380px;
- }
+.intro {
+    min-width: 340px !important;
+}
 
 .key {
     display: inline-block;
@@ -46,22 +42,25 @@ table {
     text-align: left;
 }
 
+
 th, td {
-    padding: 5px;
+    padding: 2px;
 }
 
-a:link, a:visited {
+a, a:link, a:visited {
     color: #1b4fd3;
     text-decoration: none;
     font-weight: 400;
 }
 
 a:hover {
-    background-color: #b6b6b6 
+    background-color: #b6b6b6; 
+    text-decoration: none !important;
 }
 
-a.light {
+a.light, a.light:hover {
     font-weight: 300;
+    text-decoration: none;    
 }
 
 .imgstyle:hover {
@@ -165,8 +164,8 @@ a.light {
 
 
 @media 
-only screen and (max-width: 800px),
-(min-device-width: 800px) and (max-device-width: 1024px)  {
+only screen and (max-width: 720px),
+(min-device-width: 720px) and (max-device-width: 1024px)  {
 
 	/* Force table to not be like tables anymore */
 	table, thead, tbody, th, td, tr { 

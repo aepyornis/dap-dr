@@ -5,8 +5,13 @@ html
     link(href="https://fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,regular,medium,semi-bold,bold, extra-bold, black" rel="stylesheet") 
     link(rel='stylesheet' href='./tachyons.css')
     link(rel='stylesheet' href='./styles.css') 
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous")
     <!-- Global site tag (gtag.js) - Google Analytics -->
     script(async src="https://www.googletagmanager.com/gtag/js?id=UA-110952392-1")
+    <!--Bootstrap-->
+    script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous")
     script.
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -24,45 +29,47 @@ html
       span #{district.neighborhoods}
     div.fl.w-100.tl.pl4.pt3.f5
       a(href='/').no-print Back
-    div.fl.f5
-      div.w-40.pl4.pt3#map
-        - var mapurl = 'https://github.com/aepyornis/dap-dr/blob/master/dashboard/cdmaps/' + district.cd + '-01.png?raw=true'
-          img(src=mapurl)
-      div.w-60.ph4.pt3.lighttext#intro
-        span.tl A monthly update of 
-        span harassment and displacement risk in rent stabilized buildings
-        span  in 
-        span.medtext #{district.borough} #{district.name}
-        span.no-print  (
-        a(href='#notes').no-print.light Notes
-        span.no-print )
-        span . 
-        div.tl.pt2
-          div.lighttext Risk indicators include
-          div.pt2
-            a(href='#sales') New sales of residential buildings
-          div.pt2
-            a(href='#hpdcomplaints') 5+ new complaints filed with the Department of Housing Preservation and Development (HPD)
-          div.pt2
-            a(href='#hpdviols') 10+ new violations issued by HPD
-          div.pt2
-            a(href='#dobcomplaints') 2+ new complaints filed with the Department of Buildings (DOB)
-          div.pt2
-            a(href='#dobjobs') New DOB construction permit applications.
-          p.tl.lighttext.no-print 
-              span You can click directly to a property's 
-              //-  a(href='http://whoownswhat.justfix.nyc', target='_blank') Who Owns What
-              //-  span  page for owner info, 
-              a(href='https://hpdonline.hpdnyc.org/HPDonline/provide_address.aspx', target='_blank').light HPD building info
-              span , 
-              a(href='http://a810-bisweb.nyc.gov/bisweb/bispi00.jsp', target='_blank').light DOB Building Information System
-              span ,  
-              a(href='https://a836-acris.nyc.gov/DS/DocumentSearch/BBL', target='_blank').light ACRIS financial records
-              span , or 
-              a(href='http://nycprop.nyc.gov/nycproperty/nynav/jsp/selectbbl.jsp', target='_blank').light property tax information
-              span , or 
-              a(href='http://www.oasisnyc.net/map.aspx', target='_blank').light OASIS Map
-              span  page. You can also click a building address to view it in Google Maps.
+    div.fl.f6
+      div.container(style="max-width: none; padding-left: 0px")
+        div.row.pl4.pr3
+          div.pt3.col-sm.map
+            - var mapurl = 'https://github.com/aepyornis/dap-dr/blob/master/dashboard/cdmaps/' + district.cd + '-01.png?raw=true'
+              img(src=mapurl)
+          div.ph4.pt3.lighttext.col-sm.intro
+            span.tl A monthly update of 
+            span harassment and displacement risk in rent stabilized buildings
+            span  in 
+            span.medtext #{district.borough} #{district.name}
+            span.no-print  (
+            a(href='#notes').no-print.light Notes
+            span.no-print )
+            span . 
+            div.tl.pt2
+              div.lighttext Risk indicators include
+              div.pt2
+                a(href='#sales') New sales of residential buildings
+              div.pt2
+                a(href='#hpdcomplaints') 5+ new complaints filed with the Department of Housing Preservation and Development (HPD)
+              div.pt2
+                a(href='#hpdviols') 10+ new violations issued by HPD
+              div.pt2
+                a(href='#dobcomplaints') 2+ new complaints filed with the Department of Buildings (DOB)
+              div.pt2
+                a(href='#dobjobs') New DOB construction permit applications.
+              div.pt2.tl.lighttext.no-print 
+                  span You can click directly to a property's 
+                  //-  a(href='http://whoownswhat.justfix.nyc', target='_blank') Who Owns What
+                  //-  span  page for owner info, 
+                  a(href='https://hpdonline.hpdnyc.org/HPDonline/provide_address.aspx', target='_blank').light HPD building info
+                  span , 
+                  a(href='http://a810-bisweb.nyc.gov/bisweb/bispi00.jsp', target='_blank').light DOB Building Information System
+                  span ,  
+                  a(href='https://a836-acris.nyc.gov/DS/DocumentSearch/BBL', target='_blank').light ACRIS financial records
+                  span , or 
+                  a(href='http://nycprop.nyc.gov/nycproperty/nynav/jsp/selectbbl.jsp', target='_blank').light property tax information
+                  span , or 
+                  a(href='http://www.oasisnyc.net/map.aspx', target='_blank').light OASIS Map
+                  span  page. You can also click a building address to view it in Google Maps.
       div.fl.pt2.pl4.f6.w-95
         div.lighttext If a building appears on more than one of the lists below in a given month it will be coded: 
           div.pt3.pb2
@@ -94,13 +101,13 @@ html
           span data from the Department of Finance can lag, so these sales might be from the month before last. 
         table.w-100
           thead
-            tr
+            tr.tc
               th BBL
-              th.w-20 Address
+              th.pl1.w-20 Address
               th Total Units
-              th(colspan="2") Stabilized Units
+              th(colspan="2") Stab&shy;ilized Units
               th Sale Price
-              th Price / Sq Foot
+              th Price/&shy;Sq. Foot
               th Sale Date &#9662;
               th Owner
               th.w-20.no-print 
@@ -140,12 +147,12 @@ html
           span.no-print  link for details. 
         table.w-100
           thead
-            tr
+            tr.tc
               th BBL
-              th.w-20 Address
+              th.pl1.w-20 Address
               th Total Units
-              th(colspan="2") Stabilized Units
-              th Complaints &#9662;
+              th(colspan="2") Stab&shy;ilized Units
+              th Compl&shy;aints &#9662;
               th Owner
               th.w-20.no-print  
             tr
@@ -183,16 +190,16 @@ html
           span . 
         table.w-100
           thead
-            tr
+            tr.tc
               th BBL
-              th.w-20 Address
+              th.pl1.w-20 Address
               th Total Units
-              th(colspan="2") Stabilized Units
+              th(colspan="2") Stab&shy;ilized Units
               th Class A
               th Class B
               th Class C
               th Total &#9662;
-              th Owner
+              th.pl1 Owner
               th.w-20.no-print 
             tr 
               th.pb3
@@ -232,13 +239,13 @@ html
           span.no-print  link for details through the Building Information System. 
         table.w-100
           thead
-            tr
+            tr.tc
               th BBL
-              th.w-20 Address
+              th.pl1.w-20 Address
               th Total Units
-              th(colspan="2") Stabilized Units
-              th Complaints &#9662;
-              th Owner
+              th(colspan="2") Stab&shy;ilized Units
+              th Compl&shy;aints &#9662;
+              th.pl1 Owner
               th.no-print
             tr 
               th.pb3
@@ -275,15 +282,15 @@ html
           span . 
         table.w-100
           thead
-            tr
+            tr.tc
               th BBL
-              th.w-20 Address
+              th.pl1.w-20 Address
               th Total Units
-              th(colspan="2") Stabilized Units
-              th Alt 1 Permits
-              th Alt 2 Permits &#9662;
-              th DM Permits
-              th Owner
+              th(colspan="2") Stab&shy;ilized Units
+              th Alt 1 Perm&shy;its
+              th Alt 2 Perm&shy;its &#9662;
+              th DM Perm&shy;its
+              th.pl1 Owner
               th.w-20.no-print
             tr 
               th.pb3
@@ -351,8 +358,7 @@ html
         span.no-print  link for individual property tax bills
         span . Missing or fluctuating numbers may be due to missing/incorrect registration by the owner or inconsistencies in property tax documentation. 
             | NYS Housing and Community Renewal maintains the most accurate information on rent stabilization, which is not available to the public.
-        //- p The threshold of $50,000 is used to differentiate "true" or "arms-length" sales that reflect the property's market value for transfers between people or entities with existing relationships.            
-    
+        //- p The threshold of $50,000 is used to differentiate "true" or "arms-length" sales that reflect the property's market value for transfers between people or entities with existing relationships.  
       div.w-100
         div.credits
           span Made possible by support from
@@ -362,8 +368,6 @@ html
           span and 
               a(href='https://github.com/aepyornis/nyc-db' target='_blank').light Ziggy (github.com/aepyornis)
               span .
-
-  
     //- Javascript for accordion feature
     script.
       var acc = document.getElementsByClassName("accordion");
