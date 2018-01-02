@@ -1,19 +1,68 @@
 doctype html
 html
   head
+    meta( name='viewport', content='width=device-width, initial-scale=1' )
+    link(href="https://fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,regular,medium,semi-bold,bold, extra-bold, black" rel="stylesheet") 
     link(rel='stylesheet' href='./tachyons.css')
-  body.courier
-    header.tc.ph4
-      h1.f3.f2-m.f1-l.fw3.black-90.mv3 
-        | Housing Statistics for Community Board Districts
-      //h2.f5.f4-m.f3-l.fw2.black-90.mv3
-    main.mb3
-      for boro in districts
-        div.fl.w-100.pa3
-          h2.f3.black-60 #{boro[0]}
-          for district in boro[1]
-            div.fl.w-80.mb3.links
-              a.link.black.hover-bg-light-red(href=`${district.cd}.html`) 
-                | #{district.neighborhoods}
-
-
+    link(rel='stylesheet' href='./styles.css')
+    <!--Bootstrap-->
+    script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous")
+  body
+    div.dapgray.ph4.pv2
+      div.container(style="max-width: none; padding: 0px;")
+        div.row
+          div.col-sm
+            a(href='/').imgstyle
+              img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/dapdrlogo.png')#daplogo
+    div.ph4.f6.lighttext
+      p
+        span.highlight Tenant organizers have limited time and capacity. ANHD produces DAP District Reports 
+          | to help them prioritize outreach. The reports give monthly updates on displacement risk to 
+          | stabilized tenants in the neighborhoods where organizers work.
+      p DAP District Reports provide a list of rent stabilized buildings by Community Board where tenants may be at risk of harassment and displacement. Risk is indicated by new 
+        span.medtext property sales
+        span , 
+        span.medtext HPD complaints
+        span , 
+        span.medtext HPD violations
+        span , 
+        span.medtext DOB complaints
+        span , and 
+        span.medtext DOB construction permit applications. 
+      p Buildings that appear on multiple lists are coded 
+        span.dapyellow.black.ph1 yellow
+        span , 
+        span.daporange.black.ph1 orange
+        span , or 
+        span.dapred.white.ph1.lighttext red
+        span , depending on the level of risk.
+    for boro in districts
+      div.fl.w-100.ph4
+        h2.f3.black #{boro[0]} 
+        for district in boro[1]
+          div.fl.mb3.links.w-90
+            a(href=`${district.cd}.html`) 
+              span.black-90 #{district.name}: 
+              | #{district.neighborhoods}
+    div.fl.w-100.bg-black-10.f6.pl4
+      div.pr3.pt3.lighttext
+        span The 
+        a(href='http://www.anhd.org', target='_blank').light Association for Neighborhood and Housing Development
+        span  produces these District Reports and 
+        a(href='http://map.dapmapnyc.org/app', target='_blank').light DAP Map
+        span  as part of the 
+        a(href='http://www.dapmapnyc.org', target='_blank').light Displacement Alert Project
+        span . Email 
+        a(href='mailto:lucy.b@anhd.org').light lucy.b@anhd.org
+        span  with feedback or questions. 
+      div.w-100.pt2
+        div.credits
+          span Made possible by support from
+        div.ph2.credits
+          img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/fordlogo.png')
+        div.credits
+          span and 
+              a(href='https://github.com/aepyornis/nyc-db' target='_blank').light Ziggy (github.com/aepyornis)
+              span .

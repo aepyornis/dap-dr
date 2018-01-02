@@ -1,17 +1,277 @@
-html, body {
+html, body, div, table, th, tbody, thead {
     font-family: 'Montserrat', sans-serif;
+    font-weight:400;
+}
+
+h1, h2, h3, h4 {
+    font-weight:500;
+}
+
+table {
+    border-spacing: 0;
+    padding: 1px;
     
 }
 
-a {
-    color: #150055;
+.map {
+    max-width: 310px !important;
+}
+
+.key {
+    display: inline-block;
+    min-width: 240px;
+}
+
+.credits {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+}
+
+
+th, td {
+    padding: 2px;
+    hyphens: auto;
+}
+
+a, a:link, a:visited {
+    color: #1b4fd3;
     text-decoration: none;
+    font-weight: 400;
 }
 
 a:hover {
-    background-color: #b0b0b0 
+    background-color: #b6b6b6; 
+    text-decoration: none !important;
+}
+
+a.light, a.light:hover {
+    font-weight: 300;
+    text-decoration: none;    
+}
+
+.imgstyle:hover {
+    background-color:rgba(0, 0, 0, 0)
+}
+
+#daplogo {
+    width: 300px;
+    padding-left: 0px;
+}
+
+.bluetext {
+    color: #1b4fd3
+}
+
+.dapgray {
+    background-color: #c4b9b9
 }
 
 .dapred {
-    background-color: #b60000
+    background-color: #e4492a;
+    -webkit-print-color-adjust: exact;
+}
+
+.daporange {
+    background-color: #fdad2d;
+    -webkit-print-color-adjust: exact;
+    
+}
+
+.dapyellow {
+    background-color: #fae0a0;
+    -webkit-print-color-adjust: exact;
+    
+}
+
+.highlight {
+    background-color: #e9dbb9
+}
+
+.boldtext {
+	font-weight: 700;
+}
+
+.medtext {
+    font-weight: 500;
+}
+
+.lighttext {
+    font-weight: 300;
+}
+
+@media print
+{    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+    .panel {display: block !important;}
+    .no-screen {}
+    html, body, div, table, th, tbody, thead {
+        font-family: 'Montserrat', sans-serif;
+        font-weight:400;
+        font-size: 0.75rem !important;
+    }
+    a:link, a:visited {
+        color: black;
+        text-decoration: none;
+        font-weight: 400;
+    }
+    
+    .bluetext {
+        color: black;
+        font-size: 1rem !important;
+    }
+
+}
+
+@media screen
+{
+    .no-print{}
+    .no-screen{display:none;}
+    .panel{display:none;}
+}
+
+.accordion {
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+ .accordion:hover {
+    background-color: #c4b9b9
+}
+
+
+
+
+/* @media(min-width:0em){
+    html{
+        font-size: 110%;
+    };
+} 
+
+@media(min-width:480px){
+    html{
+        font-size: 100%
+    };
+
+} */
+
+
+@media 
+only screen and (max-width: 720px),
+(min-device-width: 720px) and (max-device-width: 1024px)  {
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+        display: block; 
+        text-align: left !important; 
+        
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	/* tr { border: 1px solid #ccc; } */
+	
+	td { 
+		/* Behave  like a "row" */
+		/* border: none; */
+		/* border-bottom: 1px solid #eee;  */
+		position: relative;
+        padding-left: 100px; 
+        hyphens: auto;
+        word-wrap: break-word;        
+        min-height: 26px;
+        /* padding-top: 5px;
+        padding-bottom: 5px; */
+        
+	}
+	
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		max-width: auto; 
+        padding-right: 5px;
+        hyphens: auto;
+        word-wrap: break-word; 
+    }
+
+    th {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    tr {
+        /* margin-top: 10px; */
+        border-top: 6px solid #e5e5e5;
+        padding-top: 8px;
+        padding-bottom: 8px;
+
+    }
+
+
+    	/*
+	Label the data
+	*/
+	td.sales:nth-of-type(1):before { content: "BBL"; }
+	td.sales:nth-of-type(2):before { content: "Address"; }
+	td.sales:nth-of-type(3):before { content: "Total Units"; }
+    td.sales:nth-of-type(4):before { content: "Stab 2007"; }
+    td.sales:nth-of-type(5):before { content: "Stab 2016"; }
+	td.sales:nth-of-type(6):before { content: "Sale Price"; }
+	td.sales:nth-of-type(7):before { content: "$ / Sq Ft"; }
+	td.sales:nth-of-type(8):before { content: "Sale Date"; }
+	td.sales:nth-of-type(9):before { content: "Owner"; }
+	td.sales:nth-of-type(10):before { content: "Links"; }
+
+	td.hpdcomplaints:nth-of-type(1):before { content: "BBL"; }
+	td.hpdcomplaints:nth-of-type(2):before { content: "Address"; }
+	td.hpdcomplaints:nth-of-type(3):before { content: "Total Units"; }
+    td.hpdcomplaints:nth-of-type(4):before { content: "Stab 2007"; }
+    td.hpdcomplaints:nth-of-type(5):before { content: "Stab 2016"; }
+	td.hpdcomplaints:nth-of-type(6):before { content: "Complaints"; }
+	td.hpdcomplaints:nth-of-type(7):before { content: "Owner"; }
+	td.hpdcomplaints:nth-of-type(8):before { content: "Links"; }
+
+	td.hpdviols:nth-of-type(1):before { content: "BBL"; }
+	td.hpdviols:nth-of-type(2):before { content: "Address"; }
+	td.hpdviols:nth-of-type(3):before { content: "Total Units"; }
+    td.hpdviols:nth-of-type(4):before { content: "Stab 2007"; }
+    td.hpdviols:nth-of-type(5):before { content: "Stab 2016"; }
+	td.hpdviols:nth-of-type(6):before { content: "Class A"; }
+	td.hpdviols:nth-of-type(7):before { content: "Class B"; }
+	td.hpdviols:nth-of-type(8):before { content: "Class C"; }
+	td.hpdviols:nth-of-type(9):before { content: "Total"; }
+	td.hpdviols:nth-of-type(10):before { content: "Owner"; }
+	td.hpdviols:nth-of-type(11):before { content: "Links"; }
+    
+    td.dobcomplaints:nth-of-type(1):before { content: "BBL"; }
+	td.dobcomplaints:nth-of-type(2):before { content: "Address"; }
+	td.dobcomplaints:nth-of-type(3):before { content: "Total Units"; }
+    td.dobcomplaints:nth-of-type(4):before { content: "Stab 2007"; }
+    td.dobcomplaints:nth-of-type(5):before { content: "Stab 2016"; }
+	td.dobcomplaints:nth-of-type(6):before { content: "Complaints"; }
+	td.dobcomplaints:nth-of-type(7):before { content: "Owner"; }
+	td.dobcomplaints:nth-of-type(8):before { content: "Links"; }
+
+	td.dobjobs:nth-of-type(1):before { content: "BBL"; }
+	td.dobjobs:nth-of-type(2):before { content: "Address"; }
+	td.dobjobs:nth-of-type(3):before { content: "Total Units"; }
+    td.dobjobs:nth-of-type(4):before { content: "Stab 2007"; }
+    td.dobjobs:nth-of-type(5):before { content: "Stab 2016"; }
+	td.dobjobs:nth-of-type(6):before { content: "Alt 1"; }
+	td.dobjobs:nth-of-type(7):before { content: "Alt 2"; }
+	td.dobjobs:nth-of-type(8):before { content: "DM"; }
+	td.dobjobs:nth-of-type(9):before { content: "Owner"; }
+	td.dobjobs:nth-of-type(10):before { content: "Links"; }
+
 }

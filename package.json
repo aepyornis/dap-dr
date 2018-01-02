@@ -4,11 +4,11 @@
   "description": "",
   "main": "./commmunityBoardJson.js",
   "bin": {
-    "community-board-json": "./communityBoardJson.js",
+    "community-board-json": "./comunityBoardJson.js",
     "community-board-pages": "./communityBoardPages.js"
   },
   "scripts": {
-    "json": "./commmunityBoardJson.js > boards.json",
+    "json": "./communityBoardJson.js > boards.json",
     "build": "./communityBoardPages.js boards.json",
     "zip": "zip -r dap-dr-$(date +'%F').zip boards.json public",
     "clean": "rm -rf ./public",
@@ -31,7 +31,7 @@
     "sinon": "^4.0.1",
     "http-server": "^0.10.0"
   },
-   "engines" : {
-     "node" : ">=8.5.0"
+  "engines": {
+    "node": ">=8.5.0"
   }
 }

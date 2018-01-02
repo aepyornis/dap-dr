@@ -7,6 +7,7 @@ const groupBy = require('lodash/groupBy');
 const toPairs = require('lodash/toPairs');
 const merge = require('lodash/merge');
 const round = require('lodash/round');
+const isUndefined = require('lodash/isUndefined');
 
 const format = require('d3-format').format;
 const toN = require('./toN');
@@ -46,6 +47,36 @@ const index = (folder) => {
   saveFile('index', html, folder);
 };
 
+/**
+ * 
+ * @param {Objects} communityBoardsJson 
+ * @param {Object} - bbl count lookup thingy
+ */
+const bblCount = (communityBoard) => {
+  let bbls = {};
+  const datasets = [ 'recentSales', 'hpdViolations', 'dobjobs', 'dobComplaints', 'hpdComplaints' ];
+  datasets.forEach(ds => {
+    communityBoard[ds].forEach( taxLot => {
+      if (isUndefined(bbls[taxLot.bbl])) {
+        bbls[taxLot.bbl] = [ ds ];
+      } else {
+        bbls[taxLot.bbl] = bbls[taxLot.bbl].concat([ ds ]);
+      }
+    });
+  })
+  return bbls;
+}
+
+const rowClassFun = () => {
+  const classLookup = { 
+    1: 'f6',
+    2: 'f6 dapyellow', 
+    3: 'f6 daporange', 
+    4: 'f6 dapred', 
+    5: 'f6 dapred'
+  };
+  return (count) => classLookup[count];
+}
 
 /**
  * Turn an array of information about community boards into html 
@@ -55,9 +86,10 @@ const index = (folder) => {
  */
 const main = (communityBoardsJson, folder) => {
   index(folder);
-  
+
   communityBoardsJson
     .map( board => merge(board, {stats: statsPresenter(board.stats) }) )
+    .map( board => merge(board, {bblCount: bblCount(board), rowClass: rowClassFun() }))
     .map( board => ( { fileName: board.district.cd, html: communityBoardTemplate(board) } ) )
     .forEach( ({fileName, html}) => saveFile(fileName, html, folder) );
 };

@@ -10,9 +10,9 @@ const cloneDeep = require('lodash/cloneDeep');
 const toN = require('./toN');
 // commmunity board data
 const communityBoardList = require('./community_boards.json');
-const queries = [ 'stats', 'recentSales','newBuildingJobs', 'hpdViolations', 'dobjobs' ];
+const queries = [ 'stats', 'recentSales','newBuildingJobs', 'hpdViolations', 'dobjobs', 'dobComplaints', 'hpdComplaints' ];
 
-const CONCURRENCY = 3;
+const CONCURRENCY = 3;0
 
 /**
  * wraps values in an object, and optionally transforms the values
