@@ -13,22 +13,8 @@ table {
     
 }
 
-.inner {
-    display: inline-block;
-    /* min-width: 240px; */
-    max-width: 300px;
-    vertical-align: middle;
-    text-align: center;
- }
-
-
 .map {
-    /* min-width: 288px !important; */
-    max-width: 460px !important;
-}
-
-.intro {
-    /* min-width: 288px !important; */
+    max-width: 310px !important;
 }
 
 .key {
@@ -73,6 +59,10 @@ a.light, a.light:hover {
     padding-left: 0px;
 }
 
+.bluetext {
+    color: #1b4fd3
+}
+
 .dapgray {
     background-color: #c4b9b9
 }
@@ -83,13 +73,13 @@ a.light, a.light:hover {
 }
 
 .daporange {
-    background-color: #fdbb50;
+    background-color: #fdad2d;
     -webkit-print-color-adjust: exact;
     
 }
 
 .dapyellow {
-    background-color: #fede88;
+    background-color: #fae0a0;
     -webkit-print-color-adjust: exact;
     
 }
@@ -129,6 +119,11 @@ a.light, a.light:hover {
         font-weight: 400;
     }
     
+    .bluetext {
+        color: black;
+        font-size: 1rem !important;
+    }
+
 }
 
 @media screen

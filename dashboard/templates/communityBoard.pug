@@ -19,14 +19,14 @@ html(lang="en")
       gtag('config', 'UA-110952392-1');
   body
     div.dapgray.ph4.pv2
-      div.container.align-middle(style="max-width: none; padding: 0px;")
+      div.container(style="max-width: none; padding: 0px;")
         div.row
           div.col-sm
             a(href='/').imgstyle
               img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/dapdrlogo.png')#daplogo
-          div.f4.black-90.col-sm.align-middle.pt3
+          div.f4.black-90.col-sm.align-self-center
             div.v-mid #{district.borough} #{district.name}
-            div.lighttext December 2017
+            div.lighttext November 2017
     div.w-100.pv2.pl4.bg-black-10.fl.f5
       span #{district.neighborhoods}
     div.fl.w-100.tl.pl4.pt3.f5
@@ -88,7 +88,7 @@ html(lang="en")
           span.highlight Tip:
           span.bg-white.lighttext  to find the building on other lists, copy its BBL (Borough, Block, and Lot code) and use Find (Ctrl+F or &#8984+F)
     div.fl.w-100.mb3.bg-black-10#sales
-      div.accordion.f4.tl.pv2.ph4 New sales of residential buildings last month
+      div.accordion.f4.tl.pv2.ph4.bluetext New sales of residential buildings last month
       div.ph4.pb2.panel
         p.f6.tl.mt2.mb3.lighttext.lh-copy A high sale price can mean the new owner plans to displace existing tenants to make large profits. 
           | All property transfers are included here, even when the recorded dollar amount is 0. 
@@ -141,7 +141,7 @@ html(lang="en")
         div.fl.w-100.tl.mv2.f5.no-print
           a(href='#') Top
     div.fl.w-100.mb3.bg-black-10#hpdcomplaints
-      div.accordion.f4.tl.pv2.ph4 Buildings with 5+ new complaints filed with HPD last month
+      div.accordion.f4.tl.pv2.ph4.bluetext Buildings with 5+ new complaints filed with HPD last month
       div.ph4.pb2.panel
         p.f6.tl.mt2.mb3.lighttext.lh-copy Complaints that tenants make about conditions in their apartment or building get sent to Housing Preservation and Development for inspection. One complaint can include multiple problems in an apartment or a building. 
           span.no-print Click a building's 
@@ -181,7 +181,7 @@ html(lang="en")
         div.fl.w-100.tl.mv2.f5.no-print
           a(href='#') Top
     div.fl.w-100.mb3.bg-black-10#hpdviols
-      div.accordion.f4.tl.pv2.ph4 Buildings with 10+ new violations issued by HPD last month
+      div.accordion.f4.tl.pv2.ph4.bluetext Buildings with 10+ new violations issued by HPD last month
       div.ph4.pb2.panel
         p.f6.tl.mt2.mb3.lighttext.lh-copy HPD issues violations of the Housing Maintenance Code after inspecting building conditions. Class A, B, and C violations can indicate a landlord is neglecting or actively harassing tenants, Class C being the most severe 
           span.no-print (
@@ -233,7 +233,7 @@ html(lang="en")
         div.fl.w-100.tl.mv2.f5.no-print
           a(href='#') Top
     div.fl.w-100.mb3.bg-black-10#dobcomplaints
-      div.accordion.f4.tl.pv2.ph4 Buildings with 2+ new complaints filed with DOB last month
+      div.accordion.f4.tl.pv2.ph4.bluetext Buildings with 2+ new complaints filed with DOB last month
       div.ph4.pb2.panel
         p.f6.tl.mt2.mb3.lighttext.lh-copy Complaints that tenants make about construction or certain building conditions (e.g. broken elevator) get sent to the Department of Buildings. 
           span.no-print Click a building's 
@@ -273,7 +273,7 @@ html(lang="en")
         div.fl.w-100.tl.mv2.f5.no-print
           a(href='#') Top
     div.fl.w-100.mb3.bg-black-10#dobjobs
-      div.accordion.f4.tl.pv2.ph4 Buildings with new DOB permit applications filed last month
+      div.accordion.f4.tl.pv2.ph4.bluetext Buildings with new DOB permit applications filed last month
       div.ph4.pb2.panel
         p.f6.tl.mt2.mb3.lighttext.lh-copy Construction permit applications show a landlord's intention to do construction and renovations, which can be used to destabilize apartments: for example, Alt 2 permits may represent work that will justify Individual Apartment Improvement rent increases 
           span.no-print (
@@ -361,7 +361,7 @@ html(lang="en")
         span . Missing or fluctuating numbers may be due to missing/incorrect registration by the owner or inconsistencies in property tax documentation. 
             | NYS Housing and Community Renewal maintains the most accurate information on rent stabilization, which is not available to the public.
         //- p The threshold of $50,000 is used to differentiate "true" or "arms-length" sales that reflect the property's market value for transfers between people or entities with existing relationships.  
-      div.w-100
+      div.w-100.pt2
         div.credits
           span Made possible by support from
         div.ph2.credits
