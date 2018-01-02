@@ -86,7 +86,6 @@ SELECT subset.*,
     WHERE
        pluto.cd = '${ cd }' 
 	   and novissueddate >= date_trunc('month', current_date - interval '1 month')
-    --    and novissueddate < date_trunc('month', current_date - interval '3 month')
        AND coalesce(uc2007,uc2008, uc2009, uc2010, uc2011, uc2012, uc2013, uc2014,uc2015,uc2016) is not null
     group by viols.bbl, pluto.cd, pluto.address, residentialunits, uc2007, uc2016, borocode, pluto.block, pluto.lot, pluto.zipcode, pluto.bbl
     having count(class) > 9

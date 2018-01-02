@@ -79,7 +79,7 @@ select subset.*,
 	INNER JOIN rentstab ON rentstab.ucbbl = pluto.bbl
 	WHERE pluto.cd is not null
       AND pluto.cd = '${ cd }'
-      AND sales.saledate >= date_trunc('month', current_date - interval '1 month')
+      AND sales.saledate >= date_trunc('month', current_date - interval '2 month')
       AND sales.residentialunits > 0
       --Took out the line below as a test, too much info might be obscured by the cut-off and it won't add many rows. Like before, more can be researched via ACRIS
       --AND sales.saleprice > 50000

@@ -5,10 +5,14 @@ html
     link(href="https://fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,regular,medium,semi-bold,bold, extra-bold, black" rel="stylesheet") 
     link(rel='stylesheet' href='./tachyons.css')
     link(rel='stylesheet' href='./styles.css')
+    <!--Bootstrap-->
+    script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous")
   body
     div.title.tc.fl.w-100.pt2.white.dapgray.mb3
       img.w-30(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/dapdrlogo.png')
-    div.f5.pl4.black-70
+    div.f5.pl4.lighttext
       p
         span.highlight Tenant organizers have limited time and capacity, and ANHD produces DAP District Reports 
           | to help them prioritize outreach. The reports give monthly updates on displacement risk to 
@@ -41,22 +45,20 @@ html
     div.fl.w-100.bg-black-10.f6.pl4
       div.pr3.pt3.lighttext
         span The 
-        a(href='http://www.anhd.org', target='_blank') Association for Neighborhood and Housing Development
+        a(href='http://www.anhd.org', target='_blank').light Association for Neighborhood and Housing Development
         span  produces these District Reports and 
-        a(href='http://map.dapmapnyc.org/app', target='_blank') DAP Map
+        a(href='http://map.dapmapnyc.org/app', target='_blank').light DAP Map
         span  as part of the 
-        a(href='http://www.dapmapnyc.org', target='_blank') Displacement Alert Project
+        a(href='http://www.dapmapnyc.org', target='_blank').light Displacement Alert Project
         span . Email 
-        a(href='mailto:lucy.b@anhd.org') lucy.b@anhd.org
+        a(href='mailto:lucy.b@anhd.org').light lucy.b@anhd.org
         span  with feedback or questions. 
-      table
-        thead
-          tr
-            th.pv3.black.lighttext
-              span Made possible by support from
-            th
-              img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/fordlogo.png')
-            th.pv3.black.lighttext.pl1
-              span and 
-                a(href='https://github.com/aepyornis/nyc-db' target='_blank') Ziggy (github.com/aepyornis)
-                span .
+      div.w-100
+        div.credits
+          span Made possible by support from
+        div.ph2.credits
+          img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/fordlogo.png')
+        div.credits
+          span and 
+              a(href='https://github.com/aepyornis/nyc-db' target='_blank').light Ziggy (github.com/aepyornis)
+              span .

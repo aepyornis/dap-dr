@@ -1,5 +1,5 @@
 doctype html
-html
+html(lang="en")
   head
     meta( name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes' )
     link(href="https://fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,regular,medium,semi-bold,bold, extra-bold, black" rel="stylesheet") 
@@ -18,13 +18,15 @@ html
       gtag('js', new Date());
       gtag('config', 'UA-110952392-1');
   body
-    div.dapgray.w-100.pl4
-      div.inner
-        a(href='/').imgstyle
-          img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/dapdrlogo.png')#daplogo
-      div.inner.f4.medtext.black-90
-        div #{district.borough} #{district.name} 
-        div.lighttext November 2017 
+    div.dapgray.ph4.pv2
+      div.container.align-middle(style="max-width: none; padding: 0px;")
+        div.row
+          div.col-sm
+            a(href='/').imgstyle
+              img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/dapdrlogo.png')#daplogo
+          div.f4.black-90.col-sm.align-middle.pt3
+            div.v-mid #{district.borough} #{district.name}
+            div.lighttext December 2017
     div.w-100.pv2.pl4.bg-black-10.fl.f5
       span #{district.neighborhoods}
     div.fl.w-100.tl.pl4.pt3.f5
@@ -33,9 +35,9 @@ html
       div.container(style="max-width: none; padding-left: 0px")
         div.row.pl4.pr3
           div.pt3.col-sm.map
-            - var mapurl = 'https://github.com/aepyornis/dap-dr/blob/master/dashboard/cdmaps/' + district.cd + '-01.png?raw=true'
+            - var mapurl = 'https://github.com/aepyornis/dap-dr/blob/master/dashboard/cdmaps/' + district.cd + '-01-min.png?raw=true'
               img(src=mapurl)
-          div.ph4.pt3.lighttext.col-sm.intro
+          div.ph4.pt3.lighttext.col-sm
             span.tl A monthly update of 
             span harassment and displacement risk in rent stabilized buildings
             span  in 
@@ -70,7 +72,7 @@ html
                   span , or 
                   a(href='http://www.oasisnyc.net/map.aspx', target='_blank').light OASIS Map
                   span  page. You can also click a building address to view it in Google Maps.
-      div.fl.pt2.pl4.f6.w-95
+      div.fl.pt2.ph4.f6
         div.lighttext If a building appears on more than one of the lists below in a given month it will be coded: 
           div.pt3.pb2
             div.dib.pv1.pr2
@@ -83,7 +85,7 @@ html
               span.pa1.dapred.white Red:
               span.lighttext  four risk factors
         div.fl.mt2.mb3.w-100 
-          span.dapgray Tip:
+          span.highlight Tip:
           span.bg-white.lighttext  to find the building on other lists, copy its BBL (Borough, Block, and Lot code) and use Find (Ctrl+F or &#8984+F)
     div.fl.w-100.mb3.bg-black-10#sales
       div.accordion.f4.tl.pv2.ph4 New sales of residential buildings last month

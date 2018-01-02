@@ -15,7 +15,7 @@ table {
 
 .inner {
     display: inline-block;
-    min-width: 240px;
+    /* min-width: 240px; */
     max-width: 300px;
     vertical-align: middle;
     text-align: center;
@@ -23,12 +23,12 @@ table {
 
 
 .map {
-    min-width: 320px !important;
+    /* min-width: 288px !important; */
     max-width: 460px !important;
 }
 
 .intro {
-    min-width: 340px !important;
+    /* min-width: 288px !important; */
 }
 
 .key {
@@ -45,6 +45,7 @@ table {
 
 th, td {
     padding: 2px;
+    hyphens: auto;
 }
 
 a, a:link, a:visited {
@@ -188,8 +189,9 @@ only screen and (max-width: 720px),
 		/* border: none; */
 		/* border-bottom: 1px solid #eee;  */
 		position: relative;
-        padding-left: 120px; 
-        /* hyphens: auto; */
+        padding-left: 100px; 
+        hyphens: auto;
+        word-wrap: break-word;        
         min-height: 26px;
         /* padding-top: 5px;
         padding-bottom: 5px; */
@@ -203,7 +205,9 @@ only screen and (max-width: 720px),
 		top: 6px;
 		left: 6px;
 		max-width: auto; 
-        padding-right: 10px;
+        padding-right: 5px;
+        hyphens: auto;
+        word-wrap: break-word; 
     }
 
     th {
