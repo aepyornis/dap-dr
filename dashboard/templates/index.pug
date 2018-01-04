@@ -14,9 +14,9 @@ html
       div.container(style="max-width: none; padding: 0px;")
         div.row
           div.col-sm
-            a(href='/').imgstyle
-              img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/dapdrlogo.png')#daplogo
-    div.ph4.f6.lighttext
+            a(href='/').imgstyle.daplogo
+              img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/dapdrlogo.png').daplogo
+    div.ph4.pv3.f6.lighttext
       p
         span.highlight Tenant organizers have limited time and capacity. ANHD produces DAP District Reports 
           | to help them prioritize outreach. The reports give monthly updates on displacement risk to 
@@ -40,9 +40,9 @@ html
         span , depending on the level of risk.
     for boro in districts
       div.fl.w-100.ph4
-        h2.f3.black #{boro[0]} 
+        div.f4.pv2.black #{boro[0]} 
         for district in boro[1]
-          div.fl.mb3.links.w-90
+          div.fl.mb2.f6.links.w-90
             a(href=`${district.cd}.html`) 
               span.black-90 #{district.name}: 
               | #{district.neighborhoods}

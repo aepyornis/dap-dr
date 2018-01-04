@@ -23,20 +23,32 @@ html(lang="en")
         div.row
           div.col-sm
             a(href='/').imgstyle
-              img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/dapdrlogo.png')#daplogo
+              img(src='https://github.com/lblok/dapreports/blob/master/images/dapdrlogo.png?raw=true').daplogo
           div.f4.black-90.col-sm.align-self-center
             div.v-mid #{district.borough} #{district.name}
             div.lighttext November 2017
-    div.w-100.pv2.pl4.bg-black-10.fl.f5
+    div.w-100.fl.f5.pv2.ph4.bg-black-10
       span #{district.neighborhoods}
-    div.fl.w-100.tl.pl4.pt3.f5
+    div.fl.w-100.tl.pl4.pt2.f5
       a(href='/').no-print Back
+    div.w-100.fl
+        div.container(style="max-width: none; padding-left: 0px")
+          div.dropdown.pt2.pl4.show
+            - var nov17 = '/nov17/' + district.cd + '.html'
+            - var current = '../' + district.cd + '.html'
+              a.btn.btn-secondary.btn-sm.dropdown-toggle(data-toggle="dropdown") Select Month
+              span.caret
+                ul.dropdown-menu
+                  li.item
+                    a.dropdown(href=nov17) November 2017
+                  li.item
+                    a.dropdown(href=current) December 2017
     div.fl.f6
       div.container(style="max-width: none; padding-left: 0px")
         div.row.pl4.pr3
           div.pt3.col-sm.map
-            - var mapurl = 'https://github.com/aepyornis/dap-dr/blob/master/dashboard/cdmaps/' + district.cd + '-01-min.png?raw=true'
-              img(src=mapurl)
+            - var mapurl = 'https://github.com/lblok/dapreports/blob/master/images/cdmaps/' + district.cd + '-01-min.png?raw=true'
+              img(src=mapurl) 
           div.ph4.pt3.lighttext.col-sm
             span.tl A monthly update of 
             span harassment and displacement risk in rent stabilized buildings
@@ -57,7 +69,7 @@ html(lang="en")
               div.pt2
                 a(href='#dobcomplaints') 2+ new complaints filed with the Department of Buildings (DOB)
               div.pt2
-                a(href='#dobjobs') New DOB construction permit applications.
+                a(href='#dobjobs') New DOB construction permit applications
               div.pt2.tl.lighttext.no-print 
                   span You can click directly to a property's 
                   //-  a(href='http://whoownswhat.justfix.nyc', target='_blank') Who Owns What
@@ -67,7 +79,7 @@ html(lang="en")
                   a(href='http://a810-bisweb.nyc.gov/bisweb/bispi00.jsp', target='_blank').light DOB Building Information System
                   span ,  
                   a(href='https://a836-acris.nyc.gov/DS/DocumentSearch/BBL', target='_blank').light ACRIS financial records
-                  span , or 
+                  span ,  
                   a(href='http://nycprop.nyc.gov/nycproperty/nynav/jsp/selectbbl.jsp', target='_blank').light property tax information
                   span , or 
                   a(href='http://www.oasisnyc.net/map.aspx', target='_blank').light OASIS Map
@@ -76,21 +88,21 @@ html(lang="en")
         div.lighttext If a building appears on more than one of the lists below in a given month it will be coded: 
           div.pt3.pb2
             div.dib.pv1.pr2
-              span.pa1.dapyellow Yellow:
+              span.ph1.dapyellow Yellow:
               span.lighttext  two risk factors 
             div.dib.pv1.pr2
-              span.pa1.dtext.daporange Orange:
+              span.ph1.dtext.daporange Orange:
               span.lighttext  three risk factors 
             div.dib.pv1
-              span.pa1.dapred.white Red:
+              span.ph1.dapred.white Red:
               span.lighttext  four risk factors
         div.fl.mt2.mb3.w-100 
-          span.highlight Tip:
+          span.medtext Tip:
           span.bg-white.lighttext  to find the building on other lists, copy its BBL (Borough, Block, and Lot code) and use Find (Ctrl+F or &#8984+F)
-    div.fl.w-100.mb3.bg-black-10#sales
-      div.accordion.f4.tl.pv2.ph4.bluetext New sales of residential buildings last month
-      div.ph4.pb2.panel
-        p.f6.tl.mt2.mb3.lighttext.lh-copy A high sale price can mean the new owner plans to displace existing tenants to make large profits. 
+    div.section#sales
+      div.accordion New sales of residential buildings last month
+      div.panel
+        p.desc A high sale price can mean the new owner plans to displace existing tenants to make large profits. 
           | All property transfers are included here, even when the recorded dollar amount is 0. 
           //- Buildings on this list sold for more than $50,000, which is used as a threshold for "true" sales versus other types of transfers 
           //- span.no-print (
@@ -111,7 +123,7 @@ html(lang="en")
               th Sale Price
               th Price/&shy;Sq. Foot
               th Sale Date &#9662;
-              th Owner
+              th.w-25 Owner
               th.w-20.no-print 
             tr
               th.tl
@@ -138,12 +150,12 @@ html(lang="en")
               td.sales #{sale.iso_date}
               td.sales !{sale.owner}
               td.no-print.sales !{sale.hpdlink} !{sale.bislink} !{sale.acrislink} !{sale.taxlink} !{sale.oasislink}
-        div.fl.w-100.tl.mv2.f5.no-print
+        div.toplink.no-print
           a(href='#') Top
-    div.fl.w-100.mb3.bg-black-10#hpdcomplaints
-      div.accordion.f4.tl.pv2.ph4.bluetext Buildings with 5+ new complaints filed with HPD last month
-      div.ph4.pb2.panel
-        p.f6.tl.mt2.mb3.lighttext.lh-copy Complaints that tenants make about conditions in their apartment or building get sent to Housing Preservation and Development for inspection. One complaint can include multiple problems in an apartment or a building. 
+    div.section#hpdcomplaints
+      div.accordion Buildings with 5+ new complaints filed with HPD last month
+      div.panel
+        p.desc Complaints that tenants make about conditions in their apartment or building get sent to Housing Preservation and Development for inspection. One complaint can include multiple problems in an apartment or a building. 
           span.no-print Click a building's 
           a(href='https://hpdonline.hpdnyc.org/HPDonline/provide_address.aspx', target='_blank').no-print (HPD)
           span.no-print  link for details. 
@@ -178,12 +190,12 @@ html(lang="en")
               td.tc.hpdcomplaints #{complaint.hpdcomplaints}
               td.hpdcomplaints !{complaint.owner}
               td.no-print.hpdcomplaints !{complaint.hpdlink} !{complaint.bislink} !{complaint.acrislink} !{complaint.taxlink} !{complaint.oasislink}
-        div.fl.w-100.tl.mv2.f5.no-print
+        div.toplink.no-print
           a(href='#') Top
-    div.fl.w-100.mb3.bg-black-10#hpdviols
-      div.accordion.f4.tl.pv2.ph4.bluetext Buildings with 10+ new violations issued by HPD last month
-      div.ph4.pb2.panel
-        p.f6.tl.mt2.mb3.lighttext.lh-copy HPD issues violations of the Housing Maintenance Code after inspecting building conditions. Class A, B, and C violations can indicate a landlord is neglecting or actively harassing tenants, Class C being the most severe 
+    div.section#hpdviols
+      div.accordion Buildings with 10+ new violations issued by HPD last month
+      div.panel
+        p.desc HPD issues violations of the Housing Maintenance Code after inspecting building conditions. Class A, B, and C violations can indicate a landlord is neglecting or actively harassing tenants, Class C being the most severe 
           span.no-print (
           a(href='http://www1.nyc.gov/assets/hpd/downloads/pdf/ABCs-housing-singlepg.pdf', target='_blank').no-print info, p.7
           span.no-print ). Click a building's 
@@ -230,12 +242,12 @@ html(lang="en")
               td.tc.hpdviols #{violation.total}
               td.hpdviols !{violation.owner}
               td.hpdviols.no-print !{violation.hpdlink} !{violation.bislink} !{violation.acrislink} !{violation.taxlink} !{violation.oasislink}
-        div.fl.w-100.tl.mv2.f5.no-print
+        div.toplink.no-print
           a(href='#') Top
-    div.fl.w-100.mb3.bg-black-10#dobcomplaints
-      div.accordion.f4.tl.pv2.ph4.bluetext Buildings with 2+ new complaints filed with DOB last month
-      div.ph4.pb2.panel
-        p.f6.tl.mt2.mb3.lighttext.lh-copy Complaints that tenants make about construction or certain building conditions (e.g. broken elevator) get sent to the Department of Buildings. 
+    div.section#dobcomplaints
+      div.accordion Buildings with 2+ new complaints filed with DOB last month
+      div.panel
+        p.desc Complaints that tenants make about construction or certain building conditions (e.g. broken elevator) get sent to the Department of Buildings. 
           span.no-print Click a building's 
           a(href='http://a810-bisweb.nyc.gov/bisweb/bsqpm01.jsp', target='_blank').no-print (DOB)
           span.no-print  link for details through the Building Information System. 
@@ -270,12 +282,12 @@ html(lang="en")
               td.tc.dobcomplaints #{complaint.dobcomplaints}
               td.dobcomplaints !{complaint.owner}
               td.no-print.dobcomplaints !{complaint.hpdlink} !{complaint.bislink} !{complaint.acrislink} !{complaint.taxlink} !{complaint.oasislink}
-        div.fl.w-100.tl.mv2.f5.no-print
+        div.toplink.no-print
           a(href='#') Top
-    div.fl.w-100.mb3.bg-black-10#dobjobs
-      div.accordion.f4.tl.pv2.ph4.bluetext Buildings with new DOB permit applications filed last month
-      div.ph4.pb2.panel
-        p.f6.tl.mt2.mb3.lighttext.lh-copy Construction permit applications show a landlord's intention to do construction and renovations, which can be used to destabilize apartments: for example, Alt 2 permits may represent work that will justify Individual Apartment Improvement rent increases 
+    div.section#dobjobs
+      div.accordion Buildings with new DOB permit applications filed last month
+      div.panel
+        p.desc Construction permit applications show a landlord's intention to do construction and renovations, which can be used to destabilize apartments: for example, Alt 2 permits may represent work that will justify Individual Apartment Improvement rent increases 
           span.no-print (
           a(href='http://www1.nyc.gov/assets/buildings/pdf/pw1_userguide.pdf', target='_blank').no-print more info on permit types, p.5
           span.no-print ). Click a building's 
@@ -365,7 +377,7 @@ html(lang="en")
         div.credits
           span Made possible by support from
         div.ph2.credits
-          img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/fordlogo.png')
+          img(src='https://github.com/lblok/dapreports/blob/master/images/fordlogo.png?raw=true')
         div.credits
           span and 
               a(href='https://github.com/aepyornis/nyc-db' target='_blank').light Ziggy (github.com/aepyornis)
