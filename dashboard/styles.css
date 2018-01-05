@@ -175,6 +175,10 @@ a.dropdown, a.dropdown:hover {
 }
 
 
+.brdr {
+    border-bottom: 3px solid rgb(100, 100, 100);
+}
+
 
 @media print
 {    
@@ -192,7 +196,7 @@ a.dropdown, a.dropdown:hover {
     html, body, div, table, th, tbody, thead {
         font-family: 'Montserrat', sans-serif;
         font-weight:400;
-        font-size: 0.75rem !important;
+        font-size: 0.875rem !important;
     }
 
     a:link, a:visited {
@@ -207,6 +211,7 @@ a.dropdown, a.dropdown:hover {
 
     .pageintro {
         width: 500px !important;
+        /* font-size: .875rem !important; */
     }
 
     .accordion {

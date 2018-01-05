@@ -2,8 +2,7 @@
   {
     "borough": "Bronx",
     "name": "Community Board 1",
-    "neighborhoods": "Mott Haven, Melrose",
-    "neighborhoodslong": "Mott Haven, Port Morris, Melrose",
+    "neighborhoods": "Mott Haven, Port Morris, Melrose",
     "address": "Bronx Community Board 1 3024 Third Avenue Bronx, NY 10455",
     "email": "brxcb1@optonline.net",
     "phone": "718-585-7117",
@@ -17,8 +16,7 @@
   {
     "borough": "Bronx",
     "name": "Community Board 2",
-    "neighborhoods": "Hunts Point, Longwood",    
-    "neighborhoodslong": "Hunts Point, Longwood, Morrisania",
+    "neighborhoods": "Hunts Point, Longwood, Morrisania",
     "address": "Bronx Community Board 2 1029 E. 163rd Street, Suite 202 Bronx, NY 10459",
     "email": "brxcb2@optonline.net",
     "phone": "718-328-9125 / 718-328-9126",
@@ -32,8 +30,7 @@
   {
     "borough": "Bronx",
     "name": "Community Board 3",
-    "neighborhoods": "Morrisania, Crotona",  
-    "neighborhoodslong": "Crotona Park, Claremont Village, Concourse Village, Woodstock, and Morrisania",
+    "neighborhoods": "Crotona Park, Claremont Village, Concourse Village, Woodstock, and Morrisania",
     "address": "Bronx Community Board 3 1426 Boston Road, Bronx, NY 10456",
     "email": "Brxcomm3@optonline.net",
     "phone": "718-378-8054",
@@ -47,8 +44,7 @@
   {
     "borough": "Bronx",
     "name": "Community Board 4",
-    "neighborhoods": "Highbridge, South Concourse",  
-    "neighborhoodslong": "Highbridge, Concourse, Mount Eden, and Concourse Village",
+    "neighborhoods": "Highbridge, Concourse, Mount Eden, and Concourse Village",
     "address": "Bronx Community Board 4 1650 Selwyn Avenue, #11A Bronx, NY 10457",
     "email": "bx04@cb.nyc.gov",
     "phone": "718-299-0800",
@@ -62,8 +58,7 @@
   {
     "borough": "Bronx",
     "name": "Community Board 5",
-    "neighborhoods": "University Heights, Fordham",  
-    "neighborhoodslong": "Fordham, University Heights, Morris Heights, Bathgate, and Mount Hope",
+    "neighborhoods": "Fordham, University Heights, Morris Heights, Bathgate, and Mount Hope",
     "address": "Bronx Community Board 5 BCC Campus, McCracken Hall, Room 12/13 W. 181st Street at Dr. Martin Luther King, Jr. Blvd.",
     "email": "brxcb5@optonline.net",
     "phone": "718-364-2030",
@@ -77,8 +72,7 @@
   {
     "borough": "Bronx",
     "name": "Community Board 6",
-    "neighborhoods": "Belmont, East Tremont",  
-    "neighborhoodslong": "Belmont, Bathgate, West Farms, East Tremont, and Bronx Park South",
+    "neighborhoods": "Belmont, Bathgate, West Farms, East Tremont, and Bronx Park South",
     "address": "Bronx Community Board 6 1932 Arthur Avenue, Rm. 709 Bronx, NY 10457",
     "email": "bronxcb6@bronxcb6.org",
     "phone": "718-579-6990",
@@ -92,8 +86,7 @@
   {
     "borough": "Bronx",
     "name": "Community Board 7",
-    "neighborhoods": "Kingsbridge Heights, Bedford",  
-    "neighborhoodslong": "Norwood, University Heights, Jerome Park, Bedford Park, Fordham, and Kingsbridge Heights",
+    "neighborhoods": "Norwood, University Heights, Jerome Park, Bedford Park, Fordham, and Kingsbridge Heights",
     "address": "Bronx Community Board 7 229-A East 204th Street Bronx, NY 10458",
     "email": "info@BronxCB7.info",
     "phone": "718-933-5650",
@@ -107,8 +100,7 @@
   {
     "borough": "Bronx",
     "name": "Community Board 8",
-    "neighborhoods": "Riverdale, Fieldston",  
-    "neighborhoodslong": "Fieldston, Kingsbridge, Kingsbridge Heights, Marble Hill, Riverdale, Spuyten Duyvil, Van Cortlandt Village",
+    "neighborhoods": "Fieldston, Kingsbridge, Kingsbridge Heights, Marble Hill, Riverdale, Spuyten Duyvil, Van Cortlandt Village",
     "address": "Bronx Community Board 8 5676 Riverdale Avenue, Bronx, NY 10471",
     "email": "bx08@cb.nyc.gov",
     "phone": "718-884-3959",
@@ -122,8 +114,7 @@
   {
     "borough": "Bronx",
     "name": "Community Board 9",
-    "neighborhoods": "Parkchester, Soundview",  
-    "neighborhoodslong": "Parkchester, Unionport, Soundview, Castle Hill, Bruckner, Harding Park, Bronx River and Clason Point",
+    "neighborhoods": "Parkchester, Unionport, Soundview, Castle Hill, Bruckner, Harding Park, Bronx River and Clason Point",
     "address": "Bronx Community Board 9 1967 Turnbull Avenue, Rm. 7 Bronx, NY 10473",
     "email": "bxbrd09@optonline.net",
     "phone": "718-823-3034",
@@ -137,8 +128,7 @@
   {
     "borough": "Bronx",
     "name": "Community Board 10",
-    "neighborhoods": "Throgs Neck, Co-op City",  
-    "neighborhoodslong": "Co-op City, City Island, Spencer Estates, Throggs Neck, Country Club, Zerega, Westchester Square, Pelham Bay, Eastchester Bay, Schuylerville, Edgewater, Locust Point, and Silver Beach",
+    "neighborhoods": "Co-op City, City Island, Spencer Estates, Throggs Neck, Country Club, Zerega, Westchester Square, Pelham Bay, Eastchester Bay, Schuylerville, Edgewater, Locust Point, and Silver Beach",
     "address": "Bronx Community Board 10 3165 East Tremont Avenue, Bronx, NY 10461",
     "email": "bx10@cb.nyc.gov",
     "phone": "718-892-1161",
@@ -152,8 +142,7 @@
   {
     "borough": "Bronx",
     "name": "Community Board 11",
-    "neighborhoods": "Morris Park, Bronxdale",  
-    "neighborhoodslong": "Allerton, Bronx Park East, Eastchester Gardens, Indian Village, Morris Park, Olinville, Parkside, Pelham Gardens, Pelham Parkway, Van Nest, and Westchester Heights",
+    "neighborhoods": "Allerton, Bronx Park East, Eastchester Gardens, Indian Village, Morris Park, Olinville, Parkside, Pelham Gardens, Pelham Parkway, Van Nest, and Westchester Heights",
     "address": "Bronx Community Board 11 1741 Colden Avenue, Bronx, NY 10462",
     "email": "",
     "phone": "718-892-6262",
@@ -167,8 +156,7 @@
   {
     "borough": "Bronx",
     "name": "Community Board 12",
-    "neighborhoods": "Williamsbridge, Baychester",  
-    "neighborhoodslong": "Edenwald, Wakefield, Williamsbridge, Woodlawn, Fish Bay, Eastchester, Olinville, and Baychester",
+    "neighborhoods": "Edenwald, Wakefield, Williamsbridge, Woodlawn, Fish Bay, Eastchester, Olinville, and Baychester",
     "address": "Bronx Community Board 12 4101 White Plains Road, Bronx, NY 10466",
     "email": "gtorres@cb.nyc.gov",
     "phone": "718-881-4455",
@@ -182,8 +170,7 @@
   {
     "borough": "Brooklyn",
     "name": "Community Board 1",
-    "neighborhoods": "Greenpoint, Williamsburg",      
-    "neighborhoodslong": "Flushing Avenue, Williamsburg, Greenpoint, Northside, and Southside",
+    "neighborhoods": "Flushing Avenue, Williamsburg, Greenpoint, Northside, and Southside",
     "address": "Brooklyn Community Board 1 435 Graham Avenue, Brooklyn, NY 11211",
     "email": "bk01@cb.nyc.gov",
     "phone": "718-389-0009",
@@ -197,8 +184,7 @@
   {
     "borough": "Brooklyn",
     "name": "Community Board 2",
-    "neighborhoods": "Brooklyn Heights, Fort Greene",  
-    "neighborhoodslong": "Brooklyn Heights, Fulton Mall, Boerum Hill, Fort Greene, Brooklyn Navy Yard, Fulton Ferry, and Clinton Hill",
+    "neighborhoods": "Brooklyn Heights, Fulton Mall, Boerum Hill, Fort Greene, Brooklyn Navy Yard, Fulton Ferry, and Clinton Hill",
     "address": "Brooklyn Community Board 2 350 Jay Street, 8th Floor Brooklyn, NY 11201",
     "email": "cb2k@nyc.rr.com",
     "phone": "718-596-5410",
@@ -212,8 +198,7 @@
   {
     "borough": "Brooklyn",
     "name": "Community Board 3",
-    "neighborhoods": "Bedford Stuyvesant",  
-    "neighborhoodslong": "Bedford-Stuyvesant, Stuyvesant Heights, and Ocean Hill",
+    "neighborhoods": "Bedford-Stuyvesant, Stuyvesant Heights, and Ocean Hill",
     "address": "Brooklyn Community Board 3 1360 Fulton Street, Brooklyn, NY 11216",
     "email": "bk03@cb.nyc.gov",
     "phone": "718-622-6601",
@@ -227,8 +212,7 @@
   {
     "borough": "Brooklyn",
     "name": "Community Board 4",
-    "neighborhoods": "Bushwick",  
-    "neighborhoodslong": "Bushwick",
+    "neighborhoods": "Bushwick",
     "address": "Brooklyn Community Board 4 1420 Bushwick Avenue, Suite 370 Brooklyn, NY 11207-1422",
     "email": "bk04@cb.nyc.gov",
     "phone": "718-628-8400",
@@ -242,8 +226,7 @@
   {
     "borough": "Brooklyn",
     "name": "Community Board 5",
-    "neighborhoods": "East New York, Starrett City",  
-    "neighborhoodslong": "East New York, Cypress Hills, Highland Park, New Lots, City Line, Starrett City, and Ridgewood",
+    "neighborhoods": "East New York, Cypress Hills, Highland Park, New Lots, City Line, Starrett City, and Ridgewood",
     "address": "Brooklyn Community Board 5 404 Pine Street, 3rd Floor Brooklyn, New York 11208",
     "email": "BK05@cb.nyc.gov",
     "phone": "929-221-8261",
@@ -257,8 +240,7 @@
   {
     "borough": "Brooklyn",
     "name": "Community Board 6",
-    "neighborhoods": "Park Slope, Carroll Gardens, Gowanus, Red Hook",  
-    "neighborhoodslong": "Red Hook, Carroll Gardens, Park Slope, Gowanus, and Cobble Hill",
+    "neighborhoods": "Red Hook, Carroll Gardens, Park Slope, Gowanus, and Cobble Hill",
     "address": "Brooklyn Community Board 6 250 Baltic Street, Brooklyn, NY 11201",
     "email": "info@brooklyncb6.org",
     "phone": "718-643-3027",
@@ -272,8 +254,7 @@
   {
     "borough": "Brooklyn",
     "name": "Community Board 7",
-    "neighborhoods": "Sunset Park",  
-    "neighborhoodslong": "Sunset Park and Windsor Terrace",
+    "neighborhoods": "Sunset Park and Windsor Terrace",
     "address": "Brooklyn Community Board 7 4201 4th Avenue, Brooklyn, NY 11232",
     "email": "bk07@cb.nyc.gov",
     "phone": "718-854-0003",
@@ -287,8 +268,7 @@
   {
     "borough": "Brooklyn",
     "name": "Community Board 8",
-    "neighborhoods": "Crown Heights, Prospect Heights",  
-    "neighborhoodslong": "Crown Heights, Prospect Heights, and Weeksville",
+    "neighborhoods": "Crown Heights, Prospect Heights, and Weeksville",
     "address": "Brooklyn Community Board 8 1291 St. Marks Avenue, Brooklyn, NY 11213",
     "email": "info@brooklyncb8.org",
     "phone": "718-467-5574",
@@ -302,8 +282,7 @@
   {
     "borough": "Brooklyn",
     "name": "Community Board 9",
-    "neighborhoods": "South Crown Heights, Lefferts Gardens",  
-    "neighborhoodslong": "Crown Heights, Prospect Lefferts Gardens, and Wingate",
+    "neighborhoods": "Crown Heights, Prospect Lefferts Gardens, and Wingate",
     "address": "Brooklyn Community Board 9 890 Nostrand Avenue, Brooklyn, NY 11225",
     "email": "bk09@cb.nyc.gov",
     "phone": "718-778-9279",
@@ -317,8 +296,7 @@
   {
     "borough": "Brooklyn",
     "name": "Community Board 10",
-    "neighborhoods": "Bay Ridge",  
-    "neighborhoodslong": "Bay Ridge, Dyker Heights, and Fort Hamilton",
+    "neighborhoods": "Bay Ridge, Dyker Heights, and Fort Hamilton",
     "address": "Brooklyn Community Board 10 8119 5th Avenue Brooklyn, New York 11209",
     "email": "communitybd10@nyc.rr.com",
     "phone": "718-745-6827",
@@ -332,8 +310,7 @@
   {
     "borough": "Brooklyn",
     "name": "Community Board 11",
-    "neighborhoods": "Bensonhurst",  
-    "neighborhoodslong": "Bath Beach, Gravesend, Mapleton, and Bensonhurst",
+    "neighborhoods": "Bath Beach, Gravesend, Mapleton, and Bensonhurst",
     "address": "Brooklyn Community Board 11 2214 Bath Avenue, Brooklyn, NY 11214",
     "email": "info@brooklyncb11.org",
     "phone": "718-266-8800",
@@ -347,8 +324,7 @@
   {
     "borough": "Brooklyn",
     "name": "Community Board 12",
-    "neighborhoods": "Borough Park",  
-    "neighborhoodslong": "Boro Park, Kensington, Ocean Parkway, and Midwood",
+    "neighborhoods": "Boro Park, Kensington, Ocean Parkway, and Midwood",
     "address": "Brooklyn Community Board 12 5910 13th Avenue, Brooklyn, NY 11219",
     "email": "BKCB12@gmail.com",
     "phone": "718-851-0800",
@@ -362,8 +338,7 @@
   {
     "borough": "Brooklyn",
     "name": "Community Board 13",
-    "neighborhoods": "Coney Island",  
-    "neighborhoodslong": "Coney Island, Brighton Beach, Bensonhurst, Gravesend, and Seagate",
+    "neighborhoods": "Coney Island, Brighton Beach, Bensonhurst, Gravesend, and Seagate",
     "address": "Brooklyn Community Board 13 1201 Surf Avenue, 3rd Floor Brooklyn, NY 11224",
     "email": "",
     "phone": "718-266-3001",
@@ -377,8 +352,7 @@
   {
     "borough": "Brooklyn",
     "name": "Community Board 14",
-    "neighborhoods": "Flatbush, Midwood",  
-    "neighborhoodslong": "Flatbush, Midwood, Kensington, and Ocean Parkway",
+    "neighborhoods": "Flatbush, Midwood, Kensington, and Ocean Parkway",
     "address": "</b>Brooklyn Community Board 14 810 East 16th Street, Brooklyn, NY 11230-3010",
     "email": "info@cb14brooklyn.com",
     "phone": "718-859-6357",
@@ -392,8 +366,7 @@
   {
     "borough": "Brooklyn",
     "name": "Community Board 15",
-    "neighborhoods": "Sheepshead Bay",  
-    "neighborhoodslong": "Sheepshead Bay, Manhattan Beach, Kings Bay, Gerritsen Beach, Kings Highway, East Gravesend, Madison, Homecrest, and Plum Beach",
+    "neighborhoods": "Sheepshead Bay, Manhattan Beach, Kings Bay, Gerritsen Beach, Kings Highway, East Gravesend, Madison, Homecrest, and Plum Beach",
     "address": "Brooklyn Community Board 15 Kingsboro Community College, 2001 Oriental Boulevard, C Cluster,",
     "email": "bklcb15@verizon.net",
     "phone": "718-332-3008",
@@ -407,8 +380,7 @@
   {
     "borough": "Brooklyn",
     "name": "Community Board 16",
-    "neighborhoods": "Brownsville",  
-    "neighborhoodslong": "Brownsville and Ocean Hill",
+    "neighborhoods": "Brownsville and Ocean Hill",
     "address": "Brooklyn Community Board 16 444 Thomas Boyland Street, Rm. 103 Brooklyn, NY 11212",
     "email": "bk16@cb.nyc.gov",
     "phone": "718-385-0323",
@@ -422,8 +394,7 @@
   {
     "borough": "Brooklyn",
     "name": "Community Board 17",
-    "neighborhoods": "East Flatbush",  
-    "neighborhoodslong": "East Flatbush, Remsen Village, Farragut, Rugby, Erasmus and Ditmas Village",
+    "neighborhoods": "East Flatbush, Remsen Village, Farragut, Rugby, Erasmus and Ditmas Village",
     "address": "Brooklyn Community Board 17 4112 Farragut Road Brooklyn, New York 11210",
     "email": "bk17@cb.nyc.gov",
     "phone": "718-434-3461",
@@ -437,8 +408,7 @@
   {
     "borough": "Brooklyn",
     "name": "Community Board 18",
-    "neighborhoods": "Flatlands, Canarsie",  
-    "neighborhoodslong": "Canarsie, Bergen Beach, Mill Basin, Flatlands, Marine Park, Georgetown, and Mill Island",
+    "neighborhoods": "Canarsie, Bergen Beach, Mill Basin, Flatlands, Marine Park, Georgetown, and Mill Island",
     "address": "Brooklyn Community Board 18 1097 Bergen Avenue Brooklyn, NY 11234-4841",
     "email": "bkbrd18@optonline.net",
     "phone": "718-241-0422",
@@ -452,8 +422,7 @@
   {
     "borough": "Manhattan",
     "name": "Community Board 1",
-    "neighborhoods": "Financial District",  
-    "neighborhoodslong": "Tribeca, Seaport/Civic Center, Financial District, Battery Park City",
+    "neighborhoods": "Tribeca, Seaport/Civic Center, Financial District, Battery Park City",
     "address": "Manhattan Community Board 1 1 Centre Street, Room 2202-N New York, NY 10007",
     "email": "man01@cb.nyc.gov",
     "phone": "212-669-7970",
@@ -467,8 +436,7 @@
   {
     "borough": "Manhattan",
     "name": "Community Board 2",
-    "neighborhoods": "Greenwich Village, SoHo",  
-    "neighborhoodslong": "Greenwich Village, West Village, NoHo, SoHo, Lower East Side, Chinatown, Little Italy",
+    "neighborhoods": "Greenwich Village, West Village, NoHo, SoHo, Lower East Side, Chinatown, Little Italy",
     "address": "Manhattan Community Board 2 3 Washington Square Village, #1A New York, NY 10012",
     "email": "bgormley@cb.nyc.gov",
     "phone": "212-979-2272",
@@ -482,8 +450,7 @@
   {
     "borough": "Manhattan",
     "name": "Community Board 3",
-    "neighborhoods": "Lower East Side, East Village, Chinatown",  
-    "neighborhoodslong": "Tompkins Square, East Village, Lower East Side, Chinatown, Two Bridges",
+    "neighborhoods": "Tompkins Square, East Village, Lower East Side, Chinatown, Two Bridges",
     "address": "Manhattan Community Board 3 59 East 4th Street, New York, NY 10003",
     "email": "info@cb3manhattan.org",
     "phone": "212-533-5300",
@@ -497,8 +464,7 @@
   {
     "borough": "Manhattan",
     "name": "Community Board 4",
-    "neighborhoods": "Clinton, Chelsea",  
-    "neighborhoodslong": "Clinton, Chelsea",
+    "neighborhoods": "Clinton, Chelsea",
     "address": "Manhattan Community Board 4 330 West 42nd Street, Suite 2618 New York, NY 10036",
     "email": "jbodine@cb.nyc.gov",
     "phone": "212-736-4536",
@@ -512,8 +478,7 @@
   {
     "borough": "Manhattan",
     "name": "Community Board 5",
-    "neighborhoods": "Midtown",  
-    "neighborhoodslong": "Midtown",
+    "neighborhoods": "Midtown",
     "address": "Manhattan Community Board 5 450 7th Avenue, Rm. 2109 New York, NY 10123",
     "email": "office@cb5.org",
     "phone": "212-465-0907",
@@ -527,8 +492,7 @@
   {
     "borough": "Manhattan",
     "name": "Community Board 6",
-    "neighborhoods": "Stuyvesant Town, Peter Cooper Village, Turtle Bay",  
-    "neighborhoodslong": "Stuyvesant Town, Tudor City, Turtle Bay, Peter Cooper Village, Murray Hill, Gramercy Park, Kips Bay, Sutton Place",
+    "neighborhoods": "Stuyvesant Town, Tudor City, Turtle Bay, Peter Cooper Village, Murray Hill, Gramercy Park, Kips Bay, Sutton Place",
     "address": "Manhattan Community Board 6 P.O. Box 1672 New York, NY 10159-1672",
     "email": "office@cbsix.org",
     "phone": "212-319-3750",
@@ -542,8 +506,7 @@
   {
     "borough": "Manhattan",
     "name": "Community Board 7",
-    "neighborhoods": "Upper West Side",  
-    "neighborhoodslong": "Manhattan Valley, Upper West Side, and Lincoln Square",
+    "neighborhoods": "Manhattan Valley, Upper West Side, and Lincoln Square",
     "address": "Manhattan Community Board 7 250 W. 87th Street New York, NY 10024",
     "email": "office@cb7.org",
     "phone": "212-362-4008",
@@ -557,8 +520,7 @@
   {
     "borough": "Manhattan",
     "name": "Community Board 8",
-    "neighborhoods": "Upper East Side",  
-    "neighborhoodslong": "Upper East Side, LenoxHill, Yorkville, and Roosevelt Island",
+    "neighborhoods": "Upper East Side, LenoxHill, Yorkville, and Roosevelt Island",
     "address": "Manhattan Community Board 8 505 Park Avenue, Suite 620 New York, NY 10022",
     "email": "info@cb8m.com",
     "phone": "212-758-4340",
@@ -572,8 +534,7 @@
   {
     "borough": "Manhattan",
     "name": "Community Board 9",
-    "neighborhoods": "Morningside, Hamilton",  
-    "neighborhoodslong": "Hamilton Heights, Manhattanville, Morningside Heights, and West Harlem",
+    "neighborhoods": "Hamilton Heights, Manhattanville, Morningside Heights, and West Harlem",
     "address": "Manhattan Community Board 9 16-18 Old Broadway New York, NY 10027",
     "email": "nyc-cb9m@juno.com",
     "phone": "212-864-6200",
@@ -587,8 +548,7 @@
   {
     "borough": "Manhattan",
     "name": "Community Board 10",
-    "neighborhoods": "Central Harlem",  
-    "neighborhoodslong": "Central Harlem",
+    "neighborhoods": "Central Harlem",
     "address": "Manhattan Community Board 10 215 West 125th Street 4th Floor",
     "email": "mn10@cb.nyc.gov",
     "phone": "212.749.3105",
@@ -602,8 +562,7 @@
   {
     "borough": "Manhattan",
     "name": "Community Board 11",
-    "neighborhoods": "East Harlem",  
-    "neighborhoodslong": "East Harlem",
+    "neighborhoods": "East Harlem",
     "address": "Manhattan Community Board 11 1664 Park Avenue, Ground Floor New York, NY 10035",
     "email": "mn11@cb.nyc.gov",
     "phone": "212-831-8929",
@@ -617,8 +576,7 @@
   {
     "borough": "Manhattan",
     "name": "Community Board 12",
-    "neighborhoods": "Washington Heights, Inwood",  
-    "neighborhoodslong": "Inwood and Washington Heights",
+    "neighborhoods": "Inwood and Washington Heights",
     "address": "Manhattan Community Board 12 530 West 166th Street, 6th Floor New York, NY 10032",
     "email": "DBlow@cb.nyc.gov, ebsmith@cb.nyc.gov, and pgarcia01@cb.nyc.gov",
     "phone": "212-568-8500",
@@ -632,8 +590,7 @@
   {
     "borough": "Queens",
     "name": "Community Board 1",
-    "neighborhoods": "Astoria",  
-    "neighborhoodslong": "Astoria, Old Astoria, Long Island City, Queensbridge, Ditmars, Ravenswood, Steinway, Garden Bay, and Woodside",
+    "neighborhoods": "Astoria, Old Astoria, Long Island City, Queensbridge, Ditmars, Ravenswood, Steinway, Garden Bay, and Woodside",
     "address": "Queens Community Board 1 45-02 Ditmars Boulevard LL Suite 125",
     "email": "qn01@cb.nyc.gov",
     "phone": "718-626-1021",
@@ -647,8 +604,7 @@
   {
     "borough": "Queens",
     "name": "Community Board 2",
-    "neighborhoods": "Long Island City, Sunnyside, Woodside",  
-    "neighborhoodslong": "Long Island City, Woodside, and Sunnyside",
+    "neighborhoods": "Long Island City, Woodside, and Sunnyside",
     "address": "Queens Community Board 2 43-22 50th Street, Woodside, NY 11377",
     "email": "qn02@cb.nyc.gov",
     "phone": "718-533-8773",
@@ -662,8 +618,7 @@
   {
     "borough": "Queens",
     "name": "Community Board 3",
-    "neighborhoods": "Jackson Heights",  
-    "neighborhoodslong": "Jackson Heights, East Elmhurst, North Corona, and La Guardia Airport",
+    "neighborhoods": "Jackson Heights, East Elmhurst, North Corona, and La Guardia Airport",
     "address": "Queens Community Board 3 82-11 37th Avenue, Suite 606 Jackson Heights, NY 11372",
     "email": "communityboard3@nyc.rr.com",
     "phone": "718-458-2707",
@@ -677,8 +632,7 @@
   {
     "borough": "Queens",
     "name": "Community Board 4",
-    "neighborhoods": "Elmhurst, Corona",  
-    "neighborhoodslong": "Corona, Corona Heights, Elmhurst, and Newtown",
+    "neighborhoods": "Corona, Corona Heights, Elmhurst, and Newtown",
     "address": "Queens Community Board 4 46-11 104th Street Corona, NY 11368",
     "email": "QN04@cb.nyc.gov",
     "phone": "718-760-3141",
@@ -692,8 +646,7 @@
   {
     "borough": "Queens",
     "name": "Community Board 5",
-    "neighborhoods": "Ridgewood, Maspeth",  
-    "neighborhoodslong": "Ridgewood, Glendale, Middle Village, Maspeth, and Liberty Park",
+    "neighborhoods": "Ridgewood, Glendale, Middle Village, Maspeth, and Liberty Park",
     "address": "Queens Community Board 5 61-23 Myrtle Avenue Glendale, NY 11385",
     "email": "qnscb5@nyc.rr.com",
     "phone": "718.366.1834",
@@ -707,8 +660,7 @@
   {
     "borough": "Queens",
     "name": "Community Board 6",
-    "neighborhoods": "Rego Park, Forest Hills",  
-    "neighborhoodslong": "Forest Hills and Rego Park",
+    "neighborhoods": "Forest Hills and Rego Park",
     "address": "Queens Community Board 6 104-01 Metropolitan Avenue Forest Hills, NY 11375",
     "email": "cb6q@nyc.rr.com",
     "phone": "718-263-9250",
@@ -722,8 +674,7 @@
   {
     "borough": "Queens",
     "name": "Community Board 7",
-    "neighborhoods": "Flushing, Whitestone",  
-    "neighborhoodslong": "Flushing, Bay Terrace, College Point, Whitestone, Malba, Beechhurst, Queensboro Hill, and Willets Point",
+    "neighborhoods": "Flushing, Bay Terrace, College Point, Whitestone, Malba, Beechhurst, Queensboro Hill, and Willets Point",
     "address": "Queens Community Board 7 133-32 41st Road - Suite 3B Flushing, NY 11355",
     "email": "qn07@cb.nyc.gov",
     "phone": "718-359-2800",
@@ -737,8 +688,7 @@
   {
     "borough": "Queens",
     "name": "Community Board 8",
-    "neighborhoods": "Hillcrest, Fresh Meadows",  
-    "neighborhoodslong": "Fresh Meadows, Cunningham Heights, Hilltop Village, Pomonak Houses, Fresh Meadows, Jamaica Estates, Holliswood, Flushing South, Utopia, Kew Gardens Hills, and Briarwood",
+    "neighborhoods": "Fresh Meadows, Cunningham Heights, Hilltop Village, Pomonak Houses, Fresh Meadows, Jamaica Estates, Holliswood, Flushing South, Utopia, Kew Gardens Hills, and Briarwood",
     "address": "Queens Community Board 8 197-15 Hillside Avenue, Hollis, NY 11423",
     "email": "qn08@cb.nyc.gov",
     "phone": "718-264-7895",
@@ -752,8 +702,7 @@
   {
     "borough": "Queens",
     "name": "Community Board 9",
-    "neighborhoods": "Ozone Park, Woodhaven",  
-    "neighborhoodslong": "Richmond Hill, Woodhaven, Ozone Park, and Kew Gardens",
+    "neighborhoods": "Richmond Hill, Woodhaven, Ozone Park, and Kew Gardens",
     "address": "Queens Community Board 9 Queens Borough Hall, 120-55 Queens Boulevard, Rm. 310A",
     "email": "communitybd9@nyc.rr.com",
     "phone": "718-286-2686",
@@ -767,8 +716,7 @@
   {
     "borough": "Queens",
     "name": "Community Board 10",
-    "neighborhoods": "South Ozone Park , Howard Beach",  
-    "neighborhoodslong": "Howard Beach, Ozone Park, South Ozone Park, Richmond Hill, Tudor Village, and Lindenwood",
+    "neighborhoods": "Howard Beach, Ozone Park, South Ozone Park, Richmond Hill, Tudor Village, and Lindenwood",
     "address": "Queens Community Board 10 115-01 Lefferts Boulevard, South Ozone Park, NY 11420",
     "email": "cb10qns@nyc.rr.com",
     "phone": "718-843-4488",
@@ -782,8 +730,7 @@
   {
     "borough": "Queens",
     "name": "Community Board 11",
-    "neighborhoods": "Bayside, Little Neck",  
-    "neighborhoodslong": "Bayside, Douglaston, Little Neck, Auburndale, East Flushing, Oakland Gardens, and Hollis Hills",
+    "neighborhoods": "Bayside, Douglaston, Little Neck, Auburndale, East Flushing, Oakland Gardens, and Hollis Hills",
     "address": "Queens Community Board 11 46-21 Little Neck Parkway Little Neck, NY 11362",
     "email": "cb11q@nyc.rr.com",
     "phone": "718-225-1054",
@@ -797,8 +744,7 @@
   {
     "borough": "Queens",
     "name": "Community Board 12",
-    "neighborhoods": "Jamaica, Hollis",  
-    "neighborhoodslong": "Jamaica, Hollis, St. Albans, Springfield Gardens, Baisley Park, Rochdale Village, and South Jamaica",
+    "neighborhoods": "Jamaica, Hollis, St. Albans, Springfield Gardens, Baisley Park, Rochdale Village, and South Jamaica",
     "address": "Queens Community Board 12 90-28 161st Street, Jamaica, NY 11432",
     "email": "qn12@cb.nyc.gov",
     "phone": "718-658-3308",
@@ -812,8 +758,7 @@
   {
     "borough": "Queens",
     "name": "Community Board 13",
-    "neighborhoods": "Queens Village",  
-    "neighborhoodslong": "Queens Village, Glen Oaks, New Hyde Park, Bellerose, Cambria Heights, Laurelton, Rosedale, Floral Park, and Brookville",
+    "neighborhoods": "Queens Village, Glen Oaks, New Hyde Park, Bellerose, Cambria Heights, Laurelton, Rosedale, Floral Park, and Brookville",
     "address": "Queens Community Board 13 Queens Reform Church, 219-41 Jamaica Avenue,",
     "email": "mmcmillan@qcb13.org",
     "phone": "718-464-9700",
@@ -827,8 +772,7 @@
   {
     "borough": "Queens",
     "name": "Community Board 14",
-    "neighborhoods": "Rockaway, Broad Channel",  
-    "neighborhoodslong": "Breezy Point, Belle Harbor, Broad Channel, Neponsit, Arverne, Bayswater, Edgemere, Rockaway Park, Rockaway and Far Rockaway",
+    "neighborhoods": "Breezy Point, Belle Harbor, Broad Channel, Neponsit, Arverne, Bayswater, Edgemere, Rockaway Park, Rockaway and Far Rockaway",
     "address": "Queens Community Board 14 1931 Mott Avenue, Far Rockaway, NY 11691",
     "email": "cbrock14@nyc.rr.com",
     "phone": "718-471-7300",
@@ -842,8 +786,7 @@
   {
     "borough": "Staten Island",
     "name": "Community Board 1",
-    "neighborhoods": "Stapleton , St. George",  
-    "neighborhoodslong": "Arlington, Castleton Corners, Clifton, Concord, Elm Park, Fort Wadsworth, Graniteville, Grymes Hill, Livingston, Mariners Harbor, Meiers Corners, New Brighton, Port Ivory, Port Richmond, Randall Manor, Rosebank, St. George, Shore Acres, Silver Lake, Stapleton, Sunnyside, Tompkinsville, West Brighton, Westerleigh",
+    "neighborhoods": "Arlington, Castleton Corners, Clifton, Concord, Elm Park, Fort Wadsworth, Graniteville, Grymes Hill, Livingston, Mariners Harbor, Meiers Corners, New Brighton, Port Ivory, Port Richmond, Randall Manor, Rosebank, St. George, Shore Acres, Silver Lake, Stapleton, Sunnyside, Tompkinsville, West Brighton, Westerleigh",
     "address": "Staten Island Community Board 1 1 Edgewater Plaza, Room 217 Staten Island, NY 10305",
     "email": "sicb1@si.rr.com",
     "phone": "718-981-6900",
@@ -857,8 +800,7 @@
   {
     "borough": "Staten Island",
     "name": "Community Board 2",
-    "neighborhoods": "South Beach, Willowbrook",  
-    "neighborhoodslong": "Arrochar, Bloomfield, Bulls Heads, Chelsea, Dongan Hills, Egbertville, Emerson Hill, Grant City, Grasmere, High Rock, Lighthouse Hill, Midland Beach, New Dorp, New Springville, Oakwood, Ocean Breeze, Old Town, Richmondtown, South Beach, Todt Hill, and Travis",
+    "neighborhoods": "Arrochar, Bloomfield, Bulls Heads, Chelsea, Dongan Hills, Egbertville, Emerson Hill, Grant City, Grasmere, High Rock, Lighthouse Hill, Midland Beach, New Dorp, New Springville, Oakwood, Ocean Breeze, Old Town, Richmondtown, South Beach, Todt Hill, and Travis",
     "address": "Staten Island Community Board 2 Sea View Hospital Lou Caravone Community Service Building,",
     "email": "dderrico@cb.nyc.gov",
     "phone": "718-317-3235",
@@ -872,8 +814,7 @@
   {
     "borough": "Staten Island",
     "name": "Community Board 3",
-    "neighborhoods": "Tottenville, Great Kills",  
-    "neighborhoodslong": "Annadale, Arden Heights, Bay Terrace, Charleston, Eltingville, Great Kills, Greenridge, Huguenot, Pleasant Plains, Prince's Bay, Richmondtown, Richmond Valley, Rossville, Tottenville, and Woodrow",
+    "neighborhoods": "Annadale, Arden Heights, Bay Terrace, Charleston, Eltingville, Great Kills, Greenridge, Huguenot, Pleasant Plains, Prince's Bay, Richmondtown, Richmond Valley, Rossville, Tottenville, and Woodrow",
     "address": "Staten Island Community Board 3 1243 Woodrow Road, 2nd Floor Staten Island, N. Y. 10309",
     "email": "sicb3@cb.nyc.gov",
     "phone": "718 356-7900",
