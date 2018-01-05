@@ -25,31 +25,32 @@ html(lang="en")
             a(href='/').imgstyle
               img(src='https://github.com/lblok/dapreports/blob/master/images/dapdrlogo.png?raw=true').daplogo
           div.f4.black-90.col-sm.align-self-center
-            div.v-mid #{district.borough} #{district.name}
-            div.lighttext November 2017
-    div.w-100.fl.f5.pv2.ph4.bg-black-10
+            div.v-mid.title #{district.borough} #{district.name}
+            div.lighttext.title December 2017
+            //- Select month dropdown
+            div.w-100.fl.no-print
+                div.container(style="max-width: none; padding-left: 0px")
+                  div.dropdown.pt1.show
+                    - var nov17 = '/nov17/' + district.cd + '.html'
+                    - var current = '../' + district.cd + '.html'
+                      a.btn.btn-secondary.btn-sm.dropdown-toggle(data-toggle="dropdown") Select Month
+                      span.caret
+                        ul.dropdown-menu
+                          li.item
+                            a.dropdown(href=nov17) November 2017
+                          li.item
+                            a.dropdown(href=current) December 2017
+    div.w-100.fl.f5.pv2.ph4.bg-black-10.nhoods
       span #{district.neighborhoods}
     div.fl.w-100.tl.pl4.pt2.f5
       a(href='/').no-print Back
-    div.w-100.fl
-        div.container(style="max-width: none; padding-left: 0px")
-          div.dropdown.pt2.pl4.show
-            - var nov17 = '/nov17/' + district.cd + '.html'
-            - var current = '../' + district.cd + '.html'
-              a.btn.btn-secondary.btn-sm.dropdown-toggle(data-toggle="dropdown") Select Month
-              span.caret
-                ul.dropdown-menu
-                  li.item
-                    a.dropdown(href=nov17) November 2017
-                  li.item
-                    a.dropdown(href=current) December 2017
     div.fl.f6
       div.container(style="max-width: none; padding-left: 0px")
         div.row.pl4.pr3
           div.pt3.col-sm.map
             - var mapurl = 'https://github.com/lblok/dapreports/blob/master/images/cdmaps/' + district.cd + '-01-min.png?raw=true'
               img(src=mapurl) 
-          div.ph4.pt3.lighttext.col-sm
+          div.ph4.pt3.lighttext.col-sm.pageintro
             span.tl A monthly update of 
             span harassment and displacement risk in rent stabilized buildings
             span  in 
@@ -98,7 +99,7 @@ html(lang="en")
               span.lighttext  four risk factors
         div.fl.mt2.mb3.w-100 
           span.medtext Tip:
-          span.bg-white.lighttext  to find the building on other lists, copy its BBL (Borough, Block, and Lot code) and use Find (Ctrl+F or &#8984+F)
+          span.bg-white.lighttext  to find the building on other lists, expand all of them and then copy its BBL (Borough, Block, and Lot code) and use Find (Ctrl+F or &#8984+F). 
     div.section#sales
       div.accordion New sales of residential buildings last month
       div.panel
@@ -124,7 +125,7 @@ html(lang="en")
               th Price/&shy;Sq. Foot
               th Sale Date &#9662;
               th.w-25 Owner
-              th.w-20.no-print 
+              th.w-20.no-print Links
             tr
               th.tl
               th
@@ -148,7 +149,7 @@ html(lang="en")
               td.sales $#{sale.saleprice}
               td.sales $#{sale.ppgsf}
               td.sales #{sale.iso_date}
-              td.sales !{sale.owner}
+              td.f7.sales !{sale.owner}
               td.no-print.sales !{sale.hpdlink} !{sale.bislink} !{sale.acrislink} !{sale.taxlink} !{sale.oasislink}
         div.toplink.no-print
           a(href='#') Top
@@ -168,7 +169,7 @@ html(lang="en")
               th(colspan="2") Stab&shy;ilized Units
               th Compl&shy;aints &#9662;
               th Owner
-              th.w-20.no-print  
+              th.w-20.no-print  Links
             tr
               th.pb3
               th
@@ -188,7 +189,7 @@ html(lang="en")
               td.tc.gray.hpdcomplaints #{complaint.uc2007}
               td.tc.hpdcomplaints #{complaint.uc2016}
               td.tc.hpdcomplaints #{complaint.hpdcomplaints}
-              td.hpdcomplaints !{complaint.owner}
+              td.f7.hpdcomplaints !{complaint.owner}
               td.no-print.hpdcomplaints !{complaint.hpdlink} !{complaint.bislink} !{complaint.acrislink} !{complaint.taxlink} !{complaint.oasislink}
         div.toplink.no-print
           a(href='#') Top
@@ -214,7 +215,7 @@ html(lang="en")
               th Class C
               th Total &#9662;
               th.pl1 Owner
-              th.w-20.no-print 
+              th.w-20.no-print Links
             tr 
               th.pb3
               th
@@ -240,7 +241,7 @@ html(lang="en")
               td.tc.hpdviols #{violation.class_b}
               td.tc.hpdviols #{violation.class_c}
               td.tc.hpdviols #{violation.total}
-              td.hpdviols !{violation.owner}
+              td.f7.hpdviols !{violation.owner}
               td.hpdviols.no-print !{violation.hpdlink} !{violation.bislink} !{violation.acrislink} !{violation.taxlink} !{violation.oasislink}
         div.toplink.no-print
           a(href='#') Top
@@ -260,7 +261,7 @@ html(lang="en")
               th(colspan="2") Stab&shy;ilized Units
               th Compl&shy;aints &#9662;
               th.pl1 Owner
-              th.no-print
+              th.w-20.no-print Links
             tr 
               th.pb3
               th 
@@ -280,7 +281,7 @@ html(lang="en")
               td.tc.gray.dobcomplaints #{complaint.uc2007}
               td.tc.dobcomplaints #{complaint.uc2016}
               td.tc.dobcomplaints #{complaint.dobcomplaints}
-              td.dobcomplaints !{complaint.owner}
+              td.f7.dobcomplaints !{complaint.owner}
               td.no-print.dobcomplaints !{complaint.hpdlink} !{complaint.bislink} !{complaint.acrislink} !{complaint.taxlink} !{complaint.oasislink}
         div.toplink.no-print
           a(href='#') Top
@@ -305,7 +306,7 @@ html(lang="en")
               th Alt 2 Perm&shy;its &#9662;
               th DM Perm&shy;its
               th.pl1 Owner
-              th.w-20.no-print
+              th.w-20.no-print Links
             tr 
               th.pb3
               th 
@@ -329,7 +330,7 @@ html(lang="en")
               td.tc.dobjobs #{job.a1}
               td.tc.dobjobs #{job.a2}
               td.tc.dobjobs #{job.dm}
-              td.dobjobs !{job.owner}
+              td.f7.dobjobs !{job.owner}
               td.no-print.dobjobs !{job.hpdlink} !{job.bislink} !{job.acrislink} !{job.taxlink} !{job.oasislink}
     div.fl.w-100.tl.pl4.mt1.mb3.f5.no-print
       a(href='javascript:history.back()') Back
@@ -337,15 +338,15 @@ html(lang="en")
       a(href='#') Top
     div.fl.w-100.bg-black-10.f6.pl4
       div.pr3.pt3.lighttext
-        span The 
-        a(href='http://www.anhd.org', target='_blank').light Association for Neighborhood and Housing Development
-        span  produces these District Reports and 
-        a(href='http://map.dapmapnyc.org/app', target='_blank').light DAP Map
-        span  as part of the 
-        a(href='http://www.dapmapnyc.org', target='_blank').light Displacement Alert Project
-        span . Email 
-        a(href='mailto:lucy.b@anhd.org').light lucy.b@anhd.org
-        span  with feedback or questions. 
+        span.medtext#notes Notes: 
+        span All buildings in the report have contained at least one rent stabilized unit between 2007 and 2016. 
+          | Stabilized unit numbers are approximate and based on property tax bills from the NYC Department of Finance
+        span.no-print : click a building's 
+        a(href='http://nycprop.nyc.gov/nycproperty/nynav/jsp/selectbbl.jsp', target='_blank').no-print (Taxes)
+        span.no-print  link for individual property tax bills
+        span . Missing or fluctuating numbers may be due to missing/incorrect registration by the owner or inconsistencies in property tax documentation. 
+            | NYS Housing and Community Renewal maintains the most accurate information on rent stabilization, which is not available to the public.
+        //- p The threshold of $50,000 is used to differentiate "true" or "arms-length" sales that reflect the property's market value for transfers between people or entities with existing relationships.  
       div.pt3.lighttext
         span.medtext Data sources: 
         a(href='http://taxbills.nyc' target='blank').light taxbills.nyc
@@ -363,16 +364,17 @@ html(lang="en")
         a(href='https://data.cityofnewyork.us/Housing-Development/DOB-Complaints-Received/eabe-havv/data' target='blank').light DOB Complaints Received
         span , 
         a(href='https://data.cityofnewyork.us/Housing-Development/DOB-Job-Application-Filings/ic3t-wcy2/data' target='blank').light DOB Job Applications Filed
+
       div.pr3.pt3.lighttext
-        span.medtext#notes Notes: 
-        span All buildings in the report have contained at least one rent stabilized unit between 2007 and 2016. 
-          | Stabilized unit numbers are approximate and based on property tax bills from the NYC Department of Finance
-        span.no-print : click a building's 
-        a(href='http://nycprop.nyc.gov/nycproperty/nynav/jsp/selectbbl.jsp', target='_blank').no-print (Taxes)
-        span.no-print  link for individual property tax bills
-        span . Missing or fluctuating numbers may be due to missing/incorrect registration by the owner or inconsistencies in property tax documentation. 
-            | NYS Housing and Community Renewal maintains the most accurate information on rent stabilization, which is not available to the public.
-        //- p The threshold of $50,000 is used to differentiate "true" or "arms-length" sales that reflect the property's market value for transfers between people or entities with existing relationships.  
+        span The 
+        a(href='http://www.anhd.org', target='_blank').light Association for Neighborhood and Housing Development
+        span  produces these District Reports and 
+        a(href='http://map.dapmapnyc.org/app', target='_blank').light DAP Map
+        span  as part of the 
+        a(href='http://www.dapmapnyc.org', target='_blank').light Displacement Alert Project
+        span . Email 
+        a(href='mailto:lucy.b@anhd.org').light lucy.b@anhd.org
+        span  with feedback or questions. 
       div.w-100.pt2
         div.credits
           span Made possible by support from

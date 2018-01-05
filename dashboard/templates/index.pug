@@ -16,12 +16,15 @@ html
           div.col-sm
             a(href='/').imgstyle.daplogo
               img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/dapdrlogo.png').daplogo
-    div.ph4.pv3.f6.lighttext
+    div.intro
       p
-        span.highlight Tenant organizers have limited time and capacity. ANHD produces DAP District Reports 
+        span.highlight Tenant organizers have limited time and capacity. As part of its
+          a(href='http://dapmapnyc.org')  Displacement Alert Project
+          span , ANHD produces DAP District Reports 
           | to help them prioritize outreach. The reports give monthly updates on displacement risk to 
           | stabilized tenants in the neighborhoods where organizers work.
-      p DAP District Reports provide a list of rent stabilized buildings by Community Board where tenants may be at risk of harassment and displacement. Risk is indicated by new 
+      p DAP District Reports provide lists of rent stabilized buildings organized by Community Board where 
+        | tenants may be at risk of harassment and displacement. Risk is indicated by new 
         span.medtext property sales
         span , 
         span.medtext HPD complaints
@@ -44,7 +47,7 @@ html
         for district in boro[1]
           div.fl.mb2.f6.links.w-90
             a(href=`${district.cd}.html`) 
-              span.black-90 #{district.name}: 
+              span #{district.name}: &nbsp;
               | #{district.neighborhoods}
     div.fl.w-100.bg-black-10.f6.pl4
       div.pr3.pt3.lighttext

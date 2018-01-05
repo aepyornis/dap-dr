@@ -29,8 +29,9 @@ table {
 }
 
 th, td {
-    padding: 1px 5px 1px 5px;
-    hyphens: auto;
+    padding: 1px 4px 1px 4px;
+    /* hyphens: auto; */
+    font-size: .875rem;
 }
 
 a, a:link, a:visited {
@@ -63,14 +64,14 @@ a.dropdown, a.dropdown:hover {
 }
 
 .btn-secondary {
-    background-color: rgba(0,0,0,.1) !important;
+    background-color: rgba(255, 255, 255, 0.8) !important;
     color: black !important;
     border-radius: .5rem !important;
     border: 0px !important;
 }
 
 .btn-secondary:hover {
-    background-color: #c4b9b9 !important;
+    background-color: rgba(255, 255, 255, 0.6) !important;
 }
 
 .dropdown-menu {
@@ -79,15 +80,20 @@ a.dropdown, a.dropdown:hover {
     padding: 0px !important;
     margin: 0px !important;    
     border: 2px !important;
-    border-color: white !important;
+    border-color: rgba(220, 220, 220, 0.8) !important;
+    border-radius: .5rem !important;
+    border-color: rgba(220, 220, 220, 0.8) !important;
 }
 
 .item {
     padding: .25rem;
+    border: 1px !important;
+    border-radius: .5rem !important;
+
 }
 
 .item:hover {
-    background-color: rgba(0,0,0,.1);
+    background-color: rgba(220, 220, 220, 0.5) !important;
 }
 
 .imgstyle:hover {
@@ -143,15 +149,21 @@ a.dropdown, a.dropdown:hover {
     background-color: rgba(0,0,0,.1)
 }
 
+.intro {
+    padding: 1rem 2rem 1rem 2rem;
+    font-size: .875rem;
+    font-weight: 300;
+    line-height: 1.25;
+}
+
 .desc {
     font-weight: 300;
     font-size: .875rem;
     text-align: left;
     margin-top: .5rem;
     margin-bottom: 1rem;
-    line-height: 1.5;
+    line-height: 1.25;
 }
-
 
 .toplink {
     float: left;
@@ -166,30 +178,61 @@ a.dropdown, a.dropdown:hover {
 
 @media print
 {    
-    .no-print, .no-print *
+    .accordion:after, .no-print, .no-print *
     {
         display: none !important;
     }
-    .panel {display: block !important;}
+    .panel {
+        display: block !important;
+        padding-top: 0 !important;
+    }
+
     .no-screen {}
+
     html, body, div, table, th, tbody, thead {
         font-family: 'Montserrat', sans-serif;
         font-weight:400;
         font-size: 0.75rem !important;
     }
+
     a:link, a:visited {
         color: black;
         text-decoration: none;
         font-weight: 400;
     }
     
+    .map {
+        width: 200px !important;
+    }
+
+    .pageintro {
+        width: 500px !important;
+    }
+
     .accordion {
         color: black !important;
-        font-size: 1rem !important;
+        font-size: 1.25rem !important;
+        padding-left: 2rem !important;
+        padding-bottom: 0 !important;
+    }
+
+    .daplogo {
+        width: 200px !important;
+    }
+
+    .title {
+        /* width: 400px !important; */
+        font-size: 1.5rem !important;
+        /* padding-bottom: .25rem !important; */
+        /* margin-top: -45px !important;
+        margin-left: 200px !important; */
+    }
+
+    .nhoods {
+        font-size: 1.25rem !important;
     }
 
 }
-
 
 @media screen
 {
@@ -202,10 +245,7 @@ a.dropdown, a.dropdown:hover {
     cursor: pointer;
     transition: 0.1s;
     font-size: 1.125rem;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-left: 32px;
-    padding-right: 32px;
+    padding: 8px 32px 8px 32px;
 }
 
 .panel {
@@ -236,8 +276,8 @@ a.dropdown, a.dropdown:hover {
 
 
 @media 
-only screen and (max-width: 720px),
-(min-device-width: 720px) and (max-device-width: 1024px)  {
+only screen and (max-width: 718px),
+(min-device-width: 718px) and (max-device-width: 1024px)  {
 
 	/* Force table to not be like tables anymore */
 	table, thead, tbody, th, td, tr { 
@@ -257,28 +297,25 @@ only screen and (max-width: 720px),
 	
 	td { 
 		/* Behave  like a "row" */
-		/* border: none; */
-		/* border-bottom: 1px solid #eee;  */
 		position: relative;
         padding-left: 100px; 
         hyphens: auto;
         word-wrap: break-word;        
-        min-height: 26px;
-        /* padding-top: 5px;
-        padding-bottom: 5px; */
-        
+        min-height: 24px;
 	}
 	
 	td:before { 
 		/* Now like a table header */
 		position: absolute;
 		/* Top/left values mimic padding */
-		top: 6px;
+		/* top: 6px; */
 		left: 6px;
 		max-width: auto; 
         padding-right: 5px;
         hyphens: auto;
         word-wrap: break-word; 
+        font-size: .875rem;
+        vertical-align: top;        
     }
 
     th {
@@ -287,7 +324,6 @@ only screen and (max-width: 720px),
     }
 
     tr {
-        /* margin-top: 10px; */
         border-top: 6px solid #e5e5e5;
         padding-top: 8px;
         padding-bottom: 8px;
