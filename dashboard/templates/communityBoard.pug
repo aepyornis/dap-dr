@@ -116,45 +116,48 @@ html(lang="en")
           span.no-print  link for more detailed documentation. 
           span.medtext Note: 
           span data from the Department of Finance can lag, so these sales might be from the month before last. 
-        table.w-100
-          thead
-            tr.tc
-              th BBL
-              th.pl1.w-20 Address
-              th Total Units
-              th(colspan="2") Stab&shy;ilized Units
-              th Sale Price
-              th Price/&shy;Sq. Foot
-              th Sale Date &#9662;
-              th.w-25 Owner
-              th.w-20.no-print Links
-            tr.brdr
-              th.tl
-              th
-              th
-              th.gray 2007
-              th 2016
-              th 
-              th.tl
-              th 
-              th 
-              th.no-print
-          tbody
-          each sale in recentSales
-            - var trStyle = rowClass(bblCount[sale.bbl].length);
-            tr(class=trStyle).pt4
-              td.sales #{sale.bbl}
-              td.sales !{sale.googlelink}
-              td.tc.sales #{sale.residentialunits}
-              td.tc.gray.sales #{sale.uc2007} 
-              td.tc.sales #{sale.uc2016}
-              td.sales $#{sale.saleprice}
-              td.sales $#{sale.ppgsf}
-              td.sales #{sale.iso_date}
-              td.f7.sales !{sale.owner}
-              td.no-print.sales !{sale.hpdlink} !{sale.bislink} !{sale.acrislink} !{sale.taxlink} !{sale.oasislink}
-        div.toplink.no-print
-          a(href='#') Top
+        if recentSales.length > 0
+          table.w-100
+            thead
+              tr.tc
+                th BBL
+                th.pl1.w-20 Address
+                th Total Units
+                th(colspan="2") Stab&shy;ilized Units
+                th Sale Price
+                th Price/&shy;Sq. Foot
+                th Sale Date &#9662;
+                th.w-25 Owner
+                th.w-20.no-print Links
+              tr.brdr
+                th.tl
+                th
+                th
+                th.gray 2007
+                th 2016
+                th 
+                th.tl
+                th 
+                th 
+                th.no-print
+            tbody
+            each sale in recentSales
+              - var trStyle = rowClass(bblCount[sale.bbl].length);
+              tr(class=trStyle).pt4
+                td.sales #{sale.bbl}
+                td.sales !{sale.googlelink}
+                td.tc.sales #{sale.residentialunits}
+                td.tc.gray.sales #{sale.uc2007} 
+                td.tc.sales #{sale.uc2016}
+                td.sales $#{sale.saleprice}
+                td.sales $#{sale.ppgsf}
+                td.sales #{sale.iso_date}
+                td.f7.sales !{sale.owner}
+                td.no-print.sales !{sale.hpdlink} !{sale.bislink} !{sale.acrislink} !{sale.taxlink} !{sale.oasislink}
+          div.toplink.no-print
+            a(href='#') Top
+        else 
+          div no sales :) 
     div.section#hpdcomplaints
       div.accordion Buildings with 5+ new complaints filed with HPD last month (#{hpdComplaints.length} buildings)
       div.panel
@@ -405,4 +408,3 @@ html(lang="en")
       }
       });
       }
-
