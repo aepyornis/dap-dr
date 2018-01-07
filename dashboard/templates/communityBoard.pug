@@ -103,7 +103,7 @@ html(lang="en")
           span.medtext Tip:
           span.bg-white.lighttext  to find the building on other lists, expand all of them and then copy its BBL (Borough, Block, and Lot code) and use Find (Ctrl+F or &#8984+F). 
     div.section#sales
-      div.accordion New sales of residential buildings last month
+      div.accordion New sales of residential buildings last month (#{recentSales.length} buildings)
       div.panel
         p.desc A high sale price can mean the new owner plans to displace existing tenants to make large profits. 
           | All property transfers are included here, even when the recorded dollar amount is 0. 
@@ -156,7 +156,7 @@ html(lang="en")
         div.toplink.no-print
           a(href='#') Top
     div.section#hpdcomplaints
-      div.accordion Buildings with 5+ new complaints filed with HPD last month
+      div.accordion Buildings with 5+ new complaints filed with HPD last month (#{hpdComplaints.length} buildings)
       div.panel
         p.desc Complaints that tenants make about conditions in their apartment or building get sent to Housing Preservation and Development for inspection. One complaint can include multiple problems in an apartment or a building. 
           span.no-print Click a building's 
