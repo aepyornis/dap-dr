@@ -26,6 +26,7 @@ html(lang="en")
               img(src='https://github.com/lblok/dapreports/blob/master/images/dapdrlogo.png?raw=true').daplogo
           div.f4.black-90.col-sm.align-self-center
             div.v-mid.title #{district.borough} #{district.name}
+            //- Change the month here when rebuilding pages
             div.lighttext.title December 2017
             //- Select month dropdown
             div.w-100.fl.no-print
@@ -40,8 +41,9 @@ html(lang="en")
                             a.dropdown(href=nov17) November 2017
                           li.item
                             a.dropdown(href=current) December 2017
-    div.w-100.fl.f5.pv2.ph4.bg-black-10.nhoods
-      span #{district.neighborhoods}
+    //- Hide temporarily until I'm able to rebuild boards.json files with correct neighborhood names
+    //- div.w-100.fl.f5.pv2.ph4.bg-black-10.nhoods
+    //-   span #{district.neighborhoods}
     div.fl.w-100.tl.pl4.pt2.f5
       a(href='/').no-print Back
     div.fl.f6.page
@@ -134,7 +136,7 @@ html(lang="en")
               th 2016
               th 
               th.tl
-              th  
+              th 
               th 
               th.no-print
           tbody
@@ -170,7 +172,7 @@ html(lang="en")
               th Compl&shy;aints &#9662;
               th Owner
               th.w-20.no-print  Links
-            tr
+            tr.brdr
               th.pb3
               th
               th
@@ -216,7 +218,7 @@ html(lang="en")
               th Total &#9662;
               th.pl1 Owner
               th.w-20.no-print Links
-            tr 
+            tr.brdr
               th.pb3
               th
               th
@@ -262,7 +264,7 @@ html(lang="en")
               th Compl&shy;aints &#9662;
               th.pl1 Owner
               th.w-20.no-print Links
-            tr 
+            tr.brdr
               th.pb3
               th 
               th 
@@ -307,7 +309,7 @@ html(lang="en")
               th DM Perm&shy;its
               th.pl1 Owner
               th.w-20.no-print Links
-            tr 
+            tr.brdr
               th.pb3
               th 
               th 
