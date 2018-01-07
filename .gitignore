@@ -60,4 +60,6 @@ typings/
 .DS_Store
 
 boards.json
+*.json
+!/dashboard/community_boards.json
 public/
