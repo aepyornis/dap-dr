@@ -1,15 +1,35 @@
 doctype html
 html
   head
-    meta( name='viewport', content='width=device-width, initial-scale=1' )
+    meta( name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes' )
     link(href="https://fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,regular,medium,semi-bold,bold, extra-bold, black" rel="stylesheet") 
     link(rel='stylesheet' href='./tachyons.css')
-    link(rel='stylesheet' href='./styles.css')
+    link(rel='stylesheet' href='./styles.css') 
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous")
     <!--Bootstrap-->
     script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous")
     script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous")
   body
+    nav.navbar
+      div.container-nav
+        ul.navbar-list
+          li.navbar-item
+            a.navbar-link.light(href="http://www.dapmapnyc.org") HOME
+          li.navbar-item.dropdown
+            button.dropbtn
+              a.navbar-link.light(href="http://map.dapmapnyc.org/app") DAP MAP
+            div.dropdown-content
+              a.light(href="http://dapmapnyc.org/tutorial") MAP TUTORIAL
+          li.navbar-item.dropdown
+            button.dropbtn
+              a.navbar-link.active.light(href="#") DISTRICT REPORTS 
+            div.dropdown-content
+              a.light(href="http://dapmapnyc.org/reports-tutorial") REPORTS TUTORIAL
+          li.navbar-item
+            a.navbar-link.light(href="https://www.dapmapnyc.org/about") ABOUT
+          li.navbar-item
+            a.navbar-link.light(href="https://www.dapmapnyc.org/contact-us") CONTACT
     div.dapgray.ph4.pv2
       div.container(style="max-width: none; padding: 0px;")
         div.row

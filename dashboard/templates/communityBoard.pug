@@ -18,6 +18,27 @@ html(lang="en")
       gtag('js', new Date());
       gtag('config', 'UA-110952392-1');
   body
+  - var crtmonth = 'December 2017'
+  - var salesmonth = 'November 2017'
+    nav.navbar
+      div.container-nav
+        ul.navbar-list
+          li.navbar-item
+            a.navbar-link.light(href="http://www.dapmapnyc.org") HOME
+          li.navbar-item.dropdown
+            button.dropbtn
+              a.navbar-link.light(href="http://map.dapmapnyc.org/app") DAP MAP
+            div.dropdown-content
+              a.light(href="http://dapmapnyc.org/map-tutorial") MAP TUTORIAL
+          li.navbar-item.dropdown
+            button.dropbtn
+              a.navbar-link.active.light(href="#") DISTRICT REPORTS 
+            div.dropdown-content
+              a.light(href="http://dapmapnyc.org/reports-tutorial") REPORTS TUTORIAL
+          li.navbar-item
+            a.navbar-link.light(href="https://www.dapmapnyc.org/about") ABOUT
+          li.navbar-item
+            a.navbar-link.light(href="https://www.dapmapnyc.org/contact-us") CONTACT
     div.dapgray.ph4.pv2
       div.container(style="max-width: none; padding: 0px;")
         div.row
@@ -25,22 +46,22 @@ html(lang="en")
             a(href='/').imgstyle
               img(src='https://github.com/lblok/dapreports/blob/master/images/dapdrlogo.png?raw=true').daplogo
           div.f4.black-90.col-sm.align-self-center
-            div.v-mid.title #{district.borough} #{district.name}
-            //- Change the month here when rebuilding pages
-            div.lighttext.title December 2017
-            //- Select month dropdown
-            div.w-100.fl.no-print
-                div.container(style="max-width: none; padding-left: 0px")
-                  div.dropdown.pt1.show
-                    - var nov17 = '/nov17/' + district.cd + '.html'
-                    - var current = '../' + district.cd + '.html'
-                      a.btn.btn-secondary.btn-sm.dropdown-toggle(data-toggle="dropdown") Select Month
-                      span.caret
-                        ul.dropdown-menu
-                          li.item
-                            a.dropdown(href=nov17) November 2017
-                          li.item
-                            a.dropdown(href=current) December 2017
+              div.v-mid.title #{district.borough} #{district.name}
+              //- Change the month here when rebuilding pages
+              div.lighttext.title #{crtmonth}
+              //- Select month dropdown
+              div.w-100.fl.no-print
+                  div.container(style="max-width: none; padding-left: 0px")
+                    div.dropdown.pt1.show
+                      - var nov17 = '/nov17/' + district.cd + '.html'
+                      - var current = '../' + district.cd + '.html'
+                        a.btn.btn-secondary.btn-sm.dropdown-toggle(data-toggle="dropdown") Select Month
+                        span.caret
+                          ul.dropdown-menu
+                            li.item
+                              a.dropdown(href=nov17) November 2017
+                            li.item
+                              a.dropdown(href=current) December 2017
     //- Hide temporarily until I'm able to rebuild boards.json files with correct neighborhood names
     //- div.w-100.fl.f5.pv2.ph4.bg-black-10.nhoods
     //-   span #{district.neighborhoods}
@@ -54,56 +75,66 @@ html(lang="en")
               img(src=mapurl) 
           div.ph4.pt3.lighttext.col-sm.pageintro
             span.tl A monthly update of 
-            span harassment and displacement risk in rent stabilized buildings
+            span harassment and displacement risk in rent stabilized
+              a(href='#notes') * 
+            span  buildings
             span  in 
             span.medtext #{district.borough} #{district.name}
-            span.no-print  (
-            a(href='#notes').no-print.light Notes
-            span.no-print )
-            span . 
-            div.tl.pt2
-              div.lighttext Risk indicators include
-              div.pt2
-                a(href='#sales') New sales of residential buildings
-              div.pt2
-                a(href='#hpdcomplaints') 5+ new complaints filed with the Department of Housing Preservation and Development (HPD)
-              div.pt2
-                a(href='#hpdviols') 10+ new violations issued by HPD
-              div.pt2
-                a(href='#dobcomplaints') 2+ new complaints filed with the Department of Buildings (DOB)
-              div.pt2
-                a(href='#dobjobs') New DOB construction permit applications
-              div.pt2.tl.lighttext.no-print 
-                  span You can click directly to a property's 
-                  //-  a(href='http://whoownswhat.justfix.nyc', target='_blank') Who Owns What
-                  //-  span  page for owner info, 
-                  a(href='https://hpdonline.hpdnyc.org/HPDonline/provide_address.aspx', target='_blank').light HPD building info
-                  span , 
-                  a(href='http://a810-bisweb.nyc.gov/bisweb/bispi00.jsp', target='_blank').light DOB Building Information System
-                  span ,  
-                  a(href='https://a836-acris.nyc.gov/DS/DocumentSearch/BBL', target='_blank').light ACRIS financial records
-                  span ,  
-                  a(href='http://nycprop.nyc.gov/nycproperty/nynav/jsp/selectbbl.jsp', target='_blank').light property tax information
-                  span , or 
-                  a(href='http://www.oasisnyc.net/map.aspx', target='_blank').light OASIS Map
-                  span  page. You can also click a building address to view it in Google Maps.
-      div.fl.pt2.ph4.f6
-        div.lighttext If a building appears on more than one of the lists below in a given month it will be coded: 
-          div.pt1
-            div.dib.pv1.pr2
-              span.ph1.dapyellow Yellow:
-              span.lighttext  two risk factors 
-            div.dib.pv1.pr2
-              span.ph1.dtext.daporange Orange:
-              span.lighttext  three risk factors 
-            div.dib.pv1
-              span.ph1.dapred.white Red:
-              span.lighttext  four risk factors
-        div.fl.mt1.mb3.w-100 
-          span.medtext Tip:
-          span.bg-white.lighttext  to find the building on other lists, expand all of them and then copy its BBL (Borough, Block, and Lot code) and use Find (Ctrl+F or &#8984+F). 
+            span . Each list is one risk indicator.
+            //- div.tl.pt2
+            //-   div.lighttext Risk indicators include
+            //-   div.pt2
+            //-     a(href='#sales') New sales of residential buildings
+            //-   div.pt2
+            //-     a(href='#hpdcomplaints') 5+ new complaints filed with the Department of Housing Preservation and Development (HPD)
+            //-   div.pt2
+            //-     a(href='#hpdviols') 10+ new violations issued by HPD
+            //-   div.pt2
+            //-     a(href='#dobcomplaints') 2+ new complaints filed with the Department of Buildings (DOB)
+            //-   div.pt2
+            //-     a(href='#dobjobs') New DOB construction permit applications
+            div.pt2.tl.lighttext.no-print 
+                span You can click directly to a property's 
+                //-  a(href='http://whoownswhat.justfix.nyc', target='_blank') Who Owns What
+                //-  span  page for owner info, 
+                a(href='https://hpdonline.hpdnyc.org/HPDonline/provide_address.aspx', target='_blank').light HPD building info
+                span , 
+                a(href='http://a810-bisweb.nyc.gov/bisweb/bispi00.jsp', target='_blank').light DOB Building Information System
+                span ,  
+                a(href='https://a836-acris.nyc.gov/DS/DocumentSearch/BBL', target='_blank').light ACRIS financial records
+                span ,  
+                a(href='http://nycprop.nyc.gov/nycproperty/nynav/jsp/selectbbl.jsp', target='_blank').light property tax information
+                span , or 
+                a(href='http://www.oasisnyc.net/map.aspx', target='_blank').light OASIS Map
+                span  page. You can also click a building address to view it in Google Maps.
+            div.fl.pt2.f6
+              div.lighttext If a building appears on more than one of the lists below in a given month it will be coded: 
+                div.pt1
+                  div.dib.pv1.pr2
+                    span.ph1.dapyellow Yellow:
+                    span.lighttext  two risk factors 
+                  div.dib.pv1.pr2
+                    span.ph1.dtext.daporange Orange:
+                    span.lighttext  three risk factors 
+                  div.dib.pv1
+                    span.ph1.dapred.white Red:
+                    span.lighttext  four risk factors
+              div.fl.mt1.w-100
+                span.medtext Tip:
+                span.lighttext  to find the building on other lists, expand all of them and then copy its BBL (Borough, Block, and Lot code) and use Find (Ctrl+F or &#8984+F). 
+              div.fl.mt3.mb3.lighttext
+                span For more information on using District Reports, visit the 
+                  a.light(href="http://www.dapmapnyc.org/reports-tutorial") Tutorial
+                span  page.
+    //- Lists of risk factors
     div.section#sales
-      div.accordion New sales of residential buildings last month (#{recentSales.length} buildings)
+      div.accordion New sales of residential buildings last month (
+        span.medtext #{recentSales.length} 
+        if recentSales.length == 1 
+          span.medtext building
+        else
+          span.medtext buildings
+        span )
       div.panel
         p.desc A high sale price can mean the new owner plans to displace existing tenants to make large profits. 
           | All property transfers are included here, even when the recorded dollar amount is 0. 
@@ -154,52 +185,67 @@ html(lang="en")
                 td.sales #{sale.iso_date}
                 td.f7.sales !{sale.owner}
                 td.no-print.sales !{sale.hpdlink} !{sale.bislink} !{sale.acrislink} !{sale.taxlink} !{sale.oasislink}
-          div.toplink.no-print
-            a(href='#') Top
         else 
-          div no sales :) 
+          div.none There were no sales of rent stabilized buildings in #{district.borough} #{district.name} in #{salesmonth}.
+        div.toplink.no-print
+          a(href='#') Top
     div.section#hpdcomplaints
-      div.accordion Buildings with 5+ new complaints filed with HPD last month (#{hpdComplaints.length} buildings)
+      div.accordion Buildings with 5+ new complaints filed with HPD last month (
+        span.medtext #{hpdComplaints.length} 
+        if hpdComplaints.length == 1 
+          span.medtext building
+        else
+          span.medtext buildings
+        span )
       div.panel
         p.desc Complaints that tenants make about conditions in their apartment or building get sent to Housing Preservation and Development for inspection. One complaint can include multiple problems in an apartment or a building. 
           span.no-print Click a building's 
           a(href='https://hpdonline.hpdnyc.org/HPDonline/provide_address.aspx', target='_blank').no-print (HPD)
           span.no-print  link for details. 
-        table.w-100
-          thead
-            tr.tc
-              th BBL
-              th.pl1.w-20 Address
-              th Total Units
-              th(colspan="2") Stab&shy;ilized Units
-              th Compl&shy;aints &#9662;
-              th Owner
-              th.w-20.no-print  Links
-            tr.brdr
-              th.pb3
-              th
-              th
-              th.gray 2007
-              th 2016
-              th
-              th
-              th.no-print
-          tbody
-          each complaint in hpdComplaints
-            - var trStyle = rowClass(bblCount[complaint.bbl].length);
-            tr(class=trStyle)
-              td.hpdcomplaints #{complaint.bbl}
-              td.hpdcomplaints !{complaint.googlelink}
-              td.tc.hpdcomplaints #{complaint.residentialunits}
-              td.tc.gray.hpdcomplaints #{complaint.uc2007}
-              td.tc.hpdcomplaints #{complaint.uc2016}
-              td.tc.hpdcomplaints #{complaint.hpdcomplaints}
-              td.f7.hpdcomplaints !{complaint.owner}
-              td.no-print.hpdcomplaints !{complaint.hpdlink} !{complaint.bislink} !{complaint.acrislink} !{complaint.taxlink} !{complaint.oasislink}
+        if hpdComplaints.length > 0
+          table.w-100
+            thead
+              tr.tc
+                th BBL
+                th.pl1.w-20 Address
+                th Total Units
+                th(colspan="2") Stab&shy;ilized Units
+                th Compl&shy;aints &#9662;
+                th Owner
+                th.w-20.no-print  Links
+              tr.brdr
+                th.pb3
+                th
+                th
+                th.gray 2007
+                th 2016
+                th
+                th
+                th.no-print
+            tbody
+            each complaint in hpdComplaints
+              - var trStyle = rowClass(bblCount[complaint.bbl].length);
+              tr(class=trStyle)
+                td.hpdcomplaints #{complaint.bbl}
+                td.hpdcomplaints !{complaint.googlelink}
+                td.tc.hpdcomplaints #{complaint.residentialunits}
+                td.tc.gray.hpdcomplaints #{complaint.uc2007}
+                td.tc.hpdcomplaints #{complaint.uc2016}
+                td.tc.hpdcomplaints #{complaint.hpdcomplaints}
+                td.f7.hpdcomplaints !{complaint.owner}
+                td.no-print.hpdcomplaints !{complaint.hpdlink} !{complaint.bislink} !{complaint.acrislink} !{complaint.taxlink} !{complaint.oasislink}
+        else 
+          div.none There were no buildings with 5 or more complaints filed with HPD in #{district.borough} #{district.name} in #{crtmonth}.
         div.toplink.no-print
           a(href='#') Top
     div.section#hpdviols
-      div.accordion Buildings with 10+ new violations issued by HPD last month
+      div.accordion Buildings with 10+ new violations issued by HPD last month (
+        span.medtext #{hpdViolations.length} 
+        if hpdViolations.length == 1 
+          span.medtext building
+        else
+          span.medtext buildings
+        span )
       div.panel
         p.desc HPD issues violations of the Housing Maintenance Code after inspecting building conditions. Class A, B, and C violations can indicate a landlord is neglecting or actively harassing tenants, Class C being the most severe 
           span.no-print (
@@ -208,142 +254,166 @@ html(lang="en")
           a(href='https://hpdonline.hpdnyc.org/HPDonline/provide_address.aspx', target='_blank').no-print (HPD)
           span.no-print  link for more details
           span . 
-        table.w-100
-          thead
-            tr.tc
-              th BBL
-              th.pl1.w-20 Address
-              th Total Units
-              th(colspan="2") Stab&shy;ilized Units
-              th Class A
-              th Class B
-              th Class C
-              th Total &#9662;
-              th.pl1 Owner
-              th.w-20.no-print Links
-            tr.brdr
-              th.pb3
-              th
-              th
-              th.gray 2007
-              th 2016
-              th 
-              th 
-              th 
-              th 
-              th 
-              th.no-print
-          tbody
-          each violation in hpdViolations
-            - var trStyle = rowClass(bblCount[violation.bbl].length);
-            tr(class=trStyle)
-              td.hpdviols #{violation.bbl}
-              td.hpdviols !{violation.googlelink}
-              td.tc.hpdviols #{violation.residentialunits}
-              td.tc.gray.hpdviols #{violation.uc2007} 
-              td.tc.hpdviols #{violation.uc2016}
-              td.tc.hpdviols #{violation.class_a}
-              td.tc.hpdviols #{violation.class_b}
-              td.tc.hpdviols #{violation.class_c}
-              td.tc.hpdviols #{violation.total}
-              td.f7.hpdviols !{violation.owner}
-              td.hpdviols.no-print !{violation.hpdlink} !{violation.bislink} !{violation.acrislink} !{violation.taxlink} !{violation.oasislink}
+        if hpdViolations.length > 0
+          table.w-100
+            thead
+              tr.tc
+                th BBL
+                th.pl1.w-20 Address
+                th Total Units
+                th(colspan="2") Stab&shy;ilized Units
+                th Class A
+                th Class B
+                th Class C
+                th Total &#9662;
+                th.pl1 Owner
+                th.w-20.no-print Links
+              tr.brdr
+                th.pb3
+                th
+                th
+                th.gray 2007
+                th 2016
+                th 
+                th 
+                th 
+                th 
+                th 
+                th.no-print
+            tbody
+            each violation in hpdViolations
+              - var trStyle = rowClass(bblCount[violation.bbl].length);
+              tr(class=trStyle)
+                td.hpdviols #{violation.bbl}
+                td.hpdviols !{violation.googlelink}
+                td.tc.hpdviols #{violation.residentialunits}
+                td.tc.gray.hpdviols #{violation.uc2007} 
+                td.tc.hpdviols #{violation.uc2016}
+                td.tc.hpdviols #{violation.class_a}
+                td.tc.hpdviols #{violation.class_b}
+                td.tc.hpdviols #{violation.class_c}
+                td.tc.hpdviols #{violation.total}
+                td.f7.hpdviols !{violation.owner}
+                td.hpdviols.no-print !{violation.hpdlink} !{violation.bislink} !{violation.acrislink} !{violation.taxlink} !{violation.oasislink}
+        else
+          div.none There were no buildings with ten or more violations issued by HPD in #{district.borough} #{district.name} in #{crtmonth}.          
         div.toplink.no-print
           a(href='#') Top
     div.section#dobcomplaints
-      div.accordion Buildings with 2+ new complaints filed with DOB last month
+      div.accordion Buildings with 2+ new complaints filed with DOB last month (
+        span.medtext #{dobComplaints.length} 
+        if dobComplaints.length == 1 
+          span.medtext building
+        else
+          span.medtext buildings
+        span )
       div.panel
         p.desc Complaints that tenants make about construction or certain building conditions (e.g. broken elevator) get sent to the Department of Buildings. 
           span.no-print Click a building's 
           a(href='http://a810-bisweb.nyc.gov/bisweb/bsqpm01.jsp', target='_blank').no-print (DOB)
           span.no-print  link for details through the Building Information System. 
-        table.w-100
-          thead
-            tr.tc
-              th BBL
-              th.pl1.w-20 Address
-              th Total Units
-              th(colspan="2") Stab&shy;ilized Units
-              th Compl&shy;aints &#9662;
-              th.pl1 Owner
-              th.w-20.no-print Links
-            tr.brdr
-              th.pb3
-              th 
-              th 
-              th.gray 2007
-              th 2016
-              th
-              th 
-              th.no-print
-          tbody
-          each complaint in dobComplaints
-            - var trStyle = rowClass(bblCount[complaint.bbl].length);
-            tr(class=trStyle).w-100
-              td.dobcomplaints #{complaint.bbl}
-              td.dobcomplaints !{complaint.googlelink}
-              td.tc.dobcomplaints #{complaint.residentialunits}
-              td.tc.gray.dobcomplaints #{complaint.uc2007}
-              td.tc.dobcomplaints #{complaint.uc2016}
-              td.tc.dobcomplaints #{complaint.dobcomplaints}
-              td.f7.dobcomplaints !{complaint.owner}
-              td.no-print.dobcomplaints !{complaint.hpdlink} !{complaint.bislink} !{complaint.acrislink} !{complaint.taxlink} !{complaint.oasislink}
+        if dobComplaints.length > 0
+          table.w-100
+            thead
+              tr.tc
+                th BBL
+                th.pl1.w-20 Address
+                th Total Units
+                th(colspan="2") Stab&shy;ilized Units
+                th Compl&shy;aints &#9662;
+                th.pl1 Owner
+                th.w-20.no-print Links
+              tr.brdr
+                th.pb3
+                th 
+                th 
+                th.gray 2007
+                th 2016
+                th
+                th 
+                th.no-print
+            tbody
+            each complaint in dobComplaints
+              - var trStyle = rowClass(bblCount[complaint.bbl].length);
+              tr(class=trStyle).w-100
+                td.dobcomplaints #{complaint.bbl}
+                td.dobcomplaints !{complaint.googlelink}
+                td.tc.dobcomplaints #{complaint.residentialunits}
+                td.tc.gray.dobcomplaints #{complaint.uc2007}
+                td.tc.dobcomplaints #{complaint.uc2016}
+                td.tc.dobcomplaints #{complaint.dobcomplaints}
+                td.f7.dobcomplaints !{complaint.owner}
+                td.no-print.dobcomplaints !{complaint.hpdlink} !{complaint.bislink} !{complaint.acrislink} !{complaint.taxlink} !{complaint.oasislink}
+        else 
+          div.none There were no buildings with two or more complaints filed with DOB in #{district.borough} #{district.name} in #{crtmonth}.                    
         div.toplink.no-print
           a(href='#') Top
     div.section#dobjobs
-      div.accordion Buildings with new DOB permit applications filed last month
+      div.accordion Buildings with new DOB permit applications filed last month (
+        span.medtext #{dobjobs.length} 
+        if dobjobs.length == 1 
+          span.medtext building
+        else
+          span.medtext buildings
+        span )
       div.panel
-        p.desc Construction permit applications show a landlord's intention to do construction and renovations, which can be used to destabilize apartments: for example, Alt 2 permits may represent work that will justify Individual Apartment Improvement rent increases 
+        p.desc Construction permit applications show a landlord's intention to do construction and renovations, which can be used to destabilize apartments. 
+          | For example, Alt 2 permits may represent work that will justify Individual Apartment Improvement rent increases 
           span.no-print (
           a(href='http://www1.nyc.gov/assets/buildings/pdf/pw1_userguide.pdf', target='_blank').no-print more info on permit types, p.5
           span.no-print ). Click a building's 
           a(href='http://a810-bisweb.nyc.gov/bisweb/bsqpm01.jsp', target='_blank').no-print (DOB)
           span.no-print  link for details through the Building Information System
           span . 
-        table.w-100
-          thead
-            tr.tc
-              th BBL
-              th.pl1.w-20 Address
-              th Total Units
-              th(colspan="2") Stab&shy;ilized Units
-              th Alt 1 Perm&shy;its
-              th Alt 2 Perm&shy;its &#9662;
-              th DM Perm&shy;its
-              th.pl1 Owner
-              th.w-20.no-print Links
-            tr.brdr
-              th.pb3
-              th 
-              th 
-              th.gray 2007
-              th 2016
-              th 
-              th 
-              th  
-              th 
-              th.no-print
-          tbody
-          each job in dobjobs
-            - var trStyle = rowClass(bblCount[job.bbl].length);
-            tr(class=trStyle)
-              td.dobjobs #{job.bbl}
-              td.dobjobs !{job.googlelink}
-              td.tc.dobcomplaints #{job.residentialunits}
-              td.tc.gray.dobjobs #{job.uc2007} 
-              td.tc.dobjobs #{job.uc2016}
-              td.tc.dobjobs #{job.a1}
-              td.tc.dobjobs #{job.a2}
-              td.tc.dobjobs #{job.dm}
-              td.f7.dobjobs !{job.owner}
-              td.no-print.dobjobs !{job.hpdlink} !{job.bislink} !{job.acrislink} !{job.taxlink} !{job.oasislink}
-    div.fl.w-100.tl.pl4.mt1.mb3.f5.no-print
+        if dobjobs.length > 0
+          table.w-100
+            thead
+              tr.tc
+                th BBL
+                th.pl1.w-20 Address
+                th Total Units
+                th(colspan="2") Stab&shy;ilized Units
+                th Alt 1 Perm&shy;its
+                th Alt 2 Perm&shy;its &#9662;
+                th DM Perm&shy;its
+                th.pl1 Owner
+                th.w-20.no-print Links
+              tr.brdr
+                th.pb3
+                th 
+                th 
+                th.gray 2007
+                th 2016
+                th 
+                th 
+                th  
+                th 
+                th.no-print
+            tbody
+            each job in dobjobs
+              - var trStyle = rowClass(bblCount[job.bbl].length);
+              tr(class=trStyle)
+                td.dobjobs #{job.bbl}
+                td.dobjobs !{job.googlelink}
+                td.tc.dobcomplaints #{job.residentialunits}
+                td.tc.gray.dobjobs #{job.uc2007} 
+                td.tc.dobjobs #{job.uc2016}
+                td.tc.dobjobs #{job.a1}
+                td.tc.dobjobs #{job.a2}
+                td.tc.dobjobs #{job.dm}
+                td.f7.dobjobs !{job.owner}
+                td.no-print.dobjobs !{job.hpdlink} !{job.bislink} !{job.acrislink} !{job.taxlink} !{job.oasislink}
+        else 
+          div.none There were no buildings with new DOB permit applications filed in #{district.borough} #{district.name} in #{crtmonth}.                    
+
+    //- Footer
+    div.fl.w-100.tl.pl4.pt4.mb3.f5.no-print
       a(href='javascript:history.back()') Back
       span  | 
       a(href='#') Top
     div.fl.w-100.bg-black-10.f6.pl4
       div.pr3.pt3.lighttext
-        span.medtext#notes Notes: 
+        span.medtext#notes *
         span All buildings in the report have contained at least one rent stabilized unit between 2007 and 2016. 
           | Stabilized unit numbers are approximate and based on property tax bills from the NYC Department of Finance
         span.no-print : click a building's 
@@ -389,6 +459,7 @@ html(lang="en")
           span and 
               a(href='https://github.com/aepyornis/nyc-db' target='_blank').light Ziggy (github.com/aepyornis)
               span .
+
     //- Javascript for accordion feature
     script.
       var acc = document.getElementsByClassName("accordion");

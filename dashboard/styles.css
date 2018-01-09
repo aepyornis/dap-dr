@@ -3,9 +3,8 @@ html, body, div, table, th, tbody, thead {
     font-weight:400;
 }
 
-h1, h2, h3, h4 {
-    font-weight:500;
-}
+
+
 
 table {
     border-spacing: 0;
@@ -13,8 +12,15 @@ table {
     
 }
 
+th, td {
+    padding: 1px 4px 1px 4px;
+    /* hyphens: auto; */
+    font-size: .875rem;
+}
+
 .map {
     max-width: 310px !important;
+    padding-bottom: .5rem !important;
 }
 
 .key {
@@ -28,11 +34,6 @@ table {
     text-align: left;
 }
 
-th, td {
-    padding: 1px 4px 1px 4px;
-    /* hyphens: auto; */
-    font-size: .875rem;
-}
 
 a, a:link, a:visited {
     color: #1c48ae;
@@ -105,6 +106,121 @@ a.dropdown, a.dropdown:hover {
     padding-left: 0px;
 }
 
+/**** Navbar CSS (from DAP Map) ****/
+
+.navbar { 
+    display: block; 
+    background-color: black;
+    height: 37px;
+    padding: 0rem !important;
+}
+
+.navbar > .container-nav {
+  width: 100%; 
+  max-width: 950px;
+  position: relative;
+  margin: 0 auto;
+  display: relative;
+}
+
+.navbar-list {
+  list-style: none;
+  margin-bottom: 0; 
+  padding-left: 0rem !important;
+}
+
+.navbar-item {
+  position: relative;
+  float: left;
+  margin-bottom: 0; 
+}
+
+.navbar-link {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: lighter;
+  font-family: helvetica, sans-serif;
+  margin: 0 17px;
+  text-decoration: none;
+  line-height: 44px;
+  color: #969696 !important;
+  transition: color 0.4s ease 0s;
+}
+
+.navbar-link:hover {
+  color: #ff6601 !important;
+  transition: color 0.4s ease 0s;
+  background-color: transparent;  
+}
+
+.navbar-link.active {
+  color: #FDAF7E !important; 
+}
+
+.navbar-link.active::after {
+    content: "" !important;
+}
+
+/* Dropdown Button */
+.dropbtn {    
+    border: none;
+    cursor: pointer;
+    height: 40px;
+    background-color: black;
+    padding: 0;
+    text-align: left;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    z-index: 1;
+    padding: 2px 10px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: helvetica-w01-light,helvetica-w02-light,sans-serif;
+    /* margin: 0 17px; */
+    text-decoration: none;
+    color: #969696;
+    transition: color 0.4s ease 0s;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #fff;
+    font-weight: 300;
+    color: #ff6601;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    color: #ff6601 !important;
+    transition: color 0.4s ease 0s;
+    background-color: transparent;  
+}
+
+/* Colors and font weights */
+
 .dapgray {
     background-color: #c4b9b9
 }
@@ -142,6 +258,8 @@ a.dropdown, a.dropdown:hover {
     font-weight: 300;
 }
 
+/* Text sections */
+
 .section {
     float: left;
     width: 100%;
@@ -174,7 +292,11 @@ a.dropdown, a.dropdown:hover {
     font-size: 1rem;
 }
 
-
+.none {
+    font-size: .875rem;
+    font-weight: 300;
+    font-style: italic;
+}
 
 
 
@@ -279,6 +401,13 @@ a.dropdown, a.dropdown:hover {
  .accordion:hover {
     background-color: #c4b9b9
     
+}
+
+@media
+only screen and (max-width: 600px) {
+    .navbar {
+        display: none !important;
+    }
 }
 
 
@@ -392,5 +521,12 @@ only screen and (max-width: 718px),
 	td.dobjobs:nth-of-type(8):before { content: "DM"; }
 	td.dobjobs:nth-of-type(9):before { content: "Owner"; }
 	td.dobjobs:nth-of-type(10):before { content: "Links"; }
+
+    /* Hide navbar */
+    
+    /* .navbar {
+        display: none !important;
+    } */
+
 
 }
