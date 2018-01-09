@@ -4,8 +4,6 @@ html, body, div, table, th, tbody, thead {
 }
 
 
-
-
 table {
     border-spacing: 0;
     padding: 1px;
@@ -20,7 +18,7 @@ th, td {
 
 .map {
     max-width: 310px !important;
-    padding-bottom: .5rem !important;
+    padding-bottom: 1rem !important;
 }
 
 .key {

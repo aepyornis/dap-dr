@@ -37,15 +37,26 @@ html
             a(href='/').imgstyle.daplogo
               img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/dapdrlogo.png').daplogo
     div.intro
+      p 
+        span Community groups, organizers, residents, and policymakers play a critical role in preventing tenant harassment and displacement 
+        | in rent stabilized buildings. However, existing data and information is fragmented and often confusing, and identifying which 
+        | New York City buildings are most vulnerable can be a challenge. 
       p
-        span.highlight Tenant organizers have limited time and capacity. As part of its
-          a(href='http://dapmapnyc.org')  Displacement Alert Project
-          span , ANHD produces DAP District Reports 
-          | to help them prioritize outreach. The reports give monthly updates on displacement risk to 
-          | stabilized tenants in the neighborhoods where organizers work.
-      p DAP District Reports provide lists of rent stabilized buildings organized by Community Board where 
-        | tenants may be at risk of harassment and displacement. Risk is indicated by new 
-        span.medtext property sales
+        span DAP District Reports are a part of the 
+        a.light(href='http://anhd.org' target='_blank') Association for Neighborhood & Housing Development’s 
+        span (ANHD) 
+        a.light(href='http://dapmapnyc.org' target='_blank')  Displacement Alert Project 
+        span  (DAP), leveraging data and visualizations to help protect tenants and preserve New York City’s stock of affordable housing.
+      p 
+        span Our DAP District Reports provide up-to-date information on where rent stabilized tenants are at greatest risk of displacement 
+        | in each community district. Buildings that appear on multiple lists are coded 
+        span.dapyellow.black.ph1 yellow
+        span , 
+        span.daporange.black.ph1 orange
+        span , or 
+        span.dapred.white.ph1.lighttext red
+        span , depending on the level of risk. We determine risk based on public data on 
+        span.medtext new property sales
         span , 
         span.medtext HPD complaints
         span , 
@@ -54,13 +65,13 @@ html
         span.medtext DOB complaints
         span , and 
         span.medtext DOB construction permit applications. 
-      p Buildings that appear on multiple lists are coded 
-        span.dapyellow.black.ph1 yellow
-        span , 
-        span.daporange.black.ph1 orange
-        span , or 
-        span.dapred.white.ph1.lighttext red
-        span , depending on the level of risk.
+      p
+        span With DAP District Reports, you can:
+          ul.lh-copy
+            li Access community district-level data on at-risk buildings
+            li View reports on your computer, phone, or print them out in a clear format to take offline and into the field
+            li Look back at reports from previous months
+            li Navigate directly to a property page on ACRIS, HPD, DOB, DOF tax bills, OASIS map, and Google Maps
     for boro in districts
       div.fl.w-100.ph4
         div.f4.pv2.black #{boro[0]} 
@@ -69,7 +80,7 @@ html
             a(href=`${district.cd}.html`) 
               span #{district.name}: &nbsp;
               | #{district.neighborhoods}
-    div.fl.w-100.bg-black-10.f6.pl4
+    div.fl.w-100.bg-black-10.f6.pl4.mt4.pb3
       div.pr3.pt3.lighttext
         span The 
         a(href='http://www.anhd.org', target='_blank').light Association for Neighborhood and Housing Development
