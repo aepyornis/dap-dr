@@ -1,8 +1,13 @@
 doctype html
-html
+html(lang="en")
   head
-    meta( name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes' )
-    link(href="https://fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,regular,medium,semi-bold,bold, extra-bold, black" rel="stylesheet") 
+    meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes')
+    meta(name='description' content='Community District Reports on tenant harassment and displacement in New York City')
+    meta(name='keywords' content='tenant,harassment,displacement,risk,NYC,ANHD,DAP Map')
+    meta(name='author' content='ANHD')
+    title
+      | DAP District Reports
+    link(href="https://fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,regular,medium,semi-bold,bold,extra-bold,black" rel="stylesheet") 
     link(rel='stylesheet' href='./tachyons.css')
     link(rel='stylesheet' href='./styles.css') 
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous")
@@ -17,13 +22,13 @@ html
           li.navbar-item
             a.navbar-link.light(href="http://www.dapmapnyc.org") HOME
           li.navbar-item.dropdown
-            button.dropbtn
+            div.dropbtn
               a.navbar-link.light(href="http://map.dapmapnyc.org/app") DAP MAP
             div.dropdown-content
-              a.light(href="http://dapmapnyc.org/tutorial") MAP TUTORIAL
+              a.light(href="http://dapmapnyc.org/map-tutorial") MAP TUTORIAL
           li.navbar-item.dropdown
-            button.dropbtn
-              a.navbar-link.active.light(href="#") DISTRICT REPORTS 
+            div.dropbtn
+              a.navbar-link.active.light(href="http://reports.dapmapnyc.org") DISTRICT REPORTS 
             div.dropdown-content
               a.light(href="http://dapmapnyc.org/reports-tutorial") REPORTS TUTORIAL
           li.navbar-item
@@ -34,22 +39,23 @@ html
       div.container(style="max-width: none; padding: 0px;")
         div.row
           div.col-sm
-            a(href='/').imgstyle.daplogo
-              img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/dapdrlogo.png').daplogo
+            h1
+              a(href='/').imgstyle.daplogo
+                img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/dapdrlogo.png' alt='DAP District Reports').daplogo
     div.intro
       p 
         span Community groups, organizers, residents, and policymakers play a critical role in preventing tenant harassment and displacement 
-        | in rent stabilized buildings. However, existing data and information is fragmented and often confusing, and identifying which 
-        | New York City buildings are most vulnerable can be a challenge. 
+        | in rent stabilized buildings. However, existing data and information is fragmented and often confusing, which can make it challenging  
+        | to identify which New York City buildings are most vulnerable. 
       p
         span DAP District Reports are a part of the 
-        a.light(href='http://anhd.org' target='_blank') Association for Neighborhood & Housing Development’s 
+        a.light(href='http://anhd.org' target='_blank') Association for Neighborhood & Housing Development's 
         span (ANHD) 
         a.light(href='http://dapmapnyc.org' target='_blank')  Displacement Alert Project 
-        span  (DAP), leveraging data and visualizations to help protect tenants and preserve New York City’s stock of affordable housing.
+        span  (DAP), leveraging data and visualizations to help protect tenants and preserve New York City's stock of affordable housing.
       p 
         span Our DAP District Reports provide up-to-date information on where rent stabilized tenants are at greatest risk of displacement 
-        | in each community district. Buildings that appear on multiple lists are coded 
+        | in each community district. Buildings that appear on multiple lists are coded 
         span.dapyellow.black.ph1 yellow
         span , 
         span.daporange.black.ph1 orange
@@ -67,16 +73,15 @@ html
         span.medtext DOB construction permit applications. 
       p
         span With DAP District Reports, you can:
-          ul.lh-copy
-            li Access community district-level data on at-risk buildings
-            li View reports on your computer, phone, or print them out in a clear format to take offline and into the field
-            li Look back at reports from previous months
-            li Navigate directly to a property page on ACRIS, HPD, DOB, DOF tax bills, OASIS map, and Google Maps
+        ul.lh-copy
+          li Access community district-level data on at-risk buildings
+          li View reports on your computer, phone, or print them out in a clear format to take offline and into the field
+          li Look back at reports from previous months
+          li Navigate directly to a property page on ACRIS, HPD, DOB, DOF tax bills, OASIS map, and Google Maps
       p
         span For more information on using District Reports, visit the 
         a.light(href="http://www.dapmapnyc.org/reports-tutorial" target="_blank") Tutorial
         span  page.
-        a(href='')
     for boro in districts
       div.fl.w-100.ph4
         div.f4.pv2.black #{boro[0]} 
@@ -100,7 +105,7 @@ html
         div.credits
           span Made possible by support from
         div.ph2.credits
-          img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/fordlogo.png')
+          img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/fordlogo.png' alt='Ford Foundation')
         div.credits
           span and 
               a(href='https://github.com/aepyornis/nyc-db' target='_blank').light Ziggy (github.com/aepyornis)

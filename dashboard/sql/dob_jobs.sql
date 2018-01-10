@@ -84,8 +84,8 @@ SELECT subset.*,
     INNER JOIN rentstab rentstab on rentstab.ucbbl = dobjobs.bbl
     WHERE
     pluto.cd = '${ cd }' 
-    AND latestactiondate >= date_trunc('month', current_date - interval '2 month') 
-    and latestactiondate < date_trunc('month', current_date - interval '1 month') 
+    AND latestactiondate >= date_trunc('month', current_date - interval '1 month') 
+    --and latestactiondate < date_trunc('month', current_date - interval '1 month') 
     AND coalesce(uc2007,uc2008, uc2009, uc2010, uc2011, uc2012, uc2013, uc2014,uc2015,uc2016) is not null
     group by dobjobs.bbl, pluto.cd, pluto.address, residentialunits, uc2007, uc2016, borocode, pluto.block, pluto.lot, pluto.zipcode, pluto.bbl
     ) as subset

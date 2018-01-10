@@ -81,8 +81,6 @@ select subset.*,
       AND pluto.cd = '${ cd }'
       AND sales.saledate >= date_trunc('month', current_date - interval '2 month')
       AND sales.residentialunits > 0
-      --Took out the line below as a test, too much info might be obscured by the cut-off and it won't add many rows. Like before, more can be researched via ACRIS
-      --AND sales.saleprice > 50000
       AND COALESCE(uc2007,uc2008, uc2009, uc2010, uc2011, uc2012, uc2013, uc2014,uc2015,uc2016) is not null
       ) as subset
 LEFT JOIN hpd_registrations_grouped_by_bbl_with_contacts hpd_reg on hpd_reg.bbl = subset.bbl

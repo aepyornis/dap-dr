@@ -16,9 +16,19 @@ th, td {
     font-size: .875rem;
 }
 
+h1 {
+    margin: 0;
+}
+
 .map {
     max-width: 310px !important;
+    min-width: 300px !important;
     padding-bottom: 1rem !important;
+}
+
+.pageintro {
+    min-width: 500px !important;
+    flex: 100%;
 }
 
 .key {
@@ -519,12 +529,6 @@ only screen and (max-width: 718px),
 	td.dobjobs:nth-of-type(8):before { content: "DM"; }
 	td.dobjobs:nth-of-type(9):before { content: "Owner"; }
 	td.dobjobs:nth-of-type(10):before { content: "Links"; }
-
-    /* Hide navbar */
-    
-    /* .navbar {
-        display: none !important;
-    } */
 
 
 }

@@ -75,8 +75,8 @@ select subset.*,
       from dob_complaints dob
       left join pluto_16v2 pluto on pluto.address = concat(housenumber,' ',housestreet)
       inner join rentstab on rentstab.ucbbl=pluto.bbl
-      where cast(dateentered as date) >= date_trunc('month', current_date - interval '2 month') 
-      and cast(dateentered as date) < date_trunc('month', current_date - interval '1 month')
+      where cast(dateentered as date) >= date_trunc('month', current_date - interval '1 month') 
+      -- and cast(dateentered as date) < date_trunc('month', current_date - interval '1 month')
       AND communityboard = '${ cd }'
       and pluto.unitsres > 0 
       AND COALESCE(uc2007,uc2008, uc2009, uc2010, uc2011, uc2012, uc2013, uc2014,uc2015,uc2016) is not null
