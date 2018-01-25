@@ -1,25 +1,25 @@
 select subset.*,
-      first(replace(trim(both'"{}",' from cast(corpnames as text)), '"','')) as owner
-      -- first(concat('<a href="http://whoownswhat.justfix.nyc/address/',
-      --       case 
-      --             when borocode = '1' then 'MANHATTAN'
-      --             when borocode = '2' then 'BRONX'
-      --             when borocode = '3' then 'BROOKLYN'
-      --             when borocode = '4' then 'QUEENS'
-      --             when borocode = '5' then 'STATEN ISLAND'
-      --       end,
-      --       '/',
-      --       split_part(address,' ',1),
-      --       '/',
-      --       split_part(address,' ',2),
-      --       '%20',
-      --       split_part(address,' ',3),
-      --       '%20',
-      --       split_part(address,' ',4),
-      --       '" target="_blank">',
-      --       replace(trim(both'"{}",' from cast(corpnames as text)), '"',''),
-      --       ' </a>'
-      --       )) as owner
+      first(replace(trim(both'"{}",' from cast(corpnames as text)), '"','')) as ownertext,
+      first(concat('<a href="http://whoownswhat.justfix.nyc/address/',
+            case 
+                  when borocode = '1' then 'MANHATTAN'
+                  when borocode = '2' then 'BRONX'
+                  when borocode = '3' then 'BROOKLYN'
+                  when borocode = '4' then 'QUEENS'
+                  when borocode = '5' then 'STATEN ISLAND'
+            end,
+            '/',
+            split_part(address,' ',1),
+            '/',
+            split_part(address,' ',2),
+            '%20',
+            split_part(address,' ',3),
+            '%20',
+            split_part(address,' ',4),
+            '" target="_blank">',
+            replace(trim(both'"{}",' from cast(corpnames as text)), '"',''),
+            ' </a>'
+            )) as owner
       from
       (select pluto.cd, 
       hpd.bbl, 
@@ -77,8 +77,7 @@ select subset.*,
       inner join rentstab on rentstab.ucbbl=hpd.bbl
       where 
             pluto.cd = '${ cd }'
-            and cast(receiveddate as date) >= date_trunc('month', current_date - interval '2 month') 
-            and cast(receiveddate as date) < date_trunc('month', current_date - interval '1 month')
+            and receiveddate between '7-01-2017' and '7-31-2017'
             and pluto.unitsres > 0
             and coalesce(uc2007,uc2008, uc2009, uc2010, uc2011, uc2012, uc2013, uc2014,uc2015,uc2016) is not null
       group by hpd.bbl, pluto.cd, pluto.address, residentialunits, uc2007, uc2016, borocode, pluto.block, pluto.lot, pluto.zipcode, pluto.bbl

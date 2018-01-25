@@ -1,0 +1,9 @@
+Release Notes
+
+v1.3.0: 1-9-17 Went live on reports.dapmapnyc.org and was linked to from dapmapnyc.org but was IE incompatible
+    boardsdec17-2.json; boardsnov17-1.json
+v1.3.1: 1-10-17 Active version upon email announcement
+v1.3.2: 1-11-17 Fixed mobile compatibility issues that came from IE compatibility fixes
+v1.3.3: 1-12-17 Changed dobjobs date field from latestactiondate to prefilingdate (earliest date of application submission. latestactiondate will change with status updates e.g. approval)
+    boardsdec17-3.json; boardsnov17-3.json
+v1.3.4: 1-25-17 Added WOW back with new boards.json files, edited intro text to include. Added July-October 2017 and updated dropdown list.

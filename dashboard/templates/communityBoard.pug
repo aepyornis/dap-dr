@@ -11,20 +11,24 @@ html(lang="en")
     link(rel='stylesheet' href='./tachyons.css')
     link(rel='stylesheet' href='./styles.css') 
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous")
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    script(async src="https://www.googletagmanager.com/gtag/js?id=UA-110952392-1")
+
     <!--Bootstrap-->
     script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous")
     script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous")
+   
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    script(async src="https://www.googletagmanager.com/gtag/js?id=UA-112369835-1")
     script.
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'UA-110952392-1');
+      gtag('config', 'UA-112369835-1');
+  
   body
-  - var crtmonth = 'November 2017'
-  - var salesmonth = 'November 2017'
+  //- Change the months here when rebuilding pages
+  - var crtmonth = 'July 2017'
+  - var salesmonth = 'July 2017'
     nav.navbar
       div.container-nav
         ul.navbar-list
@@ -48,22 +52,51 @@ html(lang="en")
       div.container(style="max-width: none; padding: 0px;")
         div.row
           div.col-sm
-            h1
+            h1.f5.black
               a(href='/').imgstyle
                 img(src='https://github.com/lblok/dapreports/blob/master/images/dapdrlogo.png?raw=true' alt='DAP District Reports').daplogo
           div.f4.black-90.col-sm.align-self-center
               div.v-mid.title #{district.borough} #{district.name}
-              //- Change the month here when rebuilding pages
               div.lighttext.title #{crtmonth}
               //- Select month dropdown
               div.w-100.fl.no-print
                   div.container(style="max-width: none; padding-left: 0px")
                     div.dropdown.pt1.show
+                      - var jan17 = '/jan17/' + district.cd + '.html'
+                      - var feb17 = '/feb17/' + district.cd + '.html'
+                      - var mar17 = '/mar17/' + district.cd + '.html'
+                      - var apr17 = '/apr17/' + district.cd + '.html'
+                      - var may17 = '/may17/' + district.cd + '.html'
+                      - var jun17 = '/jun17/' + district.cd + '.html'
+                      - var jul17 = '/jul17/' + district.cd + '.html'
+                      - var aug17 = '/aug17/' + district.cd + '.html'
+                      - var sep17 = '/sep17/' + district.cd + '.html'
+                      - var oct17 = '/oct17/' + district.cd + '.html'
                       - var nov17 = '/nov17/' + district.cd + '.html'
                       - var current = '../' + district.cd + '.html'
                         a.btn.btn-secondary.btn-sm.dropdown-toggle(data-toggle="dropdown") Select Month
                         span.caret
                           ul.dropdown-menu
+                            //- li.item
+                            //-   a.dropdown(href=jan17) January 2017
+                            //- li.item
+                            //-   a.dropdown(href=feb17) February 2017                          
+                            //- li.item
+                            //-   a.dropdown(href=mar17) March 2017
+                            //- li.item
+                            //-   a.dropdown(href=apr17) April 2017
+                            //- li.item
+                            //-   a.dropdown(href=may17) May 2017
+                            //- li.item
+                            //-   a.dropdown(href=jun17) June 2017
+                            li.item
+                              a.dropdown(href=jul17) July 2017
+                            li.item
+                              a.dropdown(href=aug17) August 2017
+                            li.item
+                              a.dropdown(href=sep17) September 2017
+                            li.item
+                              a.dropdown(href=oct17) October 2017
                             li.item
                               a.dropdown(href=nov17) November 2017
                             li.item
@@ -79,7 +112,7 @@ html(lang="en")
           div.pt3.col-sm.map
             - var mapurl = 'https://github.com/lblok/dapreports/blob/master/images/cdmaps/' + district.cd + '-01-min.png?raw=true'
               img(src=mapurl alt= district.borough + ' ' + district.name ' Map') 
-          div.ph4.pt3.lighttext.col-sm.pageintro
+          div.ph4.pt3.lighttext.col-sm.pageintro.printintro
             span.tl A monthly update of 
             span harassment and displacement risk in rent stabilized
             a(href='#notes') * 
@@ -89,18 +122,27 @@ html(lang="en")
             span . Each list is one risk indicator.
             div.pt2.tl.lighttext.no-print 
               span You can click directly to a property's 
-              //-  a(href='http://whoownswhat.justfix.nyc', target='_blank') Who Owns What
-              //-  span  page for owner info, 
-              a(href='https://hpdonline.hpdnyc.org/HPDonline/provide_address.aspx', target='_blank').light HPD building info
+              a(href='https://hpdonline.hpdnyc.org/HPDonline/provide_address.aspx', target='_blank').light HPD building info 
+                span.medtext (HPD)
               span , 
-              a(href='http://a810-bisweb.nyc.gov/bisweb/bispi00.jsp', target='_blank').light DOB Building Information System
+              a(href='http://a810-bisweb.nyc.gov/bisweb/bispi00.jsp', target='_blank').light DOB Building Information System 
+                span.medtext (DOB)
               span ,  
-              a(href='https://a836-acris.nyc.gov/DS/DocumentSearch/BBL', target='_blank').light ACRIS financial records
+              a(href='https://a836-acris.nyc.gov/DS/DocumentSearch/BBL', target='_blank').light ACRIS financial records 
+                span.medtext (ACRIS)
               span ,  
-              a(href='http://nycprop.nyc.gov/nycproperty/nynav/jsp/selectbbl.jsp', target='_blank').light property tax information
+              a(href='http://nycprop.nyc.gov/nycproperty/nynav/jsp/selectbbl.jsp', target='_blank').light property tax information 
+                span.medtext (Taxes)
               span , or 
-              a(href='http://www.oasisnyc.net/map.aspx', target='_blank').light OASIS Map
-              span  page. You can also click a building address to view it in Google Maps.
+              a(href='http://www.oasisnyc.net/map.aspx', target='_blank').light OASIS Map 
+                span.medtext (OASIS)
+              span  page. You can also click the link for a building's registered 
+                span.medtext Owner 
+              span to view its 
+              a(href='http://whoownswhat.justfix.nyc', target='_blank').light Who Owns What 
+              span  page and its 
+                span.medtext Address 
+              span to view it in Google Maps.
             div.fl.pt2.f6
               div.lighttext If a building appears on more than one of the lists below in a given month it will be coded: 
                 div.pt1
@@ -116,10 +158,10 @@ html(lang="en")
               div.fl.mt1.w-100
                 span.medtext Tip:
                 span.lighttext  to find the building on other lists, expand all of them and then copy its BBL (Borough, Block, and Lot code) and use Find (Ctrl+F or &#8984+F). 
-              div.fl.mt3.mb3.lighttext
-                span For more information on using District Reports, visit the 
-                a.light(href="http://www.dapmapnyc.org/reports-tutorial" target="_blank") Tutorial
-                span  page.
+              div.fl.mt3.mb3.lighttext.no-print
+                span.noprint For more information on using DAP District Reports, visit the 
+                a.light.noprint(href="http://www.dapmapnyc.org/reports-tutorial" target="_blank") Tutorial
+                span.noprint  page.
     //- Lists of risk factors
     div.section#sales
       div.accordion New sales of residential buildings last month (
@@ -130,7 +172,7 @@ html(lang="en")
           span.medtext buildings
         span )
       div.panel
-        p.desc A high sale price can mean the new owner plans to displace existing tenants to make large profits. 
+        p.desc A high sales price can mean the new owner plans to displace existing tenants to make large profits. 
           | All property transfers are included here, even when the recorded dollar amount is 0. 
           //- Buildings on this list sold for more than $50,000, which is used as a threshold for "true" sales versus other types of transfers 
           //- span.no-print (
@@ -149,7 +191,7 @@ html(lang="en")
                 th.pl1.w-20 Address
                 th Total Units
                 th(colspan="2") Stab&shy;ilized Units
-                th Sale Price
+                th Sales Price
                 th Price/&shy;Sq. Foot
                 th Sale Date &#9662;
                 th.w-25 Owner
@@ -355,10 +397,11 @@ html(lang="en")
           | For example, Alt 2 permits may represent work that will justify Individual Apartment Improvement rent increases 
           span.no-print (
           a(href='http://www1.nyc.gov/assets/buildings/pdf/pw1_userguide.pdf', target='_blank').no-print more info on permit types, p.5
-          span.no-print ). Click a building's 
+          span.no-print ). 
+          span . Buildings are included here based on construction permit pre-filing dates. 
+          span.no-print Click a building's 
           a(href='http://a810-bisweb.nyc.gov/bisweb/bsqpm01.jsp', target='_blank').no-print (DOB)
-          span.no-print  link for details through the Building Information System
-          span . 
+          span.no-print  link for details through the Building Information System.
         if dobjobs.length > 0
           table.w-100
             thead
@@ -415,7 +458,6 @@ html(lang="en")
         span.no-print  link for individual property tax bills
         span . Missing or fluctuating numbers may be due to missing/incorrect registration by the owner or inconsistencies in property tax documentation. 
             | NYS Housing and Community Renewal maintains the most accurate information on rent stabilization, which is not available to the public.
-        //- p The threshold of $50,000 is used to differentiate "true" or "arms-length" sales that reflect the property's market value for transfers between people or entities with existing relationships.  
       div.pt3.lighttext
         span.medtext Data sources: 
         a(href='http://taxbills.nyc' target='blank').light taxbills.nyc
@@ -425,6 +467,8 @@ html(lang="en")
         a(href='http://taxbills.nyc/DATALICENSE-CC-BY-SA.html' target='blank').light CC BY-SA
         span ); 
         a(href='http://www1.nyc.gov/site/finance/taxes/property-rolling-sales-data.page' target='blank').light DOF Rolling Sales
+        span , 
+        a(href='https://www1.nyc.gov/site/planning/data-maps/open-data/pluto-mappluto-archive.page' target='blank').light PLUTO 16v2
         span ; NYC Open Data Portal: 
         a(href='https://data.cityofnewyork.us/Housing-Development/Housing-Maintenance-Code-Complaints/uwyv-629c/data' target='blank').light Housing Maintenance Code Complaints
         span , 
@@ -432,7 +476,11 @@ html(lang="en")
         span , 
         a(href='https://data.cityofnewyork.us/Housing-Development/DOB-Complaints-Received/eabe-havv/data' target='blank').light DOB Complaints Received
         span , 
-        a(href='https://data.cityofnewyork.us/Housing-Development/DOB-Job-Application-Filings/ic3t-wcy2/data' target='blank').light DOB Job Applications Filed
+        a(href='https://data.cityofnewyork.us/Housing-Development/DOB-Job-Application-Filings/ic3t-wcy2/data' target='blank').light DOB Job Applications Filings
+        span , 
+        a(href='https://data.cityofnewyork.us/Housing-Development/Multiple-Dwelling-Registrations/tesw-yqqr/data' target='blank').light Multiple Dwelling Registrations
+        span , 
+        a(href='https://data.cityofnewyork.us/Housing-Development/Registration-Contacts/feu5-w2e2/data' target='blank').light Registration Contacts
 
       div.pr3.pt3.lighttext
         span The 

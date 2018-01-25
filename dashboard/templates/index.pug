@@ -15,6 +15,14 @@ html(lang="en")
     script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous")
     script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous")
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    script(async src="https://www.googletagmanager.com/gtag/js?id=UA-112369835-1")
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-112369835-1');
+  
   body
     nav.navbar
       div.container-nav
@@ -39,15 +47,15 @@ html(lang="en")
       div.container(style="max-width: none; padding: 0px;")
         div.row
           div.col-sm
-            h1
+            h1.f5.black
               a(href='/').imgstyle.daplogo
-                img(src='https://raw.githubusercontent.com/aepyornis/dap-dr/master/dashboard/dapdrlogo.png' alt='DAP District Reports').daplogo
+                img(src='https://github.com/lblok/dapreports/blob/master/images/dapdrlogo.png?raw=true' alt='DAP District Reports').daplogo
     div.intro
-      p 
+      p.mobilehide 
         span Community groups, organizers, residents, and policymakers play a critical role in preventing tenant harassment and displacement 
         | in rent stabilized buildings. However, existing data and information is fragmented and often confusing, which can make it challenging  
         | to identify which New York City buildings are most vulnerable. 
-      p
+      p.mobilehide
         span DAP District Reports are a part of the 
         a.light(href='http://anhd.org' target='_blank') Association for Neighborhood & Housing Development's 
         span (ANHD) 
@@ -71,9 +79,9 @@ html(lang="en")
         span.medtext DOB complaints
         span , and 
         span.medtext DOB construction permit applications. 
-      p
-        span With DAP District Reports, you can:
-        ul.lh-copy
+      p.mobilehide
+        span.mobilehide With DAP District Reports, you can:
+        ul.lh-copy.mobilehide
           li Access community district-level data on at-risk buildings
           li View reports on your computer, phone, or print them out in a clear format to take offline and into the field
           li Look back at reports from previous months
