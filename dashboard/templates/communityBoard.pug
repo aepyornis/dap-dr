@@ -27,8 +27,8 @@ html(lang="en")
   
   body
   //- Change the months here when rebuilding pages
-  - var crtmonth = 'July 2017'
-  - var salesmonth = 'July 2017'
+  - var crtmonth = 'January 2018'
+  - var salesmonth = 'January 2018'
     nav.navbar
       div.container-nav
         ul.navbar-list
@@ -73,22 +73,23 @@ html(lang="en")
                       - var sep17 = '/sep17/' + district.cd + '.html'
                       - var oct17 = '/oct17/' + district.cd + '.html'
                       - var nov17 = '/nov17/' + district.cd + '.html'
+                      - var dec17 = '/dec17/' + district.cd + '.html'
                       - var current = '../' + district.cd + '.html'
                         a.btn.btn-secondary.btn-sm.dropdown-toggle(data-toggle="dropdown") Select Month
                         span.caret
-                          ul.dropdown-menu
-                            //- li.item
-                            //-   a.dropdown(href=jan17) January 2017
-                            //- li.item
-                            //-   a.dropdown(href=feb17) February 2017                          
-                            //- li.item
-                            //-   a.dropdown(href=mar17) March 2017
-                            //- li.item
-                            //-   a.dropdown(href=apr17) April 2017
-                            //- li.item
-                            //-   a.dropdown(href=may17) May 2017
-                            //- li.item
-                            //-   a.dropdown(href=jun17) June 2017
+                          ul.drop.dropdown-menu
+                            li.item
+                              a.dropdown(href=jan17) January 2017
+                            li.item
+                              a.dropdown(href=feb17) February 2017                          
+                            li.item
+                              a.dropdown(href=mar17) March 2017
+                            li.item
+                              a.dropdown(href=apr17) April 2017
+                            li.item
+                              a.dropdown(href=may17) May 2017
+                            li.item
+                              a.dropdown(href=jun17) June 2017
                             li.item
                               a.dropdown(href=jul17) July 2017
                             li.item
@@ -100,7 +101,9 @@ html(lang="en")
                             li.item
                               a.dropdown(href=nov17) November 2017
                             li.item
-                              a.dropdown(href=current) December 2017
+                              a.dropdown(href=dec17) December 2017
+                            li.item
+                              a.dropdown(href=current) January 2018                              
     //- Hide temporarily 
     //- div.w-100.fl.f5.pv2.ph4.bg-black-10.nhoods
     //-   span #{district.neighborhoods}
@@ -119,7 +122,7 @@ html(lang="en")
             span  buildings
             span  in 
             span.medtext #{district.borough} #{district.name}
-            span . Each list is one risk indicator.
+            span . Each list is one risk factor.
             div.pt2.tl.lighttext.no-print 
               span You can click directly to a property's 
               a(href='https://hpdonline.hpdnyc.org/HPDonline/provide_address.aspx', target='_blank').light HPD building info 
@@ -445,7 +448,7 @@ html(lang="en")
 
       //- Footer  
     div.fl.w-100.tl.pl4.pt5.mb3.f5.no-print
-      a(href='javascript:history.back()') Back
+      a(href='/').no-print Back
       span  | 
       a(href='#') Top
     div.fl.w-100.bg-black-10.f6.pl4.pb3

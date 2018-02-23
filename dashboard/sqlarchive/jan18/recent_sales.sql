@@ -81,7 +81,7 @@ select subset.*,
 	INNER JOIN rentstab ON rentstab.ucbbl = pluto.bbl
 	WHERE pluto.cd is not null
       AND pluto.cd = '${ cd }'
-      AND sales.saledate between '01-01-2018' and '01-31-2018'
+      AND sales.saledate between '12-01-2017' and '12-31-2017'
       AND sales.residentialunits > 0
       AND COALESCE(uc2007,uc2008, uc2009, uc2010, uc2011, uc2012, uc2013, uc2014,uc2015,uc2016) is not null
       ) as subset

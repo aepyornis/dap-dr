@@ -29,9 +29,7 @@ select subset.*,
       uc2007, uc2016,
       pluto.borocode,
 	ltrim(to_char(sales.saleprice, '9G999G999G999')) as saleprice,
-   	ltrim(to_char((sales.saleprice / nullif(sales.grosssquarefeet, 0)), '99G999')) as ppgsf,
-      ltrim(to_char((sales.saleprice / pluto.unitsres), '99G999G999')) as ppu,
-      ltrim(to_char(((sales.saleprice / pluto.unitsres) / 132),'9G999G999')) as avgrent,
+   	sales.saleprice / nullif(sales.grosssquarefeet, 0) as ppgsf,
 	to_char(saledate, 'MM/DD/YYYY') as iso_date,
    	sales.saledate,
       concat('<a href="https://hpdonline.hpdnyc.org/HPDonline/Provide_address.aspx?p1=',
@@ -81,12 +79,12 @@ select subset.*,
 	INNER JOIN rentstab ON rentstab.ucbbl = pluto.bbl
 	WHERE pluto.cd is not null
       AND pluto.cd = '${ cd }'
-      AND sales.saledate between '01-01-2018' and '01-31-2018'
+      AND sales.saledate between '1-01-2017' and '1-31-2017'
       AND sales.residentialunits > 0
       AND COALESCE(uc2007,uc2008, uc2009, uc2010, uc2011, uc2012, uc2013, uc2014,uc2015,uc2016) is not null
       ) as subset
 LEFT JOIN hpd_registrations_grouped_by_bbl_with_contacts hpd_reg on hpd_reg.bbl = subset.bbl
-group by subset.bbl, cd, address, residentialunits, uc2007, uc2016, borocode, saleprice, ppgsf, ppu, avgrent, subset.saledate, iso_date, hpdlink, bislink, acrislink, taxlink, googlelink, oasislink
+group by subset.bbl, cd, address, residentialunits, uc2007, uc2016, borocode, saleprice, ppgsf, subset.saledate, iso_date, hpdlink, bislink, acrislink, taxlink, googlelink, oasislink
 order by subset.cd asc, subset.saledate desc;
 
 

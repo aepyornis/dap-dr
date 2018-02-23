@@ -7,3 +7,9 @@ v1.3.2: 1-11-17 Fixed mobile compatibility issues that came from IE compatibilit
 v1.3.3: 1-12-17 Changed dobjobs date field from latestactiondate to prefilingdate (earliest date of application submission. latestactiondate will change with status updates e.g. approval)
     boardsdec17-3.json; boardsnov17-3.json
 v1.3.4: 1-25-17 Added WOW back with new boards.json files, edited intro text to include. Added July-October 2017 and updated dropdown list.
+v1.3.5: 2-6-18  Fixed nav bar bug and added Jan 18 as well as Jan-June 17.
+    boardsjan18-1.json; boardsjan17-1.json; boardsfeb17-1.json; boardsmar17-1.json; boardsapr17-1.json; boardsmay17-1.json; boardsjun17-1.json 
+v1.3.5.1: 2-6-18 Fixed ppgsf variable and bottom Back button link
+v1.3.5.2: 2-7-18 Fixed printing format
+v1.3.6 2-23-18 Added Jan 18 sales for a complete Jan 18
+    boardsjan18-2.json 

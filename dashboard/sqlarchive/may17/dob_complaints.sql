@@ -77,7 +77,7 @@ select subset.*,
       inner join rentstab on rentstab.ucbbl=pluto.bbl
       where 
       communityboard = '${ cd }'
-      and dateentered between '1-01-2018' and '1-31-2018'
+      and dateentered between '5-01-2017' and '5-31-2017'
       and pluto.unitsres > 0 
       AND COALESCE(uc2007,uc2008, uc2009, uc2010, uc2011, uc2012, uc2013, uc2014,uc2015,uc2016) is not null
       group by pluto.bbl, concat(housenumber,' ',housestreet), communityboard, pluto.unitsres, uc2007, uc2016, pluto.address, pluto.borocode, pluto.block, pluto.lot, pluto.zipcode, pluto.bbl
