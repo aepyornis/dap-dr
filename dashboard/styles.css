@@ -233,6 +233,49 @@ ul.drop {
     overflow-y:auto; 
  }
 
+/* Google custom search */
+
+
+/* div.gsc-control-cse {
+    padding: 5px 5px 5px 5px !important;
+    border: 0 !important;
+}
+
+form.gsc-search-box {
+    margin: 0px !important;
+} */
+
+/* Not needed?
+ table.gsc-search-box {
+    border-collapse: initial !important;
+} */
+
+/* input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gsc-search-box .gsc-input>input:focus, .gsc-input-box-focus {
+    box-shadow: none !important;
+    border: none !important;
+}
+
+span.gcsc-branding-text {
+    display: none !important;
+}
+
+td#gs_tti50 {
+    color: white !important;
+}
+
+div.gcsc-branding {
+    display: none !important;
+}
+
+div.gsc-above-wrapper-area {
+    display: none !important;
+}
+
+.gsc-results-wrapper-overlay {
+    height: 50% !important;
+    box-shadow: none !important;
+} */
+
 /* Colors and font weights */
 
 .dapgray {
@@ -439,7 +482,7 @@ only screen and (max-width: 718px),
 (min-device-width: 718px) and (max-device-width: 1024px)  {
 
 	/* Force table to not be like tables anymore */
-	table, thead, tbody, th, td, tr { 
+	table.tab, table.tab thead, table.tab tbody, table.tab th, table.tab td, table.tab tr { 
         display: block; 
         text-align: left !important; 
         
@@ -454,7 +497,7 @@ only screen and (max-width: 718px),
 	
 	/* tr { border: 1px solid #ccc; } */
 	
-	td { 
+	table.tab td { 
 		/* Behave  like a "row" */
 		position: relative;
         padding-left: 100px; 
@@ -482,13 +525,12 @@ only screen and (max-width: 718px),
         padding-bottom: 5px;
     }
 
-    tr {
+    table.tab tr {
         border-top: 6px solid #e5e5e5;
         padding-top: 8px;
         padding-bottom: 8px;
 
     }
-
 
     	/*
 	Label the data
@@ -546,4 +588,7 @@ only screen and (max-width: 718px),
 	td.dobjobs:nth-of-type(10):before { content: "Links"; }
 
 
+
+
 }
+

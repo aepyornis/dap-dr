@@ -27,8 +27,8 @@ html(lang="en")
   
   body
   //- Change the months here when rebuilding pages
-  - var crtmonth = 'January 2018'
-  - var salesmonth = 'January 2018'
+  - var crtmonth = 'January 2017'
+  - var salesmonth = 'January 2017'
     nav.navbar
       div.container-nav
         ul.navbar-list
@@ -74,6 +74,8 @@ html(lang="en")
                       - var oct17 = '/oct17/' + district.cd + '.html'
                       - var nov17 = '/nov17/' + district.cd + '.html'
                       - var dec17 = '/dec17/' + district.cd + '.html'
+                      - var jan18 = '/jan18/' + district.cd + '.html'
+                      - var feb18 = '/feb18/' + district.cd + '.html'                      
                       - var current = '../' + district.cd + '.html'
                         a.btn.btn-secondary.btn-sm.dropdown-toggle(data-toggle="dropdown") Select Month
                         span.caret
@@ -103,10 +105,11 @@ html(lang="en")
                             li.item
                               a.dropdown(href=dec17) December 2017
                             li.item
-                              a.dropdown(href=current) January 2018                              
-    //- Hide temporarily 
-    //- div.w-100.fl.f5.pv2.ph4.bg-black-10.nhoods
-    //-   span #{district.neighborhoods}
+                              a.dropdown(href=jan18) January 2018    
+                            li.item
+                              a.dropdown(href=feb18) February 2018    
+                            li.item
+                              a.dropdown(href=current) March 2018                                                                                      
     div.fl.w-100.tl.pl4.pt2.f5
       a(href='/').no-print Back
     div.fl.f6.page
@@ -177,17 +180,13 @@ html(lang="en")
       div.panel
         p.desc A high sales price can mean the new owner plans to displace existing tenants to make large profits. 
           | All property transfers are included here, even when the recorded dollar amount is 0. 
-          //- Buildings on this list sold for more than $50,000, which is used as a threshold for "true" sales versus other types of transfers 
-          //- span.no-print (
-          //- a(href='#notes').no-print Notes
-          //- span.no-print )
           span.no-print Sales data is messy &#8212 click a building's 
           a(href='https://a836-acris.nyc.gov/DS/DocumentSearch/BBL', target='_blank').no-print (ACRIS)
           span.no-print  link for more detailed documentation. 
           span.medtext Note: 
           span data from the Department of Finance can lag, so these sales might be from the month before last. 
         if recentSales.length > 0
-          table.w-100
+          table.tab.w-100
             thead
               tr.tc
                 th BBL
@@ -213,7 +212,7 @@ html(lang="en")
             tbody
             each sale in recentSales
               - var trStyle = rowClass(bblCount[sale.bbl].length);
-              tr(class=trStyle).pt4
+              tr(class=trStyle)
                 td.sales #{sale.bbl}
                 td.sales !{sale.googlelink}
                 td.tc.sales #{sale.residentialunits}
@@ -242,7 +241,7 @@ html(lang="en")
           a(href='https://hpdonline.hpdnyc.org/HPDonline/provide_address.aspx', target='_blank').no-print (HPD)
           span.no-print  link for details. 
         if hpdComplaints.length > 0
-          table.w-100
+          table.tab.w-100
             thead
               tr.tc
                 th BBL
@@ -294,7 +293,7 @@ html(lang="en")
           span.no-print  link for more details
           span . 
         if hpdViolations.length > 0
-          table.w-100
+          table.tab.w-100
             thead
               tr.tc
                 th BBL
@@ -352,7 +351,7 @@ html(lang="en")
           a(href='http://a810-bisweb.nyc.gov/bisweb/bsqpm01.jsp', target='_blank').no-print (DOB)
           span.no-print  link for details through the Building Information System. 
         if dobComplaints.length > 0
-          table.w-100
+          table.tab.w-100
             thead
               tr.tc
                 th BBL
@@ -374,7 +373,7 @@ html(lang="en")
             tbody
             each complaint in dobComplaints
               - var trStyle = rowClass(bblCount[complaint.bbl].length);
-              tr(class=trStyle).w-100
+              tr(class=trStyle)
                 td.dobcomplaints #{complaint.bbl}
                 td.dobcomplaints !{complaint.googlelink}
                 td.tc.dobcomplaints #{complaint.residentialunits}
@@ -400,13 +399,13 @@ html(lang="en")
           | For example, Alt 2 permits may represent work that will justify Individual Apartment Improvement rent increases 
           span.no-print (
           a(href='http://www1.nyc.gov/assets/buildings/pdf/pw1_userguide.pdf', target='_blank').no-print more info on permit types, p.5
-          span.no-print ). 
+          span.no-print )
           span . Buildings are included here based on construction permit pre-filing dates. 
           span.no-print Click a building's 
           a(href='http://a810-bisweb.nyc.gov/bisweb/bsqpm01.jsp', target='_blank').no-print (DOB)
           span.no-print  link for details through the Building Information System.
         if dobjobs.length > 0
-          table.w-100
+          table.tab.w-100
             thead
               tr.tc
                 th BBL
@@ -460,7 +459,7 @@ html(lang="en")
         a(href='http://nycprop.nyc.gov/nycproperty/nynav/jsp/selectbbl.jsp', target='_blank').no-print (Taxes)
         span.no-print  link for individual property tax bills
         span . Missing or fluctuating numbers may be due to missing/incorrect registration by the owner or inconsistencies in property tax documentation. 
-            | NYS Housing and Community Renewal maintains the most accurate information on rent stabilization, which is not available to the public.
+            | NYS Homes and Community Renewal maintains the most accurate information on rent stabilization, which is not available to the public.
       div.pt3.lighttext
         span.medtext Data sources: 
         a(href='http://taxbills.nyc' target='blank').light taxbills.nyc

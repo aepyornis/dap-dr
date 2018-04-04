@@ -22,7 +22,20 @@ html(lang="en")
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'UA-112369835-1');
-  
+    //- Google CSE script
+    //- script.
+    //-   (function() {
+    //-   var cx = '005888735957028579810:ukgrtxc97wc';
+    //-   var gcse = document.createElement('script');
+    //-   var apikey = 'AIzaSyASYk-1Q4B63eVV7eZfqWUWzCKYR0X1BUU'
+    //-   gcse.type = 'text/javascript';
+    //-   gcse.async = true;
+    //-   gcse.src = 'https://cse.google.com/cse.js?cx=' + cx + '&key=' + apikey;
+    //-   var s = document.getElementsByTagName('script')[0];
+    //-   s.parentNode.insertBefore(gcse, s);
+    //-   })();
+      //- console.log gcse.src 
+    //- Google search API: AIzaSyASYk-1Q4B63eVV7eZfqWUWzCKYR0X1BUU
   body
     nav.navbar
       div.container-nav
@@ -43,6 +56,7 @@ html(lang="en")
             a.navbar-link.light(href="https://www.dapmapnyc.org/about") ABOUT
           li.navbar-item
             a.navbar-link.light(href="https://www.dapmapnyc.org/contact-us") CONTACT
+      
     div.dapgray.ph4.pv2
       div.container(style="max-width: none; padding: 0px;")
         div.row
@@ -50,6 +64,11 @@ html(lang="en")
             h1.f5.black
               a(href='/').imgstyle.daplogo
                 img(src='https://github.com/lblok/dapreports/blob/master/images/dapdrlogo.png?raw=true' alt='DAP District Reports').daplogo
+    //- Google CSE
+    //- div.dapgray.ph4.pb2
+    //-   <gcse:search filter="0" enableAutoComplete="true" noResultsString="No District Reports match that address.">
+
+
     div.intro
       p.mobilehide 
         span Community groups, organizers, residents, and policymakers play a critical role in preventing tenant harassment and displacement 
