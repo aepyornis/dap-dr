@@ -79,7 +79,7 @@ select subset.*,
       inner join rentstab on rentstab.ucbbl=hpd.bbl
       where 
             pluto.cd = '${ cd }'
-            and receiveddate between '03-01-2018' and '03-31-2018'
+            and receiveddate between '04-01-2017' and '04-30-2017'
             and pluto.unitsres > 0
             and coalesce(uc2007,uc2008, uc2009, uc2010, uc2011, uc2012, uc2013, uc2014,uc2015,uc2016) is not null
       group by hpd.bbl, pluto.cd, pluto.address, residentialunits, uc2007, uc2016, borocode, pluto.block, pluto.lot, pluto.council, pluto.zipcode, pluto.bbl

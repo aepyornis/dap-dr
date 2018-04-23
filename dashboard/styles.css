@@ -64,6 +64,9 @@ a.dropdown, a.dropdown:hover {
     text-decoration: none;
     background-color: transparent;
     font-size: 0.875rem;
+    width: 100%;
+    height: 100%;
+    padding: .25rem;
 }
 
 .btn-sm {
@@ -94,7 +97,7 @@ a.dropdown, a.dropdown:hover {
 }
 
 .item {
-    padding: .25rem;
+    /* padding: .25rem; */
     border: 1px !important;
     border-radius: .5rem !important;
 
@@ -111,6 +114,22 @@ a.dropdown, a.dropdown:hover {
 .daplogo {
     width: 300px;
     padding-left: 0px;
+}
+
+#expbtn {
+    padding-left: .75rem;
+    padding-right: .75rem;
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+    margin-right: 1rem;
+    margin-bottom: .5rem;
+    float: right;
+    background-color: rgba(0,0,0,.08);
+    text-decoration: none;
+}
+
+#expbtn:hover {
+    background-color: #c4b9b9
 }
 
 /**** Navbar CSS (from DAP Map) ****/
@@ -433,6 +452,8 @@ div.gsc-above-wrapper-area {
 
 }
 
+
+
 .accordion:after {
     content: '\002B'; /* Unicode character for "plus" sign (+) */
     font-size: 26px;
@@ -536,56 +557,61 @@ only screen and (max-width: 718px),
 	Label the data
 	*/
 	td.sales:nth-of-type(1):before { content: "BBL"; }
-	td.sales:nth-of-type(2):before { content: "Address"; }
-	td.sales:nth-of-type(3):before { content: "Total Units"; }
-    td.sales:nth-of-type(4):before { content: "Stab 2007"; }
-    td.sales:nth-of-type(5):before { content: "Stab 2016"; }
-	td.sales:nth-of-type(6):before { content: "Sale Price"; }
-	td.sales:nth-of-type(7):before { content: "$ / Sq Ft"; }
-	td.sales:nth-of-type(8):before { content: "Sale Date"; }
-	td.sales:nth-of-type(9):before { content: "Owner"; }
-	td.sales:nth-of-type(10):before { content: "Links"; }
+    td.sales:nth-of-type(2):before { content: "Address"; }
+    td.sales:nth-of-type(3):before { content: "Zip"; }
+	td.sales:nth-of-type(4):before { content: "Total Units"; }
+    td.sales:nth-of-type(5):before { content: "Stab. ('07)"; }
+    td.sales:nth-of-type(6):before { content: "Stab. ('16)"; }
+	td.sales:nth-of-type(7):before { content: "Sale Price"; }
+	td.sales:nth-of-type(8):before { content: "$ / Sq Ft"; }
+	td.sales:nth-of-type(9):before { content: "Sale Date"; }
+	td.sales:nth-of-type(10):before { content: "Owner"; }
+	td.sales:nth-of-type(11):before { content: "Links"; }
 
 	td.hpdcomplaints:nth-of-type(1):before { content: "BBL"; }
-	td.hpdcomplaints:nth-of-type(2):before { content: "Address"; }
-	td.hpdcomplaints:nth-of-type(3):before { content: "Total Units"; }
-    td.hpdcomplaints:nth-of-type(4):before { content: "Stab 2007"; }
-    td.hpdcomplaints:nth-of-type(5):before { content: "Stab 2016"; }
-	td.hpdcomplaints:nth-of-type(6):before { content: "Complaints"; }
-	td.hpdcomplaints:nth-of-type(7):before { content: "Owner"; }
-	td.hpdcomplaints:nth-of-type(8):before { content: "Links"; }
+    td.hpdcomplaints:nth-of-type(2):before { content: "Address"; }
+    td.hpdcomplaints:nth-of-type(3):before { content: "Zip"; }    
+	td.hpdcomplaints:nth-of-type(4):before { content: "Total Units"; }
+    td.hpdcomplaints:nth-of-type(5):before { content: "Stab. ('07')"; }
+    td.hpdcomplaints:nth-of-type(6):before { content: "Stab. ('16')"; }
+	td.hpdcomplaints:nth-of-type(7):before { content: "Complaints"; }
+	td.hpdcomplaints:nth-of-type(8):before { content: "Owner"; }
+	td.hpdcomplaints:nth-of-type(9):before { content: "Links"; }
 
 	td.hpdviols:nth-of-type(1):before { content: "BBL"; }
-	td.hpdviols:nth-of-type(2):before { content: "Address"; }
-	td.hpdviols:nth-of-type(3):before { content: "Total Units"; }
-    td.hpdviols:nth-of-type(4):before { content: "Stab 2007"; }
-    td.hpdviols:nth-of-type(5):before { content: "Stab 2016"; }
-	td.hpdviols:nth-of-type(6):before { content: "Class A"; }
-	td.hpdviols:nth-of-type(7):before { content: "Class B"; }
-	td.hpdviols:nth-of-type(8):before { content: "Class C"; }
-	td.hpdviols:nth-of-type(9):before { content: "Total"; }
-	td.hpdviols:nth-of-type(10):before { content: "Owner"; }
-	td.hpdviols:nth-of-type(11):before { content: "Links"; }
+    td.hpdviols:nth-of-type(2):before { content: "Address"; }
+	td.hpdviols:nth-of-type(3):before { content: "Zip"; }    
+	td.hpdviols:nth-of-type(4):before { content: "Total Units"; }
+    td.hpdviols:nth-of-type(5):before { content: "Stab. ('07)"; }
+    td.hpdviols:nth-of-type(6):before { content: "Stab. ('16)"; }
+	td.hpdviols:nth-of-type(7):before { content: "Class A"; }
+	td.hpdviols:nth-of-type(8):before { content: "Class B"; }
+	td.hpdviols:nth-of-type(9):before { content: "Class C"; }
+	td.hpdviols:nth-of-type(10):before { content: "Total"; }
+	td.hpdviols:nth-of-type(11):before { content: "Owner"; }
+	td.hpdviols:nth-of-type(12):before { content: "Links"; }
     
     td.dobcomplaints:nth-of-type(1):before { content: "BBL"; }
-	td.dobcomplaints:nth-of-type(2):before { content: "Address"; }
-	td.dobcomplaints:nth-of-type(3):before { content: "Total Units"; }
-    td.dobcomplaints:nth-of-type(4):before { content: "Stab 2007"; }
-    td.dobcomplaints:nth-of-type(5):before { content: "Stab 2016"; }
-	td.dobcomplaints:nth-of-type(6):before { content: "Complaints"; }
-	td.dobcomplaints:nth-of-type(7):before { content: "Owner"; }
-	td.dobcomplaints:nth-of-type(8):before { content: "Links"; }
+    td.dobcomplaints:nth-of-type(2):before { content: "Address"; }
+	td.dobcomplaints:nth-of-type(3):before { content: "Zip"; }    
+	td.dobcomplaints:nth-of-type(4):before { content: "Total Units"; }
+    td.dobcomplaints:nth-of-type(5):before { content: "Stab. ('07)"; }
+    td.dobcomplaints:nth-of-type(6):before { content: "Stab. ('16)"; }
+	td.dobcomplaints:nth-of-type(7):before { content: "Complaints"; }
+	td.dobcomplaints:nth-of-type(8):before { content: "Owner"; }
+	td.dobcomplaints:nth-of-type(9):before { content: "Links"; }
 
 	td.dobjobs:nth-of-type(1):before { content: "BBL"; }
-	td.dobjobs:nth-of-type(2):before { content: "Address"; }
-	td.dobjobs:nth-of-type(3):before { content: "Total Units"; }
-    td.dobjobs:nth-of-type(4):before { content: "Stab 2007"; }
-    td.dobjobs:nth-of-type(5):before { content: "Stab 2016"; }
-	td.dobjobs:nth-of-type(6):before { content: "Alt 1"; }
-	td.dobjobs:nth-of-type(7):before { content: "Alt 2"; }
-	td.dobjobs:nth-of-type(8):before { content: "DM"; }
-	td.dobjobs:nth-of-type(9):before { content: "Owner"; }
-	td.dobjobs:nth-of-type(10):before { content: "Links"; }
+    td.dobjobs:nth-of-type(2):before { content: "Address"; }
+	td.dobjobs:nth-of-type(3):before { content: "Zip"; }    
+	td.dobjobs:nth-of-type(4):before { content: "Total Units"; }
+    td.dobjobs:nth-of-type(5):before { content: "Stab. ('07)"; }
+    td.dobjobs:nth-of-type(6):before { content: "Stab. ('16)"; }
+	td.dobjobs:nth-of-type(7):before { content: "Alt 1"; }
+	td.dobjobs:nth-of-type(8):before { content: "Alt 2"; }
+	td.dobjobs:nth-of-type(9):before { content: "DM"; }
+	td.dobjobs:nth-of-type(10):before { content: "Owner"; }
+	td.dobjobs:nth-of-type(11):before { content: "Links"; }
 
 
 

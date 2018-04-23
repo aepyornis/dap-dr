@@ -3,9 +3,8 @@ create or replace view bbljobs as
            job,
            jobtype
     from dobjobs
-    where prefilingdate between '03-01-2018' and '03-31-2018'
+    where prefilingdate between '04-01-2017' and '04-30-2017'
     group by bbl, job, jobtype;
-
 
 SELECT subset.*,   
       first(replace(trim(both'"{}",' from cast(corpnames as text)), '"','')) as ownertext,

@@ -1,3 +1,4 @@
+-- This still doesn't select the most recent sale, but it will select only one from the last month.
 select subset.*,
       first(replace(trim(both'"{}",' from cast(corpnames as text)), '"','')) as ownertext,
       first(concat('<a href="http://whoownswhat.justfix.nyc/address/',
@@ -20,18 +21,20 @@ select subset.*,
             replace(trim(both'"{}",' from cast(corpnames as text)), '"',''),
             ' </a>'
             )) as owner
-    from (
-    select 
-	pluto.bbl,
-	pluto.cd,
+      from (
+      select 
+      pluto.bbl,
+      pluto.cd,
 	pluto.address,
       pluto.unitsres as residentialunits,
       uc2007, uc2016,
       pluto.borocode,
-	ltrim(to_char(sales.saleprice, '9G999G999G999')) as saleprice,
-   	sales.saleprice / nullif(sales.grosssquarefeet, 0) as ppgsf,
-	to_char(saledate, 'MM/DD/YYYY') as iso_date,
-   	sales.saledate,
+      pluto.zipcode,
+      pluto.council,
+      left(first(saleprice)::money::text, -3) as saleprice,
+      left((first(saleprice) / nullif(first(sales.grosssquarefeet), 0))::money::text, -3) as ppgsf,
+      left((first(saleprice) / pluto.unitsres)::money::text, -3) as ppu,
+	to_char(first(saledate), 'MM/DD/YYYY') as saledate,
       concat('<a href="https://hpdonline.hpdnyc.org/HPDonline/Provide_address.aspx?p1=',
             pluto.borocode,
             '&p2=',
@@ -74,22 +77,16 @@ select subset.*,
             '" target="_blank">',
             pluto.address,
             '</a>') as googlelink
-	FROM dof_sales sales
-	LEFT JOIN pluto_16v2 pluto on sales.bbl = pluto.bbl
+	FROM 
+        (select * from dof_sales order by saledate desc) as sales
+	LEFT JOIN pluto_17v1 pluto on sales.bbl = pluto.bbl
 	INNER JOIN rentstab ON rentstab.ucbbl = pluto.bbl
 	WHERE pluto.cd is not null
       AND pluto.cd = '${ cd }'
-      AND sales.saledate between '4-01-2017' and '4-30-2017'
+      AND sales.saledate between '04-01-2017' and '04-30-2017'
       AND sales.residentialunits > 0
       AND COALESCE(uc2007,uc2008, uc2009, uc2010, uc2011, uc2012, uc2013, uc2014,uc2015,uc2016) is not null
+        group by sales.bbl, pluto.cd, pluto.address, pluto.unitsres, uc2007, uc2016, borocode, pluto.block, pluto.lot, pluto.council, pluto.zipcode, pluto.bbl
       ) as subset
 LEFT JOIN hpd_registrations_grouped_by_bbl_with_contacts hpd_reg on hpd_reg.bbl = subset.bbl
-group by subset.bbl, cd, address, residentialunits, uc2007, uc2016, borocode, saleprice, ppgsf, subset.saledate, iso_date, hpdlink, bislink, acrislink, taxlink, googlelink, oasislink
-order by subset.cd asc, subset.saledate desc;
-
-
-
-
-
-
-
+group by subset.bbl, cd, address, residentialunits, uc2007, uc2016, borocode, zipcode, council, subset.saleprice, ppgsf, ppu, subset.saledate, hpdlink, bislink, acrislink, taxlink, googlelink, oasislink

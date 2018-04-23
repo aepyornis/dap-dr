@@ -27,8 +27,8 @@ html(lang="en")
   
   body
   //- Change the months here when rebuilding pages
-  - var crtmonth = 'January 2017'
-  - var salesmonth = 'January 2017'
+  - var crtmonth = 'March 2018'
+  - var salesmonth = 'March 2018'
     nav.navbar
       div.container-nav
         ul.navbar-list
@@ -168,6 +168,8 @@ html(lang="en")
                 span.noprint For more information on using DAP District Reports, visit the 
                 a.light.noprint(href="http://www.dapmapnyc.org/reports-tutorial" target="_blank") Tutorial
                 span.noprint  page.
+    div.fl.w-100
+      a(href="#" onclick="expandAll()")#expbtn Expand All
     //- Lists of risk factors
     div.section#sales
       div.accordion New sales of residential buildings last month (
@@ -177,7 +179,7 @@ html(lang="en")
         else
           span.medtext buildings
         span )
-      div.panel
+      div.panel#expand1
         p.desc A high sales price can mean the new owner plans to displace existing tenants to make large profits. 
           | All property transfers are included here, even when the recorded dollar amount is 0. 
           span.no-print Sales data is messy &#8212 click a building's 
@@ -191,36 +193,28 @@ html(lang="en")
               tr.tc
                 th BBL
                 th.pl1.w-20 Address
+                th Zip
                 th Total Units
-                th(colspan="2") Stab&shy;ilized Units
+                th.gray Stab&shy;ilized Units ('07)
+                th Stab&shy;ilized Units ('16)
                 th Sales Price
-                th Price/&shy;Sq. Foot
+                th Price/Sq. Foot
                 th Sale Date &#9662;
                 th.w-25 Owner
                 th.w-20.no-print Links
-              tr.brdr
-                th.tl
-                th
-                th
-                th.gray 2007
-                th 2016
-                th 
-                th.tl
-                th 
-                th 
-                th.no-print
             tbody
             each sale in recentSales
               - var trStyle = rowClass(bblCount[sale.bbl].length);
               tr(class=trStyle)
                 td.sales #{sale.bbl}
                 td.sales !{sale.googlelink}
+                td.sales #{sale.zipcode}
                 td.tc.sales #{sale.residentialunits}
                 td.tc.gray.sales #{sale.uc2007} 
                 td.tc.sales #{sale.uc2016}
-                td.sales $#{sale.saleprice}
-                td.sales $#{sale.ppgsf}
-                td.sales #{sale.iso_date}
+                td.sales #{sale.saleprice}
+                td.sales #{sale.ppgsf}
+                td.sales #{sale.saledate}
                 td.f7.sales !{sale.owner}
                 td.no-print.sales !{sale.hpdlink} !{sale.bislink} !{sale.acrislink} !{sale.taxlink} !{sale.oasislink}
         else 
@@ -235,7 +229,7 @@ html(lang="en")
         else
           span.medtext buildings
         span )
-      div.panel
+      div.panel#expand2
         p.desc Complaints that tenants make about conditions in their apartment or building get sent to Housing Preservation and Development for inspection. One complaint can include multiple problems in an apartment or a building. 
           span.no-print Click a building's 
           a(href='https://hpdonline.hpdnyc.org/HPDonline/provide_address.aspx', target='_blank').no-print (HPD)
@@ -246,26 +240,20 @@ html(lang="en")
               tr.tc
                 th BBL
                 th.pl1.w-20 Address
+                th Zip
                 th Total Units
-                th(colspan="2") Stab&shy;ilized Units
+                th.gray Stab&shy;ilized Units ('07)
+                th Stab&shy;ilized Units ('16)
                 th Compl&shy;aints &#9662;
                 th Owner
                 th.w-20.no-print  Links
-              tr.brdr
-                th.pb3
-                th
-                th
-                th.gray 2007
-                th 2016
-                th
-                th
-                th.no-print
             tbody
             each complaint in hpdComplaints
               - var trStyle = rowClass(bblCount[complaint.bbl].length);
               tr(class=trStyle)
                 td.hpdcomplaints #{complaint.bbl}
                 td.hpdcomplaints !{complaint.googlelink}
+                td.hpdcomplaints #{complaint.zipcode}
                 td.tc.hpdcomplaints #{complaint.residentialunits}
                 td.tc.gray.hpdcomplaints #{complaint.uc2007}
                 td.tc.hpdcomplaints #{complaint.uc2016}
@@ -284,7 +272,7 @@ html(lang="en")
         else
           span.medtext buildings
         span )
-      div.panel
+      div.panel#expand3
         p.desc HPD issues violations of the Housing Maintenance Code after inspecting building conditions. Class A, B, and C violations can indicate a landlord is neglecting or actively harassing tenants, Class C being the most severe 
           span.no-print (
           a(href='http://www1.nyc.gov/assets/hpd/downloads/pdf/ABCs-housing-singlepg.pdf', target='_blank').no-print info, p.7
@@ -298,32 +286,23 @@ html(lang="en")
               tr.tc
                 th BBL
                 th.pl1.w-20 Address
+                th Zip
                 th Total Units
-                th(colspan="2") Stab&shy;ilized Units
+                th.gray Stab&shy;ilized Units ('07)
+                th Stab&shy;ilized Units ('16)
                 th Class A
                 th Class B
                 th Class C
                 th Total &#9662;
                 th.pl1 Owner
                 th.w-20.no-print Links
-              tr.brdr
-                th.pb3
-                th
-                th
-                th.gray 2007
-                th 2016
-                th 
-                th 
-                th 
-                th 
-                th 
-                th.no-print
             tbody
             each violation in hpdViolations
               - var trStyle = rowClass(bblCount[violation.bbl].length);
               tr(class=trStyle)
                 td.hpdviols #{violation.bbl}
                 td.hpdviols !{violation.googlelink}
+                td.hpdviols #{violation.zipcode}
                 td.tc.hpdviols #{violation.residentialunits}
                 td.tc.gray.hpdviols #{violation.uc2007} 
                 td.tc.hpdviols #{violation.uc2016}
@@ -345,7 +324,7 @@ html(lang="en")
         else
           span.medtext buildings
         span )
-      div.panel
+      div.panel#expand4
         p.desc Complaints that tenants make about construction or certain building conditions (e.g. broken elevator) get sent to the Department of Buildings. 
           span.no-print Click a building's 
           a(href='http://a810-bisweb.nyc.gov/bisweb/bsqpm01.jsp', target='_blank').no-print (DOB)
@@ -356,26 +335,20 @@ html(lang="en")
               tr.tc
                 th BBL
                 th.pl1.w-20 Address
+                th Zip
                 th Total Units
-                th(colspan="2") Stab&shy;ilized Units
+                th.gray Stab&shy;ilized Units ('07)
+                th Stab&shy;ilized Units ('16)
                 th Compl&shy;aints &#9662;
                 th.pl1 Owner
                 th.w-20.no-print Links
-              tr.brdr
-                th.pb3
-                th 
-                th 
-                th.gray 2007
-                th 2016
-                th
-                th 
-                th.no-print
             tbody
             each complaint in dobComplaints
               - var trStyle = rowClass(bblCount[complaint.bbl].length);
               tr(class=trStyle)
                 td.dobcomplaints #{complaint.bbl}
                 td.dobcomplaints !{complaint.googlelink}
+                td.dobcomplaints #{complaint.zipcode}
                 td.tc.dobcomplaints #{complaint.residentialunits}
                 td.tc.gray.dobcomplaints #{complaint.uc2007}
                 td.tc.dobcomplaints #{complaint.uc2016}
@@ -394,7 +367,7 @@ html(lang="en")
         else
           span.medtext buildings
         span )
-      div.panel
+      div.panel#expand5
         p.desc Construction permit applications show a landlord's intention to do construction and renovations, which can be used to destabilize apartments. 
           | For example, Alt 2 permits may represent work that will justify Individual Apartment Improvement rent increases 
           span.no-print (
@@ -410,30 +383,22 @@ html(lang="en")
               tr.tc
                 th BBL
                 th.pl1.w-20 Address
+                th Zip
                 th Total Units
-                th(colspan="2") Stab&shy;ilized Units
+                th.gray Stab&shy;ilized Units ('07)
+                th Stab&shy;ilized Units ('16)
                 th Alt 1 Perm&shy;its
                 th Alt 2 Perm&shy;its &#9662;
                 th DM Perm&shy;its
                 th.pl1 Owner
                 th.w-20.no-print Links
-              tr.brdr
-                th.pb3
-                th 
-                th 
-                th.gray 2007
-                th 2016
-                th 
-                th 
-                th  
-                th 
-                th.no-print
             tbody
             each job in dobjobs
               - var trStyle = rowClass(bblCount[job.bbl].length);
               tr(class=trStyle)
                 td.dobjobs #{job.bbl}
                 td.dobjobs !{job.googlelink}
+                td.dobjobs #{job.zipcode}
                 td.tc.dobcomplaints #{job.residentialunits}
                 td.tc.gray.dobjobs #{job.uc2007} 
                 td.tc.dobjobs #{job.uc2016}
@@ -521,5 +486,46 @@ html(lang="en")
       } else {
           panel.style.display = "block";
       }
+      console.log (panel.style.display)
       });
       }
+      
+    script.
+      function expandAll() {
+        var exp1 = document.getElementById("expand1");
+        if (exp1.style.display == "none" || exp1.style.display == '') {
+          exp1.style.display = "block";
+        } else {
+          exp1.style.display = "none";
+        }
+        var exp2 = document.getElementById("expand2");
+        if (exp2.style.display == "none" || exp2.style.display == '') {
+          exp2.style.display = "block";
+        } else {
+          exp2.style.display = "none";
+        }
+        var exp3 = document.getElementById("expand3");
+        if (exp3.style.display == "none" || exp3.style.display == '') {
+          exp3.style.display = "block";
+        } else {
+          exp3.style.display = "none";
+        }
+        var exp4 = document.getElementById("expand4");
+        if (exp4.style.display == "none" || exp4.style.display == '') {
+          exp4.style.display = "block";
+        } else {
+          exp4.style.display = "none";
+        }
+        var exp5 = document.getElementById("expand5");
+        if (exp5.style.display == "none" || exp5.style.display == '') {
+          exp5.style.display = "block";
+        } else {
+          exp5.style.display = "none";
+        }
+
+
+        }
+        
+      
+
+      

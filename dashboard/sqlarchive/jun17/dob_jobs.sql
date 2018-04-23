@@ -3,9 +3,8 @@ create or replace view bbljobs as
            job,
            jobtype
     from dobjobs
-    where prefilingdate between '6-01-2017' and '6-30-2017'
+    where prefilingdate between '06-01-2017' and '06-30-2017'
     group by bbl, job, jobtype;
-
 
 SELECT subset.*,   
       first(replace(trim(both'"{}",' from cast(corpnames as text)), '"','')) as ownertext,
@@ -36,6 +35,8 @@ SELECT subset.*,
 	pluto.unitsres as residentialunits,
 	uc2007, uc2016,
     pluto.borocode,
+    pluto.zipcode,
+    pluto.council,
     count(case when bbljobs.jobtype ='A1' then 1 else null end) as a1,
     count(case when bbljobs.jobtype='A2' then 1 else null end) as a2,
     count(case when bbljobs.jobtype='DM' then 1 else null end) as dm,
@@ -89,17 +90,17 @@ SELECT subset.*,
             pluto.address,
             '</a>') as googlelink
 	from bbljobs
-    LEFT JOIN pluto_16v2 pluto on bbljobs.bbl = pluto.bbl
+    LEFT JOIN pluto_17v1 pluto on bbljobs.bbl = pluto.bbl
     INNER JOIN rentstab rentstab on rentstab.ucbbl = bbljobs.bbl
     WHERE
         pluto.cd = '${ cd }' 
         AND coalesce(uc2007,uc2008, uc2009, uc2010, uc2011, uc2012, uc2013, uc2014,uc2015,uc2016) is not null
-    group by bbljobs.bbl, pluto.cd, pluto.address, residentialunits, uc2007, uc2016, borocode, pluto.block, pluto.lot, pluto.zipcode, pluto.bbl
+    group by bbljobs.bbl, pluto.cd, pluto.address, residentialunits, uc2007, uc2016, borocode, pluto.block, pluto.lot, pluto.council, pluto.zipcode, pluto.bbl
     ) as subset
 LEFT JOIN hpd_registrations_grouped_by_bbl_with_contacts hpd_reg on hpd_reg.bbl = subset.bbl
 where (
     a1 > 0 or
     a2 > 0 or
     dm > 0)
-group by subset.bbl, cd, address, residentialunits, uc2007, uc2016, a1, a2, dm, total, borocode, hpdlink, bislink, acrislink, googlelink, taxlink, oasislink
+group by subset.bbl, cd, address, residentialunits, uc2007, uc2016, a1, a2, dm, total, borocode, hpdlink, bislink, acrislink, googlelink, taxlink, oasislink, council, zipcode
 order by cd asc, a2 desc
