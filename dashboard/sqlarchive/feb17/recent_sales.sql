@@ -31,6 +31,7 @@ select subset.*,
       pluto.borocode,
       pluto.zipcode,
       pluto.council,
+      pluto.numbldgs,
       left(first(saleprice)::money::text, -3) as saleprice,
       left((first(saleprice) / nullif(first(sales.grosssquarefeet), 0))::money::text, -3) as ppgsf,
       left((first(saleprice) / pluto.unitsres)::money::text, -3) as ppu,
@@ -83,10 +84,10 @@ select subset.*,
 	INNER JOIN rentstab ON rentstab.ucbbl = pluto.bbl
 	WHERE pluto.cd is not null
       AND pluto.cd = '${ cd }'
-      AND sales.saledate between '05-01-2018' and '05-31-2018'
+      AND sales.saledate between '02-01-2017' and '02-28-2017'
       AND sales.residentialunits > 0
       AND COALESCE(uc2007,uc2008, uc2009, uc2010, uc2011, uc2012, uc2013, uc2014,uc2015,uc2016) is not null
-        group by sales.bbl, pluto.cd, pluto.address, pluto.unitsres, uc2007, uc2016, borocode, pluto.block, pluto.lot, pluto.council, pluto.zipcode, pluto.bbl
+        group by sales.bbl, pluto.cd, pluto.address, pluto.unitsres, uc2007, uc2016, borocode, pluto.block, pluto.lot, pluto.council, pluto.zipcode, pluto.bbl, pluto.numbldgs
       ) as subset
 LEFT JOIN hpd_registrations_grouped_by_bbl_with_contacts hpd_reg on hpd_reg.bbl = subset.bbl
-group by subset.bbl, cd, address, residentialunits, uc2007, uc2016, borocode, zipcode, council, subset.saleprice, ppgsf, ppu, subset.saledate, hpdlink, bislink, acrislink, taxlink, googlelink, oasislink
+group by subset.bbl, cd, address, residentialunits, uc2007, uc2016, borocode, zipcode, council, numbldgs, subset.saleprice, ppgsf, ppu, subset.saledate, hpdlink, bislink, acrislink, taxlink, googlelink, oasislink

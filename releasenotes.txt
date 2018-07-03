@@ -19,3 +19,13 @@ v1.3.7.2 3-16-18 Added Feb 18 sales. v1.3.7 was missing any sales. Now fixed.
     boardsfeb18-2.json
 v1.3.8 4-4-18 Added March 18. 503 error still needs attn.
     boardsmar18-1.json
+v1.3.8.2 4-19-18 Fixed formatting issue for $ sales in march and rebuilt march18 json because it was missing data. Built new pages just for March.
+    boardsmar18-1.2.json 
+v1.4.0 4-24-18 Added March 18 sales, has zip code but haven’t added zip codes in previous months yet. Working on expand all feature.
+    boardsmar18-2.json 
+v1.5.0 5-4-18 Added April 18. Added zip codes to all months and added expand/collapse all buttons. Re-built all past months to add zip codes and reformat money fields on sales. Boards files built backwards don’t have ‘-‘ suffixes but new ones do, for pre-sales updates and post-sales updates.
+    boardsapr18-1.json, boardsfeb18.json back to boardsjan17.json
+v1.5.1 6-4-18 Added May 18 and April 18 sales. Added April 18 sales to April 18 reports
+    boardsmay18-1.json, boardsapr18-2.json
+v1.5.2 6-19-18 Added May 18 sales
+    boardsmay18-2.json

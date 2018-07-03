@@ -69,19 +69,18 @@ html(lang="en")
     //-   <gcse:search filter="0" enableAutoComplete="true" noResultsString="No District Reports match that address.">
 
 
+    //- div.section.accordion.f4.mt3.lh-solid About DAP District Reports
+    //- div.intro.panel
+    //-   p
+
     div.intro
       p.mobilehide 
         span Community groups, organizers, residents, and policymakers play a critical role in preventing tenant harassment and displacement 
         | in rent stabilized buildings. However, existing data and information is fragmented and often confusing, which can make it challenging  
         | to identify which New York City buildings are most vulnerable. 
-      p.mobilehide
-        span DAP District Reports are a part of the 
-        a.light(href='http://anhd.org' target='_blank') Association for Neighborhood & Housing Development's 
-        span (ANHD) 
-        a.light(href='http://dapmapnyc.org' target='_blank')  Displacement Alert Project 
-        span  (DAP), leveraging data and visualizations to help protect tenants and preserve New York City's stock of affordable housing.
-      p 
-        span Our DAP District Reports provide up-to-date information on where rent stabilized tenants are at greatest risk of displacement 
+      p.pt2.mb2.f5.medtext Where are rent stabilized tenants at greatest risk of harassment and displacement? 
+      div.lighttext 
+        span DAP District Reports provide up-to-date information on where rent stabilized tenants are at greatest risk of displacement 
         | in each community district. Buildings that appear on multiple lists are coded 
         span.dapyellow.black.ph1 yellow
         span , 
@@ -109,6 +108,15 @@ html(lang="en")
         span For more information on using District Reports, visit the 
         a.light(href="http://www.dapmapnyc.org/reports-tutorial" target="_blank") Tutorial
         span  page.
+      p.mobilehide
+        span DAP District Reports are a part of the 
+        a.light(href='http://anhd.org' target='_blank') Association for Neighborhood & Housing Development's 
+        span (ANHD) 
+        a.light(href='http://dapmapnyc.org' target='_blank')  Displacement Alert Project 
+        span  (DAP), leveraging data and visualizations to help protect tenants and preserve New York City's stock of affordable housing.
+
+    div.w-100
+      div.pt3.pb2.pl4.f5 Select a Community Board to view this month's District Report:
     for boro in districts
       div.fl.w-100.ph4
         div.f4.pv2.black #{boro[0]} 
@@ -137,3 +145,24 @@ html(lang="en")
           span and 
               a(href='https://github.com/aepyornis/nyc-db' target='_blank').light Ziggy (github.com/aepyornis)
               span .
+
+
+    //- //- Javascript for individual accordion feature
+    //- script.
+    //-   var acc = document.getElementsByClassName("accordion");
+    //-   var i;
+    //-   for (i = 0; i < acc.length; i++) {
+    //-   acc[i].addEventListener("click", function() {
+    //-   /* Toggle between adding and removing the "active" class,
+    //-   to highlight the button that controls the panel */
+    //-   this.classList.toggle("active");
+
+    //-   /* Toggle between hiding and showing the active panel */
+    //-   var panel = this.nextElementSibling;
+    //-   if (panel.style.display === "block") {
+    //-       panel.style.display = "none";
+    //-   } else {
+    //-       panel.style.display = "block";
+    //-   }
+    //-   });
+    //-   }

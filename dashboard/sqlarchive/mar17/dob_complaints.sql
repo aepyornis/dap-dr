@@ -29,6 +29,7 @@ select subset.*,
       pluto.borocode,
       pluto.zipcode,
       pluto.council,
+      pluto.numbldgs,
       count(distinct complaintnumber) as dobcomplaints,
             concat('<a href="https://hpdonline.hpdnyc.org/HPDonline/Provide_address.aspx?p1=',
                   pluto.borocode,
@@ -79,14 +80,14 @@ select subset.*,
       inner join rentstab on rentstab.ucbbl=pluto.bbl
       where 
       communityboard = '${ cd }'
-      and dateentered between '06-01-2018' and '06-30-2018'
+      and dateentered between '03-01-2017' and '03-31-2017'
       and pluto.unitsres > 0 
       AND COALESCE(uc2007,uc2008, uc2009, uc2010, uc2011, uc2012, uc2013, uc2014,uc2015,uc2016) is not null
-      group by pluto.bbl, concat(housenumber,' ',housestreet), communityboard, pluto.unitsres, uc2007, uc2016, pluto.address, pluto.borocode, pluto.block, pluto.lot, pluto.council, pluto.zipcode, pluto.bbl
+      group by pluto.bbl, concat(housenumber,' ',housestreet), communityboard, pluto.unitsres, uc2007, uc2016, pluto.address, pluto.borocode, pluto.block, pluto.lot, pluto.council, pluto.zipcode, pluto.bbl, pluto.numbldgs
       having count(distinct complaintnumber) > 1
       ) as subset
 LEFT JOIN hpd_registrations_grouped_by_bbl_with_contacts hpd_reg on hpd_reg.bbl = subset.bbl
-group by subset.bbl, address, communityboard, residentialunits, uc2007, uc2016, dobcomplaints, borocode, hpdlink, bislink, acrislink, googlelink, taxlink, oasislink, council, zipcode
+group by subset.bbl, address, communityboard, residentialunits, uc2007, uc2016, dobcomplaints, borocode, hpdlink, bislink, acrislink, googlelink, taxlink, oasislink, council, zipcode, numbldgs
       order by communityboard asc, dobcomplaints desc
 
 
