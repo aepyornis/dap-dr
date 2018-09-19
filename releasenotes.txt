@@ -37,3 +37,5 @@ v1.5.4 7-25-18 Added June 18 sales
     boardsjun18-2.json 
 v1.5.5 8-6-18 Added July 18 data
     boardsjul18-1.json
+v1.6 8-20-18 Added July 18 sales, rewrote SQL queries and in middle of updating boards files backwards. Added translate feature. Still to do: rebuild backwards with translate feature.
+    boardsjul18.json

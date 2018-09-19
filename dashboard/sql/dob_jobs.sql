@@ -8,14 +8,7 @@ create or replace view bbljobs as
     group by bbl, job, jobtype;
 
 SELECT subset.*,   
-      first(replace(trim(both'"{}",' from cast(corpnames as text)), '"','')) as ownertext,
-      first(concat('<a href="http://whoownswhat.justfix.nyc/bbl/',
-            pluto.borocode,'/',
-            pluto.block,'/',
-            pluto.lot,
-            '" target="_blank">',
-            replace(trim(both'"{}",' from cast(corpnames as text)), '"',''),
-            ' </a>')) as owner
+      first(replace(trim(both'"{}",' from cast(corpnames as text)), '"','')) as owner
     from
 	(select pluto.cd,
 	bbljobs.bbl,

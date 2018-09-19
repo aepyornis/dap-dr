@@ -33,8 +33,8 @@ select subset.*,
 	INNER JOIN rentstab ON rentstab.ucbbl = pluto.bbl
 	WHERE pluto.cd is not null
       AND pluto.cd = '${ cd }'
-      AND saledate >= date_trunc('month', current_date - interval '1 month') 
-      and saledate < date_trunc('month', current_date - interval '0 month')
+      AND saledate >= date_trunc('month', current_date - interval '2 month') 
+      and saledate < date_trunc('month', current_date - interval '1 month')
       AND sales.residentialunits > 0
       AND COALESCE(uc2007,uc2008, uc2009, uc2010, uc2011, uc2012, uc2013, uc2014,uc2015,uc2016) is not null
         group by sales.bbl, pluto.cd, pluto.address, pluto.unitsres, uc2007, uc2016, borocode, pluto.block, pluto.lot, pluto.council, pluto.zipcode, pluto.bbl
