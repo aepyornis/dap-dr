@@ -40,21 +40,25 @@ html(lang="en")
       div.container-nav
         ul.navbar-list
           li.navbar-item
-            a.navbar-link.light(href="http://www.dapmapnyc.org") HOME
+            a.navbar-link.light(href="https://displacementalert.org") HOME
           li.navbar-item.dropdown
             div.dropbtn
-              a.navbar-link.light(href="http://map.dapmapnyc.org/app") DAP MAP
+              a.navbar-link.light(href="https://map.displacementalert.org") DAP MAP
             div.dropdown-content
-              a.light(href="http://dapmapnyc.org/map-tutorial") MAP TUTORIAL
+              a.light(href="https://displacementalert.org/map-tutorial") MAP TUTORIAL
           li.navbar-item.dropdown
             div.dropbtn
-              a.navbar-link.active.light(href="http://reports.dapmapnyc.org") DISTRICT REPORTS 
+              a.navbar-link.active.light(href="https://reports.displacementalert.org") DISTRICT REPORTS 
             div.dropdown-content
-              a.light(href="http://dapmapnyc.org/reports-tutorial") REPORTS TUTORIAL
+              a.light(href="http://displacementalert.org/reports-tutorial") REPORTS TUTORIAL
           li.navbar-item
-            a.navbar-link.light(href="https://www.dapmapnyc.org/about") ABOUT
+            a.navbar-link.light(href="https://www.displacementalert.org/about") ABOUT
           li.navbar-item
-            a.navbar-link.light(href="https://www.dapmapnyc.org/contact-us") CONTACT
+            a.navbar-link.light(href="https://www.displacementalert.org/watchlist") WATCH LIST
+          li.navbar-item
+            a.navbar-link.light(href="https://portal.displacementalert.org") PORTAL
+          li.navbar-item
+            a.navbar-link.light(href="https://www.displacementalert.org/contact-us") CONTACT
           li
             div#google_translate_element
     div.dapgray.ph4.pv2
@@ -103,7 +107,7 @@ html(lang="en")
           li Access community district-level data on at-risk buildings
           li View reports on your computer, phone, or print them out in a clear format to take offline and into the field
           li Look back at reports from previous months
-          li Navigate directly to a property page on ACRIS, HPD, DOB, DOF tax bills, OASIS map, and Google Maps
+          li Navigate directly to a property page on ACRIS, HPD, DOB, OASIS map, and DAP Portal
       p
         span For more information on using District Reports, visit the 
         a.light(href="http://www.dapmapnyc.org/reports-tutorial" target="_blank") Tutorial
@@ -114,7 +118,6 @@ html(lang="en")
         span (ANHD) 
         a.light(href='http://dapmapnyc.org' target='_blank')  Displacement Alert Project 
         span  (DAP), leveraging data and visualizations to help protect tenants and preserve New York City's stock of affordable housing.
-
     div.w-100
       div.pt3.pb2.pl4.f5 Select a Community Board to view this month's District Report:
     for boro in districts

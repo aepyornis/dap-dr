@@ -5,6 +5,7 @@ create or replace view bbljobs as
     from dobjobs
     where prefilingdate >= date_trunc('month', current_date - interval '1 month') 
 	and prefilingdate < date_trunc('month', current_date - interval '0 month')
+    and doc = 1
     group by bbl, job, jobtype;
 
 SELECT subset.*,   
@@ -14,7 +15,7 @@ SELECT subset.*,
 	bbljobs.bbl,
 	pluto.address,
 	pluto.unitsres as residentialunits,
-	uc2007, uc2016,
+	uc2007, uc2017,
     pluto.borocode,
     pluto.block,
     pluto.lot,
@@ -39,12 +40,12 @@ SELECT subset.*,
             '+',
             split_part(pluto.address,' ',4)) as hpdlink
 	from bbljobs
-    LEFT JOIN pluto_18v1 pluto on bbljobs.bbl = pluto.bbl
+    LEFT JOIN pluto_18v2 pluto on bbljobs.bbl = pluto.bbl
     INNER JOIN rentstab rentstab on rentstab.ucbbl = bbljobs.bbl
     WHERE
         pluto.cd = '${ cd }' 
-        AND coalesce(uc2007,uc2008, uc2009, uc2010, uc2011, uc2012, uc2013, uc2014,uc2015,uc2016) is not null
-    group by bbljobs.bbl, pluto.cd, pluto.address, residentialunits, uc2007, uc2016, borocode, pluto.block, pluto.lot, pluto.council, pluto.zipcode, pluto.bbl
+        AND coalesce(uc2007,uc2008, uc2009, uc2010, uc2011, uc2012, uc2013, uc2014,uc2015,uc2016,uc2017) is not null
+    group by bbljobs.bbl, pluto.cd, pluto.address, residentialunits, uc2007, uc2017, borocode, pluto.block, pluto.lot, pluto.council, pluto.zipcode, pluto.bbl
     ) as subset
 LEFT JOIN hpd_registrations_grouped_by_bbl_with_contacts hpd_reg on hpd_reg.bbl = subset.bbl
 left join pluto_18v1 pluto on pluto.bbl = subset.bbl
@@ -52,5 +53,5 @@ where (
     a1 > 0 or
     a2 > 0 or
     dm > 0)
-group by subset.bbl, subset.cd, subset.address, residentialunits, uc2007, uc2016, a1, a2, dm, total, subset.borocode, subset.block, subset.lot, hpdlink,  subset.council, subset.zipcode
+group by subset.bbl, subset.cd, subset.address, residentialunits, uc2007, uc2017, a1, a2, dm, total, subset.borocode, subset.block, subset.lot, hpdlink,  subset.council, subset.zipcode
 order by cd asc, a2 desc

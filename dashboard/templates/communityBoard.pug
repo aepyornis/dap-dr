@@ -30,27 +30,29 @@ html(lang="en")
 
   body
   //- Change the months here when rebuilding pages
-  - var crtmonth = 'August 2018'
-  - var salesmonth = 'July 2018'
+  - var crtmonth = 'January 2020'
+  - var salesmonth = 'January 2020'
     nav.navbar
       div.container-nav
         ul.navbar-list
           li.navbar-item
-            a.navbar-link.light(href="http://www.dapmapnyc.org") HOME
+            a.navbar-link.light(href="https://displacementalert.org") HOME
           li.navbar-item.dropdown
             div.dropbtn
-              a.dropbtn.navbar-link.light(href="http://map.dapmapnyc.org/app") DAP MAP
+              a.navbar-link.light(href="https://map.displacementalert.org") DAP MAP
             div.dropdown-content
-              a.light(href="http://dapmapnyc.org/map-tutorial") MAP TUTORIAL
+              a.light(href="https://displacementalert.org/map-tutorial") MAP TUTORIAL
           li.navbar-item.dropdown
             div.dropbtn
-              a.navbar-link.active.light(href="http://reports.dapmapnyc.org") DISTRICT REPORTS 
+              a.navbar-link.active.light(href="https://reports.displacementalert.org") DISTRICT REPORTS 
             div.dropdown-content
-              a.light(href="http://dapmapnyc.org/reports-tutorial") REPORTS TUTORIAL
+              a.light(href="http://displacementalert.org/reports-tutorial") REPORTS TUTORIAL
           li.navbar-item
-            a.navbar-link.light(href="https://www.dapmapnyc.org/about") ABOUT
+            a.navbar-link.light(href="https://www.displacementalert.org/about") ABOUT
           li.navbar-item
-            a.navbar-link.light(href="https://www.dapmapnyc.org/contact-us") CONTACT
+            a.navbar-link.light(href="https://portal.displacementalert.org") PORTAL
+          li.navbar-item
+            a.navbar-link.light(href="https://www.displacementalert.org/contact-us") CONTACT
           li
             div#google_translate_element
     div.dapgray.ph4.pv2
@@ -86,6 +88,24 @@ html(lang="en")
                       - var may18 = '/may18/' + district.cd + '.html'
                       - var jun18 = '/jun18/' + district.cd + '.html'
                       - var jul18 = '/jul18/' + district.cd + '.html'
+                      - var aug18 = '/aug18/' + district.cd + '.html'
+                      - var sep18 = '/sep18/' + district.cd + '.html'
+                      - var oct18 = '/oct18/' + district.cd + '.html'
+                      - var nov18 = '/nov18/' + district.cd + '.html'
+                      - var dec18 = '/dec18/' + district.cd + '.html'
+                      - var jan19 = '/jan19/' + district.cd + '.html'
+                      - var feb19 = '/feb19/' + district.cd + '.html'
+                      - var mar19 = '/mar19/' + district.cd + '.html'
+                      - var apr19 = '/apr19/' + district.cd + '.html'
+                      - var may19 = '/may19/' + district.cd + '.html'
+                      - var jun19 = '/jun19/' + district.cd + '.html'
+                      - var jul19 = '/jul19/' + district.cd + '.html'
+                      - var aug19 = '/aug19/' + district.cd + '.html'
+                      - var sep19 = '/sep19/' + district.cd + '.html'
+                      - var oct19 = '/oct19/' + district.cd + '.html'
+                      - var nov19 = '/nov19/' + district.cd + '.html'
+                      - var dec19 = '/dec19/' + district.cd + '.html'
+                      - var jan20 = '/jan20/' + district.cd + '.html'
                       - var current = '../' + district.cd + '.html'
                         a.btn.btn-secondary.btn-sm.dropdown-toggle(data-toggle="dropdown") Select Month
                         span.caret
@@ -129,7 +149,43 @@ html(lang="en")
                             li.item
                               a.dropdown(href=jul18) July 2018
                             li.item
-                              a.dropdown(href=current) August 2018
+                              a.dropdown(href=aug18) August 2018
+                            li.item
+                              a.dropdown(href=sep18) September 2018
+                            li.item
+                              a.dropdown(href=oct18) October 2018
+                            li.item
+                              a.dropdown(href=nov18) November 2018
+                            li.item
+                              a.dropdown(href=dec18) December 2018
+                            li.item
+                              a.dropdown(href=jan19) January 2019
+                            li.item
+                              a.dropdown(href=feb19) February 2019
+                            li.item
+                              a.dropdown(href=mar19) March 2019
+                            li.item
+                              a.dropdown(href=apr19) April 2019
+                            li.item
+                              a.dropdown(href=may19) May 2019
+                            li.item
+                              a.dropdown(href=jun19) June 2019
+                            li.item
+                              a.dropdown(href=jul19) July 2019
+                            li.item
+                              a.dropdown(href=aug19) August 2019
+                            li.item
+                              a.dropdown(href=sep19) September 2019
+                            li.item
+                              a.dropdown(href=oct19) October 2019
+                            li.item
+                              a.dropdown(href=nov19) November 2019
+                            li.item
+                              a.dropdown(href=dec19) December 2019   
+                            li.item
+                              a.dropdown(href=jan20) January 2020
+                            li.item
+                              a.dropdown(href=current) February 2020                                                                          
     div.fl.w-100.tl.pl4.pt2.f5
       a(href='/').no-print Back
     div.fl.f6.page
@@ -168,7 +224,12 @@ html(lang="en")
               a(href='http://whoownswhat.justfix.nyc', target='_blank').light Who Owns What 
               span  page and its 
                 span.medtext Address 
-              span to view it in Google Maps.
+              span to view it on 
+              a(href='http://portal.displacementalert.org', target='_blank').light DAP Portal
+              span . The 
+              a(href='http://nycprop.nyc.gov/nycproperty/nynav/jsp/selectbbl.jsp', target='_blank').light
+                span.medtext (Taxes) 
+              span link will take you to the Department of Finance portal to view tax records and tax exemption information. 
             div.fl.pt2.f6
               div.lighttext If a building appears on more than one of the lists below in a given month it will be coded: 
                 div.pt1
@@ -188,7 +249,7 @@ html(lang="en")
                 span.noprint For more information on using DAP District Reports, visit the 
                 a.light.noprint(href="http://www.dapmapnyc.org/reports-tutorial" target="_blank") Tutorial
                 span.noprint  page.
-    
+
     //- Expand/Collapse all buttons
 
     div.fl.w-100.no-print
@@ -218,7 +279,10 @@ html(lang="en")
           a(href='https://a836-acris.nyc.gov/DS/DocumentSearch/BBL', target='_blank').no-print (ACRIS)
           span.no-print  link for more detailed documentation. 
           span.medtext Note: 
+            //- a(href='https://www1.nyc.gov/site/finance/taxes/property-rolling-sales-data.page' target='_blank') Rolling Sales Data 
+            //- span from the Department of Finance is delayed. We will update DAP District Reports with new data as soon as possible. 
           span data from the Department of Finance can lag, so these sales might be from the month before last. 
+          span.bold 
         if recentSales.length > 0
           table.tab.w-100
             thead
@@ -228,7 +292,7 @@ html(lang="en")
                 th Zip
                 th Total Units
                 th.gray Stab&shy;ilized Units ('07)
-                th Stab&shy;ilized Units ('16)
+                th Stab&shy;ilized Units ('17)
                 th Sales Price
                 th Price/Sq. Foot
                 th Sale Date &#9662;
@@ -239,11 +303,11 @@ html(lang="en")
               - var trStyle = rowClass(bblCount[sale.bbl].length);
               tr(class=trStyle)
                 td.sales #{sale.bbl}
-                td.sales <a href="http://www.google.com/maps/place/#{sale.address}%20#{sale.zipcode}" target="_blank">#{sale.address}</a>
+                td.sales <a href="https://portal.displacementalert.org/property/#{sale.bbl}" target="_blank">#{sale.address}</a>
                 td.sales #{sale.zipcode}
                 td.tc.sales #{sale.residentialunits}
                 td.tc.gray.sales #{sale.uc2007} 
-                td.tc.sales #{sale.uc2016}
+                td.tc.sales #{sale.uc2017}
                 td.sales #{sale.saleprice}
                 td.sales #{sale.ppgsf}
                 td.sales #{sale.saledate}
@@ -280,7 +344,7 @@ html(lang="en")
                 th Zip
                 th Total Units
                 th.gray Stab&shy;ilized Units ('07)
-                th Stab&shy;ilized Units ('16)
+                th Stab&shy;ilized Units ('17)
                 th Compl&shy;aints &#9662;
                 th Owner
                 th.w-20.no-print  Links
@@ -289,11 +353,11 @@ html(lang="en")
               - var trStyle = rowClass(bblCount[complaint.bbl].length);
               tr(class=trStyle)
                 td.hpdcomplaints #{complaint.bbl}
-                td.hpdcomplaints <a href="http://www.google.com/maps/place/#{complaint.address}%20#{complaint.zipcode}" target="_blank">#{complaint.address}</a>
+                td.hpdcomplaints <a href="https://portal.displacementalert.org/property/#{complaint.bbl}" target="_blank">#{complaint.address}</a>
                 td.hpdcomplaints #{complaint.zipcode}
                 td.tc.hpdcomplaints #{complaint.residentialunits}
                 td.tc.gray.hpdcomplaints #{complaint.uc2007}
-                td.tc.hpdcomplaints #{complaint.uc2016}
+                td.tc.hpdcomplaints #{complaint.uc2017}
                 td.tc.hpdcomplaints #{complaint.hpdcomplaints}
                 td.f7.hpdcomplaints <a href="http://whoownswhat.justfix.nyc/bbl/#{complaint.borocode}/#{complaint.block}/#{complaint.lot}" target="_blank">#{complaint.owner}</a>
                 td.no-print.hpdcomplaints 
@@ -331,7 +395,7 @@ html(lang="en")
                 th Zip
                 th Total Units
                 th.gray Stab&shy;ilized Units ('07)
-                th Stab&shy;ilized Units ('16)
+                th Stab&shy;ilized Units ('17)
                 th Class A
                 th Class B
                 th Class C
@@ -343,11 +407,11 @@ html(lang="en")
               - var trStyle = rowClass(bblCount[violation.bbl].length);
               tr(class=trStyle)
                 td.hpdviols #{violation.bbl}
-                td.hpdviols <a href="http://www.google.com/maps/place/#{violation.address}%20#{violation.zipcode}" target="_blank">#{violation.address}</a>
+                td.hpdviols <a href="https://portal.displacementalert.org/property/#{violation.bbl}" target="_blank">#{violation.address}</a>
                 td.hpdviols #{violation.zipcode}
                 td.tc.hpdviols #{violation.residentialunits}
                 td.tc.gray.hpdviols #{violation.uc2007} 
-                td.tc.hpdviols #{violation.uc2016}
+                td.tc.hpdviols #{violation.uc2017}
                 td.tc.hpdviols #{violation.class_a}
                 td.tc.hpdviols #{violation.class_b}
                 td.tc.hpdviols #{violation.class_c}
@@ -385,7 +449,7 @@ html(lang="en")
                 th Zip
                 th Total Units
                 th.gray Stab&shy;ilized Units ('07)
-                th Stab&shy;ilized Units ('16)
+                th Stab&shy;ilized Units ('17)
                 th Compl&shy;aints &#9662;
                 th.pl1 Owner
                 th.w-20.no-print Links
@@ -394,11 +458,11 @@ html(lang="en")
               - var trStyle = rowClass(bblCount[complaint.bbl].length);
               tr(class=trStyle)
                 td.dobcomplaints #{complaint.bbl}
-                td.dobcomplaints <a href="http://www.google.com/maps/place/#{complaint.address}%20#{complaint.zipcode}" target="_blank">#{complaint.address}</a>
+                td.dobcomplaints <a href="https://portal.displacementalert.org/property/#{complaint.bbl}" target="_blank">#{complaint.address}</a>
                 td.dobcomplaints #{complaint.zipcode}
                 td.tc.dobcomplaints #{complaint.residentialunits}
                 td.tc.gray.dobcomplaints #{complaint.uc2007}
-                td.tc.dobcomplaints #{complaint.uc2016}
+                td.tc.dobcomplaints #{complaint.uc2017}
                 td.tc.dobcomplaints #{complaint.dobcomplaints}
                 td.f7.dobcomplaints <a href="http://whoownswhat.justfix.nyc/bbl/#{complaint.borocode}/#{complaint.block}/#{complaint.lot}" target="_blank">#{complaint.owner}</a>
                 td.no-print.dobcomplaints 
@@ -438,7 +502,7 @@ html(lang="en")
                 th Zip
                 th Total Units
                 th.gray Stab&shy;ilized Units ('07)
-                th Stab&shy;ilized Units ('16)
+                th Stab&shy;ilized Units ('17)
                 th Alt 1 Perm&shy;its
                 th Alt 2 Perm&shy;its &#9662;
                 th DM Perm&shy;its
@@ -449,11 +513,11 @@ html(lang="en")
               - var trStyle = rowClass(bblCount[job.bbl].length);
               tr(class=trStyle)
                 td.dobjobs #{job.bbl}
-                td.dobjobs <a href="http://www.google.com/maps/place/#{job.address}%20#{job.zipcode}" target="_blank">#{job.address}</a>
+                td.dobjobs <a href="https://portal.displacementalert.org/property/#{job.bbl}" target="_blank">#{job.address}</a>
                 td.dobjobs #{job.zipcode}
                 td.tc.dobjobs #{job.residentialunits}
                 td.tc.gray.dobjobs #{job.uc2007} 
-                td.tc.dobjobs #{job.uc2016}
+                td.tc.dobjobs #{job.uc2017}
                 td.tc.dobjobs #{job.a1}
                 td.tc.dobjobs #{job.a2}
                 td.tc.dobjobs #{job.dm}
@@ -475,7 +539,7 @@ html(lang="en")
     div.fl.w-100.bg-black-10.f6.pl4.pb3
       div.pr3.pt3.lighttext
         span.medtext#notes *
-        span All buildings in the report have contained at least one rent stabilized unit between 2007 and 2016. 
+        span All buildings in the report have contained at least one rent stabilized unit between 2007 and 2017. 
           | Stabilized unit numbers are approximate and based on property tax bills from the NYC Department of Finance
         span.no-print : click a building's 
         a(href='http://nycprop.nyc.gov/nycproperty/nynav/jsp/selectbbl.jsp', target='_blank').no-print (Taxes)
@@ -492,7 +556,7 @@ html(lang="en")
         span ); 
         a(href='http://www1.nyc.gov/site/finance/taxes/property-rolling-sales-data.page' target='blank').light DOF Rolling Sales
         span , 
-        a(href='https://www1.nyc.gov/site/planning/data-maps/open-data/pluto-mappluto-archive.page' target='blank').light PLUTO 16v2
+        a(href='https://www1.nyc.gov/site/planning/data-maps/open-data/dwn-pluto-mappluto.page' target='blank').light PLUTO 18v2
         span ; NYC Open Data Portal: 
         a(href='https://data.cityofnewyork.us/Housing-Development/Housing-Maintenance-Code-Complaints/uwyv-629c/data' target='blank').light Housing Maintenance Code Complaints
         span , 

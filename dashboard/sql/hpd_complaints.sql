@@ -5,7 +5,7 @@ select subset.*,
             hpd.bbl, 
             pluto.address,
             pluto.unitsres as residentialunits, 
-            uc2007, uc2016,
+            uc2007, uc2017,
             pluto.borocode, 
             pluto.block,
             pluto.lot,
@@ -23,20 +23,20 @@ select subset.*,
                   '+',
                   split_part(pluto.address,' ',4)) as hpdlink
       from hpd_complaints hpd
-      left join pluto_18v1 pluto on pluto.bbl=hpd.bbl
+      left join pluto_18v2 pluto on pluto.bbl=hpd.bbl
       inner join rentstab on rentstab.ucbbl=hpd.bbl
       where 
             pluto.cd = '${ cd }'
             and receiveddate >= date_trunc('month', current_date - interval '1 month') 
             and receiveddate < date_trunc('month', current_date - interval '0 month')
             and pluto.unitsres > 0
-            and coalesce(uc2007,uc2008, uc2009, uc2010, uc2011, uc2012, uc2013, uc2014,uc2015,uc2016) is not null
-      group by hpd.bbl, pluto.cd, pluto.address, residentialunits, uc2007, uc2016, borocode, pluto.block, pluto.lot, pluto.council, pluto.zipcode, pluto.bbl
+            and coalesce(uc2007,uc2008, uc2009, uc2010, uc2011, uc2012, uc2013, uc2014,uc2015,uc2016,uc2017) is not null
+      group by hpd.bbl, pluto.cd, pluto.address, residentialunits, uc2007, uc2017, borocode, pluto.block, pluto.lot, pluto.council, pluto.zipcode, pluto.bbl
       having count(distinct complaintid) > 4
       ) as subset
 left join hpd_registrations_grouped_by_bbl_with_contacts hpd_reg on hpd_reg.bbl = subset.bbl
 left join pluto_18v1 pluto on pluto.bbl = subset.bbl
-group by subset.bbl, subset.cd, subset.address, residentialunits, uc2007, uc2016, hpdcomplaints, subset.borocode, subset.block, subset.lot, hpdlink, subset.council, subset.zipcode
+group by subset.bbl, subset.cd, subset.address, residentialunits, uc2007, uc2017, hpdcomplaints, subset.borocode, subset.block, subset.lot, hpdlink, subset.council, subset.zipcode
 order by cd asc, hpdcomplaints desc
 
 
