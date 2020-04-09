@@ -47,7 +47,7 @@
   {
     "borough": "Bronx",
     "name": "Community Board 4",
-    "neighborhoods": "Highbridge, S. Concourse",  
+    "neighborhoods": "Highbridge, South Concourse",  
     "neighborhoodslong": "Highbridge, Concourse, Mount Eden, and Concourse Village",
     "address": "Bronx Community Board 4 1650 Selwyn Avenue, #11A Bronx, NY 10457",
     "email": "bx04@cb.nyc.gov",
@@ -302,7 +302,7 @@
   {
     "borough": "Brooklyn",
     "name": "Community Board 9",
-    "neighborhoods": "S. Crown Heights, Lefferts Gardens",  
+    "neighborhoods": "South Crown Heights, Lefferts Gardens",  
     "neighborhoodslong": "Crown Heights, Prospect Lefferts Gardens, and Wingate",
     "address": "Brooklyn Community Board 9 890 Nostrand Avenue, Brooklyn, NY 11225",
     "email": "bk09@cb.nyc.gov",
@@ -767,7 +767,7 @@
   {
     "borough": "Queens",
     "name": "Community Board 10",
-    "neighborhoods": "S. Ozone Park , Howard Beach",  
+    "neighborhoods": "South Ozone Park , Howard Beach",  
     "neighborhoodslong": "Howard Beach, Ozone Park, South Ozone Park, Richmond Hill, Tudor Village, and Lindenwood",
     "address": "Queens Community Board 10 115-01 Lefferts Boulevard, South Ozone Park, NY 11420",
     "email": "cb10qns@nyc.rr.com",
@@ -812,7 +812,7 @@
   {
     "borough": "Queens",
     "name": "Community Board 13",
-    "neighborhoods": "Jamaica, Hollis",  
+    "neighborhoods": "Queens Village",  
     "neighborhoodslong": "Queens Village, Glen Oaks, New Hyde Park, Bellerose, Cambria Heights, Laurelton, Rosedale, Floral Park, and Brookville",
     "address": "Queens Community Board 13 Queens Reform Church, 219-41 Jamaica Avenue,",
     "email": "mmcmillan@qcb13.org",
@@ -857,7 +857,7 @@
   {
     "borough": "Staten Island",
     "name": "Community Board 2",
-    "neighborhoods": "S. Beach, Willowbrook",  
+    "neighborhoods": "South Beach, Willowbrook",  
     "neighborhoodslong": "Arrochar, Bloomfield, Bulls Heads, Chelsea, Dongan Hills, Egbertville, Emerson Hill, Grant City, Grasmere, High Rock, Lighthouse Hill, Midland Beach, New Dorp, New Springville, Oakwood, Ocean Breeze, Old Town, Richmondtown, South Beach, Todt Hill, and Travis",
     "address": "Staten Island Community Board 2 Sea View Hospital Lou Caravone Community Service Building,",
     "email": "dderrico@cb.nyc.gov",

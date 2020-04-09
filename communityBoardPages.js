@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 const fs = require('fs');
+const mkdirp = require('mkdirp');
 const path = require('path');
 const pagesMaker = require("./dashboard/communityBoardPagesMaker.js");
 
@@ -9,14 +10,9 @@ const DEFAULT_OUTPUT_FOLDER = './public';
 
 const help = `
 Community Board Pages: creates community board website
-  use: commmunity-board-pages COMMUNITY-BOARD-JSON-FILE
+  use: commmunity-board-pages [COMMUNITY-BOARD-JSON-FILE] [FOLDER-NAME]
 `;
 
-const makeDirIfNotExists = function(dir) {
-  if (!fs.existsSync(dir)){
-    fs.mkdirSync(dir);
-  }
-};
 
 const copyCss = (dir) => {
   fs.copyFileSync(
@@ -41,7 +37,7 @@ if (helpCommands.includes(process.argv[2])) {
   let pathToJson = path.resolve(process.argv[2]);
   let folder = process.argv[3] || DEFAULT_OUTPUT_FOLDER;
 
-  makeDirIfNotExists(folder);
+  mkdirp(folder);
   copyCss(folder);
   pagesMaker(require(pathToJson), folder);
   

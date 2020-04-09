@@ -1,0 +1,67 @@
+Release Notes
+
+v1.3.0: 1-9-17 Went live on reports.dapmapnyc.org and was linked to from dapmapnyc.org but was IE incompatible
+    boardsdec17-2.json; boardsnov17-1.json
+v1.3.1: 1-10-17 Active version upon email announcement
+v1.3.2: 1-11-17 Fixed mobile compatibility issues that came from IE compatibility fixes
+v1.3.3: 1-12-17 Changed dobjobs date field from latestactiondate to prefilingdate (earliest date of application submission. latestactiondate will change with status updates e.g. approval)
+    boardsdec17-3.json; boardsnov17-3.json
+v1.3.4: 1-25-17 Added WOW back with new boards.json files, edited intro text to include. Added July-October 2017 and updated dropdown list.
+v1.3.5: 2-6-18  Fixed nav bar bug and added Jan 18 as well as Jan-June 17.
+    boardsjan18-1.json; boardsjan17-1.json; boardsfeb17-1.json; boardsmar17-1.json; boardsapr17-1.json; boardsmay17-1.json; boardsjun17-1.json 
+v1.3.5.1: 2-6-18 Fixed ppgsf variable and bottom Back button link
+v1.3.5.2: 2-7-18 Fixed printing format
+v1.3.6 2-23-18 Added Jan 18 sales for a complete Jan 18
+    boardsjan18-2.json 
+v1.3.7 3-5-18 Added Feb 18 
+    boardsfeb18-1.json 
+v1.3.7.2 3-16-18 Added Feb 18 sales. v1.3.7 was missing any sales. Now fixed.
+    boardsfeb18-2.json
+v1.3.8 4-4-18 Added March 18. 503 error still needs attn.
+    boardsmar18-1.json
+v1.3.8.2 4-19-18 Fixed formatting issue for $ sales in march and rebuilt march18 json because it was missing data. Built new pages just for March.
+    boardsmar18-1.2.json 
+v1.4.0 4-24-18 Added March 18 sales, has zip code but haven’t added zip codes in previous months yet. Working on expand all feature.
+    boardsmar18-2.json 
+v1.5.0 5-4-18 Added April 18. Added zip codes to all months and added expand/collapse all buttons. Re-built all past months to add zip codes and reformat money fields on sales. Boards files built backwards don’t have ‘-‘ suffixes but new ones do, for pre-sales updates and post-sales updates.
+    boardsapr18-1.json, boardsfeb18.json back to boardsjan17.json
+v1.5.1 6-4-18 Added May 18 and April 18 sales. Added April 18 sales to April 18 reports
+    boardsmay18-1.json, boardsapr18-2.json
+v1.5.2 6-19-18 Added May 18 sales
+    boardsmay18-2.json
+v1.5.3 7-3-18 Added May 18. Expand jump issue still needs fixing. 
+    boardsjun18-1.json 
+v1.5.3.1 7-5-18 Added new data with DOB permits through the end of June
+    boardsjun18-1-2.json 
+v1.5.4 7-25-18 Added June 18 sales
+    boardsjun18-2.json 
+v1.5.5 8-6-18 Added July 18 data
+    boardsjul18-1.json
+v1.6 8-20-18 Added July 18 sales, rewrote SQL queries and in middle of updating boards files backwards. Added translate feature. Still to do: rebuild backwards with translate feature.
+    boardsjul18.json
+v1.6.0.1 8-28-18 Fixed typo in footer for July 2018 pages
+v1.7.0 9-4-18 Added August 18 data. Used sam raby's code to update dropdowns for previous months’ reports instead of rebuilding all pages from scratch. Have not updated all boards files backwards because unnecessary for updating dropdowns now. Changed path to styles.css and tachyons.css 
+    boardsaug18-1.json 
+v1.7.0.1 9-5-18 Fixed dropdowns for july 2018 reports to include august
+v1.8.0 9-20-18 Changed nav bar for DAP website changes, changed CNAME for URL change
+v1.8.1 10-4-18 Added September 18 data and August 18 sales, updated August w August sales
+    boardssep18-1.json, boardsaug18-2.json
+v1.8.2 10-23-18 Added Sept 18 sales
+    boardssep18-2.json
+v1.8.3.0 11-7-18 Added some Oct 18 data but some is missing from DOB, needs addtl update
+    boardsoct18-1.json 
+v1.8.3.1 11-14-18 Added full month of October 18, last update had a bug missing sep 18 month
+    boardsoct18-2.json 
+v1.8.4 11-27-18 Added Oct 18 sales
+    boardsoct18-3.jso
+    boardsnov18-1.json 
+v1.8.5 12-4-18 Added Nov 18 data with 2017 rent stab numbers
+v1.8.6 1-3-19 Added Nov 18 sales and Dec 18 data
+    boardsnov18-2.json
+    boardsdec18-1.json
+v1.8.7 1-28-19 Added Dec 18 sales
+    boardsdec18-2.json
+v1.8.8 2-7-19 Added Jan 19 data
+    boardsjan19-1.json  
+v1.8.9 3-12-19 Added Feb 19 data and Jan 19 sales backwards. Didn't submit after updating
+    boardsjan19-2.json boardsfeb19-2.json 

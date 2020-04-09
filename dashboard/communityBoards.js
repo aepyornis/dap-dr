@@ -12,7 +12,7 @@ const toN = require('./toN');
 const communityBoardList = require('./community_boards.json');
 const queries = [ 'stats', 'recentSales','newBuildingJobs', 'hpdViolations', 'dobjobs', 'dobComplaints', 'hpdComplaints' ];
 
-const CONCURRENCY = 3;0
+const CONCURRENCY = 3;
 
 /**
  * wraps values in an object, and optionally transforms the values
