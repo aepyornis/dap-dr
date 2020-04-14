@@ -5,7 +5,7 @@ select subset.*,
             pluto.bbl, 
             concat(housenumber,' ',housestreet) as address,
             pluto.unitsres as residentialunits, 
-            uc2007, uc2017,
+            uc2007, uc2018,
             pluto.borocode,
             pluto.block,
             pluto.lot,
@@ -25,18 +25,19 @@ select subset.*,
       from dob_complaints dob
       left join pluto_18v2 pluto on pluto.address = concat(housenumber,' ',housestreet)
       inner join rentstab on rentstab.ucbbl=pluto.bbl
+      left join rentstab_v2 rr on rr.ucbbl = pluto.bbl 
       where 
-      communityboard = '${ cd }'
-      and dateentered >= date_trunc('month', current_date - interval '1 month') 
-      and dateentered < date_trunc('month', current_date - interval '0 month')
+      --communityboard = '${ cd }' and
+       dateentered >= date_trunc('month', current_date - interval '2 month') 
+      and dateentered < date_trunc('month', current_date - interval '1 month')
       and pluto.unitsres > 0 
-      AND COALESCE(uc2007,uc2008, uc2009, uc2010, uc2011, uc2012, uc2013, uc2014,uc2015,uc2016,uc2017) is not null
-      group by pluto.bbl, concat(housenumber,' ',housestreet), communityboard, pluto.unitsres, uc2007, uc2017, pluto.address, pluto.borocode, pluto.block, pluto.lot, pluto.council, pluto.zipcode, pluto.bbl
+      AND COALESCE(uc2007,uc2008, uc2009, uc2010, uc2011, uc2012, uc2013, uc2014,uc2015,uc2016,uc2017, uc2018) is not null
+      group by pluto.bbl, concat(housenumber,' ',housestreet), communityboard, pluto.unitsres, uc2007, uc2018, pluto.address, pluto.borocode, pluto.block, pluto.lot, pluto.council, pluto.zipcode, pluto.bbl
       having count(distinct complaintnumber) > 1
       ) as subset
 LEFT JOIN hpd_registrations_grouped_by_bbl_with_contacts hpd_reg on hpd_reg.bbl = subset.bbl
-left join pluto_18v1 pluto on pluto.bbl = subset.bbl
-group by subset.bbl, subset.address, communityboard, residentialunits, uc2007, uc2017, dobcomplaints, subset.borocode, subset.block, subset.lot, hpdlink, subset.council, subset.zipcode
+left join pluto_18v2 pluto on pluto.bbl = subset.bbl
+group by subset.bbl, subset.address, communityboard, residentialunits, uc2007, uc2018, dobcomplaints, subset.borocode, subset.block, subset.lot, hpdlink, subset.council, subset.zipcode
       order by communityboard asc, dobcomplaints desc
 
 /*

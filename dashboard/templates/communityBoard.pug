@@ -30,8 +30,8 @@ html(lang="en")
 
   body
   //- Change the months here when rebuilding pages
-  - var crtmonth = 'January 2020'
-  - var salesmonth = 'January 2020'
+  - var crtmonth = 'February 2020'
+  - var salesmonth = 'February 2020'
     nav.navbar
       div.container-nav
         ul.navbar-list
@@ -106,6 +106,7 @@ html(lang="en")
                       - var nov19 = '/nov19/' + district.cd + '.html'
                       - var dec19 = '/dec19/' + district.cd + '.html'
                       - var jan20 = '/jan20/' + district.cd + '.html'
+                      - var jan20 = '/feb20/' + district.cd + '.html'
                       - var current = '../' + district.cd + '.html'
                         a.btn.btn-secondary.btn-sm.dropdown-toggle(data-toggle="dropdown") Select Month
                         span.caret
@@ -185,7 +186,10 @@ html(lang="en")
                             li.item
                               a.dropdown(href=jan20) January 2020
                             li.item
-                              a.dropdown(href=current) February 2020                                                                          
+                              a.dropdown(href=feb20) February 2020        
+                            li.item
+                              a.dropdown(href=current) March 2020        
+
     div.fl.w-100.tl.pl4.pt2.f5
       a(href='/').no-print Back
     div.fl.f6.page
@@ -307,7 +311,7 @@ html(lang="en")
                 td.sales #{sale.zipcode}
                 td.tc.sales #{sale.residentialunits}
                 td.tc.gray.sales #{sale.uc2007} 
-                td.tc.sales #{sale.uc2017}
+                td.tc.sales #{sale.uc2018}
                 td.sales #{sale.saleprice}
                 td.sales #{sale.ppgsf}
                 td.sales #{sale.saledate}
@@ -357,7 +361,7 @@ html(lang="en")
                 td.hpdcomplaints #{complaint.zipcode}
                 td.tc.hpdcomplaints #{complaint.residentialunits}
                 td.tc.gray.hpdcomplaints #{complaint.uc2007}
-                td.tc.hpdcomplaints #{complaint.uc2017}
+                td.tc.hpdcomplaints #{complaint.uc2018}
                 td.tc.hpdcomplaints #{complaint.hpdcomplaints}
                 td.f7.hpdcomplaints <a href="http://whoownswhat.justfix.nyc/bbl/#{complaint.borocode}/#{complaint.block}/#{complaint.lot}" target="_blank">#{complaint.owner}</a>
                 td.no-print.hpdcomplaints 
@@ -411,7 +415,7 @@ html(lang="en")
                 td.hpdviols #{violation.zipcode}
                 td.tc.hpdviols #{violation.residentialunits}
                 td.tc.gray.hpdviols #{violation.uc2007} 
-                td.tc.hpdviols #{violation.uc2017}
+                td.tc.hpdviols #{violation.uc2018}
                 td.tc.hpdviols #{violation.class_a}
                 td.tc.hpdviols #{violation.class_b}
                 td.tc.hpdviols #{violation.class_c}
@@ -462,7 +466,7 @@ html(lang="en")
                 td.dobcomplaints #{complaint.zipcode}
                 td.tc.dobcomplaints #{complaint.residentialunits}
                 td.tc.gray.dobcomplaints #{complaint.uc2007}
-                td.tc.dobcomplaints #{complaint.uc2017}
+                td.tc.dobcomplaints #{complaint.uc2018}
                 td.tc.dobcomplaints #{complaint.dobcomplaints}
                 td.f7.dobcomplaints <a href="http://whoownswhat.justfix.nyc/bbl/#{complaint.borocode}/#{complaint.block}/#{complaint.lot}" target="_blank">#{complaint.owner}</a>
                 td.no-print.dobcomplaints 
@@ -517,7 +521,7 @@ html(lang="en")
                 td.dobjobs #{job.zipcode}
                 td.tc.dobjobs #{job.residentialunits}
                 td.tc.gray.dobjobs #{job.uc2007} 
-                td.tc.dobjobs #{job.uc2017}
+                td.tc.dobjobs #{job.uc2018}
                 td.tc.dobjobs #{job.a1}
                 td.tc.dobjobs #{job.a2}
                 td.tc.dobjobs #{job.dm}
@@ -539,7 +543,7 @@ html(lang="en")
     div.fl.w-100.bg-black-10.f6.pl4.pb3
       div.pr3.pt3.lighttext
         span.medtext#notes *
-        span All buildings in the report have contained at least one rent stabilized unit between 2007 and 2017. 
+        span All buildings in the report have contained at least one rent stabilized unit between 2007 and 2018. 
           | Stabilized unit numbers are approximate and based on property tax bills from the NYC Department of Finance
         span.no-print : click a building's 
         a(href='http://nycprop.nyc.gov/nycproperty/nynav/jsp/selectbbl.jsp', target='_blank').no-print (Taxes)
