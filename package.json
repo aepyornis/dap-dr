@@ -8,8 +8,8 @@
     "community-board-pages": "./communityBoardPages.js"
   },
   "scripts": {
-    "json": "./communityBoardJson.js > boards.json",
-    "build": "./communityBoardPages.js boards.json",
+    "json": "node ./communityBoardJson.js > boards.json",
+    "build": "node ./communityBoardPages.js boards.json",
     "zip": "zip -r dap-dr-$(date +'%F').zip boards.json public",
     "clean": "rm -rf ./public",
     "start": "http-server ./public",
