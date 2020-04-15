@@ -28,8 +28,8 @@ select subset.*,
       left join rentstab_v2 rr on rr.ucbbl = pluto.bbl 
       where 
             pluto.cd = '${ cd }' and
-            receiveddate >= date_trunc('month', current_date - interval '2 month') 
-            and receiveddate < date_trunc('month', current_date - interval '1 month')
+            receiveddate >= date_trunc('month', current_date - interval '1 month') 
+            and receiveddate < date_trunc('month', current_date - interval '0 month')
             and pluto.unitsres > 0
             and coalesce(uc2007,uc2008, uc2009, uc2010, uc2011, uc2012, uc2013, uc2014,uc2015,uc2016,uc2017,uc2018) is not null
       group by hpd.bbl, pluto.cd, pluto.address, residentialunits, uc2007, uc2018, borocode, pluto.block, pluto.lot, pluto.council, pluto.zipcode, pluto.bbl

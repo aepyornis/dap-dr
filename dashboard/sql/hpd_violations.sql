@@ -35,8 +35,8 @@ SELECT subset.*,
     left join rentstab_v2 rr on rr.ucbbl = pluto.bbl 
     WHERE
        pluto.cd = '${ cd }' and
-	    novissueddate >= date_trunc('month', current_date - interval '2 month') 
-       and novissueddate < date_trunc('month', current_date - interval '1 month')
+	    novissueddate >= date_trunc('month', current_date - interval '1 month') 
+       and novissueddate < date_trunc('month', current_date - interval '0 month')
        and coalesce(uc2007,uc2008, uc2009, uc2010, uc2011, uc2012, uc2013, uc2014,uc2015,uc2016,uc2017,uc2018) is not null
     group by viols.bbl, pluto.cd, pluto.address, residentialunits, uc2007, uc2018, borocode, pluto.block, pluto.lot, pluto.council, pluto.zipcode, pluto.bbl
     having count(class) > 9
