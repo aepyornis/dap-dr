@@ -5,7 +5,7 @@ SELECT subset.*,
         viols.bbl,
         pluto.address,
         pluto.unitsres as residentialunits,
-        uc2007, uc2018,
+        uc2007, uc2019,
         pluto.borocode,
         pluto.block,
         pluto.lot,
@@ -30,20 +30,20 @@ SELECT subset.*,
             '+',
             split_part(pluto.address,' ',4)) as hpdlink
 	from hpd_violations viols
-    LEFT JOIN pluto_18v2 pluto on viols.bbl = pluto.bbl
+    LEFT JOIN pluto_19v2 pluto on viols.bbl = pluto.bbl
     INNER JOIN rentstab rentstab on rentstab.ucbbl = viols.bbl
     left join rentstab_v2 rr on rr.ucbbl = pluto.bbl 
     WHERE
        pluto.cd = '${ cd }' and
 	    novissueddate >= date_trunc('month', current_date - interval '1 month') 
        and novissueddate < date_trunc('month', current_date - interval '0 month')
-       and coalesce(uc2007,uc2008, uc2009, uc2010, uc2011, uc2012, uc2013, uc2014,uc2015,uc2016,uc2017,uc2018) is not null
-    group by viols.bbl, pluto.cd, pluto.address, residentialunits, uc2007, uc2018, borocode, pluto.block, pluto.lot, pluto.council, pluto.zipcode, pluto.bbl
+       and coalesce(uc2007,uc2008, uc2009, uc2010, uc2011, uc2012, uc2013, uc2014,uc2015,uc2016,uc2017,uc2018,uc2019) is not null
+    group by viols.bbl, pluto.cd, pluto.address, residentialunits, uc2007, uc2019, borocode, pluto.block, pluto.lot, pluto.council, pluto.zipcode, pluto.bbl
     having count(class) > 9
     ) as subset
 LEFT JOIN hpd_registrations_grouped_by_bbl_with_contacts hpd_reg on hpd_reg.bbl = subset.bbl
-left join pluto_18v2 pluto on pluto.bbl = subset.bbl
-group by subset.bbl, subset.cd, subset.address, residentialunits, uc2007, uc2018, class_a, class_b, class_c, total, subset.borocode, subset.block, subset.lot, hpdlink, subset.council, subset.zipcode
+left join pluto_19v2 pluto on pluto.bbl = subset.bbl
+group by subset.bbl, subset.cd, subset.address, residentialunits, uc2007, uc2019, class_a, class_b, class_c, total, subset.borocode, subset.block, subset.lot, hpdlink, subset.council, subset.zipcode
 order by cd asc, total desc
 
 

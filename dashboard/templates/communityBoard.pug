@@ -30,8 +30,8 @@ html(lang="en")
 
   body
   //- Change the months here when rebuilding pages
-  - var crtmonth = 'March 2020'
-  - var salesmonth = 'February 2020'
+  - var crtmonth = 'November 2020'
+  - var salesmonth = 'October 2020'
     nav.navbar
       div.container-nav
         ul.navbar-list
@@ -61,12 +61,13 @@ html(lang="en")
           div.col-sm
             h1.f5.black
               a(href='/').imgstyle
-                img(src='https://github.com/lblok/dapreports/blob/master/images/dapdrlogo.png?raw=true' alt='DAP District Reports').daplogo
-          div.f4.black-90.col-sm.align-self-center
+                img(src='https://anhd.org/sites/default/files/dap_district_reports_black.png' alt='DAP District Reports').daplogo
+          div.f4.black-90.col-med.align-self-center.pl4
               div.v-mid.title #{district.borough} #{district.name}
               div.lighttext.title #{crtmonth}
               //- Select month dropdown
-              div.w-100.fl.no-print
+          div.f4.black-90.col-sm
+              div.w-100.fl.pl3.no-print
                   div.container(style="max-width: none; padding-left: 0px")
                     div.dropdown.pt1.show
                       - var jan17 = '/jan17/' + district.cd + '.html'
@@ -107,6 +108,14 @@ html(lang="en")
                       - var dec19 = '/dec19/' + district.cd + '.html'
                       - var jan20 = '/jan20/' + district.cd + '.html'
                       - var feb20 = '/feb20/' + district.cd + '.html'
+                      - var mar20 = '/mar20/' + district.cd + '.html'
+                      - var apr20 = '/apr20/' + district.cd + '.html'
+                      - var may20 = '/may20/' + district.cd + '.html'
+                      - var jun20 = '/jun20/' + district.cd + '.html'
+                      - var jul20 = '/jul20/' + district.cd + '.html'
+                      - var aug20 = '/aug20/' + district.cd + '.html'
+                      - var sep20 = '/sep20/' + district.cd + '.html'
+                      - var oct20 = '/oct20/' + district.cd + '.html'
                       - var current = '../' + district.cd + '.html'
                         a.btn.btn-secondary.btn-sm.dropdown-toggle(data-toggle="dropdown") Select Month
                         span.caret
@@ -182,14 +191,29 @@ html(lang="en")
                             li.item
                               a.dropdown(href=nov19) November 2019
                             li.item
-                              a.dropdown(href=dec19) December 2019   
+                              a.dropdown(href=dec19) December 2019
                             li.item
                               a.dropdown(href=jan20) January 2020
                             li.item
-                              a.dropdown(href=feb20) February 2020        
+                              a.dropdown(href=feb20) February 2020
                             li.item
-                              a.dropdown(href=current) March 2020        
-
+                              a.dropdown(href=mar20) March 2020
+                            li.item
+                              a.dropdown(href=apr20) April 2020
+                            li.item
+                              a.dropdown(href=may20) May 2020
+                            li.item
+                              a.dropdown(href=jun20) June 2020
+                            li.item
+                              a.dropdown(href=jul20) July 2020
+                            li.item
+                              a.dropdown(href=aug20) August 2020
+                            li.item
+                              a.dropdown(href=sep20) September 2020
+                            li.item
+                              a.dropdown(href=oct20) October 2020
+                            li.item
+                              a.dropdown(href=current) November 2020
     div.fl.w-100.tl.pl4.pt2.f5
       a(href='/').no-print Back
     div.fl.f6.page
@@ -296,7 +320,7 @@ html(lang="en")
                 th Zip
                 th Total Units
                 th.gray Stab&shy;ilized Units ('07)
-                th Stab&shy;ilized Units ('17)
+                th Stab&shy;ilized Units ('19)
                 th Sales Price
                 th Price/Sq. Foot
                 th Sale Date &#9662;
@@ -311,7 +335,7 @@ html(lang="en")
                 td.sales #{sale.zipcode}
                 td.tc.sales #{sale.residentialunits}
                 td.tc.gray.sales #{sale.uc2007} 
-                td.tc.sales #{sale.uc2018}
+                td.tc.sales #{sale.uc2019}
                 td.sales #{sale.saleprice}
                 td.sales #{sale.ppgsf}
                 td.sales #{sale.saledate}
@@ -348,7 +372,7 @@ html(lang="en")
                 th Zip
                 th Total Units
                 th.gray Stab&shy;ilized Units ('07)
-                th Stab&shy;ilized Units ('17)
+                th Stab&shy;ilized Units ('19)
                 th Compl&shy;aints &#9662;
                 th Owner
                 th.w-20.no-print  Links
@@ -361,7 +385,7 @@ html(lang="en")
                 td.hpdcomplaints #{complaint.zipcode}
                 td.tc.hpdcomplaints #{complaint.residentialunits}
                 td.tc.gray.hpdcomplaints #{complaint.uc2007}
-                td.tc.hpdcomplaints #{complaint.uc2018}
+                td.tc.hpdcomplaints #{complaint.uc2019}
                 td.tc.hpdcomplaints #{complaint.hpdcomplaints}
                 td.f7.hpdcomplaints <a href="http://whoownswhat.justfix.nyc/bbl/#{complaint.borocode}/#{complaint.block}/#{complaint.lot}" target="_blank">#{complaint.owner}</a>
                 td.no-print.hpdcomplaints 
@@ -399,7 +423,7 @@ html(lang="en")
                 th Zip
                 th Total Units
                 th.gray Stab&shy;ilized Units ('07)
-                th Stab&shy;ilized Units ('17)
+                th Stab&shy;ilized Units ('19)
                 th Class A
                 th Class B
                 th Class C
@@ -415,7 +439,7 @@ html(lang="en")
                 td.hpdviols #{violation.zipcode}
                 td.tc.hpdviols #{violation.residentialunits}
                 td.tc.gray.hpdviols #{violation.uc2007} 
-                td.tc.hpdviols #{violation.uc2018}
+                td.tc.hpdviols #{violation.uc2019}
                 td.tc.hpdviols #{violation.class_a}
                 td.tc.hpdviols #{violation.class_b}
                 td.tc.hpdviols #{violation.class_c}
@@ -453,7 +477,7 @@ html(lang="en")
                 th Zip
                 th Total Units
                 th.gray Stab&shy;ilized Units ('07)
-                th Stab&shy;ilized Units ('17)
+                th Stab&shy;ilized Units ('19)
                 th Compl&shy;aints &#9662;
                 th.pl1 Owner
                 th.w-20.no-print Links
@@ -466,7 +490,7 @@ html(lang="en")
                 td.dobcomplaints #{complaint.zipcode}
                 td.tc.dobcomplaints #{complaint.residentialunits}
                 td.tc.gray.dobcomplaints #{complaint.uc2007}
-                td.tc.dobcomplaints #{complaint.uc2018}
+                td.tc.dobcomplaints #{complaint.uc2019}
                 td.tc.dobcomplaints #{complaint.dobcomplaints}
                 td.f7.dobcomplaints <a href="http://whoownswhat.justfix.nyc/bbl/#{complaint.borocode}/#{complaint.block}/#{complaint.lot}" target="_blank">#{complaint.owner}</a>
                 td.no-print.dobcomplaints 
@@ -506,7 +530,7 @@ html(lang="en")
                 th Zip
                 th Total Units
                 th.gray Stab&shy;ilized Units ('07)
-                th Stab&shy;ilized Units ('17)
+                th Stab&shy;ilized Units ('19)
                 th Alt 1 Perm&shy;its
                 th Alt 2 Perm&shy;its &#9662;
                 th DM Perm&shy;its
@@ -521,7 +545,7 @@ html(lang="en")
                 td.dobjobs #{job.zipcode}
                 td.tc.dobjobs #{job.residentialunits}
                 td.tc.gray.dobjobs #{job.uc2007} 
-                td.tc.dobjobs #{job.uc2018}
+                td.tc.dobjobs #{job.uc2019}
                 td.tc.dobjobs #{job.a1}
                 td.tc.dobjobs #{job.a2}
                 td.tc.dobjobs #{job.dm}
@@ -560,7 +584,7 @@ html(lang="en")
         span ); 
         a(href='http://www1.nyc.gov/site/finance/taxes/property-rolling-sales-data.page' target='blank').light DOF Rolling Sales
         span , 
-        a(href='https://www1.nyc.gov/site/planning/data-maps/open-data/dwn-pluto-mappluto.page' target='blank').light PLUTO 18v2
+        a(href='https://www1.nyc.gov/site/planning/data-maps/open-data/dwn-pluto-mappluto.page' target='blank').light PLUTO 19v2
         span ; NYC Open Data Portal: 
         a(href='https://data.cityofnewyork.us/Housing-Development/Housing-Maintenance-Code-Complaints/uwyv-629c/data' target='blank').light Housing Maintenance Code Complaints
         span , 
@@ -577,22 +601,13 @@ html(lang="en")
       div.pr3.pt3.lighttext
         span The 
         a(href='http://www.anhd.org', target='_blank').light Association for Neighborhood and Housing Development
-        span  produces these District Reports and 
-        a(href='http://map.dapmapnyc.org/app', target='_blank').light DAP Map
-        span  as part of the 
+        span  produces these District Reports as part of the 
         a(href='http://www.dapmapnyc.org', target='_blank').light Displacement Alert Project
         span . Email 
         a(href='mailto:lucy.b@anhd.org').light lucy.b@anhd.org
         span  with feedback or questions. 
       div.w-100.pt2
-        div.credits
-          span Made possible by support from
-        div.ph2.credits
-          img(src='https://github.com/lblok/dapreports/blob/master/images/fordlogo.png?raw=true' alt='Ford Foundation')
-        div.credits
-          span and 
-              a(href='https://github.com/aepyornis/nyc-db' target='_blank').light Ziggy (github.com/aepyornis)
-              span .
+
 
     //- Javascript for individual accordion feature
     script.
