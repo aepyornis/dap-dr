@@ -1,12 +1,13 @@
-create or replace view bbljobs as 
-    select bbl, 
+with bbljobs as (
+     select bbl, 
            job,
            jobtype
     from dobjobs
     where prefilingdate >= date_trunc('month', current_date - interval '1 month') 
 	and prefilingdate < date_trunc('month', current_date - interval '0 month')
     and doc = 1
-    group by bbl, job, jobtype;
+    group by bbl, job, jobtype   
+)
 
 SELECT subset.*,   
       first(replace(trim(both'"{}",' from cast(corpnames as text)), '"','')) as owner

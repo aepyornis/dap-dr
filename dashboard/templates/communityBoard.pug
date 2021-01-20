@@ -30,8 +30,8 @@ html(lang="en")
 
   body
   //- Change the months here when rebuilding pages
-  - var crtmonth = 'November 2020'
-  - var salesmonth = 'October 2020'
+  - var crtmonth = 'December 2020'
+  - var salesmonth = 'November 2020'
     nav.navbar
       div.container-nav
         ul.navbar-list
@@ -46,7 +46,7 @@ html(lang="en")
             div.dropbtn
               a.navbar-link.active.light(href="https://reports.displacementalert.org") DISTRICT REPORTS 
             div.dropdown-content
-              a.light(href="http://displacementalert.org/reports-tutorial") REPORTS TUTORIAL
+              a.light(href="https://displacementalert.org/reports-tutorial") REPORTS TUTORIAL
           li.navbar-item
             a.navbar-link.light(href="https://www.displacementalert.org/about") ABOUT
           li.navbar-item
@@ -116,6 +116,7 @@ html(lang="en")
                       - var aug20 = '/aug20/' + district.cd + '.html'
                       - var sep20 = '/sep20/' + district.cd + '.html'
                       - var oct20 = '/oct20/' + district.cd + '.html'
+                      - var nov20 = '/nov20/' + district.cd + '.html'
                       - var current = '../' + district.cd + '.html'
                         a.btn.btn-secondary.btn-sm.dropdown-toggle(data-toggle="dropdown") Select Month
                         span.caret
@@ -213,7 +214,9 @@ html(lang="en")
                             li.item
                               a.dropdown(href=oct20) October 2020
                             li.item
-                              a.dropdown(href=current) November 2020
+                              a.dropdown(href=nov20) November 2020
+                            li.item
+                              a.dropdown(href=current) December 2020
     div.fl.w-100.tl.pl4.pt2.f5
       a(href='/').no-print Back
     div.fl.f6.page
@@ -275,7 +278,7 @@ html(lang="en")
                 span.lighttext  to find the building on other lists, expand all of them and then copy its BBL (Borough, Block, and Lot code) and use Find (Ctrl+F or &#8984+F). 
               div.fl.mt3.mb3.lighttext.no-print
                 span.noprint For more information on using DAP District Reports, visit the 
-                a.light.noprint(href="http://www.dapmapnyc.org/reports-tutorial" target="_blank") Tutorial
+                a.light.noprint(href="https://displacementalert.org/reports-tutorial" target="_blank") Tutorial
                 span.noprint  page.
 
     //- Expand/Collapse all buttons
